@@ -45,7 +45,7 @@ let cookie = '[{\n' +
     '          "name": "Red Dye",\n' +
     '          "src": "./images/redDye.png",\n' +
     '          "count": 11,\n' +
-    '          "ingredients": [\n' +
+    '          "craftIngredients": [\n' +
     '            {\n' +
     '              "name": "Valberry",\n' +
     '              "src": "./images/valberry.png",\n' +
@@ -58,7 +58,7 @@ let cookie = '[{\n' +
     '            },\n' +
     '            {\n' +
     '              "name": "Carrot",\n' +
-    '              "src": "./carrot.png",\n' +
+    '              "src": "./images/carrot.png",\n' +
     '              "count": 12\n' +
     '            }\n' +
     '          ]\n' +
@@ -67,31 +67,35 @@ let cookie = '[{\n' +
     '          "name": "Blue Dye",\n' +
     '          "src": "./images/blueDye.png",\n' +
     '          "count": 15,\n' +
-    '          "ingredients": {\n' +
-    '            "Mint": {\n' +
+    '          "craftIngredients": [\n' +
+    '            {\n' +
+    '              "name": "Mint",\n' +
     '              "src": "./images/mint.png",\n' +
     '              "count": 20\n' +
     '            },\n' +
-    '            "Wolfhook": {\n' +
+    '            {\n' +
+    '              "name": "Wolfhook",\n' +
     '              "src": "./images/wolfhook.png",\n' +
     '              "count": 82\n' +
     '            }\n' +
-    '          }\n' +
+    '          ]\n' +
     '        },\n' +
     '        {\n' +
     '          "name": "Yellow Dye",\n' +
     '          "src": "./images/yellowDye.png",\n' +
     '          "count": 25,\n' +
-    '          "ingredients": {\n' +
-    '            "Berry": {\n' +
+    '          "craftIngredients": [\n' +
+    '            {\n' +
+    '              "name": "Berry",\n' +
     '              "src": "./images/berry.png",\n' +
     '              "count": 112\n' +
     '            },\n' +
-    '            "Cor Lapis": {\n' +
+    '            {\n' +
+    '              "name": "Cor Lapis",\n' +
     '              "src": "./images/corLapis.png",\n' +
     '              "count": 66\n' +
     '            }\n' +
-    '          }\n' +
+    '          ]\n' +
     '        }\n' +
     '      ]\n' +
     '    },\n' +
@@ -102,7 +106,7 @@ let cookie = '[{\n' +
     '          "name": "Fabric",\n' +
     '          "src": "./images/fabric.png",\n' +
     '          "count": 11,\n' +
-    '          "ingredients": [\n' +
+    '          "craftIngredients": [\n' +
     '            {\n' +
     '              "name": "Silk Flower",\n' +
     '              "src": "./images/silkFlower.png",\n' +

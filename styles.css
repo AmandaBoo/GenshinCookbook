@@ -1,4 +1,6 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 /* The Modal (background) */
 .modal {
@@ -13,6 +15,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+/*    inner scrolling doesn't work very well - this might be a future problem*/
 }
 
 /* Modal Content */
@@ -39,3 +42,53 @@ body {font-family: Arial, Helvetica, sans-serif;}
     cursor: pointer;
 }
 
+.category-label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.title-label {
+    font-size: 14px;
+    font-weight: bold;
+/*    left align the text and match width of divs underneath as soon as those are known*/
+}
+
+.title-span {
+    display: flex;
+    flex-direction: row;
+}
+
+.ingredient-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px;
+    border: 2px solid #ccc;
+    border-radius: 16px;
+    margin: 5px;
+    background: floralwhite;
+}
+
+.ingredient-div {
+    display: flex;
+    align-items: center;
+}
+
+.card-label {
+
+}
+
+.card-icon {
+
+}
+
+.card-text-field {
+    max-width: 50px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.craft-ingredient-div {
+    display: flex;
+    flex-wrap: wrap;
+}
