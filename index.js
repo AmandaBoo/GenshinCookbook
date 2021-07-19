@@ -43,52 +43,52 @@ let cookie = '[{\n' +
     '      "ingredients": [\n' +
     '        {\n' +
     '          "name": "Red Dye",\n' +
-    '          "src": "../images/redDye.png",\n' +
+    '          "src": "./images/redDye.png",\n' +
     '          "count": 11,\n' +
     '          "ingredients": [\n' +
     '            {\n' +
     '              "name": "Valberry",\n' +
-    '              "src": "../images/valberry.png",\n' +
+    '              "src": "./images/valberry.png",\n' +
     '              "count": 11\n' +
     '            },\n' +
     '            {\n' +
     '              "name": "Sunsettia",\n' +
-    '              "src": "../images/sunsettia.png",\n' +
+    '              "src": "./images/sunsettia.png",\n' +
     '              "count": 24\n' +
     '            },\n' +
     '            {\n' +
     '              "name": "Carrot",\n' +
-    '              "src": "../carrot.png",\n' +
+    '              "src": "./carrot.png",\n' +
     '              "count": 12\n' +
     '            }\n' +
     '          ]\n' +
     '        },\n' +
     '        {\n' +
     '          "name": "Blue Dye",\n' +
-    '          "src": "../images/blueDye.png",\n' +
+    '          "src": "./images/blueDye.png",\n' +
     '          "count": 15,\n' +
     '          "ingredients": {\n' +
     '            "Mint": {\n' +
-    '              "src": "../images/mint.png",\n' +
+    '              "src": "./images/mint.png",\n' +
     '              "count": 20\n' +
     '            },\n' +
     '            "Wolfhook": {\n' +
-    '              "src": "../images/wolfhook.png",\n' +
+    '              "src": "./images/wolfhook.png",\n' +
     '              "count": 82\n' +
     '            }\n' +
     '          }\n' +
     '        },\n' +
     '        {\n' +
     '          "name": "Yellow Dye",\n' +
-    '          "src": "../images/yellowDye.png",\n' +
+    '          "src": "./images/yellowDye.png",\n' +
     '          "count": 25,\n' +
     '          "ingredients": {\n' +
     '            "Berry": {\n' +
-    '              "src": "../images/berry.png",\n' +
+    '              "src": "./images/berry.png",\n' +
     '              "count": 112\n' +
     '            },\n' +
     '            "Cor Lapis": {\n' +
-    '              "src": "../images/corLapis.png",\n' +
+    '              "src": "./images/corLapis.png",\n' +
     '              "count": 66\n' +
     '            }\n' +
     '          }\n' +
@@ -100,12 +100,12 @@ let cookie = '[{\n' +
     '      "ingredients": [\n' +
     '        {\n' +
     '          "name": "Fabric",\n' +
-    '          "src": "../images/fabric.png",\n' +
+    '          "src": "./images/fabric.png",\n' +
     '          "count": 11,\n' +
     '          "ingredients": [\n' +
     '            {\n' +
     '              "name": "Silk Flower",\n' +
-    '              "src": "../images/silkFlower.png",\n' +
+    '              "src": "./images/silkFlower.png",\n' +
     '              "count": 123\n' +
     '            }\n' +
     '          ]\n' +
