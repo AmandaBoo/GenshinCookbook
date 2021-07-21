@@ -1,0 +1,49 @@
+{
+  "rawIngredients": [
+    {
+      "name": "Carrot",
+      "qty": 0
+    },
+    {
+      "name": "Sunsettia",
+      "qty": 0
+    },
+    {
+      "name": "Valberry",
+      "qty": 0
+    }
+  ],
+  "foodIngredients": [
+    {
+      "name": "Bacon",
+      "qty": 0
+    },
+    {
+      "name": "Butter",
+      "qty": 0
+    }
+  ],
+  "furnitureIngredients": [
+    {
+      "name": "Fabric",
+      "qty": 0
+    },
+    {
+      "name": "Red Dye",
+      "qty": 0
+    }
+  ],
+  "foodRecipes": [
+    {
+      "name": "Jade Parcels",
+      "qty": 0
+    },
+    {
+      "name": "Triple-Layered Consommé",
+      "qty": 0
+    }
+  ],
+  "furnitureRecipes": [
+
+  ]
+}
