@@ -1,0 +1,28 @@
+{
+  "foodIngredients": [
+    {
+      "name": "Bacon",
+      "src" : "./images/crafted-ingredient-food",
+      "craftsFrom": [
+        [{
+          "name": "Raw Meat",
+          "qty": 2
+        },
+        {
+          "name": "Salt",
+          "qty": 2
+        }]
+      ]
+    },
+    {
+      "name": "Butter",
+      "src": "./images/crafted-ingredients-food",
+      "craftsFrom": [
+        [{
+          "name": "Milk",
+          "qty": 2
+        }]
+      ]
+    }
+  ]
+}

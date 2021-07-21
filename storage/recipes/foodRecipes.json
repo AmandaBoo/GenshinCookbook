@@ -1,0 +1,48 @@
+{
+  "foodRecipes": [
+    {
+      "name": "Jade Parcels",
+      "src": "./testLink",
+      "craftsFrom": [
+        [{
+          "name": "Lotus Head",
+          "qty": 3
+        },
+        {
+          "name": "Jueyun Chili",
+          "qty": 2
+        },
+        {
+          "name": "Cabbage",
+          "qty": 1
+        },
+        {
+          "name": "Ham",
+          "qty": 1
+        }]
+      ]
+    },
+    {
+      "name": "Triple-Layered Consommé",
+      "src": "./testLink",
+      "craftsFrom": [
+        [{
+          "name": "Ham",
+          "qty": 2
+        },
+        {
+          "name": "Fowl",
+          "qty": 2
+        },
+        {
+          "name": "Bamboo Shoot",
+          "qty": 1
+        },
+        {
+          "name": "Mushroom",
+          "qty": 1
+        }]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "furnitureIngredients": [
+    {
+      "name": "Red Dye",
+      "src": "./images/crafted-ingredient-furniture",
+      "craftsFrom": [
+        [{
+          "name": "Carrot",
+          "qty": 1
+        }],
+        [{
+          "name": "Sunsettia",
+          "qty": 1
+        }],
+        [{
+          "name": "Valberry",
+          "qty": 1
+        }]
+      ]
+    },
+    {
+      "name": "Fabric",
+      "src": "testLink",
+      "craftsFrom": [
+        [{
+          "name": "Silk Flower",
+          "qty": 1,
+          "output": 10
+        }]
+      ]
+    }
+  ]
+}
