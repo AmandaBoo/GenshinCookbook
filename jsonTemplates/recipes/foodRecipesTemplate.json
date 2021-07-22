@@ -1,24 +1,12 @@
 {
   "foodRecipes": [
     {
-      "name": "Jade Parcels",
+      "name": "Steak",
       "src": "./testLink",
       "craftsFrom": [
         [{
-          "name": "Lotus Head",
-          "qty": 3
-        },
-        {
-          "name": "Jueyun Chili",
+          "name": "Raw Meat",
           "qty": 2
-        },
-        {
-          "name": "Cabbage",
-          "qty": 1
-        },
-        {
-          "name": "Ham",
-          "qty": 1
         }]
       ]
     },

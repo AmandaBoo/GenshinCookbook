@@ -1,7 +1,7 @@
 {
   "foodIngredients": [
     {
-      "name": "Bacon",
+      "name": "Ham",
       "src" : "./images/crafted-ingredient-food",
       "craftsFrom": [
         [{
@@ -10,7 +10,7 @@
         },
         {
           "name": "Salt",
-          "qty": 2
+          "qty": 1
         }]
       ]
     },

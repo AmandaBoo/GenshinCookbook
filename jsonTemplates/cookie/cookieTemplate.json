@@ -1,0 +1,55 @@
+{
+  "rawIngredients": [
+    {
+      "name": "Raw Meat",
+      "qty": 0
+    },
+    {
+      "name": "Fowl",
+      "qty": 0
+    },
+    {
+      "name": "Bamboo Shoot",
+      "qty": 0
+    },
+    {
+      "name": "Mushroom",
+      "qty": 0
+    },
+    {
+      "name": "Milk",
+      "qty": 0
+    },
+    {
+      "name": "Salt",
+      "qty": 0
+    }
+  ],
+  "foodIngredients": [
+    {
+      "name": "Ham",
+      "qty": 0
+    },
+    {
+      "name": "Butter",
+      "qty": 0
+    }
+  ],
+  "furnitureIngredients": [
+  ],
+  "foodRecipes": [
+    {
+      "name": "Steak",
+      "qty": 0,
+      "want": 0
+    },
+    {
+      "name": "Triple-Layered Consommé",
+      "qty": 0,
+      "want": 0
+    }
+  ],
+  "furnitureRecipes": [
+
+  ]
+}
