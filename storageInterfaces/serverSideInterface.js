@@ -2,14 +2,14 @@ import {RAW_INGREDIENTS} from "../storage/serverSideStorageTemplates/rawIngredie
 import {FOOD_INGREDIENTS} from "../storage/serverSideStorageTemplates/foodIngredientsDescription.js";
 import {FOOD_RECIPES} from "../storage/serverSideStorageTemplates/foodRecipesDescription.js";
 
-export function getRawIngredientsFromServerSide() {
+export function getRawIngredientsFromServer() {
     return RAW_INGREDIENTS.rawIngredients;
 }
 
-export function getFoodIngredientsFromServerSide() {
+export function getFoodIngredientsFromServer() {
     return FOOD_INGREDIENTS.foodIngredients;
 }
 
-export function getFoodRecipesFromServerSide() {
+export function getFoodRecipesFromServer() {
     return FOOD_RECIPES.foodRecipes;
 }

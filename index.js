@@ -11,16 +11,16 @@ let foodRecipes = [];
 
 setUpNewLocalStorage();
 
-// if (rawIngredients.length === 0) {
-//     rawIngredients = getAllRawIngredients();
-// }
-// if (foodIngredients.length === 0) {
-//     foodIngredients = getAllFoodIngredients(rawIngredients);
-// }
-//
-// if (foodRecipes.length === 0) {
-//     foodRecipes = getAllFoodRecipes(rawIngredients, foodIngredients);
-// }
+if (rawIngredients.length === 0) {
+    rawIngredients = getAllRawIngredients();
+}
+if (foodIngredients.length === 0) {
+    foodIngredients = getAllFoodIngredients(rawIngredients);
+}
+
+if (foodRecipes.length === 0) {
+    foodRecipes = getAllFoodRecipes(rawIngredients, foodIngredients);
+}
 
 let btn = document.getElementById("inventory-btn");
 btn.onclick = function() {

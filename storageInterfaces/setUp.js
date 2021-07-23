@@ -1,5 +1,5 @@
 import {getRawIngredientsFromLocalStorage, getFoodIngredientsFromLocalStorage, getFoodRecipesFromLocalStorage} from "./localInterface.js"
-import {getRawIngredientsFromServerSide, getFoodIngredientsFromServerSide, getFoodRecipesFromServerSide} from "./serverSideInterface.js";
+import {getRawIngredientsFromServer, getFoodIngredientsFromServer, getFoodRecipesFromServer} from "./serverSideInterface.js";
 
 import {RawIngredient} from "../classes/rawIngredient.js";
 import {CraftedFoodIngredient} from "../classes/craftedFoodIngredient.js";
@@ -9,11 +9,11 @@ import {FoodRecipe} from "../classes/foodRecipe.js";
 // and creates RawIngredient objects
 export function getAllRawIngredients() {
     let allRawIngredients = [];
-    let rawIngredientsCookie = getRawIngredientsFromLocalStorage();
     let rawIngredientsLocal = getRawIngredientsFromLocalStorage();
+    let rawIngredientsServer = getRawIngredientsFromServer();
 
-    rawIngredientsLocal.forEach(ing => {
-        let quantity = rawIngredientsCookie.find(ele => ele.name === ing.name).qty;
+    rawIngredientsServer.forEach(ing => {
+        let quantity = rawIngredientsLocal.find(ele => ele.name === ing.name).qty;
         allRawIngredients.push(new RawIngredient(ing.name, quantity, ing.src));
     });
 
@@ -24,17 +24,18 @@ export function getAllRawIngredients() {
 // and creates FoodIngredient objects
 export function getAllFoodIngredients(allRawIngredients) {
     let allFoodIngredients = [];
-    let foodIngredientsCookie = getFoodIngredientsFromLocalStorage();
     let foodIngredientsLocal = getFoodIngredientsFromLocalStorage();
+    let foodIngredientsServer = getFoodIngredientsFromServer();
 
-    foodIngredientsLocal.forEach(ing => {
-        let quantity = foodIngredientsCookie.find(ele => ele.name === ing.name).qty;
+    foodIngredientsServer.forEach(ing => {
+        let quantity = foodIngredientsLocal.find(ele => ele.name === ing.name).qty;
         let craftsFromRaw = mapRawIngredients(allRawIngredients, ing)
         allFoodIngredients.push(new CraftedFoodIngredient(ing.name, quantity, ing.src, craftsFromRaw));
     });
     return allFoodIngredients;
 }
 
+// TODO : MODIFY MAPPING SO THAT IT ALSO KEEPS TRACK OF QTY REQUIRED
 function mapRawIngredients(allRawIngredients, foodIngredient) {
     let allRawIngredientRecipes = [];
     for (let i = 0; i < foodIngredient.craftsFrom.length; i++) {
@@ -51,17 +52,18 @@ function mapRawIngredients(allRawIngredients, foodIngredient) {
 // and creates FoodRecipe objects
 export function getAllFoodRecipes(allRawIngredients, allFoodIngredients) {
     let allRecipes = [];
-    let foodRecipeCookie = getFoodRecipesFromLocalStorage();
     let foodRecipeLocal = getFoodRecipesFromLocalStorage();
+    let foodRecipeServer = getFoodRecipesFromServer();
 
-    foodRecipeLocal.forEach(recipe => {
-        let quantity = foodRecipeCookie.find(ele => ele.name === recipe.name).qty;
+    foodRecipeServer.forEach(recipe => {
+        let quantity = foodRecipeLocal.find(ele => ele.name === recipe.name).qty;
         let allCraftsFrom = mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, recipe)
         allRecipes.push(new FoodRecipe(recipe.name, quantity, recipe.src, allCraftsFrom));
     })
     return allRecipes;
 }
 
+// TODO : MODIFY MAPPING SO THAT IT ALSO KEEPS TRACK OF QTY REQUIRED
 function mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, recipe) {
     let allRawAndCraftedRecipes = [];
     for (let i = 0; i < recipe.craftsFrom.length; i++) {

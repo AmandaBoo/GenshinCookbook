@@ -4,10 +4,11 @@ import {FOOD_RECIPES_TEMPLATE} from "../storage/localStorageTemplates/jsTemplate
 
 export function setUpNewLocalStorage() {
     if (localStorageNotSet()) {
-        localStorage.rawIngredients = JSON.stringify(RAW_INGREDIENTS_TEMPLATE);
+        localStorage.rawIngredients = RAW_INGREDIENTS_TEMPLATE;
         localStorage.foodIngredients = FOOD_INGREDIENTS_TEMPLATE;
-        localStorage.foodRecipes = JSON.stringify(FOOD_RECIPES_TEMPLATE);
+        localStorage.foodRecipes = FOOD_RECIPES_TEMPLATE;
     }
+    checkStorage();
 }
 
 function localStorageNotSet() {
@@ -15,13 +16,27 @@ function localStorageNotSet() {
 }
 
 export function getRawIngredientsFromLocalStorage() {
-    return localStorage.rawIngredients;
+    return JSON.parse(localStorage.rawIngredients);
 }
 
 export function getFoodIngredientsFromLocalStorage() {
-    return localStorage.foodIngredients;
+    return JSON.parse(localStorage.foodIngredients);
 }
 
 export function getFoodRecipesFromLocalStorage() {
-    return localStorage.foodRecipes;
+    return JSON.parse(localStorage.foodRecipes);
+}
+
+function checkStorage() {
+    var _lsTotal = 0,
+        _xLen, _x;
+    for (_x in localStorage) {
+        if (!localStorage.hasOwnProperty(_x)) {
+            continue;
+        }
+        _xLen = ((localStorage[_x].length + _x.length) * 2);
+        _lsTotal += _xLen;
+        console.log(_x.substr(0, 50) + " = " + (_xLen / 1024).toFixed(2) + " KB")
+    };
+    console.log("Total = " + (_lsTotal / 1024).toFixed(2) + " KB");
 }
