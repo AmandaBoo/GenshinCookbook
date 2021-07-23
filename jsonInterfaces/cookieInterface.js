@@ -16,7 +16,7 @@ export function setUpToo() {
     console.log(localStorage.foodRecipes);
     let div = document.createElement("div");
     div.innerText = localStorage.rawIngredients;
-    document.getElementById("content").append(div);
+    document.getElementById("here").append(div);
 }
 
 function getCookie(cname) {
