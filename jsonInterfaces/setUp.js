@@ -5,7 +5,7 @@ import {RawIngredient} from "../classes/rawIngredient.js";
 import {CraftedFoodIngredient} from "../classes/craftedFoodIngredient.js";
 import {FoodRecipe} from "../classes/foodRecipe.js";
 
-// retrieves raw ingredients from cookie and local in json form
+// retrieves raw ingredients from localStorage and local in json form
 // and creates RawIngredient objects
 export function getAllRawIngredients() {
     let allRawIngredients = [];
@@ -20,7 +20,7 @@ export function getAllRawIngredients() {
     return allRawIngredients;
 }
 
-// retrieves food ingredients from cookie and local in json form
+// retrieves food ingredients from localStorage and local in json form
 // and creates FoodIngredient objects
 export function getAllFoodIngredients(allRawIngredients) {
     let allFoodIngredients = [];
@@ -47,7 +47,7 @@ function mapRawIngredients(allRawIngredients, foodIngredient) {
     return allRawIngredientRecipes;
 }
 
-// retrieves recipe ingredients from cookie and local in json form
+// retrieves recipe ingredients from localStorage and local in json form
 // and creates FoodRecipe objects
 export function getAllFoodRecipes(allRawIngredients, allFoodIngredients) {
     let allRecipes = [];

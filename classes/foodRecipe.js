@@ -1,7 +1,7 @@
 
 export class FoodRecipe {
-    name; // string (cookie)
-    qty; // string (cookie)
+    name; // string (localStorage)
+    qty; // string (localStorage)
     src; // string (local)
     craftsFrom; // [[Raw[],Crafted[]], [Raw[], Crafted[]] (local)
 

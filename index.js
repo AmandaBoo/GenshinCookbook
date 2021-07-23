@@ -1,5 +1,5 @@
 import { InventoryDiv } from "./inventory/InventoryDiv.js";
-import { setUpCookie } from "./jsonInterfaces/cookieInterface.js";
+import { setUpToo } from "./jsonInterfaces/cookieInterface.js";
 import { getAllRawIngredients, getAllFoodIngredients, getAllFoodRecipes } from "./jsonInterfaces/setUp.js";
 
 let generateInventory = true;
@@ -9,18 +9,18 @@ let rawIngredients = [];
 let foodIngredients = [];
 let foodRecipes = [];
 
-setUpCookie();
+setUpToo();
 
-if (rawIngredients.length === 0) {
-    rawIngredients = getAllRawIngredients();
-}
-if (foodIngredients.length === 0) {
-    foodIngredients = getAllFoodIngredients(rawIngredients);
-}
-
-if (foodRecipes.length === 0) {
-    foodRecipes = getAllFoodRecipes(rawIngredients, foodIngredients);
-}
+// if (rawIngredients.length === 0) {
+//     rawIngredients = getAllRawIngredients();
+// }
+// if (foodIngredients.length === 0) {
+//     foodIngredients = getAllFoodIngredients(rawIngredients);
+// }
+//
+// if (foodRecipes.length === 0) {
+//     foodRecipes = getAllFoodRecipes(rawIngredients, foodIngredients);
+// }
 
 let btn = document.getElementById("inventory-btn");
 btn.onclick = function() {
