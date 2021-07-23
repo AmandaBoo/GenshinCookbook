@@ -1,6 +1,6 @@
 import { InventoryDiv } from "./inventory/InventoryDiv.js";
-import { setUpNewLocalStorage } from "./jsonInterfaces/localInterface.js";
-import { getAllRawIngredients, getAllFoodIngredients, getAllFoodRecipes } from "./jsonInterfaces/setUp.js";
+import { setUpNewLocalStorage } from "./storageInterfaces/localInterface.js";
+import { getAllRawIngredients, getAllFoodIngredients, getAllFoodRecipes } from "./storageInterfaces/setUp.js";
 
 let generateInventory = true;
 
