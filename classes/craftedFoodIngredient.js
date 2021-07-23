@@ -1,7 +1,7 @@
 
 export class CraftedFoodIngredient {
-    name; // string (localStorage)
-    qty; // string (localStorage)
+    name; // string (localStorageTemplates)
+    qty; // string (localStorageTemplates)
     src; // string (local)
     craftsFrom; // RawIngredient[][] (local)
 

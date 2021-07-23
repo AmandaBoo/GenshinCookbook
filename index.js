@@ -1,5 +1,5 @@
 import { InventoryDiv } from "./inventory/InventoryDiv.js";
-import { setUpToo } from "./jsonInterfaces/cookieInterface.js";
+import { setUpNewLocalStorage } from "./jsonInterfaces/localInterface.js";
 import { getAllRawIngredients, getAllFoodIngredients, getAllFoodRecipes } from "./jsonInterfaces/setUp.js";
 
 let generateInventory = true;
@@ -9,7 +9,7 @@ let rawIngredients = [];
 let foodIngredients = [];
 let foodRecipes = [];
 
-setUpToo();
+setUpNewLocalStorage();
 
 // if (rawIngredients.length === 0) {
 //     rawIngredients = getAllRawIngredients();

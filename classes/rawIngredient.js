@@ -1,7 +1,7 @@
 
 export class RawIngredient {
-    name; // string (localStorage)
-    qty; // string (localStorage)
+    name; // string (localStorageTemplates)
+    qty; // string (localStorageTemplates)
     src; // string (local)
 
     constructor(name, qty, src) {

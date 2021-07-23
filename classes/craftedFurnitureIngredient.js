@@ -1,7 +1,7 @@
 
 export class CraftedFurnitureIngredient {
-    name; // string (localStorage)
-    qty; // string (localStorage)
+    name; // string (localStorageTemplates)
+    qty; // string (cookie)
     src; // string (local)
     craftsFrom; // RawIngredient[][]
 }

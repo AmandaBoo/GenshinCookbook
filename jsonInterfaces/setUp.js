@@ -1,15 +1,14 @@
-import {getFoodIngredientsFromCookie, getRawIngredientsFromCookie, getFoodRecipesFromCookie} from "./cookieInterface.js";
-import {getRawIngredientsFromLocalStorage, getFoodIngredientsFromLocalStorage, getFoodRecipesFromLocalStorage} from "./localStorageInterface.js"
+import {getRawIngredientsFromLocalStorage, getFoodIngredientsFromLocalStorage, getFoodRecipesFromLocalStorage} from "./localInterface.js"
 
 import {RawIngredient} from "../classes/rawIngredient.js";
 import {CraftedFoodIngredient} from "../classes/craftedFoodIngredient.js";
 import {FoodRecipe} from "../classes/foodRecipe.js";
 
-// retrieves raw ingredients from localStorage and local in json form
+// retrieves raw ingredients from localStorageTemplates and local in json form
 // and creates RawIngredient objects
 export function getAllRawIngredients() {
     let allRawIngredients = [];
-    let rawIngredientsCookie = getRawIngredientsFromCookie();
+    let rawIngredientsCookie = getRawIngredientsFromLocalStorage();
     let rawIngredientsLocal = getRawIngredientsFromLocalStorage();
 
     rawIngredientsLocal.forEach(ing => {
@@ -20,11 +19,11 @@ export function getAllRawIngredients() {
     return allRawIngredients;
 }
 
-// retrieves food ingredients from localStorage and local in json form
+// retrieves food ingredients from localStorageTemplates and local in json form
 // and creates FoodIngredient objects
 export function getAllFoodIngredients(allRawIngredients) {
     let allFoodIngredients = [];
-    let foodIngredientsCookie = getFoodIngredientsFromCookie();
+    let foodIngredientsCookie = getFoodIngredientsFromLocalStorage();
     let foodIngredientsLocal = getFoodIngredientsFromLocalStorage();
 
     foodIngredientsLocal.forEach(ing => {
@@ -47,11 +46,11 @@ function mapRawIngredients(allRawIngredients, foodIngredient) {
     return allRawIngredientRecipes;
 }
 
-// retrieves recipe ingredients from localStorage and local in json form
+// retrieves recipe ingredients from localStorageTemplates and local in json form
 // and creates FoodRecipe objects
 export function getAllFoodRecipes(allRawIngredients, allFoodIngredients) {
     let allRecipes = [];
-    let foodRecipeCookie = getFoodRecipesFromCookie();
+    let foodRecipeCookie = getFoodRecipesFromLocalStorage();
     let foodRecipeLocal = getFoodRecipesFromLocalStorage();
 
     foodRecipeLocal.forEach(recipe => {

@@ -1,7 +1,7 @@
 
 export class FoodRecipe {
-    name; // string (localStorage)
-    qty; // string (localStorage)
+    name; // string (localStorageTemplates)
+    qty; // string (localStorageTemplates)
     src; // string (local)
     craftsFrom; // [[Raw[],Crafted[]], [Raw[], Crafted[]] (local)
 
