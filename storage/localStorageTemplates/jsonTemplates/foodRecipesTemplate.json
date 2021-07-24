@@ -1,10 +1,14 @@
 [{
   "name": "Steak",
   "qty": 0,
-  "want": 0
+  "want": 0,
+  "mastery": false,
+  "curProf": 0
 },
 {
   "name": "Triple-Layered Consommé",
   "qty": 0,
-  "want": 0
+  "want": 0,
+  "mastery": false,
+  "curProf": 0
 }]
