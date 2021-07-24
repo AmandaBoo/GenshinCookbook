@@ -2,7 +2,8 @@ export const FOOD_INGREDIENTS = {
     foodIngredients: [
         {
             name: "Ham",
-            src: "./images/crafted-ingredient-food",
+            src: "./images/ingredients/ham.png",
+            rarity: 2,
             craftsFrom: [
                 [
                     {
@@ -18,7 +19,8 @@ export const FOOD_INGREDIENTS = {
         },
         {
             name: "Butter",
-            src: "./images/crafted-ingredients-food",
+            src: "./images/ingredients/butter.png",
+            rarity: 2,
             craftsFrom: [
                 [
                     {

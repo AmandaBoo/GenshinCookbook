@@ -3,6 +3,7 @@ export const FOOD_RECIPES = {
         {
             name: "Steak",
             src: "./testLink",
+            rarity: 1,
             craftsFrom: [
                 [
                     {
@@ -15,6 +16,7 @@ export const FOOD_RECIPES = {
         {
             name: "Triple-Layered Consommé",
             src: "./testLink",
+            rarity: 3,
             craftsFrom: [
                 [
                     {

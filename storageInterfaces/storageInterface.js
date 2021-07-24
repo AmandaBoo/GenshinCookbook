@@ -24,9 +24,9 @@ export function getAllRawIngredients() {
 
     rawIngredientsServer.forEach(ing => {
         let quantity = rawIngredientsLocal.find(ele => ele.name === ing.name).qty;
-        allRawIngredients.push(new RawIngredient(ing.name, quantity, ing.src));
+        allRawIngredients.push(new RawIngredient(ing.name, quantity, ing.src, ing.rarity));
     });
-
+    console.log("RAW ING", allRawIngredients);
     return allRawIngredients;
 }
 
@@ -40,8 +40,9 @@ export function getAllFoodIngredients(allRawIngredients) {
     foodIngredientsServer.forEach(ing => {
         let quantity = foodIngredientsLocal.find(ele => ele.name === ing.name).qty;
         let craftsFromRaw = mapRawIngredients(allRawIngredients, ing)
-        allFoodIngredients.push(new CraftedFoodIngredient(ing.name, quantity, ing.src, craftsFromRaw));
+        allFoodIngredients.push(new CraftedFoodIngredient(ing.name, quantity, ing.src, ing.rarity, craftsFromRaw));
     });
+    console.log("FOOD ING", allFoodIngredients);
     return allFoodIngredients;
 }
 

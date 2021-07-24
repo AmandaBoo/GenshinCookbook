@@ -2,27 +2,33 @@ export const RAW_INGREDIENTS = {
     rawIngredients: [
         {
             name: "Fowl",
-            src: "./images/fowl.png"
+            src: "./images/ingredients/fowl.png",
+            rarity: 1,
         },
         {
             name: "Bamboo Shoot",
-            src: "./images/bambooShoot.png"
+            src: "./images/ingredients/bambooShoot.png",
+            rarity: 1,
         },
         {
             name: "Mushroom",
-            src: "./images/mushroom.png"
+            src: "./images/ingredients/mushroom.png",
+            rarity: 1,
         },
         {
             name: "Raw Meat",
-            src: "./images/rawMeat.png"
+            src: "./images/ingredients/rawMeat.png",
+            rarity: 1,
         },
         {
             name: "Milk",
-            src: "./images/milk.png"
+            src: "./images/ingredients/milk.png",
+            rarity: 1,
         },
         {
             name: "Salt",
-            src: "./images/salt.png"
+            src: "./images/ingredients/salt.png",
+            rarity: 1,
         }
     ]
 }

@@ -1,7 +1,8 @@
 
 export class FurnitureRecipe {
-    name; // string (localStorageTemplates)
-    qty; // string (localStorageTemplates)
-    src; // string (local)
-    craftsFrom; // [[Raw[],Crafted[]], [Raw[], Crafted[]] (local)
+    name; // string
+    qty; // string
+    src; // string
+    rarity; // number
+    craftsFrom; // [[Raw[],Crafted[]], [Raw[], Crafted[]]
 }
