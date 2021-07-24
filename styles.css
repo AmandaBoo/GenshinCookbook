@@ -69,36 +69,59 @@ body {
     flex-direction: row;
 }
 
-.ingredient-card {
+.cards {
+    /* manages the basic card layout */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 150px;
-    border: 2px solid #ccc;
-    border-radius: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ingredient-card {
+    background-color: #C0C0C0;
+    width: 60px;
+    height: 86px;
+
+    border: 1px solid #C0C0C0;
+    border-radius: 4px;
     margin: 5px;
+
+    text-align: center;
 }
 
 .ingredient-div {
-    display: flex;
     align-items: center;
 }
 
-.card-label {
-
-}
-
 .card-icon {
+    width: 100%;
+    background-color: #F0F0F0;
+    border-radius: 4px 4px 12px 0;
 
+    font-size: 10px; /* if an image ever fails, this helps the alt display inside the card */
 }
 
 .card-text-field {
-    max-width: 50px;
-    min-width: 50px;
     text-align: center;
+    width: 44px;
+    font-size: 12px;
+    border: 0; /* default inputs have a messy border */
+    border-radius: 4px;
 }
 
 .craft-ingredient-div {
     display: flex;
     flex-wrap: wrap;
+}
+
+/*Prevents number wheel arrows from appearing next to number type inputs*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }
