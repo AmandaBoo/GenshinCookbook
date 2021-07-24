@@ -77,15 +77,15 @@ body {
 }
 
 .ingredient-card {
-    background-color: #C0C0C0;
     width: 60px;
     height: 86px;
-
-    border: 1px solid #C0C0C0;
     border-radius: 4px;
-    margin: 5px;
+    background-color: #e9e7dc;
+    margin: 6px;
 
     text-align: center;
+    background-size: 60px;
+    background-repeat: no-repeat;
 }
 
 .ingredient-div {
@@ -94,8 +94,6 @@ body {
 
 .card-icon {
     width: 100%;
-    background-color: #F0F0F0;
-    border-radius: 4px 4px 12px 0;
 
     font-size: 10px; /* if an image ever fails, this helps the alt display inside the card */
 }
@@ -103,9 +101,10 @@ body {
 .card-text-field {
     text-align: center;
     width: 44px;
-    font-size: 12px;
     border: 0; /* default inputs have a messy border */
     border-radius: 4px;
+
+    background-color: #fcfaee;
 }
 
 .craft-ingredient-div {

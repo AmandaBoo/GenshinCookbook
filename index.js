@@ -67,7 +67,8 @@ function createIngredientCard (ingredient) {
 
     let card = document.createElement("div");
     card.id = ingredient.name;
-    card.classList += 'ingredient-card';
+    card.classList.add('ingredient-card');
+    card.style.backgroundImage = 'url("./images/backgrounds/Rarity_' + ingredient.rarity + '_background.png")';
     card.append(content);
     card.append(textField);
 
