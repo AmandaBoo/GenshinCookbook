@@ -1,26 +1,17 @@
-import { InventoryDiv } from "./inventory/InventoryDiv.js";
-import { setUpNewLocalStorage } from "./storageInterfaces/localInterface.js";
-import { getAllRawIngredients, getAllFoodIngredients, getAllFoodRecipes } from "./storageInterfaces/setUp.js";
+import { loadData } from "./storageInterfaces/localInterface.js";
+import { getAllRawIngredients, getAllFoodIngredients, getAllFoodRecipes } from "./storageInterfaces/storageInterface.js";
 
 let generateInventory = true;
 
 // LOCAL OBJECTS
-let rawIngredients = [];
-let foodIngredients = [];
-let foodRecipes = [];
+let rawIngredients;
+let foodIngredients;
+let foodRecipes;
 
-setUpNewLocalStorage();
-
-if (rawIngredients.length === 0) {
-    rawIngredients = getAllRawIngredients();
-}
-if (foodIngredients.length === 0) {
-    foodIngredients = getAllFoodIngredients(rawIngredients);
-}
-
-if (foodRecipes.length === 0) {
-    foodRecipes = getAllFoodRecipes(rawIngredients, foodIngredients);
-}
+loadData();
+rawIngredients = getAllRawIngredients();
+foodIngredients = getAllFoodIngredients(rawIngredients);
+foodRecipes = getAllFoodRecipes(rawIngredients, foodIngredients);
 
 let btn = document.getElementById("inventory-btn");
 btn.onclick = function() {

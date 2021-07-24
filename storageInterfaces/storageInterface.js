@@ -35,15 +35,17 @@ export function getAllFoodIngredients(allRawIngredients) {
     return allFoodIngredients;
 }
 
-// TODO : MODIFY MAPPING SO THAT IT ALSO KEEPS TRACK OF QTY REQUIRED
 function mapRawIngredients(allRawIngredients, foodIngredient) {
     let allRawIngredientRecipes = [];
     for (let i = 0; i < foodIngredient.craftsFrom.length; i++) {
         let temp = [];
         foodIngredient.craftsFrom[i].forEach(rawIngredient => {
-            temp.push(allRawIngredients.find(ele => ele.name === rawIngredient.name));
-        })
-        allRawIngredientRecipes.push(temp);
+            let tempObj = {ingredient: 0, qtyRequired: 0};
+            tempObj.ingredient = allRawIngredients.find(ele => ele.name === rawIngredient.name);
+            tempObj.qtyRequired = foodIngredient.craftsFrom[i].find(ele => ele.name === rawIngredient.name).qty;
+            temp.push(tempObj);
+        });
+        allRawIngredientRecipes.push(foodIngredient);
     }
     return allRawIngredientRecipes;
 }
@@ -63,7 +65,6 @@ export function getAllFoodRecipes(allRawIngredients, allFoodIngredients) {
     return allRecipes;
 }
 
-// TODO : MODIFY MAPPING SO THAT IT ALSO KEEPS TRACK OF QTY REQUIRED
 function mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, recipe) {
     let allRawAndCraftedRecipes = [];
     for (let i = 0; i < recipe.craftsFrom.length; i++) {
@@ -71,13 +72,19 @@ function mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, reci
         let rawTemp = [];
         let craftTemp = [];
         recipe.craftsFrom[i].forEach(recipeIngredient => {
-            let rawIngredient = allRawIngredients.find(ele => ele.name === recipeIngredient.name);
-            let craftIngredient = allFoodIngredients.find(ele => ele.name === recipeIngredient.name);
-            if (rawIngredient !== undefined) {
-                rawTemp.push(rawIngredient);
+            let rawObj = {ingredient: 0, qtyRequired: 0};
+            let craftObj = {ingredient: 0, qtyRequired: 0};
+
+            rawObj.ingredient = allRawIngredients.find(ele => ele.name === recipeIngredient.name);
+            rawObj.qtyRequired = recipe.craftsFrom[i].find(ele => ele.name === recipeIngredient.name).qty;
+
+            craftObj.ingredient = allFoodIngredients.find(ele => ele.name === recipeIngredient.name);
+            craftObj.qtyRequired = recipe.craftsFrom[i].find(ele => ele.name === recipeIngredient.name).qty;
+            if (rawObj.ingredient !== undefined) {
+                rawTemp.push(rawObj);
             }
-            if (craftIngredient !== undefined) {
-                craftTemp.push(craftIngredient);
+            if (craftObj.ingredient !== undefined) {
+                craftTemp.push(craftObj);
             }
         });
         rawAndCraftTemp.push(rawTemp);

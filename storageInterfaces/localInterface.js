@@ -2,13 +2,13 @@ import {RAW_INGREDIENTS_TEMPLATE} from "../storage/localStorageTemplates/jsTempl
 import {FOOD_INGREDIENTS_TEMPLATE} from "../storage/localStorageTemplates/jsTemplates/foodIngredientsTemplate.js";
 import {FOOD_RECIPES_TEMPLATE} from "../storage/localStorageTemplates/jsTemplates/foodRecipesTemplate.js";
 
-export function setUpNewLocalStorage() {
+export function loadData() {
     if (localStorageNotSet()) {
         localStorage.rawIngredients = RAW_INGREDIENTS_TEMPLATE;
         localStorage.foodIngredients = FOOD_INGREDIENTS_TEMPLATE;
         localStorage.foodRecipes = FOOD_RECIPES_TEMPLATE;
     }
-    checkStorage();
+    // checkStorage();
 }
 
 function localStorageNotSet() {
