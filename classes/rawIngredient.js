@@ -5,8 +5,8 @@ export class RawIngredient {
     src; // string (local)
 
     constructor(name, qty, src) {
-        this.name = name;
-        this.qty = qty;
         this.src = src;
+        this.qty = qty;
+        this.name = name;
     }
 }
