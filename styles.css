@@ -105,6 +105,7 @@ body {
     border-radius: 4px;
 
     background-color: #fcfaee;
+    -webkit-appearance: none;
 }
 
 .craft-ingredient-div {
