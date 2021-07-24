@@ -1,5 +1,15 @@
-import {getRawIngredientsFromLocalStorage, getFoodIngredientsFromLocalStorage, getFoodRecipesFromLocalStorage} from "./localInterface.js"
-import {getRawIngredientsFromServer, getFoodIngredientsFromServer, getFoodRecipesFromServer} from "./serverSideInterface.js";
+import {
+    getRawIngredientsFromLocalStorage,
+    getFoodIngredientsFromLocalStorage,
+    getFoodRecipesFromLocalStorage,
+    setRawIngredientsInLocalStorage,
+    setFoodIngredientsInLocalStorage
+} from "./localInterface.js"
+import {
+    getRawIngredientsFromServer,
+    getFoodIngredientsFromServer,
+    getFoodRecipesFromServer
+} from "./serverSideInterface.js";
 
 import {RawIngredient} from "../classes/rawIngredient.js";
 import {CraftedFoodIngredient} from "../classes/craftedFoodIngredient.js";
@@ -92,4 +102,9 @@ function mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, reci
         allRawAndCraftedRecipes.push(rawAndCraftTemp);
     }
     return allRawAndCraftedRecipes;
+}
+
+export function saveIngredients(rawIngredients, foodIngredients) {
+    setRawIngredientsInLocalStorage(rawIngredients);
+    setFoodIngredientsInLocalStorage(foodIngredients);
 }

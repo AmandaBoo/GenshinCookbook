@@ -1,5 +1,10 @@
 import { loadData } from "./storageInterfaces/localInterface.js";
-import { getAllRawIngredients, getAllFoodIngredients, getAllFoodRecipes } from "./storageInterfaces/storageInterface.js";
+import {
+    getAllRawIngredients,
+    getAllFoodIngredients,
+    getAllFoodRecipes,
+    saveIngredients
+} from "./storageInterfaces/storageInterface.js";
 
 let generateInventory = true;
 
@@ -32,7 +37,7 @@ function closeClick() {
     modal.style.display = "none";
 }
 
-function populateInventoryPopup(rawIngredients, foodIngredients, foodRecipes) {
+function populateInventoryPopup(rawIngredients, foodIngredients) {
     let modalContent = document.getElementById("content");
     let inventory = document.createElement("div");
     inventory.classList += 'cards';
@@ -48,15 +53,32 @@ function populateInventoryPopup(rawIngredients, foodIngredients, foodRecipes) {
 }
 
 function createIngredientCard (ingredient) {
-    let content = '<img class="card-icon" src="' + ingredient.src + '" alt="' + ingredient.name + '" />';
-    content += '<input type="number" class="card-text-field" value="' + ingredient.qty + '" />';
+    let content = document.createElement("img");
+    content.classList += "card-icon";
+    content.src = ingredient.src;
+    content.alt = ingredient.name;
+
+    let textField = document.createElement("input");
+    textField.classList += "card-text-field";
+    textField.type = "number";
+    textField.value = ingredient.qty;
+    textField.oninput = function() { ingredient.qty = textField.value }; // TODO : PREVENT E AND . FROM BEING INPUTTED
+    textField.onchange = function() { resetFieldIfBlank(ingredient, textField) };
 
     let card = document.createElement("div");
     card.id = ingredient.name;
     card.classList += 'ingredient-card';
-    card.innerHTML = content;
+    card.append(content);
+    card.append(textField);
 
     return card;
+}
+
+function resetFieldIfBlank(ingredient, field) {
+    if (field.value === "") {
+        field.value = 0;
+        ingredient.qty = 0;
+    }
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -64,5 +86,6 @@ window.onclick = function(event) {
     let modal = document.getElementById("inventory-div");
     if (event.target === modal) {
         modal.style.display = "none";
+        saveIngredients(rawIngredients, foodIngredients);
     }
 }
