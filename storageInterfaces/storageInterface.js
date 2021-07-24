@@ -26,7 +26,6 @@ export function getAllRawIngredients() {
         let quantity = rawIngredientsLocal.find(ele => ele.name === ing.name).qty;
         allRawIngredients.push(new RawIngredient(ing.name, quantity, ing.src, ing.rarity));
     });
-    console.log("RAW ING", allRawIngredients);
     return allRawIngredients;
 }
 
@@ -42,21 +41,26 @@ export function getAllFoodIngredients(allRawIngredients) {
         let craftsFromRaw = mapRawIngredients(allRawIngredients, ing)
         allFoodIngredients.push(new CraftedFoodIngredient(ing.name, quantity, ing.src, ing.rarity, craftsFromRaw));
     });
-    console.log("FOOD ING", allFoodIngredients);
     return allFoodIngredients;
 }
 
 function mapRawIngredients(allRawIngredients, foodIngredient) {
     let allRawIngredientRecipes = [];
+
+    // iterate over each possible way of making foodIngredient
     for (let i = 0; i < foodIngredient.craftsFrom.length; i++) {
         let temp = [];
+
+        // iterate over each ingredient within sub recipe
         foodIngredient.craftsFrom[i].forEach(rawIngredient => {
             let tempObj = {ingredient: 0, qtyRequired: 0};
+
+            // find RawIngredient whose name matches
             tempObj.ingredient = allRawIngredients.find(ele => ele.name === rawIngredient.name);
             tempObj.qtyRequired = foodIngredient.craftsFrom[i].find(ele => ele.name === rawIngredient.name).qty;
             temp.push(tempObj);
         });
-        allRawIngredientRecipes.push(foodIngredient);
+        allRawIngredientRecipes.push(temp);
     }
     return allRawIngredientRecipes;
 }
@@ -69,28 +73,35 @@ export function getAllFoodRecipes(allRawIngredients, allFoodIngredients) {
     let foodRecipeServer = getFoodRecipesFromServer();
 
     foodRecipeServer.forEach(recipe => {
-        let quantity = foodRecipeLocal.find(ele => ele.name === recipe.name).qty;
+        let localFoodRecipe = foodRecipeLocal.find(ele => ele.name === recipe.name);
         let allCraftsFrom = mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, recipe)
-        allRecipes.push(new FoodRecipe(recipe.name, quantity, recipe.src, allCraftsFrom));
-    })
+        allRecipes.push(new FoodRecipe(recipe.name, localFoodRecipe.qty, recipe.src, localFoodRecipe.want, localFoodRecipe.mastery,
+            localFoodRecipe.curProf, recipe.rarity, allCraftsFrom));
+    });
     return allRecipes;
 }
 
 function mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, recipe) {
     let allRawAndCraftedRecipes = [];
+
+    // iterate over each possible way of making recipe
     for (let i = 0; i < recipe.craftsFrom.length; i++) {
         let rawAndCraftTemp = [];
         let rawTemp = [];
         let craftTemp = [];
+
+        // iterate over each ingredient within sub recipe
         recipe.craftsFrom[i].forEach(recipeIngredient => {
             let rawObj = {ingredient: 0, qtyRequired: 0};
             let craftObj = {ingredient: 0, qtyRequired: 0};
 
+            // determine if ingredient is raw or crafted
             rawObj.ingredient = allRawIngredients.find(ele => ele.name === recipeIngredient.name);
             rawObj.qtyRequired = recipe.craftsFrom[i].find(ele => ele.name === recipeIngredient.name).qty;
 
             craftObj.ingredient = allFoodIngredients.find(ele => ele.name === recipeIngredient.name);
             craftObj.qtyRequired = recipe.craftsFrom[i].find(ele => ele.name === recipeIngredient.name).qty;
+
             if (rawObj.ingredient !== undefined) {
                 rawTemp.push(rawObj);
             }
@@ -98,8 +109,8 @@ function mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, reci
                 craftTemp.push(craftObj);
             }
         });
-        rawAndCraftTemp.push(rawTemp);
-        rawAndCraftTemp.push(craftTemp);
+        rawAndCraftTemp.push({raw : rawTemp});
+        rawAndCraftTemp.push({crafted:craftTemp});
         allRawAndCraftedRecipes.push(rawAndCraftTemp);
     }
     return allRawAndCraftedRecipes;
