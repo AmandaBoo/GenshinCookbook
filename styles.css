@@ -101,11 +101,14 @@ body {
 .card-text-field {
     text-align: center;
     width: 44px;
+    height:15px;
     border: 0; /* default inputs have a messy border */
     border-radius: 4px;
 
     background-color: #fcfaee;
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .craft-ingredient-div {
