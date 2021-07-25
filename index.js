@@ -23,6 +23,12 @@ btn.onclick = function() {
     openInv();
 }
 
+let closeBtn = document.getElementById("close-btn");
+closeBtn.onclick = function() {
+    closeClick();
+    saveIngredients(rawIngredients, foodIngredients);
+}
+
 function openInv() {
     let modal = document.getElementById("inventory-div");
     modal.style.display = "block";
@@ -38,7 +44,7 @@ function closeClick() {
 }
 
 function populateInventoryPopup(rawIngredients, foodIngredients) {
-    let modalContent = document.getElementById("content");
+    let modalContent = document.getElementById("materials-content");
     let inventory = document.createElement("div");
     inventory.classList += 'cards';
     modalContent.appendChild(inventory);
@@ -82,11 +88,3 @@ function resetFieldIfBlank(ingredient, field) {
     }
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    let modal = document.getElementById("inventory-div");
-    if (event.target === modal) {
-        modal.style.display = "none";
-        saveIngredients(rawIngredients, foodIngredients);
-    }
-}
