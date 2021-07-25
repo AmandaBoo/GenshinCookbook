@@ -3,12 +3,14 @@
   "qty": 0,
   "want": 0,
   "mastery": false,
-  "curProf": 0
+  "curProf": 0,
+  "canCraft": false
 },
 {
   "name": "Triple-Layered Consommé",
   "qty": 0,
   "want": 0,
   "mastery": false,
-  "curProf": 0
+  "curProf": 0,
+  "canCraft": false
 }]

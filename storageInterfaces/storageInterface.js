@@ -76,7 +76,7 @@ export function getAllFoodRecipes(allRawIngredients, allFoodIngredients) {
         let localFoodRecipe = foodRecipeLocal.find(ele => ele.name === recipe.name);
         let allCraftsFrom = mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, recipe)
         allRecipes.push(new FoodRecipe(recipe.name, localFoodRecipe.qty, recipe.src, localFoodRecipe.want, localFoodRecipe.mastery,
-            localFoodRecipe.curProf, recipe.rarity, allCraftsFrom));
+            localFoodRecipe.curProf, recipe.rarity, allCraftsFrom, localFoodRecipe.canCraft));
     });
     return allRecipes;
 }
