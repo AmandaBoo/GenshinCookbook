@@ -64,6 +64,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     width: 70%;
+    border-bottom: 1px solid white;
 }
 
 .inventory-nav-bar-main-icon,
