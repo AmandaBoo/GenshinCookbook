@@ -43,6 +43,14 @@ export function setFoodIngredientsInLocalStorage(foodIngredients) {
     localStorage.foodIngredients = JSON.stringify(foodIngredientsJSON);
 }
 
+export function setFoodRecipesInLocalStorage(foodRecipes) {
+    let foodRecipesJSON = getFoodRecipesFromLocalStorage();
+    foodRecipesJSON.forEach(recipe => {
+        recipe.qty = parseInt(foodRecipes.find(ele => ele.name === recipe.name).qty);
+    });
+    localStorage.foodRecipes = JSON.stringify(foodRecipesJSON);
+}
+
 function checkStorage() {
     let _lsTotal = 0,
         _xLen, _x;
