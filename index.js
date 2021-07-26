@@ -5,6 +5,7 @@ import {
     getAllFoodRecipes,
     saveIngredients
 } from "./storageInterfaces/storageInterface.js";
+import * as consts from './constants/constants.js';
 
 let generateInventory = true;
 
@@ -38,12 +39,12 @@ saveBtn.onclick = function() {
 }
 
 changeTab('materials');
-document.getElementById("materials-tab").onclick = () => changeTab('materials');
-document.getElementById("dishes-tab").onclick = () => changeTab('dishes');
-document.getElementById("furniture-tab").onclick = () => changeTab('furniture');
+document.getElementById("materials-tab").onclick = () => changeTab(consts.MATERIAL_TAB_VALUE);
+document.getElementById("dishes-tab").onclick = () => changeTab(consts.DISHES_TAB_VALUE);
+document.getElementById("furniture-tab").onclick = () => changeTab(consts.FURNITURE_TAB_VALUE);
 
 function openInv() {
-    let modal = document.getElementById("inventory-div");
+    let modal = document.getElementById(consts.INVENTORY_DIV);
     modal.style.display = "block";
     if (generateInventory) {
         populateInventoryPopup(rawIngredients, foodIngredients, foodRecipes);
@@ -52,12 +53,12 @@ function openInv() {
 }
 
 function closeClick() {
-    let modal = document.getElementById("inventory-div");
+    let modal = document.getElementById(consts.INVENTORY_DIV);
     modal.style.display = "none";
 }
 
 function populateInventoryPopup(rawIngredients, foodIngredients) {
-    let materialContent = document.getElementById("materials-content");
+    let materialContent = document.getElementById(consts.MATERIAL_CONTENT);
     materialContent.innerHTML = '';
 
     let materialInventory = document.createElement("div");
@@ -72,7 +73,7 @@ function populateInventoryPopup(rawIngredients, foodIngredients) {
         materialInventory.appendChild(createIngredientCard(ingredient));
     });
 
-    let dishContent = document.getElementById("dishes-content");
+    let dishContent = document.getElementById(consts.DISHES_CONTENT);
     dishContent.innerHTML = '';
 
     let dishInventory = document.createElement("div");
@@ -109,10 +110,25 @@ function createIngredientCard (ingredient) {
 }
 
 function changeTab(tab) {
-    document.getElementById("materials-content").style.display = tab === "materials" ? 'block' : 'none';
-    document.getElementById("dishes-content").style.display = tab === "dishes" ? 'block' : 'none';
-    document.getElementById("furniture-content").style.display = tab === "furniture" ? 'block' : 'none';
-    console.log(tab)
+    document.getElementById(consts.MATERIAL_CONTENT).style.display = tab === consts.MATERIAL_TAB_VALUE ? 'block' : 'none';
+    document.getElementById(consts.DISHES_CONTENT).style.display = tab === consts.DISHES_TAB_VALUE ? 'block' : 'none';
+    document.getElementById(consts.FURNITURE_CONTENT).style.display = tab === consts.FURNITURE_TAB_VALUE ? 'block' : 'none';
+
+    if (tab === consts.MATERIAL_TAB_VALUE) {
+        document.getElementById(consts.MATERIAL_TAB).classList.add('selected-tab');
+    } else {
+        document.getElementById(consts.MATERIAL_TAB).classList.remove('selected-tab');
+    }
+    if (tab === consts.DISHES_TAB_VALUE) {
+        document.getElementById(consts.DISHES_TAB).classList.add('selected-tab');
+    } else {
+        document.getElementById(consts.DISHES_TAB).classList.remove('selected-tab');
+    }
+    if (tab === consts.FURNITURE_TAB_VALUE) {
+        document.getElementById(consts.FURNITURE_TAB).classList.add('selected-tab');
+    } else {
+        document.getElementById(consts.FURNITURE_TAB).classList.remove('selected-tab');
+    }
 }
 
 function resetFieldIfBlank(ingredient, field) {
