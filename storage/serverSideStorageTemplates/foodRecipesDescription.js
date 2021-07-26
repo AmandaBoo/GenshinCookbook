@@ -2,7 +2,7 @@ export const FOOD_RECIPES = {
     foodRecipes: [
         {
             name: "Steak",
-            src: "./testLink",
+            src: "./images/foodRecipe/steak.png",
             rarity: 1,
             craftsFrom: [
                 [
@@ -15,7 +15,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Triple-Layered Consommé",
-            src: "./testLink",
+            src: "./images/foodRecipe/tripleLayeredConsomme.png",
             rarity: 3,
             craftsFrom: [
                 [
