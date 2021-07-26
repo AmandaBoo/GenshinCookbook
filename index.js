@@ -26,8 +26,21 @@ btn.onclick = function() {
 let closeBtn = document.getElementById("close-btn");
 closeBtn.onclick = function() {
     closeClick();
+    rawIngredients = getAllRawIngredients();
+    foodIngredients = getAllFoodIngredients(rawIngredients);
+    populateInventoryPopup(rawIngredients, foodIngredients);
+}
+
+let saveBtn = document.getElementById("save-btn");
+saveBtn.onclick = function() {
+    closeClick();
     saveIngredients(rawIngredients, foodIngredients);
 }
+
+changeTab('materials');
+document.getElementById("materials-tab").onclick = () => changeTab('materials');
+document.getElementById("dishes-tab").onclick = () => changeTab('dishes');
+document.getElementById("furniture-tab").onclick = () => changeTab('furniture');
 
 function openInv() {
     let modal = document.getElementById("inventory-div");
@@ -44,17 +57,31 @@ function closeClick() {
 }
 
 function populateInventoryPopup(rawIngredients, foodIngredients) {
-    let modalContent = document.getElementById("materials-content");
-    let inventory = document.createElement("div");
-    inventory.classList += 'cards';
-    modalContent.appendChild(inventory);
+    let materialContent = document.getElementById("materials-content");
+    materialContent.innerHTML = '';
+
+    let materialInventory = document.createElement("div");
+    materialInventory.classList.add('cards');
+
+    materialContent.appendChild(materialInventory);
 
     rawIngredients.forEach(ingredient => {
-        inventory.appendChild(createIngredientCard(ingredient));
+        materialInventory.appendChild(createIngredientCard(ingredient));
+    });
+    foodIngredients.forEach(ingredient => {
+        materialInventory.appendChild(createIngredientCard(ingredient));
     });
 
-    foodIngredients.forEach(ingredient => {
-        inventory.appendChild(createIngredientCard(ingredient));
+    let dishContent = document.getElementById("dishes-content");
+    dishContent.innerHTML = '';
+
+    let dishInventory = document.createElement("div");
+    dishInventory.classList.add('cards');
+
+    dishContent.appendChild(dishInventory);
+
+    foodRecipes.forEach(ingredient => {
+        dishInventory.appendChild(createIngredientCard(ingredient));
     });
 }
 
@@ -79,6 +106,13 @@ function createIngredientCard (ingredient) {
     card.append(textField);
 
     return card;
+}
+
+function changeTab(tab) {
+    document.getElementById("materials-content").style.display = tab === "materials" ? 'block' : 'none';
+    document.getElementById("dishes-content").style.display = tab === "dishes" ? 'block' : 'none';
+    document.getElementById("furniture-content").style.display = tab === "furniture" ? 'block' : 'none';
+    console.log(tab)
 }
 
 function resetFieldIfBlank(ingredient, field) {

@@ -13,21 +13,24 @@
     <img class="inventory-nav-bar-main-icon" src="./images/icons/inventoryIcon.png"/>
     <br/><b>Inventory</b>
 </button>
-<div id="here"></div>
+
 <!-- The Modal -->
 <div id="inventory-div" class="modal">
     <div class="inventory-nav-bar">
         <img class="inventory-nav-bar-main-icon" src="./images/icons/inventoryIcon.png"/>
         <div class="inventory-nav-bar-tabs">
-            <img class="inventory-nav-bar-tab-icon" src="./images/icons/ingredientsIcon.png"/>
-            <img class="inventory-nav-bar-tab-icon" src="./images/icons/foodIcon.png"/>
-            <img class="inventory-nav-bar-tab-icon" src="./images/icons/furnitureIcon.png"/>
+            <img id="materials-tab" class="inventory-nav-bar-tab-icon" src="./images/icons/ingredientsIcon.png"/>
+            <img id="dishes-tab" class="inventory-nav-bar-tab-icon" src="./images/icons/foodIcon.png"/>
+            <img id="furniture-tab" class="inventory-nav-bar-tab-icon" src="./images/icons/furnitureIcon.png"/>
         </div>
         <span id="close-btn" class="close">&times;</span>
     </div>
     <div id="materials-content" class="modal-content"></div>
     <div id="dishes-content" class="modal-content"></div>
     <div id="furniture-content" class="modal-content"></div>
+    <div class="flex-center-container">
+        <p id="save-btn" class="save-btn">Save and Close All Tabs</p>
+    </div>
 </div>
 
 </body>

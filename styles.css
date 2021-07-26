@@ -50,6 +50,8 @@ h1 {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    width: 50px;
+    text-align: right;
 }
 
 .close:hover,
@@ -86,6 +88,17 @@ h1 {
 .inventory-nav-bar-tab-icon:hover {
     border-bottom: 2px solid white;
     padding-bottom: 0;
+}
+
+.flex-center-container {
+    display: flex;
+    justify-content: center;
+}
+
+.save-btn {
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 4px;
 }
 
 .category-label {
