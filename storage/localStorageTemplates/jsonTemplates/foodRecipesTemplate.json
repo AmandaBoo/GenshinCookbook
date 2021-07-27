@@ -4,7 +4,7 @@
   "want": 0,
   "mastery": false,
   "curProf": 0,
-  "canCraft": false
+  "hasCard": false
 },
 {
   "name": "Triple-Layered Consommé",
@@ -12,5 +12,5 @@
   "want": 0,
   "mastery": false,
   "curProf": 0,
-  "canCraft": false
+  "hasCard": false
 }]

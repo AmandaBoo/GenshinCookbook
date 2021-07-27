@@ -1,15 +1,14 @@
-import { setUpLocalStorage } from "./storageInterfaces/localInterface.js";
-import * as Storage from "./storageInterfaces/storageInterface.js";
+import * as storage from "./storageInterfaces/storageInterface.js";
 import * as consts from './constants/constants.js';
 
 let generateInventory = true;
 let generateRecipeManager = true;
 
 // LOCAL OBJECTS
-setUpLocalStorage();
-let rawIngredients = Storage.getAllRawIngredients();
-let foodIngredients = Storage.getAllFoodIngredients(rawIngredients);
-let foodRecipes = Storage.getAllFoodRecipes(rawIngredients, foodIngredients);
+storage.setUpLocalStorage();
+let rawIngredients = storage.getAllRawIngredients();
+let foodIngredients = storage.getAllFoodIngredients(rawIngredients);
+let foodRecipes = storage.getAllFoodRecipes(rawIngredients, foodIngredients);
 
 let addRecipeBtn = document.getElementById("recipe-manager-btn");
 addRecipeBtn.onclick = function() {
@@ -18,7 +17,7 @@ addRecipeBtn.onclick = function() {
 
 let recipeManagerCloseBtn = document.getElementById("recipe-manager-close-btn");
 recipeManagerCloseBtn.onclick = function() {
-    closeRecipeManager();
+    closeRecipeManagerAndSave();
 }
 
 let inventoryBtn = document.getElementById("inventory-btn");
@@ -37,7 +36,8 @@ inventoryCloseBtn.onclick = function() {
 let saveBtn = document.getElementById("save-btn");
 saveBtn.onclick = function() {
     closeInventory();
-    saveIngredients(rawIngredients, foodIngredients);
+    storage.saveIngredients(rawIngredients, foodIngredients);
+    storage.saveFoodRecipes(foodRecipes);
 }
 
 // INVENTORY CODE
@@ -132,9 +132,10 @@ function resetFieldIfBlank(ingredient, field) {
 }
 
 // RECIPE MANAGER CODE
-function closeRecipeManager() {
+function closeRecipeManagerAndSave() {
     let modal = document.getElementById(consts.RECIPE_MANAGER_DIV);
     modal.style.display = "none";
+    storage.saveFoodRecipes(foodRecipes);
 }
 
 function openRecipeManager(generateRecipeManager) {
@@ -157,11 +158,11 @@ function populateRecipeManagerPopup() {
     foodRecipeContent.append(foodRecipeCardList);
 }
 
-function createRecipeCardList(foodRecipeCardList) {
+function createRecipeCardList(foodRecipes) {
     let cardList = document.createElement("div");
     cardList.classList.add("cards");
 
-    foodRecipeCardList.forEach(recipe => {
+    foodRecipes.forEach(recipe => {
         cardList.append(createRecipeCard(recipe));
     });
 
@@ -187,6 +188,19 @@ function createRecipeCard(recipe) {
     card.style.backgroundImage = 'url("./images/backgrounds/Rarity_' + recipe.rarity + '_background.png")';
     card.append(content);
     card.append(labelDiv);
+    card.onclick = () => {
+        removeRecipeCard(recipe);
+        createMainRecipeCard(recipe);
+    }
 
     return card;
+}
+
+function removeRecipeCard(recipe) {
+    document.getElementById(recipe.name).remove();
+}
+
+// MAIN RECIPE CARD PAGE CODE
+function createMainRecipeCard(recipe) {
+    recipe.hasCard = true;
 }
