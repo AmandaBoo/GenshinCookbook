@@ -182,15 +182,34 @@ body {
 .recipe-card {
     border: 1px solid #83A0A0;
     background-color: #4C5F6B;
-    width: 30%;
+    width: 400px;
     margin: 1%;
     box-shadow: 0 0 6px black;
+    border-radius: 4px;
 }
 .recipe-card-title {
     background-color: #83A0A0;
     padding: 6px;
     margin: 0;
     font-size: 28px;
+}
+.recipe-container {
+    display: flex;
+}
+.recipe-icon {
+    width: 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 2%;
+    border-radius: 10%;
+}
+.recipe-goals {
+    width: 100%;
+}
+.recipe-goals p {
+    margin: 12px;
+    background-color: #2B3D41;
+    border-radius: 8px;
 }
 .recipe-card-text {
     padding: 6px;
@@ -201,8 +220,23 @@ body {
     width: 100%;
     border-bottom: 1px solid #83A0A0;
 }
-.recipe-card-ingredients {
+.recipe-card-ingredient-card {
+     color: black;
 
+     width: 60px;
+     height: 86px;
+     border-radius: 5px;
+     border: 1px solid #83A0A0;
+     background-color: #e9e7dc;
+     margin: 6px;
+
+     text-align: center;
+     background-size: 60px;
+     background-repeat: no-repeat;
+ }
+.recipe-card-ingredient-card p {
+    font-size: 14px;
+    margin: 0; /* keeps text in card */
 }
 
 /*Prevents number wheel arrows from appearing next to number type inputs*/
