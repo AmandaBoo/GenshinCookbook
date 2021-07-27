@@ -26,7 +26,7 @@ body {
     /* Enable scroll if needed */
     background-color: rgba(0, 0, 0);
     /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.65);
     /* Black w/ opacity */
     box-sizing: border-box;
 }
@@ -105,6 +105,7 @@ h1 {
     border: 1px solid white;
     border-radius: 4px;
     padding: 10px;
+    margin: 0;
     background-color: rgba(255, 255, 255, 0.1);
 }
 .save-btn:hover {
