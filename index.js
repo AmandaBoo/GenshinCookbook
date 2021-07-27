@@ -175,19 +175,16 @@ function createRecipeCard(recipe) {
     content.src = recipe.src;
     content.alt = recipe.name;
 
-    let labelDiv = document.createElement("div");
-    labelDiv.classList.add("label-div");
     let label = document.createElement("label");
     label.innerText = recipe.name;
-    label.classList.add("label-field");
-    labelDiv.append(label);
+    label.classList.add("recipe-label-field");
 
     let card = document.createElement("div");
     card.id = recipe.name;
     card.classList.add('recipe-card');
     card.style.backgroundImage = 'url("./images/backgrounds/Rarity_' + recipe.rarity + '_background.png")';
     card.append(content);
-    card.append(labelDiv);
+    card.append(label);
     card.onclick = () => {
         removeRecipeCard(recipe);
         createMainRecipeCard(recipe);
