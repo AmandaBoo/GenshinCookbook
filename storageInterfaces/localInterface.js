@@ -2,7 +2,7 @@ import {RAW_INGREDIENTS_TEMPLATE} from "../storage/localStorageTemplates/jsTempl
 import {FOOD_INGREDIENTS_TEMPLATE} from "../storage/localStorageTemplates/jsTemplates/foodIngredientsTemplate.js";
 import {FOOD_RECIPES_TEMPLATE} from "../storage/localStorageTemplates/jsTemplates/foodRecipesTemplate.js";
 
-export function loadData() {
+export function setUpLocalStorage() {
     if (localStorageNotSet()) {
         localStorage.rawIngredients = RAW_INGREDIENTS_TEMPLATE;
         localStorage.foodIngredients = FOOD_INGREDIENTS_TEMPLATE;

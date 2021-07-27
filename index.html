@@ -8,7 +8,10 @@
 </head>
 <body>
 
-<!-- Trigger/Open The Modal -->
+<button id="recipe-manager-btn">
+    <img class="inventory-nav-bar-main-icon" src="./images/icons/cookingIcon.png"/>
+    <br/><b>Add Recipe Card</b>
+</button>
 <button id="inventory-btn">
     <img class="inventory-nav-bar-main-icon" src="./images/icons/inventoryIcon.png"/>
     <br/><b>Inventory</b>
@@ -23,7 +26,7 @@
             <img id="dishes-tab" class="inventory-nav-bar-tab-icon" src="./images/icons/foodIcon.png"/>
             <img id="furniture-tab" class="inventory-nav-bar-tab-icon" src="./images/icons/furnitureIcon.png"/>
         </div>
-        <span id="close-btn" class="close">&times;</span>
+        <span id="inventory-close-btn" class="close">&times;</span>
     </div>
     <div id="materials-content" class="modal-content"></div>
     <div id="dishes-content" class="modal-content"></div>
@@ -33,5 +36,9 @@
     </div>
 </div>
 
+<div id="recipe-manager-div" class="modal">
+    <div id="food-recipe-content"></div>
+    <span id="recipe-manager-close-btn" class="close">&times;</span>
+</div>
 </body>
 </html>

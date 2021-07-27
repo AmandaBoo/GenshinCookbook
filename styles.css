@@ -157,13 +157,48 @@ h1 {
     transform: scale(1.1);
 }
 
+.recipe-card {
+    width: 100px;
+    height: 120px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: #e9e7dc;
+    margin: 6px;
+    color: black;
+
+    text-align: center;
+    background-size: 100px;
+    background-repeat: no-repeat;
+
+    box-shadow: 0 0 6px black;
+
+    transition: all .2s ease-in-out;
+}
+
+.label-div {
+    background-color: #fcfaee;
+}
+
+.label-field {
+    text-align: center;
+    width: 44px;
+    height:15px;
+    font-size: 14px;
+    /*border: 1px solid #b0b0b0; !* default inputs have a messy border *!*/
+    /*border-radius: 4px;*/
+
+    background-color: #fcfaee;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 .ingredient-div {
     align-items: center;
 }
 
 .card-icon {
     width: 100%;
-
     font-size: 10px; /* if an image ever fails, this helps the alt display inside the card */
 }
 
