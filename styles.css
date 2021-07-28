@@ -4,12 +4,27 @@
     --light: #505860;
 }
 
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--dark);
-
+    margin: 0;
     color: #FFFFFF;
+}
+
+.site-nav-bar {
+    font-size: 20px;
+    text-align: center;
+    padding: 15px;
+    background: var(--mid);
+}
+
+.site-nav-bar-links {
+    padding: 10px;
+}
+
+.site-nav-bar-links:hover,
+.site-nav-bar-links:focus{
+    border-bottom: 2px solid white;
 }
 
 /* The Modal (background) */
