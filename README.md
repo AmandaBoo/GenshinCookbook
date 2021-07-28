@@ -11,6 +11,7 @@ TBD
 ### Naming Guide
 
 **Main Pages:**
+- *Need one for the summary home page*
 - "Cooking Manager" : Page that allows users to monitor individual food recipes 
 - "Furniture Manager" : Page that allows user to monitor indvidual furniture recipes and furniture sets
 - "Potions Manager" : Page that allows users to monitor individual potion recipes
