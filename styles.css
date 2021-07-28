@@ -1,7 +1,7 @@
 :root {
-    --dark:  #2B3D41;
-    --mid:   #4C5F6B;
-    --light: #83A0A0;
+    --dark:  #202830;
+    --mid:   #404850;
+    --light: #505860;
 }
 
 
@@ -33,7 +33,7 @@ body {
     /* Enable scroll if needed */
     background-color: rgba(0, 0, 0);
     /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.85);
     /* Black w/ opacity */
     box-sizing: border-box;
 }
@@ -222,6 +222,9 @@ body {
     padding: 6px;
     margin: 0;
     font-size: 16px;
+    background: none;
+    border: none;
+    color: white;
 }
 .recipe-card-line {
     width: 100%;

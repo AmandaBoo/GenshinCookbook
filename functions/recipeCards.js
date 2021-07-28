@@ -16,37 +16,67 @@ export function createMainRecipeCard(recipe) {
     // add icon and goals section
     let metaSection = createMetaSection(recipe);
     recipeCard.appendChild(metaSection);
-
     createRecipeCardLine(recipeCard);
 
     // add ingredient section
-    let subtitle = document.createElement("p");
-    subtitle.classList.add("recipe-card-text");
-    subtitle.innerHTML = "Overview:";
-    recipeCard.appendChild(subtitle);
+    let subIngredientList = recipe.craftsFrom[0][1].crafted;
+    if (subIngredientList.length > 0) {
+        let subtitle = document.createElement("button");
+        subtitle.classList.add("recipe-card-text");
+        subtitle.innerHTML = "Overview <> Summary";
+        subtitle.onclick = () => {toggleButton(recipe);};
+        recipeCard.appendChild(subtitle);
+    } else {
+        let subtitle = document.createElement("p");
+        subtitle.classList.add("recipe-card-text");
+        subtitle.innerHTML = "Overview:";
+        recipeCard.appendChild(subtitle);
+    }
     let ingredientList = recipe.craftsFrom[0][0].raw.concat(recipe.craftsFrom[0][1].crafted);
     let ingredientCards = createIngredientCardList(ingredientList, recipe.rarity * 5);
-
+    ingredientCards.id = recipe.name + '-overview';
     recipeCard.appendChild(ingredientCards);
 
     // create summary if needed
-    let subIngredientList = recipe.craftsFrom[0][1].crafted;
-    if (subIngredientList.length > 0) {
-        createRecipeCardLine(recipeCard);
-
-        let subsubtitle = document.createElement("p");
-        subsubtitle.classList.add("recipe-card-text");
-        subsubtitle.innerHTML = "Summary:";
-        recipeCard.appendChild(subsubtitle);
-
-        let subIngredientCards = createSubIngredientCardList(subIngredientList, recipe.rarity * 5);
-
-        recipeCard.appendChild(subIngredientCards);
-    }
+    recipeCard.appendChild(createSummarySection(recipe));
 
     // effectively the return method
     let recipeCardList = document.getElementById("recipe-cards");
     recipeCardList.append(recipeCard);
+}
+
+function toggleButton(recipe) {
+
+    console.log('logged click');
+    let summary = document.getElementById(recipe.name + '-summary');
+    let overview = document.getElementById(recipe.name + '-overview');
+
+    console.log(summary);
+
+    if (summary.style.display === 'flex') {
+        summary.style.display = 'none';
+        overview.style.display = 'flex';
+    } else {
+        summary.style.display = 'flex';
+        overview.style.display = 'none';
+    }
+}
+
+function createSummarySection(recipe) {
+    let summaryCards = document.createElement("div");
+
+    let subIngredientList = recipe.craftsFrom[0][1].crafted;
+    if (subIngredientList.length > 0) {
+
+        summaryCards = createSubIngredientCardList(subIngredientList, recipe.rarity * 5);
+
+        let ingredientCards = createIngredientCardList(recipe.craftsFrom[0][0].raw, recipe.rarity * 5);
+        summaryCards.innerHTML = ingredientCards.innerHTML + summaryCards.innerHTML;
+    }
+
+    summaryCards.id = recipe.name + '-summary';
+    summaryCards.style.display = 'none';
+    return summaryCards;
 }
 
 function createMetaSection(recipe) {
