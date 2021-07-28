@@ -16,6 +16,8 @@ setUpRecipeManager(foodRecipes);
 
 // MAIN RECIPE CARD PAGE CODE
 function populateMainPage(recipes) {
+    recipes = recipes.concat(recipes.concat(recipes.concat(recipes.concat(recipes.concat(recipes)))));
+
     recipes.forEach(recipe => {
         if (recipe.hasCard) {
             createMainRecipeCard(recipe);

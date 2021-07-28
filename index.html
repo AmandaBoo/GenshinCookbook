@@ -4,7 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <Title>Genshin Cookbook</Title>
     <link rel="stylesheet" href="styles.css">
-    <script type="module" src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">    <script type="module" src="index.js"></script>
 </head>
 <body>
 
@@ -16,16 +18,18 @@
     <label id="site-nav-bar-potions" class="site-nav-bar-links">Potions</label>
 </div>
 
-<button id="recipe-manager-btn">
-    <b>Add Recipe Card</b>
-</button>
-<button id="inventory-btn">
-    <b>Inventory</b>
-</button>
-<h1>Recipe Cards</h1>
-<div id="recipe-cards" class="cards"></div>
-<h1>Summary</h1>
-<div id="summary"></div>
+<!--RECIPE CONTENT-->
+<div class="flex-main-container">
+    <div id="recipe-cards" class="cards big-column"></div>
+    <div id="summary" class="small-column">
+        <button id="recipe-manager-btn" class="btn">
+            <b>Add Recipe Card</b>
+        </button>
+        <button id="inventory-btn" class="btn">
+            <b>Inventory</b>
+        </button>
+    </div>
+</div>
 
 <!-- The Modal -->
 <div id="inventory-div" class="modal">
@@ -42,13 +46,19 @@
     <div id="dishes-content" class="modal-content"></div>
     <div id="furniture-content" class="modal-content"></div>
     <div class="flex-center-container">
-        <p id="save-btn" class="save-btn">Save and Close All Tabs</p>
+        <p id="save-btn" class="btn">Save and Close All Tabs</p>
     </div>
 </div>
 
 <div id="recipe-manager-div" class="modal">
-    <div id="food-recipe-content"></div>
-    <span id="recipe-manager-close-btn" class="close">&times;</span>
+    <div class="inventory-nav-bar">
+        <img class="inventory-nav-bar-main-icon" src="./images/icons/foodIcon.png"/>
+        <div class="inventory-nav-bar-tabs">
+            <img class="inventory-nav-bar-tab-icon selected-tab" src="./images/icons/foodIcon.png"/>
+        </div>
+        <span id="recipe-manager-close-btn" class="close">&times;</span>
+    </div>
+    <div id="food-recipe-content" class="modal-content"></div>
 </div>
 </body>
 </html>

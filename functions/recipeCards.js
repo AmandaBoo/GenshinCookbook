@@ -7,42 +7,58 @@ export function createMainRecipeCard(recipe) {
     let recipeCard = document.createElement("div");
     recipeCard.classList.add('recipe-card');
 
-    // add title
-    let recipeTitle = document.createElement("p");
-    recipeTitle.classList.add("recipe-card-title");
-    recipeTitle.innerHTML = recipe.name;
-    recipeCard.appendChild(recipeTitle);
+    // // add title
+    // let recipeTitle = document.createElement("p");
+    // recipeTitle.classList.add("recipe-card-title");
+    // recipeTitle.innerHTML = recipe.name;
+    // recipeCard.appendChild(recipeTitle);
 
     // add icon and goals section
-    let metaSection = createMetaSection(recipe);
-    recipeCard.appendChild(metaSection);
-    createRecipeCardLine(recipeCard);
+    let frontSide = createCardBody(recipe);
+    recipeCard.appendChild(frontSide);
 
-    // add ingredient section
-    let subIngredientList = recipe.craftsFrom[0][1].crafted;
-    if (subIngredientList.length > 0) {
-        let subtitle = document.createElement("button");
-        subtitle.classList.add("recipe-card-text");
-        subtitle.innerHTML = "Overview <> Summary";
-        subtitle.onclick = () => {toggleButton(recipe);};
-        recipeCard.appendChild(subtitle);
-    } else {
-        let subtitle = document.createElement("p");
-        subtitle.classList.add("recipe-card-text");
-        subtitle.innerHTML = "Overview:";
-        recipeCard.appendChild(subtitle);
-    }
-    let ingredientList = recipe.craftsFrom[0][0].raw.concat(recipe.craftsFrom[0][1].crafted);
-    let ingredientCards = createIngredientCardList(ingredientList, recipe.rarity * 5);
-    ingredientCards.id = recipe.name + '-overview';
-    recipeCard.appendChild(ingredientCards);
-
-    // create summary if needed
-    recipeCard.appendChild(createSummarySection(recipe));
+    // // add ingredient section
+    // let subIngredientList = recipe.craftsFrom[0][1].crafted;
+    // if (subIngredientList.length > 0) {
+    //     let subtitle = createToggleButton(recipe);
+    //     recipeCard.appendChild(subtitle);
+    // } else {
+    //     let subtitle = document.createElement("p");
+    //     subtitle.classList.add("recipe-card-text");
+    //     subtitle.innerHTML = "Overview:";
+    //     recipeCard.appendChild(subtitle);
+    // }
+    // let ingredientList = recipe.craftsFrom[0][0].raw.concat(recipe.craftsFrom[0][1].crafted);
+    // let ingredientCards = createIngredientCardList(ingredientList, recipe.rarity * 5);
+    // ingredientCards.id = recipe.name + '-overview';
+    // recipeCard.appendChild(ingredientCards);
+    //
+    // // create summary if needed
+    // recipeCard.appendChild(createSummarySection(recipe));
 
     // effectively the return method
     let recipeCardList = document.getElementById("recipe-cards");
-    recipeCardList.append(recipeCard);
+    recipeCardList.appendChild(recipeCard);
+}
+
+function createToggleButton(recipe) {
+    let btn = document.createElement("button");
+    btn.classList.add("recipe-card-text");
+
+    let overview = document.createElement("span");
+    overview.innerHTML = "Overview <";
+    overview.id = recipe.name + '-btn-overview';
+    let summary = document.createElement("span");
+    summary.innerHTML = "> Summary";
+    summary.id = recipe.name + '-btn-summary';
+    summary.classList.add('disabled');
+
+    btn.appendChild(overview);
+    btn.appendChild(summary);
+
+    btn.onclick = () => {toggleButton(recipe);};
+
+    return btn;
 }
 
 function toggleButton(recipe) {
@@ -50,15 +66,21 @@ function toggleButton(recipe) {
     console.log('logged click');
     let summary = document.getElementById(recipe.name + '-summary');
     let overview = document.getElementById(recipe.name + '-overview');
+    let summaryBtn = document.getElementById(recipe.name + '-btn-summary');
+    let overviewBtn = document.getElementById(recipe.name + '-btn-overview');
 
     console.log(summary);
 
     if (summary.style.display === 'flex') {
         summary.style.display = 'none';
         overview.style.display = 'flex';
+        summaryBtn.classList.add('disabled');
+        overviewBtn.classList.remove('disabled');
     } else {
         summary.style.display = 'flex';
         overview.style.display = 'none';
+        summaryBtn.classList.remove('disabled');
+        overviewBtn.classList.add('disabled');
     }
 }
 
@@ -79,38 +101,60 @@ function createSummarySection(recipe) {
     return summaryCards;
 }
 
-function createMetaSection(recipe) {
-    let metaSection = document.createElement("div");
-    metaSection.classList.add('recipe-container');
+function createCardBody(recipe) {
+    let infoSection = document.createElement("div");
+    infoSection.classList.add('recipe-container');
 
     let icon = document.createElement("img");
     icon.src = recipe.src;
     icon.classList.add('recipe-icon');
     icon.style.backgroundImage = 'url("./images/backgrounds/Rarity_' + recipe.rarity + '_background.png")';
 
-    let goals = document.createElement("div");
-    goals.classList.add("recipe-goals");
+    let middleSection = document.createElement("div");
+    middleSection.classList.add("recipe-goals");
 
-    let masteryRatio = document.createElement("p");
-    masteryRatio.classList.add("recipe-card-text");
-    masteryRatio.innerHTML = 'Proficiency: ' + recipe.qty + ' / ' + recipe.rarity * 5;
-    goals.appendChild(masteryRatio);
+    let title = document.createElement("p");
+    title.classList.add("recipe-card-text");
+    title.innerHTML = recipe.name;
+    middleSection.appendChild(title);
 
-    let customRation = document.createElement("p");
-    customRation.classList.add("recipe-card-text");
-    customRation.innerHTML = 'Custom: ' + recipe.qty + ' / WIP';
-    goals.appendChild(customRation);
+    let progressBar = createProgressBar(recipe);
+    middleSection.appendChild(progressBar);
 
-    metaSection.appendChild(icon);
-    metaSection.appendChild(goals);
+    infoSection.appendChild(icon);
+    infoSection.appendChild(middleSection);
 
-    return metaSection;
+    return infoSection;
 }
 
-function createRecipeCardLine(recipeCard) {
-    let line = document.createElement("div");
-    line.classList.add("recipe-card-line");
-    recipeCard.appendChild(line);
+function createProgressBar (recipe) {
+    // set up
+    let bar = document.createElement("div");
+    bar.classList.add('progress-bar');
+    let color = document.createElement("div");
+    color.classList.add('progress-bar-progress');
+    bar.appendChild(color);
+
+    // calculate percentage
+    let totalNeeded = 0;
+    let totalPlayerHas = 0;
+
+    let list = recipe.craftsFrom[0][0].raw.concat(recipe.craftsFrom[0][1].crafted);
+    list.forEach(ingredient => {
+        let needed = ingredient.qtyRequired * recipe.rarity * 5;
+        totalNeeded += needed;
+
+        let has = ingredient.ingredient.qty;
+        totalPlayerHas += has > needed ? needed : has;
+        console.log(ingredient);
+
+    });
+
+    // color.style.width = (100 * totalPlayerHas / totalNeeded) + '%';
+    color.style.width = (100 * Math.random()) + '%';
+
+
+    return bar;
 }
 
 function createIngredientCardList(list, sumToMake) {

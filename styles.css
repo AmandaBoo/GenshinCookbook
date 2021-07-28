@@ -1,30 +1,59 @@
 :root {
-    --dark:  #202830;
-    --mid:   #404850;
-    --light: #505860;
+    --theme-900: #212121;
+    --theme-800: #424242;
+    --theme-700: #717171;
+    --theme-600: #757575;
+    --theme-500: #9E9E9E;
+    --theme-400: #BDBDBD;
+    --theme-300: #E0E0E0;
+    --theme-200: #EEEEEE;
+    --theme-100: #F5F5F5;
+    --theme-50: #FAFAFA;
+
+    --accent-200: #F48FB1;
+    --accent-100: #F8BBD0;
+    --accent-50: #FCE4EC;
+
+    --high-emphasis: #DEDEDE;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--dark);
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--theme-900);
     margin: 0;
-    color: #FFFFFF;
+    color: var(--high-emphasis);
+    font-size: 14px;
 }
 
 .site-nav-bar {
-    font-size: 20px;
-    text-align: center;
+    width: 100%;
     padding: 15px;
-    background: var(--mid);
+    background: var(--theme-800);
+    box-shadow: 0 2px 4px black;
+    position: fixed;
+    z-index: 1;
 }
 
 .site-nav-bar-links {
     padding: 10px;
 }
 
+.btn {
+    background-color: var(--theme-900);
+    color: var(--high-emphasis);
+    border: 1px solid var(--high-emphasis);
+    padding: 10px;
+    margin: 8px;
+    border-radius: 6px;
+    float: right;
+}
+.btn:hover {
+    background-color: var(--theme-800);
+}
+
 .site-nav-bar-links:hover,
 .site-nav-bar-links:focus{
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid var(--high-emphasis);
 }
 
 /* The Modal (background) */
@@ -68,6 +97,7 @@ body {
     font-size: 36px;
     font-weight: bold;
     width: 50px;
+    height: 50px;
     text-align: right;
 }
 .close:hover {
@@ -80,6 +110,14 @@ body {
     margin-left: 15%;
     display: flex;
     justify-content: space-between;
+    width: 70%;
+    border-bottom: 1px solid white;
+}
+
+.recipe-manager-nav-bar {
+    margin-left: 15%;
+    display: flex;
+    flex-direction: row-reverse;
     width: 70%;
     border-bottom: 1px solid white;
 }
@@ -111,20 +149,13 @@ body {
     padding-bottom: 0;
 }
 
+.flex-main-container {
+    display: flex;
+    padding-top: 54px;
+}
 .flex-center-container {
     display: flex;
     justify-content: center;
-}
-
-.save-btn {
-    border: 1px solid white;
-    border-radius: 4px;
-    padding: 10px;
-    margin: 0;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-.save-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .cards {
@@ -172,7 +203,6 @@ body {
 
 .recipe-label-field {
     text-align: center;
-    font-size: 14px;
 }
 
 .card-icon {
@@ -202,44 +232,37 @@ body {
 
 /*Main card styling*/
 .recipe-card {
-    border: 1px solid var(--light);
-    background-color: var(--mid);
+    background-color: var(--theme-800);
+    margin: 8px;
+    box-shadow: 0 2px 4px black;
+    border-radius: 12px;
     width: 400px;
-    margin: 1%;
-    box-shadow: 0 0 6px black;
-    border-radius: 4px;
 }
 .recipe-card-title {
-    background-color: var(--light);
+    /*background-color: var(--light);*/
     padding: 6px;
     margin: 0;
-    font-size: 28px;
 }
 .recipe-container {
     display: flex;
 }
 .recipe-icon {
-    width: 30%;
     background-size: cover;
     background-repeat: no-repeat;
-    margin: 2%;
-    border-radius: 10%;
+    margin: 15px;
+    border-radius: 55%;
+    height: 52px;
+    opacity: 0.9;
 }
 .recipe-goals {
     width: 100%;
 }
-.recipe-goals p {
-    margin: 12px;
-    background-color: var(--dark);
-    border-radius: 8px;
-}
 .recipe-card-text {
-    padding: 6px;
+    padding: 12px 0;
     margin: 0;
-    font-size: 16px;
+    margin-top: 7px;
     background: none;
     border: none;
-    color: white;
 }
 .recipe-card-line {
     width: 100%;
@@ -260,8 +283,24 @@ body {
      background-repeat: no-repeat;
  }
 .recipe-card-ingredient-card p {
-    font-size: 14px;
     margin: 0; /* keeps text in card */
+}
+
+.disabled {
+    color: #b0b0b0;
+}
+
+.progress-bar {
+    background-color: var(--theme-900);
+    width: 60%;
+    border-radius: 4px;
+    padding: 2px;
+}
+.progress-bar-progress {
+    background-color: var(--accent-200);
+    height: 100%;
+    height: 4px;
+    border-radius: 4px;
 }
 
 /*Prevents number wheel arrows from appearing next to number type inputs*/
