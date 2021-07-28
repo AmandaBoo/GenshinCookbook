@@ -150,9 +150,7 @@ function createProgressBar (recipe) {
 
     });
 
-    // color.style.width = (100 * totalPlayerHas / totalNeeded) + '%';
-    color.style.width = (100 * Math.random()) + '%';
-
+    color.style.width = (100 * totalPlayerHas / totalNeeded) + '%';
 
     return bar;
 }
