@@ -18,5 +18,5 @@ TBD
 
 **Sub Pages**
 - "Inventory": Popup that maps to Genshin's material, food, and furniture inventory screens and allows for users to edit the quantities of each item within
-- "Cookbook": Popup that maps to Genshin's cooking screen and allows for users to add Food Cards to the Cooking Manager page
-- "Food Cards": Cards displayed in the recipe manager that aim to give users information about their progress on obtaining mastery or a custom quantity
+- "Cookbook": Popup that maps to Genshin's cooking screen and allows for users to add Recipe Cards to the Cooking Manager page
+- "Recipe Cards": Cards displayed in the recipe manager that aim to give users information about their progress on obtaining mastery or a custom quantity
