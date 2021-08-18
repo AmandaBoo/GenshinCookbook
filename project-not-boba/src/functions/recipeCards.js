@@ -200,3 +200,10 @@ function createIngredientCard (ingredient, total) {
 
     return card;
 }
+
+function resetFieldIfBlank(ingredient, field) {
+    if (field.value === "") {
+        field.value = 0;
+        ingredient.qty = 0;
+    }
+}

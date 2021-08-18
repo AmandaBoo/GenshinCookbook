@@ -1,7 +1,10 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import * as storage from "./storageInterfaces/storageInterface.js";
 import { setUpInventory } from './functions/inventory.js';
 import { setUpRecipeManager } from './functions/addRecipeManager.js';
 import { createMainRecipeCard } from './functions/recipeCards.js';
+import "./styles.css";
 
 // LOCAL OBJECTS
 storage.setUpLocalStorage();
