@@ -1,5 +1,6 @@
 ### How to deploy React
-TBD
+- If pulling repo for the first time run ```npm install```
+- To start up local instance run ```npm run start```
 
 ### Naming Guide
 
