@@ -5,7 +5,7 @@ export class InventoryPopup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab : null
+            selectedTab : "materials-tab"
         };
         this.imgSrcList = ["images/icons/ingredientsIcon.png", "images/icons/furnitureIcon.png"];
         this.imgSrcListIds = ["materials-tab", "furniture-tab"];

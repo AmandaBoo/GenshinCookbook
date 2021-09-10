@@ -5,7 +5,7 @@ export class RecipeCardPopup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab : null
+            selectedTab : "food-tab"
         };
         this.imgSrcList = ["images/icons/foodIcon.png"];
         this.imgSrcListIds = ["food-tab"];
