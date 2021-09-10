@@ -1,4 +1,3 @@
-
 export class CraftedFoodIngredient {
     name; // string
     qty; // string

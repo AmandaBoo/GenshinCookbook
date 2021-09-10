@@ -1,4 +1,3 @@
-
 export class FurnitureRecipe {
     name; // string
     qty; // string

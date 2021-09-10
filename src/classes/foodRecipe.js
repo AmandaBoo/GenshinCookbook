@@ -1,4 +1,3 @@
-
 export class FoodRecipe {
     name; // string
     qty; // string

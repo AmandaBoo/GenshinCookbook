@@ -1,4 +1,3 @@
-
 export class CraftedFurnitureIngredient {
     name; // string
     qty; // string
