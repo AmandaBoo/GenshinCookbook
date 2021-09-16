@@ -1,4 +1,3 @@
-
 export class RawIngredient {
     name; // string
     qty; // string
