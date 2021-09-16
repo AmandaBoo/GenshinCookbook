@@ -60,7 +60,9 @@ function mapRawIngredients(allRawIngredients, foodIngredient) {
 
 // retrieves recipe ingredients from localStorageTemplates and local in json form
 // and creates FoodRecipe objects
-export function getAllFoodRecipes(allRawIngredients, allFoodIngredients) {
+export function getAllFoodRecipes() {
+    let allRawIngredients = getAllRawIngredients();
+    let allFoodIngredients = getAllFoodIngredients(allRawIngredients);
     let allRecipes = [];
     let foodRecipeLocal = localInterface.getFoodRecipesFromLocalStorage();
     let foodRecipeServer = serverInterface.getFoodRecipesFromServer();

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {NavBar} from "../shared/NavBar";
+import * as storage from "../../storageInterfaces/storageInterface";
+import IngredientCardDisplay from "./IngredientCardDisplay";
+import SaveButton from "../shared/SaveButton";
 
 export class InventoryPopup extends Component {
     constructor(props) {
@@ -9,10 +12,23 @@ export class InventoryPopup extends Component {
         };
         this.imgSrcList = ["images/icons/ingredientsIcon.png", "images/icons/furnitureIcon.png"];
         this.imgSrcListIds = ["materials-tab", "furniture-tab"];
+        this.rawIngredients = storage.getAllRawIngredients();
+        this.foodIngredients = storage.getAllFoodIngredients(this.rawIngredients);
     }
 
     updateSelectedInventoryTab(tabId) {
         this.setState({selectedTab: tabId});
+    }
+
+    determineCardData() {
+        if (this.state.selectedTab === "materials-tab") {
+            return this.rawIngredients.concat(this.foodIngredients);
+        }
+    }
+
+    onSaveClick() {
+        storage.saveIngredients(this.rawIngredients, this.foodIngredients);
+        this.props.onCloseClick();
     }
 
     render() {
@@ -26,6 +42,12 @@ export class InventoryPopup extends Component {
                         selectedTab={this.state.selectedTab}
                         onInventoryTabClick={tabId => this.updateSelectedInventoryTab(tabId)}
                         onCloseClick={() => this.props.onCloseClick()}
+                    />
+                    <IngredientCardDisplay
+                        cardData={this.determineCardData()}
+                    />
+                    <SaveButton
+                        onSaveClick={() => this.onSaveClick()}
                     />
                 </div>
             );

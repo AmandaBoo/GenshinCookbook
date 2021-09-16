@@ -64,6 +64,7 @@ function createIngredientCardList(list) {
     return cardList;
 }
 
+// TODO : REFERENCE THIS FOR CARDDISPLAY
 function createIngredientCard (ingredient) {
     let content = document.createElement("img");
     content.classList += "card-icon";

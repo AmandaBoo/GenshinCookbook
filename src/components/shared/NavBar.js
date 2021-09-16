@@ -14,6 +14,7 @@ export class NavBar extends Component {
         let navBarTabs = [];
         for (let i = 0; i < this.props.imgSrcList.length; i++) {
             let tabId = this.props.imgSrcListIds[i];
+            // TODO : FIX UNIQUE KEY PROP WARNING
             navBarTabs.push(
                 <NavBarTab
                     src={this.props.imgSrcList[i]}
