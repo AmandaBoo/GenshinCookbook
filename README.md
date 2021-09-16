@@ -2,6 +2,14 @@
 - If pulling repo for the first time run ```npm install```
 - To start up local instance run ```npm run start```
 
+### Pull Request Guide
+1. Push code up on a new branch (name your branch your ticket #)
+2. Continue to push up your code to your new branch until you're ready to merge it into master
+3. Make a PR when you're ready and add at least 1 reviewer
+4. Resolve any comments made by reviewers 
+6. Once all merge checks have passed merge the branch in
+7. Delete the branch
+
 ### Naming Guide
 
 **Main Pages:**
