@@ -8,7 +8,8 @@
 3. Make a PR when you're ready and add at least 1 reviewer
 4. Resolve any comments made by reviewers 
 6. Once all merge checks have passed merge the branch in
-7. Delete the branch
+7. Delete the branch 
+8. Close the relevant story
 
 ### Naming Guide
 
