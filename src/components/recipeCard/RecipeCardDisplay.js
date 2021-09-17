@@ -17,7 +17,6 @@ function renderCards(cardData, onUpdate) {
                 <RecipeCard
                     cardData={data}
                     onCardClick={() => {
-                        data.hasCard = true;
                         onUpdate(data);
                     }}
                 />
@@ -26,16 +25,6 @@ function renderCards(cardData, onUpdate) {
         return cardList;
     }
     return null;
-}
-
-function findCardsClicked(cardData) {
-    let cardsClicked = [];
-    cardData.forEach(card => {
-        if (card.hasCard) {
-            cardsClicked.push(card);
-        }
-    });
-    return cardsClicked;
 }
 
 export default RecipeCardDisplay;

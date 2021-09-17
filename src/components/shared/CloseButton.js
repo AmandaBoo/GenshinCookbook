@@ -1,11 +1,11 @@
 import React from 'react';
 
-const CloseButton = (props) => {
+const CloseButton = ({onCloseClick}) => {
     return (
         <span
             id={"inventory-close-btn"}
             className={"close"}
-            onClick={() => props.onClick()}
+            onClick={() => onCloseClick()}
         >&times;
         </span>
     )

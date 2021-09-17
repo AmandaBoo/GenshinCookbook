@@ -41,7 +41,7 @@ export class NavBar extends Component {
                     {this.renderNavBarTabs()}
                 </div>
                 <CloseButton
-                    onClick={() => this.props.onCloseClick()}
+                    onCloseClick={() => this.props.onCloseClick()}
                 />
             </div>
         );

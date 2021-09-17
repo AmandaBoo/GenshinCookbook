@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import {NavBar} from "../shared/NavBar";
-import SaveButton from "../shared/SaveButton";
 import * as storage from "../../storageInterfaces/storageInterface";
 import RecipeCardDisplay from "./RecipeCardDisplay";
+import RecipeEditPopup from "./RecipeEditPopup";
 
-export class RecipeCardPopup extends Component {
+export class AddRecipePopup extends Component {
     constructor(props) {
         super(props);
         this.state = {
             selectedTab : "food-tab",
-            pendingFoodRecipes : []
+            pendingFoodRecipes : [],
+            selectedRecipeCard : null
         };
         this.imgSrcList = ["images/icons/foodIcon.png"];
         this.imgSrcListIds = ["food-tab"];
@@ -20,15 +21,8 @@ export class RecipeCardPopup extends Component {
         this.setState({selectedTab: tabId});
     }
 
-    onSaveClick() {
-        storage.saveFoodRecipes(this.foodRecipes);
-        this.props.onCloseClick();
-    }
-
     onCardClicked(card) {
-        this.setState(previousState => ({
-            pendingFoodRecipes: [...previousState.pendingFoodRecipes, card]
-        }));
+        this.setState({selectedRecipeCard: card});
     }
 
     filterCards() {
@@ -37,8 +31,26 @@ export class RecipeCardPopup extends Component {
         });
     }
 
-    onCloseClick() {
+    onPopupCloseClick() {
         this.state.pendingFoodRecipes.forEach(data => data.hasCard = false);
+    }
+
+    onConfirmationCloseClick() {
+        this.resetSelectedRecipe();
+    }
+
+    onConfirmationSaveClick(recipeCard, currentProficiency, customQty) {
+        recipeCard.hasCard = true;
+        recipeCard.currentProficiency = currentProficiency;
+        recipeCard.want = customQty;
+        console.log(recipeCard);
+        console.log(this.foodRecipes);
+        storage.saveFoodRecipes(this.foodRecipes);
+        this.resetSelectedRecipe();
+    }
+
+    resetSelectedRecipe() {
+        this.setState({selectedRecipeCard: null});
     }
 
     render() {
@@ -53,15 +65,17 @@ export class RecipeCardPopup extends Component {
                         onInventoryTabClick={tabId => this.updateSelectedInventoryTab(tabId)}
                         onCloseClick={() => {
                             this.props.onCloseClick();
-                            this.onCloseClick();
+                            this.onPopupCloseClick();
                         }}
                     />
                     <RecipeCardDisplay
                         cardData={this.filterCards()}
                         onUpdate={card => this.onCardClicked(card)}
                     />
-                    <SaveButton
-                        onSaveClick={() => this.onSaveClick()}
+                    <RecipeEditPopup
+                        selectedRecipeCard={this.state.selectedRecipeCard}
+                        onSaveClick={(recipeCard, currentProf, customQty) => this.onConfirmationSaveClick(recipeCard, currentProf, customQty)}
+                        onCloseClick={() => this.onConfirmationCloseClick()}
                     />
                 </div>
             );
