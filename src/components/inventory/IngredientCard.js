@@ -37,6 +37,7 @@ function generateTextField(data, qty, setQty) {
                 setQty(event.target.value);
                 // resetFieldIfBlank(data, event);
             }}
+            onFocus={(event) => event.target.select()}
         />
     );
 }

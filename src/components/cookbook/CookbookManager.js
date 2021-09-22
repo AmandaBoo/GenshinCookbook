@@ -31,6 +31,17 @@ export class AddRecipePopup extends Component {
         });
     }
 
+    renderQuantityEditPopup() {
+        if (this.state.selectedRecipeCard != null) {
+
+            return (<QuantityEditPopup
+                selectedRecipeCard={this.state.selectedRecipeCard}
+                onSaveClick={(recipeCard, currentProf, customQty) => this.onConfirmationSaveClick(recipeCard, currentProf, customQty)}
+                onCloseClick={() => this.onConfirmationCloseClick()}
+            />);
+        }
+    }
+
     onPopupCloseClick() {
         this.state.pendingFoodRecipes.forEach(data => data.hasCard = false);
     }
@@ -70,11 +81,7 @@ export class AddRecipePopup extends Component {
                         cardData={this.filterCards()}
                         onUpdate={card => this.onCardClicked(card)}
                     />
-                    <QuantityEditPopup
-                        selectedRecipeCard={this.state.selectedRecipeCard}
-                        onSaveClick={(recipeCard, currentProf, customQty) => this.onConfirmationSaveClick(recipeCard, currentProf, customQty)}
-                        onCloseClick={() => this.onConfirmationCloseClick()}
-                    />
+                    {this.renderQuantityEditPopup()}
                 </div>
             );
         }
