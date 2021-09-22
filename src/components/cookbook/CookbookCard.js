@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RecipeCard = ({cardData, onCardClick}) => {
+const CookbookCard = ({cardData, onCardClick}) => {
     return (
         <div
             id={cardData.name}
@@ -32,4 +32,4 @@ function generateLabel(data) {
     );
 }
 
-export default RecipeCard;
+export default CookbookCard;

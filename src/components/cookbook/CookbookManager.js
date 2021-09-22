@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {NavBar} from "../shared/NavBar";
 import * as storage from "../../storageInterfaces/storageInterface";
-import RecipeCardDisplay from "./RecipeCardDisplay";
-import RecipeEditPopup from "./RecipeEditPopup";
+import CookbookCardDisplay from "./CookbookCardDisplay";
+import QuantityEditPopup from "./QuantityEditPopup";
 
 export class AddRecipePopup extends Component {
     constructor(props) {
@@ -43,8 +43,6 @@ export class AddRecipePopup extends Component {
         recipeCard.hasCard = true;
         recipeCard.currentProficiency = currentProficiency;
         recipeCard.want = customQty;
-        console.log(recipeCard);
-        console.log(this.foodRecipes);
         storage.saveFoodRecipes(this.foodRecipes);
         this.resetSelectedRecipe();
     }
@@ -68,11 +66,11 @@ export class AddRecipePopup extends Component {
                             this.onPopupCloseClick();
                         }}
                     />
-                    <RecipeCardDisplay
+                    <CookbookCardDisplay
                         cardData={this.filterCards()}
                         onUpdate={card => this.onCardClicked(card)}
                     />
-                    <RecipeEditPopup
+                    <QuantityEditPopup
                         selectedRecipeCard={this.state.selectedRecipeCard}
                         onSaveClick={(recipeCard, currentProf, customQty) => this.onConfirmationSaveClick(recipeCard, currentProf, customQty)}
                         onCloseClick={() => this.onConfirmationCloseClick()}

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {InventoryPopup} from "../inventory/InventoryPopup";
+import {InventoryManager} from "../inventory/InventoryManager";
 import {Icon} from "../shared/Icon";
-import {AddRecipePopup} from "../recipeCard/AddRecipePopup";
+import {AddRecipePopup} from "../cookbook/CookbookManager";
 
 export class MainPage extends Component {
     /* PROPS
@@ -32,7 +32,7 @@ export class MainPage extends Component {
                     onClick={i => this.setSelectedMenu(i)}
                 />
 
-                <InventoryPopup
+                <InventoryManager
                     doRender={this.state.selectedMenu === "inventory-icon"}
                     onCloseClick={() => this.setSelectedMenu(null)}
                 />

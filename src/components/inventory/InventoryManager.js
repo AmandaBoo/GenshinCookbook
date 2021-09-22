@@ -4,7 +4,7 @@ import * as storage from "../../storageInterfaces/storageInterface";
 import IngredientCardDisplay from "./IngredientCardDisplay";
 import SaveButton from "../shared/SaveButton";
 
-export class InventoryPopup extends Component {
+export class InventoryManager extends Component {
     constructor(props) {
         super(props);
         this.state = {

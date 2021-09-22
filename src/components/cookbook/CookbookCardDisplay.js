@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import RecipeCard from "./RecipeCard";
+import React from 'react';
+import CookbookCard from "./CookbookCard";
 
-const RecipeCardDisplay = ({cardData, onUpdate}) => {
+const CookbookCardDisplay = ({cardData, onUpdate}) => {
     return (
         <div className={"cards"}>
             {renderCards(cardData, onUpdate)}
@@ -14,7 +14,7 @@ function renderCards(cardData, onUpdate) {
     if (cardData !== undefined) {
         cardData.forEach(data => {
             cardList.push(
-                <RecipeCard
+                <CookbookCard
                     cardData={data}
                     onCardClick={() => {
                         onUpdate(data);
@@ -27,4 +27,4 @@ function renderCards(cardData, onUpdate) {
     return null;
 }
 
-export default RecipeCardDisplay;
+export default CookbookCardDisplay;
