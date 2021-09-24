@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import CloseButton from "../shared/CloseButton";
+import CloseButton from "../../shared/CloseButton";
 
 // TODO : OSKAR STYLE
 const QuantityEditPopup = ({selectedRecipeCard, onSaveClick, onCloseClick}) => {
@@ -22,7 +22,7 @@ const QuantityEditPopup = ({selectedRecipeCard, onSaveClick, onCloseClick}) => {
                     setCurProf(parseInt(event.target.value));
                     updateFields(recipeProficiency, event.target.value, setCurProf, setCustomQty);
                 }}
-                onFocus={(event) => setFieldOnEnter(event.target.value, setCurProf)}
+                onFocus={(event) => event.target.select()}
                 onBlur={(event) => resetFieldOnLeave(event.target.value, setCurProf)}
             />
             <span> / {recipeProficiency}</span>
@@ -41,7 +41,7 @@ const QuantityEditPopup = ({selectedRecipeCard, onSaveClick, onCloseClick}) => {
                 onChange={event => {
                     setCustomQty(parseInt(event.target.value));
                 }}
-                onFocus={(event) => setFieldOnEnter(event.target.value, setCustomQty)}
+                onFocus={(event) => event.target.select()}
                 onBlur={(event) => resetFieldOnLeave(event.target.value, setCustomQty)}
             />
             <br/>
@@ -60,12 +60,6 @@ const QuantityEditPopup = ({selectedRecipeCard, onSaveClick, onCloseClick}) => {
 function resetFieldOnLeave(value, setter) {
     if (value === "") {
         setter(0);
-    }
-}
-
-function setFieldOnEnter(value, setter) {
-    if (parseInt(value) === 0) {
-        setter("");
     }
 }
 
