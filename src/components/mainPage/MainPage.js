@@ -1,46 +1,31 @@
-import React, {Component} from 'react';
-import {InventoryManager} from "../inventory/InventoryManager";
-import {Icon} from "../shared/Icon";
-import {AddRecipePopup} from "../cookbook/CookbookManager";
+import React, {useState} from 'react';
+import {CookingPage} from "../cookingPage/CookingPage";
+import MainNavBar from "./MainNavBar";
 
-export class MainPage extends Component {
-    /* PROPS
-    *
-    * */
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedMenu : null
-        };
-    }
+const MainPage = () => {
+    const [selectedPage, setSelectedPage] = useState("cookingPage");
+    return (
+        <div>
+            <div className={"site-nav-bar"}>
+                <MainNavBar
+                    ids={["summaryPage", "cookingPage"]}
+                    names={["Summary", "Cooking"]}
+                    setSelectedPage={() => setSelectedPage}
+                />
+            </div>
+            <div className={"flex-main-container"}>
+                {renderPage(selectedPage)}
+            </div>
+        </div>
+    );
+}
 
-    setSelectedMenu(menuId) {
-        this.setState({selectedMenu : menuId});
-    }
+function renderPage(selectedPage) {
+    if (selectedPage === "summaryPage") {
 
-    render() {
-        return (
-            <>
-                <Icon
-                    id={"inventory-icon"}
-                    text={"Inventory"}
-                    onClick={i => this.setSelectedMenu(i)}
-                />
-                <Icon
-                    id={"recipe-card-icon"}
-                    text={"Add Recipe Card"}
-                    onClick={i => this.setSelectedMenu(i)}
-                />
-
-                <InventoryManager
-                    doRender={this.state.selectedMenu === "inventory-icon"}
-                    onCloseClick={() => this.setSelectedMenu(null)}
-                />
-                <AddRecipePopup
-                    doRender={this.state.selectedMenu === "recipe-card-icon"}
-                    onCloseClick={() => this.setSelectedMenu(null)}
-                />
-            </>
-        )
+    } else if (selectedPage === "cookingPage") {
+        return (<CookingPage/>);
     }
 }
+
+export default MainPage;

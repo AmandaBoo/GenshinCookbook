@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {NavBar} from "../shared/NavBar";
-import * as storage from "../../storageInterfaces/storageInterface";
+import {NavBar} from "../../shared/NavBar";
+import * as storage from "../../../storageInterfaces/storageInterface";
 import CookbookCardDisplay from "./CookbookCardDisplay";
 import QuantityEditPopup from "./QuantityEditPopup";
 

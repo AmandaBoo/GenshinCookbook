@@ -37,15 +37,8 @@ function generateTextField(data, qty, setQty) {
                 setQty(event.target.value);
                 // resetFieldIfBlank(data, event);
             }}
-            onFocus={(event) => setFieldOnEnter(event.target.value, setQty)}
-        />
+            onFocus={(event) => event.target.select()}        />
     );
-}
-
-function setFieldOnEnter(value, setter) {
-    if (parseInt(value) === 0) {
-        setter("");
-    }
 }
 
 // TODO : IMPLEMENT BLANK HANDLING

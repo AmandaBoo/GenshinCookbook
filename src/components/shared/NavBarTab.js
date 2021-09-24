@@ -1,26 +1,27 @@
 import React from 'react';
 
-export function NavBarTab (props){
-    if (props.src !== undefined) {
+export function NavBarTab ({id, src, name, isSelected, onClick}){
+    if (src !== undefined) {
        return (
             <img
                 className={
                     `inventory-nav-bar-tab-icon 
-                    ${props.isSelected ? "selected-tab" : ""}`
+                    ${isSelected ? "selected-tab" : ""}`
                 }
-                id={props.id}
-                src={props.src}
-                alt={props.src}
-                onClick={() => props.onClick(props.id)}
+                id={id}
+                src={src}
+                alt={src}
+                onClick={() => onClick(id)}
             />
         );
-    } else if (props.name !== undefined) {
+    } else if (name !== undefined) {
         return (
             <label
                 className={"site-nav-bar-links"}
-                id={props.id}
+                id={id}
+                onClick={() => onClick(id)}
             >
-                props.name
+                {name}
             </label>
        );
     }
