@@ -21,6 +21,7 @@ function renderCards(cardData) {
                 );
             }
         );
+        console.log(cardList);
         return cardList;
     }
     return null;

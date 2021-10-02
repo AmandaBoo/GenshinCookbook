@@ -14,7 +14,6 @@ export class AddRecipePopup extends Component {
         };
         this.imgSrcList = ["images/icons/foodIcon.png"];
         this.imgSrcListIds = ["food-tab"];
-        this.foodRecipes = storage.getAllFoodRecipes();
     }
 
     updateSelectedInventoryTab(tabId) {
@@ -26,7 +25,7 @@ export class AddRecipePopup extends Component {
     }
 
     filterCards() {
-        return this.foodRecipes.filter(function(value) {
+        return this.props.foodRecipes.filter(function(value) {
             return !value.hasCard;
         });
     }
@@ -54,7 +53,7 @@ export class AddRecipePopup extends Component {
         recipeCard.hasCard = true;
         recipeCard.currentProficiency = currentProficiency;
         recipeCard.want = customQty;
-        storage.saveFoodRecipes(this.foodRecipes);
+        storage.saveFoodRecipes(this.props.foodRecipes);
         this.resetSelectedRecipe();
     }
 
