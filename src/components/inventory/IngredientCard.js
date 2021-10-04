@@ -35,15 +35,10 @@ function generateTextField(data, qty, setQty) {
             onChange={event => {
                 data.qty = event.target.value;
                 setQty(event.target.value);
-                // resetFieldIfBlank(data, event);
             }}
-            onFocus={(event) => event.target.select()}        />
+            onFocus={(event) => event.target.select()}
+        />
     );
 }
-
-// TODO : IMPLEMENT BLANK HANDLING
-// function resetFieldIfBlank(ingredient, field) {
-//
-// }
 
 export default IngredientCard;
