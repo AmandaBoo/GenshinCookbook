@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {Icon} from "../shared/Icon";
-import {AddRecipePopup} from "./cookbook/CookbookManager";
 import RecipeCardDisplay from "./recipeCards/RecipeCardDisplay";
 import * as storage from "../../storageInterfaces/storageInterface";
+import SidebarDisplay from "./sidebar/SidebarDisplay";
 
 export class CookingPage extends Component {
     /* PROPS
@@ -10,14 +9,7 @@ export class CookingPage extends Component {
     * */
     constructor(props) {
         super(props);
-        this.state = {
-            selectedMenu : null
-        };
         this.recipes = storage.getAllFoodRecipes();
-    }
-
-    setSelectedMenu(menuId) {
-        this.setState({selectedMenu : menuId});
     }
 
     getRecipeCards() {
@@ -26,21 +18,14 @@ export class CookingPage extends Component {
 
     render() {
         return (
-            <>
-                <Icon
-                    id={"recipe-card-icon"}
-                    text={"Add Recipe Card"}
-                    onClick={i => this.setSelectedMenu(i)}
-                />
-                <AddRecipePopup
-                    doRender={this.state.selectedMenu === "recipe-card-icon"}
-                    onCloseClick={() => this.setSelectedMenu(null)}
-                    foodRecipes={this.recipes}
-                />
+            <div className={"cooking-page-display"}>
                 <RecipeCardDisplay
                     recipeData={this.getRecipeCards()}
                 />
-            </>
+                <SidebarDisplay
+                    recipes={this.recipes}
+                />
+            </div>
         )
     }
 }

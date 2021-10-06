@@ -30,15 +30,28 @@ body {
   padding-top: $site-nav-bar-height;
 }
 
+.cooking-page-display {
+  display: flex;
+}
+
+.sidebar-display {
+  width: 25%;
+  border-radius: 16px;
+  background-color: white;
+  margin-right:8px;
+}
+
 .recipe-card-display {
   display: flex;
+  width: 75%;
 
   .recipe-card-grid {
     $recipe-img-size: 175px;
     $ingredient-img-size: 75px;
 
     display: grid;
-    width: 50%;
+    width: 33%;
+    max-height: 300px;
     border-radius: 16px;
     background-color: white;
     margin-right:8px;
