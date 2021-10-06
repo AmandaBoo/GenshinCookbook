@@ -5,6 +5,7 @@ const RecipeIngredientMiniCard = ({ingredientData}) => {
     return (
         <div>
             <img
+                className={"recipe-ingredient-card"}
                 src={ingredientData.ingredient.src}
                 alt={ingredientData.ingredient.name}
             />

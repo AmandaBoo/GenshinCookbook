@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as storage from "./storageInterfaces/storageInterface.js";
-import "./styles.css";
+import "./newstyles.scss";
 import MainPage from "./components/mainPage/MainPage";
 
 storage.setUpLocalStorage();

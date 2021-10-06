@@ -3,7 +3,7 @@ import RecipeCard from "./RecipeCard";
 
 const RecipeCardDisplay = ({recipeData}) => {
     return (
-        <div>
+        <div className={"recipe-card-display"}>
             {renderCards(recipeData)}
         </div>
     );

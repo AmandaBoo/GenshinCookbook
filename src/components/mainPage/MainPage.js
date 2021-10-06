@@ -6,14 +6,14 @@ const MainPage = () => {
     const [selectedPage, setSelectedPage] = useState("cookingPage");
     return (
         <div>
-            <div className={"site-nav-bar"}>
+            <div className={"site-nav-bar panel"}>
                 <MainNavBar
                     ids={["summaryPage", "cookingPage"]}
                     names={["Summary", "Cooking"]}
                     setSelectedPage={() => setSelectedPage}
                 />
             </div>
-            <div className={"flex-main-container"}>
+            <div className={"sub-page-body"}>
                 {renderPage(selectedPage)}
             </div>
         </div>
