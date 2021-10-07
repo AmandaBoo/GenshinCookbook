@@ -1,7 +1,7 @@
 
 $main-font: 'Roboto', sans-serif;
 $panel-color: white;
-$bg-color: #f5f6fb;
+$background-color: #f5f6fb;
 $site-nav-bar-height: 60px;
 $white-shadow: #d4d5d9;
 $text-color: #2f3f56;
@@ -18,7 +18,7 @@ $z2-text-color: #657ef8;
 body {
   font: 100% $main-font;
   font-size: $default-font-size;
-  background-color: $bg-color;
+  background-color: $background-color;
   color: #2f3f56;
   margin: 0;
   padding: 0;
@@ -37,6 +37,7 @@ body {
 
   .nav-bar-links {
     padding: 1em;
+    cursor: pointer;
 
     &:hover {
       color: $default-hover-color;
@@ -107,10 +108,21 @@ body {
     .recipe-name {
       grid-area: top-bar;
       text-align: center;
+      border-bottom: 1px solid $white-shadow;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
     }
 
     .recipe-progress {
       grid-area: recipe-progress;
+
+      .recipe-progress-fields {
+        background-color: $background-color;
+        width: 90%;
+        border-radius: 10px;
+        padding: 0.25em;
+        text-align: center;
+      }
     }
 
     .recipe-img {
@@ -138,6 +150,7 @@ body {
       .recipe-ingredient-card {
         width: $ingredient-img-size;
         height: $ingredient-img-size;
+        cursor: pointer;
       }
 
       .ingredient-count-overlay {
@@ -153,6 +166,7 @@ body {
         bottom: 0;
         right: 0;
         left: 0;
+        cursor: pointer;
       }
     }
   }

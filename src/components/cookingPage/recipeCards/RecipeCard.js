@@ -13,8 +13,8 @@ const RecipeCard = ({recipeData}) => {
                 alt={recipeData.name}
             />
             <div className={"recipe-progress"}>
-                <p>Proficiency: {recipeData.currentProficiency}/{recipeData.rarity * 5}</p>
-                <p>Custom Qty: {recipeData.qty}/{recipeData.want}</p>
+                <p className={"recipe-progress-fields"}>Proficiency: {recipeData.currentProficiency}/{recipeData.rarity * 5}</p>
+                <p className={"recipe-progress-fields"}>Custom Qty: {recipeData.qty}/{recipeData.want}</p>
             </div>
             <div className={"recipe-ingredient-div"}>
                 {renderIngredients(recipeData.craftsFrom)}

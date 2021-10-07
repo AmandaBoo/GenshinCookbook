@@ -4,9 +4,6 @@ import * as storage from "../../storageInterfaces/storageInterface";
 import SidebarDisplay from "./sidebar/SidebarDisplay";
 
 export class CookingPage extends Component {
-    /* PROPS
-    *
-    * */
     constructor(props) {
         super(props);
         this.recipes = storage.getAllFoodRecipes();
