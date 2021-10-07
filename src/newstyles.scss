@@ -361,7 +361,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 16px;
     display: flex;
     flex-direction: column;
-    max-height: 250px;
+    max-height: 240px;
     padding: 1em;
 
     .top-bar {
@@ -399,7 +399,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .input-field-div {
-      margin: 10px 32px;
+      margin: 15px 32px 0;
       display: flex;
       flex-direction: column;
 
@@ -407,6 +407,10 @@ input[type=number]::-webkit-outer-spin-button {
         display: flex;
         justify-content: center;
       }
+    }
+
+    .modal-button {
+      margin-top: 15px;
     }
 
   }
