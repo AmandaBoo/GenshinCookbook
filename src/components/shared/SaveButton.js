@@ -6,7 +6,7 @@ const SaveButton = ({onSaveClick}) => {
         <div className="flex-center-container">
             <button
                 id={"save-btn"}
-                className={"btn"}
+                className={"modal-button"}
                 onClick={onSaveClick}
             >
                 Save and Close all Tabs

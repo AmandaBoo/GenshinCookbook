@@ -4,10 +4,11 @@ import RecipeIngredientMiniCard from "./RecipeIngredientMiniCard";
 const RecipeCard = ({recipeData}) => {
     // may need some states that help us with editing each card
     return (
-        <div className={"recipe-card-grid"}>
+        <div className={"recipe-card-grid card"}>
             <p className={"recipe-name"}>{recipeData.name}</p>
             <img
                 className={"recipe-img"}
+                style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + recipeData.rarity + '_background_cropped.jpg")'}}
                 src={recipeData.src}
                 alt={recipeData.name}
             />

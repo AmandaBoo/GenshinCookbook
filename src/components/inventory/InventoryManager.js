@@ -35,20 +35,22 @@ export class InventoryManager extends Component {
         if (this.props.doRender) {
             return (
                 <div id={"inventory-popup"} className={"modal"}>
-                    <NavBar
-                        navBarIcon={"images/icons/inventoryIcon.png"}
-                        imgSrcList={this.imgSrcList}
-                        imgSrcListIds={this.imgSrcListIds}
-                        selectedTab={this.state.selectedTab}
-                        onInventoryTabClick={tabId => this.updateSelectedInventoryTab(tabId)}
-                        onCloseClick={() => this.props.onCloseClick()}
-                    />
-                    <IngredientCardDisplay
-                        cardData={this.determineCardData()}
-                    />
-                    <SaveButton
-                        onSaveClick={() => this.onSaveClick()}
-                    />
+                    <div className={"modal-card"}>
+                        <NavBar
+                            navBarIcon={"images/icons/inventoryIcon.png"}
+                            imgSrcList={this.imgSrcList}
+                            imgSrcListIds={this.imgSrcListIds}
+                            selectedTab={this.state.selectedTab}
+                            onInventoryTabClick={tabId => this.updateSelectedInventoryTab(tabId)}
+                            onCloseClick={() => this.props.onCloseClick()}
+                        />
+                        <IngredientCardDisplay
+                            cardData={this.determineCardData()}
+                        />
+                        <SaveButton
+                            onSaveClick={() => this.onSaveClick()}
+                        />
+                    </div>
                 </div>
             );
         }

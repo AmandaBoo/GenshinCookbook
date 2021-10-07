@@ -31,13 +31,13 @@ export class NavBar extends Component {
 
     render() {
         return (
-            <div className={"inventory-nav-bar"}>
+            <div className={"modal-nav-bar"}>
                 <img
-                    className={"inventory-nav-bar-main-icon"}
+                    className={"modal-nav-bar-icon"}
                     src={this.props.navBarIcon}
                     alt={"Inventory Icon"}
                 />
-                <div className={"inventory-nav-bar-tabs"}>
+                <div>
                     {this.renderNavBarTabs()}
                 </div>
                 <CloseButton

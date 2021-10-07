@@ -5,8 +5,8 @@ export function NavBarTab ({id, src, name, isSelected, onClick}){
        return (
             <img
                 className={
-                    `inventory-nav-bar-tab-icon 
-                    ${isSelected ? "selected-tab" : ""}`
+                    `modal-nav-bar-icon
+                    ${isSelected ? "modal-nav-bar-tab-selected" : "modal-nav-bar-tab-default"}`
                 }
                 id={id}
                 src={src}
@@ -16,13 +16,16 @@ export function NavBarTab ({id, src, name, isSelected, onClick}){
         );
     } else if (name !== undefined) {
         return (
-            <label
-                className={"site-nav-bar-links"}
+            <span
+                className={
+                    `nav-bar-links
+                    ${isSelected ? "nav-bar-link-selected" : "nav-bar-link-default"}`
+                }
                 id={id}
                 onClick={() => onClick(id)}
             >
                 {name}
-            </label>
+            </span>
        );
     }
 }

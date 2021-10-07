@@ -5,7 +5,7 @@ import {Icon} from "../../shared/Icon";
 const SidebarDisplay = ({recipes}) => {
     const [selectedMenu, setSelectedMenu] = useState(null);
     return (
-        <div className={"sidebar-display"}>
+        <div className={"sidebar-display card"}>
             <Icon
                 id={"recipe-card-icon"}
                 text={"Add Recipe Card"}
