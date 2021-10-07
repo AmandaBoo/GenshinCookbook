@@ -47,7 +47,7 @@ const QuantityEditPopup = ({selectedRecipeCard, onSaveClick, onCloseClick}) => {
                     <input
                         id={"amtToCookInputField"}
                         type={"number"}
-                        value={recipeProficiency}
+                        value={customQty}
                         className={"input-field"}
                         onChange={event => {
                             setCustomQty(parseInt(event.target.value));

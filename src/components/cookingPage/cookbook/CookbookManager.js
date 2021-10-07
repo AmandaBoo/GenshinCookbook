@@ -10,7 +10,7 @@ export class AddRecipePopup extends Component {
         this.state = {
             selectedTab : "food-tab",
             pendingFoodRecipes : [],
-            selectedRecipeCard : null
+            selectedRecipeCard : null // TODO : THIS NEEDS TO COME DOWN AS A PROP OR ELSE WE DON'T MODIFY STATE
         };
         this.imgSrcList = ["images/icons/foodIcon.png"];
         this.imgSrcListIds = ["food-tab"];
@@ -32,7 +32,6 @@ export class AddRecipePopup extends Component {
 
     renderQuantityEditPopup() {
         if (this.state.selectedRecipeCard != null) {
-
             return (<QuantityEditPopup
                 selectedRecipeCard={this.state.selectedRecipeCard}
                 onSaveClick={(recipeCard, currentProf, customQty) => this.onConfirmationSaveClick(recipeCard, currentProf, customQty)}

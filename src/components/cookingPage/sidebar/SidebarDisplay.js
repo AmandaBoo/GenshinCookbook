@@ -2,8 +2,7 @@ import React, {useState} from 'react'
 import {AddRecipePopup} from "../cookbook/CookbookManager";
 import {Icon} from "../../shared/Icon";
 
-const SidebarDisplay = ({recipes}) => {
-    const [selectedMenu, setSelectedMenu] = useState(null);
+const SidebarDisplay = ({recipes, selectedMenu, setSelectedMenu}) => {
     return (
         <div className={"sidebar-display card"}>
             <Icon
