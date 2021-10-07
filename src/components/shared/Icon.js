@@ -1,12 +1,12 @@
 import React from 'react';
 
-export function Icon(props) {    
+export function Icon({onClick, id, text}) {
     return (
         <button
-            className={"btn"}
-            onClick={() => props.onClick(props.id)} 
+            className={"modal-button"}
+            onClick={() => onClick(id)}
         >
-        {props.text}
+        {text}
         </button>
     )  
 }

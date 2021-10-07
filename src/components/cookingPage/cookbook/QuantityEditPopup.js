@@ -1,60 +1,77 @@
 import React, {useState} from 'react';
 import CloseButton from "../../shared/CloseButton";
 
-// TODO : OSKAR STYLE
 const QuantityEditPopup = ({selectedRecipeCard, onSaveClick, onCloseClick}) => {
     const [curProf, setCurProf] = useState(selectedRecipeCard != null ? selectedRecipeCard.currentProficiency : 0);
     const [customQty, setCustomQty] = useState(selectedRecipeCard != null ? selectedRecipeCard.rarity * 5 : 0);
 
     const recipeProficiency = selectedRecipeCard.rarity * 5;
     return (
-        <div className={"temporary"}>
-            <CloseButton onCloseClick={() => {
-                onCloseClick();
-                resetState(setCurProf, setCustomQty);
-            }}/>
+    <div className={"edit-modal"}>
+        <div className={"edit-popup"}>
+            <div className={"top-bar"}>
+                <span>Add Recipe</span>
+                <CloseButton
+                    onCloseClick={() => {
+                        onCloseClick();
+                        resetState(setCurProf, setCustomQty);
+                    }}
+                />
+            </div>
 
-            <input
-                id={"curProfInputField"}
-                type={"number"}
-                value={curProf}
-                onChange={event => {
-                    setCurProf(parseInt(event.target.value));
-                    updateFields(recipeProficiency, event.target.value, setCurProf, setCustomQty);
-                }}
-                onFocus={(event) => event.target.select()}
-                onBlur={(event) => resetFieldOnLeave(event.target.value, setCurProf)}
-            />
-            <span> / {recipeProficiency}</span>
-            <br/>
-            <label
-                form={"curProf"}
-            >Current Proficiency
-            </label>
+            <div className={"input-field-div"}>
+                <div className={"inner-field-div"}>
+                    <input
+                        id={"curProfInputField"}
+                        type={"number"}
+                        value={curProf}
+                        className={"input-field"}
+                        onChange={event => {
+                            setCurProf(parseInt(event.target.value));
+                            updateFields(recipeProficiency, event.target.value, setCurProf, setCustomQty);
+                        }}
+                        onFocus={(event) => event.target.select()}
+                        onBlur={(event) => resetFieldOnLeave(event.target.value, setCurProf)}
+                    />
+                    <span className={"text-label"}> / {recipeProficiency}</span>
+                </div>
+                <label
+                    className={"input-label"}
+                    form={"curProf"}
+                >Current Proficiency
+                </label>
+            </div>
 
-            <br/>
+            <div className={"input-field-div"}>
+                <div className={"inner-field-div"}>
+                    <input
+                        id={"amtToCookInputField"}
+                        type={"number"}
+                        value={customQty}
+                        className={"input-field"}
+                        onChange={event => {
+                            setCustomQty(parseInt(event.target.value));
+                        }}
+                        onFocus={(event) => event.target.select()}
+                        onBlur={(event) => resetFieldOnLeave(event.target.value, setCustomQty)}
+                    />
+                </div>
+                <label
+                    className={"input-label"}
+                    form={"amtToCook"}
+                >Amount To Cook
+                </label>
+            </div>
 
-            <input
-                id={"amtToCookInputField"}
-                type={"number"}
-                value={recipeProficiency}
-                onChange={event => {
-                    setCustomQty(parseInt(event.target.value));
-                }}
-                onFocus={(event) => event.target.select()}
-                onBlur={(event) => resetFieldOnLeave(event.target.value, setCustomQty)}
-            />
-            <br/>
-            <label form={"amtToCook"}>Amount To Cook</label>
-
-            <br/>
-            <button onClick={() => {
+            <button
+                className={"modal-button"}
+                onClick={() => {
                 onSaveClick(selectedRecipeCard, curProf, customQty);
                 resetState(setCurProf, setCustomQty);
             }}>Save
             </button>
         </div>
-    );
+    </div>);
 }
 
 function resetFieldOnLeave(value, setter) {

@@ -4,16 +4,21 @@ import RecipeIngredientMiniCard from "./RecipeIngredientMiniCard";
 const RecipeCard = ({recipeData}) => {
     // may need some states that help us with editing each card
     return (
-        <div>
+        <div className={"recipe-card-grid card"}>
+            <p className={"recipe-name"}>{recipeData.name}</p>
             <img
+                className={"recipe-img"}
+                style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + recipeData.rarity + '_background_cropped.jpg")'}}
                 src={recipeData.src}
                 alt={recipeData.name}
             />
-            <p>{recipeData.name}</p>
-            <p>Proficiency: {recipeData.currentProficiency}/{recipeData.rarity * 5}</p>
-            <p>Custom Qty: {recipeData.qty}/{recipeData.want}</p>
-
-            {renderIngredients(recipeData.craftsFrom)}
+            <div className={"recipe-progress"}>
+                <p className={"recipe-progress-fields"}>Proficiency: {recipeData.currentProficiency}/{recipeData.rarity * 5}</p>
+                <p className={"recipe-progress-fields"}>Custom Qty: {recipeData.qty}/{recipeData.want}</p>
+            </div>
+            <div className={"recipe-ingredient-div"}>
+                {renderIngredients(recipeData.craftsFrom)}
+            </div>
         </div>
     );
 }

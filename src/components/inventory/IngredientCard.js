@@ -7,7 +7,7 @@ const IngredientCard = ({cardData}) => {
             <div
                 id={cardData.name}
                 className={"ingredient-card"}
-                style={{ backgroundImage: 'url("./images/backgrounds/Rarity_' + cardData.rarity + '_background.png")'}}
+                style={{ backgroundImage: 'url("./images/backgrounds/Rarity_' + cardData.rarity + '_background_cropped.jpg")'}}
             >
                 {generateImage(cardData)}
                 {generateTextField(cardData, qty, setQty)}

@@ -7,13 +7,15 @@ const MainNavBar = ({ids, names, setSelectedPage, selectedPage}) => {
     const [selectedMenu, setSelectedMenu] = useState(null);
 
     return (
-        <div>
+        <div className={"inner-nav-bar"}>
             {renderMainNavBarLinks(selectedPage, ids, setSelectedPage, names)}
-            <Icon
-                id={"inventory-icon"}
-                text={"Inventory"}
-                onClick={id => setSelectedMenu(id)}
-            />
+            <div className={"inventory-icon"}>
+                <Icon
+                    id={"inventory-icon"}
+                    text={"Inventory"}
+                    onClick={id => setSelectedMenu(id)}
+                />
+            </div>
             <InventoryManager
                 doRender={selectedMenu === "inventory-icon"}
                 onCloseClick={() => setSelectedMenu(null)}
