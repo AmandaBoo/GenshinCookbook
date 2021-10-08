@@ -6,9 +6,9 @@ import SidebarDisplay from "./sidebar/SidebarDisplay";
 export class CookingPage extends Component {
     constructor(props) {
         super(props);
-        this.recipes = storage.getAllFoodRecipes();
         this.state = {
-            selectedMenu: null
+            selectedMenu: null,
+            recipes: storage.getAllFoodRecipes()
         }
     }
 
@@ -17,17 +17,25 @@ export class CookingPage extends Component {
     }
 
     getRecipeCards() {
-        return this.recipes.filter(card => card.hasCard);
+        return this.state.recipes.filter(card => card.hasCard);
+    }
+
+    removeRecipeCard(recipeCard) {
+        recipeCard.hasCard = false;
+        recipeCard.want = 0;
+        storage.saveFoodRecipes([recipeCard]);
+        this.setState({recipes: storage.getAllFoodRecipes()});
     }
 
     render() {
         return (
             <div className={"cooking-page-display"}>
                 <RecipeCardDisplay
-                    recipeData={this.getRecipeCards()}
+                    allRecipes={this.getRecipeCards()}
+                    removeRecipeCard={card => this.removeRecipeCard(card)}
                 />
                 <SidebarDisplay
-                    recipes={this.recipes}
+                    recipes={this.state.recipes}
                     selectedMenu={this.state.selectedMenu}
                     setSelectedMenu={id => this.setSelectedMenu(id)}
                 />

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // TODO : FIX THE STYLING... NOT SURE IF FLEX CONTAINER IS RIGHT
-const SaveButton = ({onSaveClick}) => {
+const SaveButton = ({saveText = "Save", onSaveClick}) => {
     return (
         <div className="flex-center-container">
             <button
@@ -9,7 +9,7 @@ const SaveButton = ({onSaveClick}) => {
                 className={"modal-button"}
                 onClick={onSaveClick}
             >
-                Save and Close all Tabs
+                {saveText}
             </button>
         </div>
     )

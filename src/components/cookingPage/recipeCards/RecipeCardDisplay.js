@@ -1,26 +1,26 @@
 import React from 'react';
 import RecipeCard from "./RecipeCard";
 
-const RecipeCardDisplay = ({recipeData}) => {
+const RecipeCardDisplay = ({allRecipes, removeRecipeCard}) => {
     return (
         <div className={"recipe-card-display"}>
-            {renderCards(recipeData)}
+            {renderCards(allRecipes, removeRecipeCard)}
         </div>
     );
 }
 
-function renderCards(recipeData) {
+function renderCards(allRecipes, removeRecipeCard) {
     let cardList = [];
-    if (recipeData !== undefined) {
-        recipeData.forEach(data => {
-                // TODO : FIX UNIQUE KEY PROP WARNING
-                cardList.push(
-                    <RecipeCard
-                        recipeData={data}
-                    />
-                );
-            }
-        );
+    if (allRecipes !== undefined) {
+        allRecipes.forEach(data => {
+            // TODO : FIX UNIQUE KEY PROP WARNING
+            cardList.push(
+                <RecipeCard
+                    recipeData={data}
+                    onCardDelete={card => removeRecipeCard(card)}
+                />
+            );
+        });
         return cardList;
     }
     return null;
