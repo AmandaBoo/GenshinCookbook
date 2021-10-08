@@ -12,7 +12,7 @@ const MiniIngredientCard = ({ingredientData, qtyRequired}) => {
             />
             <div
                 className={"ingredient-count-overlay"}
-            > YAY : {qtyRequired}
+            > {qtyRequired}
             </div>
         </div>
     )

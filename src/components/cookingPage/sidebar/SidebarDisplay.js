@@ -6,17 +6,19 @@ import GroceryDisplay from "./grocery/GroceryDisplay";
 const SidebarDisplay = ({recipes, rawIngredientsMap, craftedIngredientsMap, selectedMenu, setSelectedMenu}) => {
     return (
         <div className={"sidebar-display card"}>
-            <Icon
-                id={"recipe-card-icon"}
-                text={"Add Recipe Card"}
-                onClick={i => setSelectedMenu(i)}
-            />
+            <div className={"add-recipe-button-div"}>
+                <Icon
+                    id={"recipe-card-icon"}
+                    text={"Add Recipe Card"}
+                    onClick={i => setSelectedMenu(i)}
+                />
+            </div>
             <AddRecipePopup
                 doRender={selectedMenu === "recipe-card-icon"}
                 onCloseClick={() => setSelectedMenu(null)}
                 foodRecipes={recipes}
             />
-            <div>
+            <div className={"grocery-div"}>
                 <GroceryDisplay
                     rawIngredientsMap={rawIngredientsMap}
                     craftedIngredientsMap={craftedIngredientsMap}

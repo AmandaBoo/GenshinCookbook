@@ -14,7 +14,7 @@ const GroceryDisplay = ({rawIngredientsMap, craftedIngredientsMap})=> {
                 ingredientsMap={filterIngredients(rawIngredientsMap, craftedIngredientsMap, "shop")}
             />
             <GroceryItemsDisplay
-                topBarText={"BOTH"}
+                topBarText={"SHOP + FORAGE"}
                 ingredientsMap={filterIngredients(rawIngredientsMap, craftedIngredientsMap, "both")}
             />
         </div>

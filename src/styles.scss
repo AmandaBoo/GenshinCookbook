@@ -75,16 +75,40 @@ body {
 
 .sidebar-display {
   width: 25%;
-  border-radius: 16px;
-  background-color: white;
   margin-right:8px;
+  padding-bottom: 10px;
 
-  .grocery-list-cards-div {
-
+  .add-recipe-button-div {
+    border-radius: 16px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 10px;
   }
 
-  .grocery-list-top-bar {
+  .grocery-div {
+    border-radius: 16px;
+    background-color: white;
 
+    .grocery-list-top-bar {
+      color: $default-color;
+      text-align: center;
+      border-bottom: 1px solid $default-color;
+      margin-left: 15%;
+      margin-right: 15%;
+      padding: 1em;
+    }
+
+    .grocery-list-cards-div {
+      display: flex;
+      justify-content: center;
+      min-height: 20px;
+      padding-bottom: 15px;
+      padding-left: 5px;
+      margin-top: 15px;
+    }
   }
 
 }

@@ -16,7 +16,6 @@ export class CookingPage extends Component {
     }
 
     getRecipeCards() {
-        console.log(this.props);
         return this.props.recipes.filter(card => card.hasCard);
     }
 
@@ -86,7 +85,7 @@ export class CookingPage extends Component {
                     recipes={this.props.recipes}
                     rawIngredientsMap={this.createRawIngredientsMap()}
                     craftedIngredientsMap={this.createCraftedIngredientsMap()}
-                    selectedMenu={this.props.selectedMenu}
+                    selectedMenu={this.state.selectedMenu}
                     setSelectedMenu={id => this.setSelectedMenu(id)}
                 />
             </div>
