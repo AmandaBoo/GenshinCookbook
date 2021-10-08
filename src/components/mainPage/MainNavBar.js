@@ -3,7 +3,7 @@ import {NavBarTab} from "../shared/NavBarTab";
 import {Icon} from "../shared/Icon";
 import {InventoryManager} from "../inventory/InventoryManager";
 
-const MainNavBar = ({ids, names, setSelectedPage, selectedPage}) => {
+const MainNavBar = ({ids, names, setSelectedPage, selectedPage, onInventorySave}) => {
     const [selectedMenu, setSelectedMenu] = useState(null);
 
     return (
@@ -19,6 +19,7 @@ const MainNavBar = ({ids, names, setSelectedPage, selectedPage}) => {
             <InventoryManager
                 doRender={selectedMenu === "inventory-icon"}
                 onCloseClick={() => setSelectedMenu(null)}
+                onSaveClick={() => onInventorySave()}
             />
         </div>
     );
