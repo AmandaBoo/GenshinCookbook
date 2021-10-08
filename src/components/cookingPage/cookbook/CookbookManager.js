@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {NavBar} from "../../shared/NavBar";
 import * as storage from "../../../storageInterfaces/storageInterface";
 import CookbookCardDisplay from "./CookbookCardDisplay";
-import QuantityEditPopup from "./QuantityEditPopup";
+import RecipeQtyEditPopup from "./shared/RecipeQtyEditPopup";
 
 export class AddRecipePopup extends Component {
     constructor(props) {
@@ -32,11 +32,14 @@ export class AddRecipePopup extends Component {
 
     renderQuantityEditPopup() {
         if (this.state.selectedRecipeCard != null) {
-            return (<QuantityEditPopup
-                selectedRecipeCard={this.state.selectedRecipeCard}
-                onSaveClick={(recipeCard, currentProf, customQty) => this.onConfirmationSaveClick(recipeCard, currentProf, customQty)}
-                onCloseClick={() => this.onConfirmationCloseClick()}
-            />);
+            return (
+                <RecipeQtyEditPopup
+                    topBarText={"Add Recipe"}
+                    selectedRecipeCard={this.state.selectedRecipeCard}
+                    onSaveClick={(recipeCard, currentProf, customQty) => this.onConfirmationSaveClick(recipeCard, currentProf, customQty)}
+                    onCloseClick={() => this.onConfirmationCloseClick()}
+                />
+            );
         }
     }
 

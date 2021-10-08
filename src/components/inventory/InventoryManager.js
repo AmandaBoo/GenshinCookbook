@@ -48,6 +48,7 @@ export class InventoryManager extends Component {
                             cardData={this.determineCardData()}
                         />
                         <SaveButton
+                            saveText={"Save and Close All Tabs"}
                             onSaveClick={() => this.onSaveClick()}
                         />
                     </div>

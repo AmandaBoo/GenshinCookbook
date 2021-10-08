@@ -47,11 +47,13 @@ export function setFoodRecipesInLocalStorage(foodRecipes) {
     let foodRecipesJSON = getFoodRecipesFromLocalStorage();
     foodRecipesJSON.forEach(recipe => {
         let foodRecipe = foodRecipes.find(ele => ele.name === recipe.name);
-        recipe.hasCard = foodRecipe.hasCard;
-        recipe.qty = foodRecipe.qty;
-        recipe.want = foodRecipe.want;
-        recipe.currentProficiency = foodRecipe.currentProficiency;
-        recipe.mastery = foodRecipe.mastery;
+        if (foodRecipe !== undefined) {
+            recipe.hasCard = foodRecipe.hasCard;
+            recipe.qty = foodRecipe.qty;
+            recipe.want = foodRecipe.want;
+            recipe.currentProficiency = foodRecipe.currentProficiency;
+            recipe.mastery = foodRecipe.mastery;
+        }
     });
     localStorage.foodRecipes = JSON.stringify(foodRecipesJSON);
 }

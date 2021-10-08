@@ -96,7 +96,7 @@ body {
 
     display: grid;
     width: 350px;
-    max-height: 310px;
+    max-height: 330px;
     border-radius: 16px;
     background-color: white;
     margin-right: 8px;
@@ -105,12 +105,25 @@ body {
     "main-img recipe-progress"
     "ingredients ingredients";
 
-    .recipe-name {
+    .recipe-top-bar {
       grid-area: top-bar;
-      text-align: center;
+      display: flex;
+      justify-content: center;
       border-bottom: 1px solid $white-shadow;
       margin-left: 0.5em;
       margin-right: 0.5em;
+      padding: 1em 1em 0.25em;
+
+      .recipe-name {
+        width: 80%;
+        text-align: center;
+      }
+
+      .button {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
     }
 
     .recipe-progress {
@@ -338,15 +351,15 @@ input[type=number]::-webkit-outer-spin-button {
   transition: all .1s ease-in-out;
 
   &:hover {
-    background-color: #657ef8;
+    background-color: $z2-text-color;
     color: #fff;
   }
 }
 
-.edit-modal {
+.message-modal {
   position: fixed;
   z-index: 1;
-  padding-top: 150px;
+  padding-top: 200px;
   left: 0;
   top: 0;
   display: flex;
@@ -355,6 +368,19 @@ input[type=number]::-webkit-outer-spin-button {
   height: 100%;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
+
+  .delete-popup {
+    background-color: white;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    max-height: 150px;
+    padding: 1em 2em;
+
+    .top-bar {
+      float: right;
+    }
+  }
 
   .edit-popup {
     background-color: white;
@@ -368,22 +394,6 @@ input[type=number]::-webkit-outer-spin-button {
       border-bottom: 1px solid $white-shadow;
       padding: 16px;
       font-weight: bold;
-    }
-
-    .close {
-      color: $default-color;
-      font-size: 30px;
-      font-weight: bold;
-      width: 30px;
-      height: 30px;
-      text-align: center;
-      margin-top: -12px;
-      cursor: pointer;
-
-      &:hover {
-        color: $default-hover-color;
-        background-color: white;
-      }
     }
 
     .input-field {
@@ -410,10 +420,29 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .modal-button {
+      width: 100%;
       margin-top: 15px;
     }
 
   }
+
+  .close {
+    color: $default-color;
+    font-size: 30px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin-top: -12px;
+    float: right;
+    cursor: pointer;
+
+    &:hover {
+      color: $default-hover-color;
+      background-color: white;
+    }
+  }
+
 }
 
 .mini-card {
