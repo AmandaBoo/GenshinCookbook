@@ -8,7 +8,6 @@ export class CookingPage extends Component {
         super(props);
         this.state = {
             selectedMenu: null,
-            recipes: storage.getAllFoodRecipes()
         }
     }
 
@@ -17,7 +16,7 @@ export class CookingPage extends Component {
     }
 
     getRecipeCards() {
-        return this.state.recipes.filter(card => card.hasCard);
+        return this.props.recipes.filter(card => card.hasCard);
     }
 
     removeRecipeCard(recipeCard) {
@@ -34,6 +33,46 @@ export class CookingPage extends Component {
         this.setState({recipes: storage.getAllFoodRecipes()});
     }
 
+    createRawIngredientsMap() {
+        let ingredientMap = new Map();
+        this.props.recipes.forEach(recipe => {
+            if (recipe.hasCard) { // TODO : ADD DISABLE FILTERING HERE
+                recipe.craftsFrom.forEach(subRecipe => {
+                    subRecipe[0].raw.forEach(entry => {
+                        let qtyLeftToObtain;
+                        if (ingredientMap.get(entry.ingredient)) {
+                            qtyLeftToObtain = (ingredientMap.get(entry.ingredient) + (entry.qtyRequired * recipe.want)) - entry.ingredient.qty;
+                        } else {
+                            qtyLeftToObtain = (entry.qtyRequired * recipe.want) - entry.ingredient.qty;
+                        }
+                        qtyLeftToObtain < 0 ? ingredientMap.set(entry.ingredient, 0) : ingredientMap.set(entry.ingredient, qtyLeftToObtain);
+                    });
+                });
+            }
+        });
+        return ingredientMap;
+    }
+
+    createCraftedIngredientsMap() {
+        let ingredientMap = new Map();
+        this.props.recipes.forEach(recipe => {
+            if (recipe.hasCard) {
+                recipe.craftsFrom.forEach(subRecipe => {
+                    subRecipe[1].crafted.forEach(entry => {
+                        let qtyLeftToObtain;
+                        if (ingredientMap.get(entry.ingredient)) {
+                            qtyLeftToObtain = (ingredientMap.get(entry.ingredient) + (entry.qtyRequired * recipe.want)) - entry.ingredient.qty;
+                        } else {
+                            qtyLeftToObtain = (entry.qtyRequired * recipe.want) - entry.ingredient.qty;
+                        }
+                        qtyLeftToObtain < 0 ? ingredientMap.set(entry.ingredient, 0) : ingredientMap.set(entry.ingredient, qtyLeftToObtain);
+                    });
+                });
+            }
+        })
+        return ingredientMap;
+    }
+
     render() {
         return (
             <div className={"cooking-page-display"}>
@@ -43,7 +82,9 @@ export class CookingPage extends Component {
                     editRecipeCard={(card, curProf, customQty) => this.editRecipeCard(card, curProf, customQty)}
                 />
                 <SidebarDisplay
-                    recipes={this.state.recipes}
+                    recipes={this.props.recipes}
+                    rawIngredientsMap={this.createRawIngredientsMap()}
+                    craftedIngredientsMap={this.createCraftedIngredientsMap()}
                     selectedMenu={this.state.selectedMenu}
                     setSelectedMenu={id => this.setSelectedMenu(id)}
                 />

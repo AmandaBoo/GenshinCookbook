@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import CloseButton from "../../../shared/CloseButton";
-import SaveButton from "../../../shared/SaveButton";
+import CloseButton from "../../shared/CloseButton";
+import SaveButton from "../../shared/SaveButton";
 
 const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onCloseClick}) => {
     // TODO : THE CARD THAT'S BEING SENT IN STILL HAS OLD DATA

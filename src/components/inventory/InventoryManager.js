@@ -28,6 +28,7 @@ export class InventoryManager extends Component {
 
     onSaveClick() {
         storage.saveIngredients(this.rawIngredients, this.foodIngredients);
+        this.props.onSaveClick();
         this.props.onCloseClick();
     }
 

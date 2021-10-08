@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import RecipeIngredientMiniCard from "./RecipeIngredientMiniCard";
-import RecipeQtyEditPopup from "../cookbook/shared/RecipeQtyEditPopup";
-import DeleteConfirmationPopup from "../cookbook/shared/DeleteConfirmationPopup";
+import MiniIngredientCard from "../shared/MiniIngredientCard";
+import RecipeQtyEditPopup from "../shared/RecipeQtyEditPopup";
+import DeleteConfirmationPopup from "../shared/DeleteConfirmationPopup";
 
 const RecipeCard = ({recipeData, onCardDelete, onCardEdit}) => {
     const [popup, setPopup] = useState(null);
@@ -67,8 +67,8 @@ function renderIngredients(ingredientsArray) {
             // raw ingredients
             arr[0].raw.forEach(ing => {
                 ingredientsList.push(
-                    <RecipeIngredientMiniCard
-                        ingredientData={ing}
+                    <MiniIngredientCard
+                        ingredientData={ing.ingredient}
                     />
                 );
             })
@@ -76,8 +76,8 @@ function renderIngredients(ingredientsArray) {
             // crafted ingredients
             arr[1].crafted.forEach(ing => {
                 ingredientsList.push(
-                    <RecipeIngredientMiniCard
-                        ingredientData={ing}
+                    <MiniIngredientCard
+                        ingredientData={ing.ingredient}
                     />
                 );
             })
