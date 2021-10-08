@@ -1,17 +1,16 @@
 import React, {useState} from 'react';
 import RecipeIngredientMiniCard from "./RecipeIngredientMiniCard";
 import RecipeQtyEditPopup from "../cookbook/shared/RecipeQtyEditPopup";
-import * as storage from "../../../storageInterfaces/storageInterface";
 import DeleteConfirmationPopup from "../cookbook/shared/DeleteConfirmationPopup";
 
-const RecipeCard = ({recipeData, onCardDelete}) => {
+const RecipeCard = ({recipeData, onCardDelete, onCardEdit}) => {
     const [popup, setPopup] = useState(null);
 
     return (
         <div className={"recipe-card-grid card"}>
             {createTopBar(recipeData, setPopup)}
             {createRecipeCardBody(recipeData)}
-            {renderQuantityEditPopup(popup, setPopup, recipeData)}
+            {renderQuantityEditPopup(popup, setPopup, recipeData, onCardEdit)}
             {renderDeleteConfirmationPopup(popup, setPopup, recipeData, onCardDelete)}
         </div>
     );
@@ -89,26 +88,20 @@ function renderIngredients(ingredientsArray) {
     return null;
 }
 
-function renderQuantityEditPopup(popup, setPopup, recipeCard) {
+function renderQuantityEditPopup(popup, setPopup, recipeCard, onCardEdit) {
     if (popup === "edit") {
         return (
             <RecipeQtyEditPopup
                 topBarText={"Edit Recipe"}
                 selectedRecipeCard={recipeCard}
                 onSaveClick={(recipeCard, currentProf, customQty) => {
-                    onEditSaveClick(recipeCard, currentProf, customQty);
+                    onCardEdit(recipeCard, currentProf, customQty);
                     onCloseClick(setPopup);
                 }}
                 onCloseClick={() => onCloseClick(setPopup)}
             />
         );
     }
-}
-
-function onEditSaveClick(recipeCard, currentProficiency, customQty) {
-    recipeCard.currentProficiency = currentProficiency;
-    recipeCard.want = customQty;
-    storage.saveFoodRecipes([recipeCard]);
 }
 
 function renderDeleteConfirmationPopup(popup, setPopup, recipeCard, onCardDelete) {

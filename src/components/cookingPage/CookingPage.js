@@ -27,12 +27,20 @@ export class CookingPage extends Component {
         this.setState({recipes: storage.getAllFoodRecipes()});
     }
 
+    editRecipeCard(recipeCard, currentProficiency, customQty) {
+        recipeCard.currentProficiency = currentProficiency;
+        recipeCard.want = customQty;
+        storage.saveFoodRecipes([recipeCard]);
+        this.setState({recipes: storage.getAllFoodRecipes()});
+    }
+
     render() {
         return (
             <div className={"cooking-page-display"}>
                 <RecipeCardDisplay
                     allRecipes={this.getRecipeCards()}
                     removeRecipeCard={card => this.removeRecipeCard(card)}
+                    editRecipeCard={(card, curProf, customQty) => this.editRecipeCard(card, curProf, customQty)}
                 />
                 <SidebarDisplay
                     recipes={this.state.recipes}

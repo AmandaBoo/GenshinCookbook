@@ -48,10 +48,11 @@ export function setFoodRecipesInLocalStorage(foodRecipes) {
     foodRecipesJSON.forEach(recipe => {
         let foodRecipe = foodRecipes.find(ele => ele.name === recipe.name);
         if (foodRecipe !== undefined) {
+            console.log(recipe);
             recipe.hasCard = foodRecipe.hasCard;
             recipe.qty = foodRecipe.qty;
             recipe.want = foodRecipe.want;
-            recipe.currentProficiency = foodRecipe.currentProficiency;
+            recipe.curProf = foodRecipe.currentProficiency;
             recipe.mastery = foodRecipe.mastery;
         }
     });
