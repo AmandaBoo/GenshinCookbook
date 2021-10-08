@@ -5,33 +5,38 @@ const GroceryDisplay = ({rawIngredientsMap, craftedIngredientsMap})=> {
 
     return (
         <div className={"sidebar-card-display"}>
-            {/*forage only*/}
             <GroceryItemsDisplay
-                ingredientsMap={getForageOnlyIngredients(rawIngredientsMap, craftedIngredientsMap)}
+                topBarText={"FORAGE"}
+                ingredientsMap={filterIngredients(rawIngredientsMap, craftedIngredientsMap, "forage")}
             />
-            {/*shop only*/}
-            {/*<GroceryItemsDisplay*/}
-            {/*    ingredients={getShopOnlyIngredients(rawIngredientsMap, craftedIngredientsMap)}*/}
-            {/*/>*/}
-            {/*/!*forage + shop*!/*/}
-            {/*<GroceryItemsDisplay*/}
-            {/*    ingredients={getForageAndShopIngredients(rawIngredientsMap, craftedIngredientsMap)}*/}
-            {/*/>*/}
+            <GroceryItemsDisplay
+                topBarText={"SHOP"}
+                ingredientsMap={filterIngredients(rawIngredientsMap, craftedIngredientsMap, "shop")}
+            />
+            <GroceryItemsDisplay
+                topBarText={"BOTH"}
+                ingredientsMap={filterIngredients(rawIngredientsMap, craftedIngredientsMap, "both")}
+            />
         </div>
     )
 };
 
-function getForageOnlyIngredients(rawIngredientsMap, craftedIngredientsMap) {
-    // look for forage + both tag
-    return rawIngredientsMap;
-}
+function filterIngredients(rawIngredientsMap, craftedIngredientsMap, obtainedBy) {
+    let filteredIngredientsMap = new Map();
 
-function getShopOnlyIngredients(rawIngredientsMap, craftedIngredientsMap) {
-    // look for shop + both tag
-}
+    rawIngredientsMap.forEach((qty, ingredient) => {
+        if (ingredient.obtainedBy === obtainedBy) {
+            filteredIngredientsMap.set(ingredient, qty);
+        }
+    });
 
-function getForageAndShopIngredients(rawIngredientsMap, craftedIngredientsMap) {
-    // look for both tag
+    craftedIngredientsMap.forEach((qty, ingredient) => {
+        if (ingredient.obtainedBy === obtainedBy) {
+            filteredIngredientsMap.set(ingredient, qty);
+        }
+    });
+
+    return filteredIngredientsMap;
 }
 
 export default GroceryDisplay;

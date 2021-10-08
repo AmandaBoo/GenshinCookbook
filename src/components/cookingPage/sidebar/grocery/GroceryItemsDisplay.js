@@ -1,16 +1,24 @@
 import React from 'react';
 import MiniIngredientCard from "../../shared/MiniIngredientCard";
 
-const GroceryItemsDisplay = ({ingredientsMap}) => {
+const GroceryItemsDisplay = ({ingredientsMap, topBarText}) => {
     return (
         <div>
-            {renderIngredients(ingredientsMap)}
+            {renderTopBar(topBarText)}
+            <div>
+                {renderIngredients(ingredientsMap)}
+            </div>
         </div>
     )
 };
 
-function renderIngredients(ingredientsMap) {
+function renderTopBar(topBarText) {
+    return (
+        <div>{topBarText}</div>
+    );
+}
 
+function renderIngredients(ingredientsMap) {
     let ingredientCards = [];
     if (ingredientsMap !== undefined) {
         ingredientsMap.forEach((qtyRequired, recipeObj) => {

@@ -95,7 +95,7 @@ body {
 
     display: grid;
     width: 350px;
-    max-height: 330px;
+    max-height: 310px;
     border-radius: 16px;
     background-color: white;
     margin-right: 8px;
@@ -153,6 +153,10 @@ body {
       justify-content: center;
       grid-area: ingredients;
       padding-left: 5px;
+
+      .ingredient-count-overlay {
+        margin-bottom: 8px;
+      }
     }
   }
 }
@@ -433,7 +437,7 @@ input[type=number]::-webkit-outer-spin-button {
   .ingredient-count-overlay {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     width: $ingredient-img-size;
     position: absolute;
     text-align: center;
