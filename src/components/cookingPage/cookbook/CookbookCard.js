@@ -4,7 +4,7 @@ const CookbookCard = ({cardData, onCardClick}) => {
     return (
         <div
             id={cardData.name}
-            className={"add-recipe-card"}
+            className={"cookbook-card"}
             style={{ backgroundImage: 'url("./images/backgrounds/Rarity_' + cardData.rarity + '_background_cropped.jpg")'}}
             onClick={onCardClick}
         >

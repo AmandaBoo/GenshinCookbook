@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {AddRecipePopup} from "../cookbook/CookbookManager";
 import {Icon} from "../../shared/Icon";
+import GroceryDisplay from "./grocery/GroceryDisplay";
 
-const SidebarDisplay = ({recipes, selectedMenu, setSelectedMenu}) => {
+const SidebarDisplay = ({recipes, rawIngredientsMap, craftedIngredientsMap, selectedMenu, setSelectedMenu}) => {
     return (
         <div className={"sidebar-display card"}>
             <Icon
@@ -15,10 +16,12 @@ const SidebarDisplay = ({recipes, selectedMenu, setSelectedMenu}) => {
                 onCloseClick={() => setSelectedMenu(null)}
                 foodRecipes={recipes}
             />
-            {/*    cooking pot*/}
-            <div>COOKING POT HERE</div>
-            {/*    grocery display*/}
-            <div>GROCERY LIST HERE</div>
+            <div>
+                <GroceryDisplay
+                    rawIngredientsMap={rawIngredientsMap}
+                    craftedIngredientsMap={craftedIngredientsMap}
+                />
+            </div>
         </div>
     )
 }

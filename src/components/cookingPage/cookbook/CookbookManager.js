@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {NavBar} from "../../shared/NavBar";
 import * as storage from "../../../storageInterfaces/storageInterface";
 import CookbookCardDisplay from "./CookbookCardDisplay";
-import RecipeQtyEditPopup from "./shared/RecipeQtyEditPopup";
+import RecipeQtyEditPopup from "../shared/RecipeQtyEditPopup";
 
 export class AddRecipePopup extends Component {
     constructor(props) {
