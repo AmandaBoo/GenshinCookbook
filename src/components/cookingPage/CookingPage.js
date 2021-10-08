@@ -8,7 +8,6 @@ export class CookingPage extends Component {
         super(props);
         this.state = {
             selectedMenu: null,
-            recipes: storage.getAllFoodRecipes()
         }
     }
 
@@ -17,7 +16,8 @@ export class CookingPage extends Component {
     }
 
     getRecipeCards() {
-        return this.state.recipes.filter(card => card.hasCard);
+        console.log(this.props);
+        return this.props.recipes.filter(card => card.hasCard);
     }
 
     removeRecipeCard(recipeCard) {
@@ -36,7 +36,7 @@ export class CookingPage extends Component {
 
     createRawIngredientsMap() {
         let ingredientMap = new Map();
-        this.state.recipes.forEach(recipe => {
+        this.props.recipes.forEach(recipe => {
             if (recipe.hasCard) { // TODO : ADD DISABLE FILTERING HERE
                 recipe.craftsFrom.forEach(subRecipe => {
                     subRecipe[0].raw.forEach(entry => {
@@ -56,7 +56,7 @@ export class CookingPage extends Component {
 
     createCraftedIngredientsMap() {
         let ingredientMap = new Map();
-        this.state.recipes.forEach(recipe => {
+        this.props.recipes.forEach(recipe => {
             if (recipe.hasCard) {
                 recipe.craftsFrom.forEach(subRecipe => {
                     subRecipe[1].crafted.forEach(entry => {
@@ -83,10 +83,10 @@ export class CookingPage extends Component {
                     editRecipeCard={(card, curProf, customQty) => this.editRecipeCard(card, curProf, customQty)}
                 />
                 <SidebarDisplay
-                    recipes={this.state.recipes}
+                    recipes={this.props.recipes}
                     rawIngredientsMap={this.createRawIngredientsMap()}
                     craftedIngredientsMap={this.createCraftedIngredientsMap()}
-                    selectedMenu={this.state.selectedMenu}
+                    selectedMenu={this.props.selectedMenu}
                     setSelectedMenu={id => this.setSelectedMenu(id)}
                 />
             </div>

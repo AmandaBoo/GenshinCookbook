@@ -78,6 +78,15 @@ body {
   border-radius: 16px;
   background-color: white;
   margin-right:8px;
+
+  .grocery-list-cards-div {
+
+  }
+
+  .grocery-list-top-bar {
+
+  }
+
 }
 
 .card {
@@ -449,6 +458,7 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
   }
 }
+
 
 ::-webkit-scrollbar {
   width: 16px;

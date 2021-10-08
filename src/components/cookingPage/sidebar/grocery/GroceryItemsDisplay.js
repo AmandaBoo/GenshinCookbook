@@ -5,7 +5,7 @@ const GroceryItemsDisplay = ({ingredientsMap, topBarText}) => {
     return (
         <div>
             {renderTopBar(topBarText)}
-            <div>
+            <div className={"grocery-list-cards-div"}>
                 {renderIngredients(ingredientsMap)}
             </div>
         </div>
@@ -14,7 +14,9 @@ const GroceryItemsDisplay = ({ingredientsMap, topBarText}) => {
 
 function renderTopBar(topBarText) {
     return (
-        <div>{topBarText}</div>
+        <div className={"grocery-list-top-bar"}>
+            {topBarText}
+        </div>
     );
 }
 
