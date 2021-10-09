@@ -1,9 +1,10 @@
 import * as localInterface from "./localInterface.js"
 import * as serverInterface from "./serverSideInterface.js";
 
-import {RawIngredient} from "../classes/rawIngredient.js";
-import {CraftedFoodIngredient} from "../classes/craftedFoodIngredient.js";
+import {RawIngredient} from "../classes/ingredients/rawIngredient.js";
+import {CraftedFoodIngredient} from "../classes/ingredients/craftedFoodIngredient.js";
 import {FoodRecipe} from "../classes/foodRecipe.js";
+import {IngredientAndQtyToObtainDto} from "../classes/dtos/ingredientAndQtyToObtain";
 
 export function setUpLocalStorage() {
     localInterface.setUpLocalStorage();
@@ -109,6 +110,38 @@ function mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, reci
         allRawAndCraftedRecipes.push(rawAndCraftTemp);
     }
     return allRawAndCraftedRecipes;
+}
+
+export function getIngredientToObtainDTOList(recipes, ingredientType) {
+    let ingredientDTOList = [];
+    let ingredientMap = new Map();
+    recipes.forEach(recipe => {
+        if (recipe.hasCard && recipe.enabled) {
+            recipe.craftsFrom.forEach(subRecipe => {
+                let subRecipeIngredientList;
+                if (ingredientType === "raw") {
+                    subRecipeIngredientList = subRecipe[0].raw;
+                } else if (ingredientType === "crafted") {
+                    subRecipeIngredientList = subRecipe[1].crafted;
+                }
+                subRecipeIngredientList.forEach(entry => {
+                    let qtyLeftToObtain;
+                    if (ingredientMap.get(entry.ingredient)) {
+                        qtyLeftToObtain = (ingredientMap.get(entry.ingredient) + (entry.qtyRequired * recipe.want)) - entry.ingredient.qty;
+                    } else {
+                        qtyLeftToObtain = (entry.qtyRequired * recipe.want) - entry.ingredient.qty;
+                    }
+                    qtyLeftToObtain < 0 ? ingredientMap.set(entry.ingredient, 0) : ingredientMap.set(entry.ingredient, qtyLeftToObtain);
+                });
+            });
+        }
+    });
+
+    ingredientMap.forEach((value, key) => {
+        ingredientDTOList.push(new IngredientAndQtyToObtainDto(key, value));
+    });
+
+    return ingredientDTOList;
 }
 
 export function saveIngredients(rawIngredients, foodIngredients) {

@@ -3,7 +3,7 @@ import {AddRecipePopup} from "../cookbook/CookbookManager";
 import {Icon} from "../../shared/Icon";
 import GroceryDisplay from "./grocery/GroceryDisplay";
 
-const SidebarDisplay = ({recipes, rawIngredientsMap, craftedIngredientsMap, selectedMenu, setSelectedMenu}) => {
+const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOList, selectedMenu, setSelectedMenu}) => {
     return (
         <div className={"sidebar-display card"}>
             <div className={"add-recipe-button-div"}>
@@ -20,8 +20,8 @@ const SidebarDisplay = ({recipes, rawIngredientsMap, craftedIngredientsMap, sele
             />
             <div className={"grocery-div"}>
                 <GroceryDisplay
-                    rawIngredientsMap={rawIngredientsMap}
-                    craftedIngredientsMap={craftedIngredientsMap}
+                    rawIngredientsDTOList={rawIngredientsDTOList}
+                    craftedIngredientsDTOList={craftedIngredientsDTOList}
                 />
             </div>
         </div>

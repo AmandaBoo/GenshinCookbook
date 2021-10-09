@@ -1,42 +1,39 @@
 import React from 'react';
 import GroceryItemsDisplay from "./GroceryItemsDisplay";
 
-const GroceryDisplay = ({rawIngredientsMap, craftedIngredientsMap})=> {
+const GroceryDisplay = ({rawIngredientsDTOList, craftedIngredientsDTOList})=> {
 
     return (
         <div className={"sidebar-card-display"}>
             <GroceryItemsDisplay
                 topBarText={"FORAGE"}
-                ingredientsMap={filterIngredients(rawIngredientsMap, craftedIngredientsMap, "forage")}
+                ingredientsMap={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "forage")}
             />
             <GroceryItemsDisplay
                 topBarText={"SHOP"}
-                ingredientsMap={filterIngredients(rawIngredientsMap, craftedIngredientsMap, "shop")}
+                ingredientsMap={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "shop")}
             />
             <GroceryItemsDisplay
                 topBarText={"SHOP + FORAGE"}
-                ingredientsMap={filterIngredients(rawIngredientsMap, craftedIngredientsMap, "both")}
+                ingredientsMap={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "both")}
             />
         </div>
     )
 };
 
-function filterIngredients(rawIngredientsMap, craftedIngredientsMap, obtainedBy) {
-    let filteredIngredientsMap = new Map();
+function filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, obtainedBy) {
+    let filteredIngredientsDTOList = [];
 
-    rawIngredientsMap.forEach((qty, ingredient) => {
-        if (ingredient.obtainedBy === obtainedBy) {
-            filteredIngredientsMap.set(ingredient, qty);
-        }
-    });
+    let filteredRawIngList = rawIngredientsDTOList.filter(dto => dto.ingredient.obtainedBy === obtainedBy);
+    let filteredCraftIngList = craftedIngredientsDTOList.filter(dto => dto.ingredient.obtainedBy === obtainedBy)
+    if (filteredRawIngList.length > 0) {
+        filteredIngredientsDTOList = filteredIngredientsDTOList.concat(filteredRawIngList);
+    }
+    if (filteredCraftIngList.length > 0) {
+        filteredIngredientsDTOList = filteredIngredientsDTOList.concat(filteredCraftIngList);
+    }
 
-    craftedIngredientsMap.forEach((qty, ingredient) => {
-        if (ingredient.obtainedBy === obtainedBy) {
-            filteredIngredientsMap.set(ingredient, qty);
-        }
-    });
-
-    return filteredIngredientsMap;
+    return filteredIngredientsDTOList;
 }
 
 export default GroceryDisplay;
