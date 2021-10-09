@@ -8,8 +8,9 @@ export class FoodRecipe {
     rarity; // number
     craftsFrom; // [[{raw:Raw[]},{crafted:Crafted[]}], [{raw:Raw[]},{crafted:Crafted[]}]]
     hasCard; // boolean
+    enabled; // boolean
 
-    constructor(name, qty, src, want, mastery, currentProficiency, rarity, craftsFrom, hasCard) {
+    constructor(name, qty, src, want, mastery, currentProficiency, rarity, craftsFrom, hasCard, enabled) {
         this.name = name;
         this.qty = qty;
         this.src = src;
@@ -19,5 +20,6 @@ export class FoodRecipe {
         this.rarity = rarity;
         this.craftsFrom = craftsFrom;
         this.hasCard = hasCard;
+        this.enabled = enabled;
     }
 }
