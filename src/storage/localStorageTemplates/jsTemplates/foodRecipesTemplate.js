@@ -5,7 +5,8 @@ export const FOOD_RECIPES_TEMPLATE = "[{\n" +
     "  \"mastery\": false,\n" +
     "  \"curProf\": 0,\n" +
     "  \"hasCard\": false,\n" +
-    "  \"enabled\": true\n" +
+    "  \"enabled\": true,\n" +
+    "  \"rank\": 0\n" +
     "},\n" +
     "{\n" +
     "  \"name\": \"Triple-Layered Consommé\",\n" +
@@ -14,5 +15,6 @@ export const FOOD_RECIPES_TEMPLATE = "[{\n" +
     "  \"mastery\": false,\n" +
     "  \"curProf\": 0,\n" +
     "  \"hasCard\": false,\n" +
-    "  \"enabled\": true\n" +
-    "}]"
+    "  \"enabled\": true,\n" +
+    "  \"rank\": 0\n" +
+    "}]";

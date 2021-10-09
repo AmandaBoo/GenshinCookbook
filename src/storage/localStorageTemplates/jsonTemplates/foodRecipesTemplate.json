@@ -5,7 +5,8 @@
   "mastery": false,
   "curProf": 0,
   "hasCard": false,
-  "enabled": true
+  "enabled": true,
+  "rank": 0
 },
 {
   "name": "Triple-Layered Consommé",
@@ -14,5 +15,6 @@
   "mastery": false,
   "curProf": 0,
   "hasCard": false,
-  "enabled": true
+  "enabled": true,
+  "rank": 0
 }]

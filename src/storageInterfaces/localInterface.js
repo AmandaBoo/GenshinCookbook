@@ -48,6 +48,7 @@ export function setFoodRecipesInLocalStorage(foodRecipes) {
     foodRecipesJSON.forEach(recipe => {
         let foodRecipe = foodRecipes.find(ele => ele.name === recipe.name);
         if (foodRecipe !== undefined) {
+            recipe.rank = foodRecipe.rank;
             recipe.enabled = foodRecipe.enabled;
             recipe.hasCard = foodRecipe.hasCard;
             recipe.qty = foodRecipe.qty;

@@ -10,7 +10,6 @@ export class AddRecipePopup extends Component {
         this.state = {
             selectedTab : "food-tab",
             pendingFoodRecipes : [],
-            selectedRecipeCard : null // TODO : THIS NEEDS TO COME DOWN AS A PROP OR ELSE WE DON'T MODIFY STATE
         };
         this.imgSrcList = ["images/icons/foodIcon.png"];
         this.imgSrcListIds = ["food-tab"];
@@ -36,25 +35,30 @@ export class AddRecipePopup extends Component {
                 <RecipeQtyEditPopup
                     topBarText={"Add Recipe"}
                     selectedRecipeCard={this.state.selectedRecipeCard}
-                    onSaveClick={(recipeCard, currentProf, customQty) => this.onConfirmationSaveClick(recipeCard, currentProf, customQty)}
+                    onSaveClick={(recipeCard, currentProf, customQty) => this.onAddNewRecipeSaveClick(recipeCard, currentProf, customQty)}
                     onCloseClick={() => this.onConfirmationCloseClick()}
                 />
             );
         }
     }
 
-    onPopupCloseClick() {
-        this.state.pendingFoodRecipes.forEach(data => data.hasCard = false);
-    }
-
     onConfirmationCloseClick() {
         this.resetSelectedRecipe();
     }
 
-    onConfirmationSaveClick(recipeCard, currentProficiency, customQty) {
+    onAddNewRecipeSaveClick(recipeCard, currentProficiency, customQty) {
+        let recipesWithCard = this.props.foodRecipes.filter(recipe => recipe.hasCard);
+        let highestRank = -1;
+        if (recipesWithCard.length > 0) {
+            highestRank = recipesWithCard.reduce(function(recipe1, recipe2) {
+                return Math.max(recipe1, recipe2);
+            }).rank;
+        }
+        recipeCard.rank = highestRank !== -1 ? highestRank + 1 : 1;
         recipeCard.hasCard = true;
         recipeCard.currentProficiency = currentProficiency;
         recipeCard.want = customQty;
+
         storage.saveFoodRecipes(this.props.foodRecipes);
         this.resetSelectedRecipe();
     }
@@ -76,7 +80,6 @@ export class AddRecipePopup extends Component {
                             onInventoryTabClick={tabId => this.updateSelectedInventoryTab(tabId)}
                             onCloseClick={() => {
                                 this.props.onCloseClick();
-                                this.onPopupCloseClick();
                             }}
                         />
                         <CookbookCardDisplay

@@ -20,9 +20,18 @@ export class CookingPage extends Component {
     }
 
     removeRecipeCard(recipeCard) {
+        let recipesWithCard = this.props.recipes.filter(recipe => recipe.hasCard);
+        let recipesWithHigherRank = [];
+        if (recipesWithCard.length > 0) {
+            recipesWithHigherRank = recipesWithCard.filter(otherRecipe => recipeCard.rank < otherRecipe.rank);
+        }
+        recipesWithHigherRank.forEach(recipe => recipe.rank = recipe.rank - 1);
+
         recipeCard.hasCard = false;
+        recipeCard.qty = 0;
         recipeCard.want = 0;
-        storage.saveFoodRecipes([recipeCard]);
+        recipeCard.rank = 0;
+        storage.saveFoodRecipes([recipeCard].concat(recipesWithHigherRank));
         this.setState({recipes: storage.getAllFoodRecipes()});
     }
 
