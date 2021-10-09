@@ -3,7 +3,6 @@ import CloseButton from "../../shared/CloseButton";
 import SaveButton from "../../shared/SaveButton";
 
 const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onCloseClick}) => {
-    // TODO : THE CARD THAT'S BEING SENT IN STILL HAS OLD DATA
     const [curProf, setCurProf] = useState(selectedRecipeCard != null ? selectedRecipeCard.currentProficiency: 0);
     const [customQty, setCustomQty] = useState(selectedRecipeCard != null ? determineStartCustomQty(topBarText, selectedRecipeCard) : 0);
 

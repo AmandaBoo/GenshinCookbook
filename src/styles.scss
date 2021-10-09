@@ -123,6 +123,14 @@ body {
   width: 75%;
   justify-content: center;
 
+  .disabled-card {
+    background-color: gainsboro;
+  }
+
+  .enabled-card {
+    background-color: white;
+  }
+
   .recipe-card-grid {
     $recipe-img-size: 170px;
 
@@ -130,7 +138,6 @@ body {
     width: 350px;
     max-height: 310px;
     border-radius: 16px;
-    background-color: white;
     margin-right: 8px;
     grid-template-areas:
     "top-bar top-bar"
@@ -156,17 +163,28 @@ body {
         height: 20px;
         cursor: pointer;
       }
+
+      .power-button {
+        margin-right: 10px;
+      }
     }
 
     .recipe-progress {
       grid-area: recipe-progress;
 
       .recipe-progress-fields {
-        background-color: $background-color;
         width: 90%;
         border-radius: 10px;
         padding: 0.25em;
         text-align: center;
+      }
+
+      .disabled-progress {
+        background-color: #e3e3e8;
+      }
+
+      .enabled-progress {
+        background-color: $background-color;;
       }
     }
 
@@ -177,8 +195,11 @@ body {
       background-size: cover;
       background-repeat: no-repeat;
       border-radius: 35px;
-      opacity: 0.9;
       margin: 3%;
+    }
+
+    .disabled-img {
+      opacity: 50%;
     }
 
     .recipe-ingredient-div {
@@ -269,6 +290,10 @@ body {
       cursor: pointer;
     }
   }
+}
+
+.disabled-img {
+ opacity: 50%;
 }
 
 .card-icon {

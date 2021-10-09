@@ -3,12 +3,15 @@ import MiniIngredientCard from "../shared/MiniIngredientCard";
 import RecipeQtyEditPopup from "../shared/RecipeQtyEditPopup";
 import DeleteConfirmationPopup from "../shared/DeleteConfirmationPopup";
 
-const RecipeCard = ({recipeData, onCardDelete, onCardEdit}) => {
+const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable}) => {
     const [popup, setPopup] = useState(null);
 
     return (
-        <div className={"recipe-card-grid card"}>
-            {createTopBar(recipeData, setPopup)}
+        <div className={
+            `recipe-card-grid card
+            ${!recipeData.enabled ? "disabled-card": "enabled-card"}
+            `}>
+            {createTopBar(recipeData, setPopup, onCardEnableDisable)}
             {createRecipeCardBody(recipeData)}
             {renderQuantityEditPopup(popup, setPopup, recipeData, onCardEdit)}
             {renderDeleteConfirmationPopup(popup, setPopup, recipeData, onCardDelete)}
@@ -16,7 +19,7 @@ const RecipeCard = ({recipeData, onCardDelete, onCardEdit}) => {
     );
 }
 
-function createTopBar(recipeData, setPopup) {
+function createTopBar(recipeData, setPopup, onCardEnableDisable) {
     return (
         <div className={"recipe-top-bar"}>
             <>
@@ -29,6 +32,12 @@ function createTopBar(recipeData, setPopup) {
             </>
             <div className={"recipe-name"}>{recipeData.name}</div>
             <>
+                <img
+                    onClick={() => onCardEnableDisable(recipeData)}
+                    className={"button power-button"}
+                    src={"./images/icons/powerIcon.png"}
+                    alt={"edit-icon.png"}
+                />
                 <img
                     onClick={() => setPopup("edit")}
                     className={"button"}
@@ -44,23 +53,36 @@ function createRecipeCardBody(recipeData) {
     return (
         <>
             <img
-                className={"recipe-img"}
+                className={
+                    `recipe-img
+                    ${!recipeData.enabled ? "disabled-img" : ""}`
+                }
                 style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + recipeData.rarity + '_background_cropped.jpg")'}}
                 src={recipeData.src}
                 alt={recipeData.name}
             />
             <div className={"recipe-progress"}>
-                <p className={"recipe-progress-fields"}>Proficiency: {recipeData.currentProficiency}/{recipeData.rarity * 5}</p>
-                <p className={"recipe-progress-fields"}>Custom Qty: {recipeData.qty}/{recipeData.want}</p>
+                <p className={
+                    `${!recipeData.enabled ? "disabled-progress" : "enabled-progress"}
+                    recipe-progress-fields`
+                }>
+                    Proficiency: {recipeData.currentProficiency}/{recipeData.rarity * 5}
+                </p>
+                <p className={
+                    `${!recipeData.enabled ? "disabled-progress" : "enabled-progress"}
+                    recipe-progress-fields`
+                }>
+                    Custom Qty: {recipeData.qty}/{recipeData.want}
+                </p>
             </div>
             <div className={"recipe-ingredient-div"}>
-                {renderIngredients(recipeData.craftsFrom)}
+                {renderIngredients(recipeData.craftsFrom, recipeData.enabled)}
             </div>
         </>
     );
 }
 
-function renderIngredients(ingredientsArray) {
+function renderIngredients(ingredientsArray, isEnabled) {
     let ingredientsList = [];
     if (ingredientsArray !== undefined) {
         ingredientsArray.forEach(arr => {
@@ -69,6 +91,7 @@ function renderIngredients(ingredientsArray) {
                 ingredientsList.push(
                     <MiniIngredientCard
                         ingredientData={ing.ingredient}
+                        isEnabled={isEnabled}
                     />
                 );
             })
@@ -78,6 +101,7 @@ function renderIngredients(ingredientsArray) {
                 ingredientsList.push(
                     <MiniIngredientCard
                         ingredientData={ing.ingredient}
+                        isEnabled={isEnabled}
                     />
                 );
             })

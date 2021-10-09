@@ -33,10 +33,16 @@ export class CookingPage extends Component {
         this.setState({recipes: storage.getAllFoodRecipes()});
     }
 
+    enableDisableRecipeCard(recipeCard) {
+        recipeCard.enabled = !recipeCard.enabled;
+        storage.saveFoodRecipes([recipeCard]);
+        this.setState({recipes: storage.getAllFoodRecipes()});
+    }
+
     createRawIngredientsMap() {
         let ingredientMap = new Map();
         this.props.recipes.forEach(recipe => {
-            if (recipe.hasCard) { // TODO : ADD DISABLE FILTERING HERE
+            if (recipe.hasCard && recipe.enabled) {
                 recipe.craftsFrom.forEach(subRecipe => {
                     subRecipe[0].raw.forEach(entry => {
                         let qtyLeftToObtain;
@@ -56,7 +62,7 @@ export class CookingPage extends Component {
     createCraftedIngredientsMap() {
         let ingredientMap = new Map();
         this.props.recipes.forEach(recipe => {
-            if (recipe.hasCard) {
+            if (recipe.hasCard && recipe.enabled) {
                 recipe.craftsFrom.forEach(subRecipe => {
                     subRecipe[1].crafted.forEach(entry => {
                         let qtyLeftToObtain;
@@ -80,6 +86,7 @@ export class CookingPage extends Component {
                     allRecipes={this.getRecipeCards()}
                     removeRecipeCard={card => this.removeRecipeCard(card)}
                     editRecipeCard={(card, curProf, customQty) => this.editRecipeCard(card, curProf, customQty)}
+                    enableDisableRecipeCard={(card) => this.enableDisableRecipeCard(card)}
                 />
                 <SidebarDisplay
                     recipes={this.props.recipes}

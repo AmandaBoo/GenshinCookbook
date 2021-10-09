@@ -1,11 +1,14 @@
 import React from 'react';
 
-const MiniIngredientCard = ({ingredientData, qtyRequired}) => {
+const MiniIngredientCard = ({ingredientData, qtyRequired, isEnabled = true}) => {
     // TODO : ADD EDIT FUNCTIONALITY FOR EACH MINI CARD HERE
     return (
         <div className={"mini-ingredient-container"}>
             <img
-                className={"mini-ingredient-card"}
+                className={
+                    `mini-ingredient-card
+                    ${!isEnabled ? "disabled-img" : ""}`
+                }
                 src={ingredientData.src}
                 alt={ingredientData.name}
                 style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + ingredientData.rarity + '_background_cropped.jpg")'}}
