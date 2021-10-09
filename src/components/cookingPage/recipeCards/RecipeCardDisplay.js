@@ -1,15 +1,15 @@
 import React from 'react';
 import RecipeCard from "./RecipeCard";
 
-const RecipeCardDisplay = ({allRecipes, removeRecipeCard, editRecipeCard}) => {
+const RecipeCardDisplay = ({allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard}) => {
     return (
         <div className={"recipe-card-display"}>
-            {renderCards(allRecipes, removeRecipeCard, editRecipeCard)}
+            {renderCards(allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard)}
         </div>
     );
 }
 
-function renderCards(allRecipes, removeRecipeCard, editRecipeCard) {
+function renderCards(allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard) {
     let cardList = [];
     if (allRecipes !== undefined) {
         allRecipes.forEach(data => {
@@ -19,6 +19,7 @@ function renderCards(allRecipes, removeRecipeCard, editRecipeCard) {
                     recipeData={data}
                     onCardDelete={card => removeRecipeCard(card)}
                     onCardEdit={(card, curProf, customQty) => editRecipeCard(card, curProf, customQty)}
+                    onCardEnableDisable={(card) => enableDisableRecipeCard(card)}
                 />
             );
         });
