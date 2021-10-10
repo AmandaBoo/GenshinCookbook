@@ -17,19 +17,20 @@ const MainPage = () => {
                 />
             </div>
             <div className={"sub-page-body"}>
-                {renderPage(selectedPage, recipes)}
+                {renderPage(selectedPage, recipes, setRecipes)}
             </div>
         </div>
     );
 }
 
-function renderPage(selectedPage, recipes) {
+function renderPage(selectedPage, recipes, setRecipes) {
     if (selectedPage === "summaryPage") {
 
     } else if (selectedPage === "cookingPage") {
         return (
             <CookingPage
                 recipes={recipes}
+                resetStateValues={() => resetStateValues(setRecipes)}
             />
         );
     }

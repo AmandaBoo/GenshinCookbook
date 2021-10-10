@@ -33,20 +33,20 @@ export class CookingPage extends Component {
         recipeCard.want = 0;
         recipeCard.rank = 0;
         storage.saveFoodRecipes([recipeCard].concat(recipesWithHigherRank));
-        this.setState({recipes: storage.getAllFoodRecipes()});
+        this.props.resetStateValues();
     }
 
     editRecipeCard(recipeCard, currentProficiency, customQty) {
         recipeCard.currentProficiency = currentProficiency;
         recipeCard.want = customQty;
         storage.saveFoodRecipes([recipeCard]);
-        this.setState({recipes: storage.getAllFoodRecipes()});
+        this.props.resetStateValues();
     }
 
     enableDisableRecipeCard(recipeCard) {
         recipeCard.enabled = !recipeCard.enabled;
         storage.saveFoodRecipes([recipeCard]);
-        this.setState({recipes: storage.getAllFoodRecipes()});
+        this.props.resetStateValues();
     }
 
     render() {

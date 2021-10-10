@@ -84,6 +84,7 @@ function createRecipeCardBody(recipeData) {
 }
 
 function renderIngredients(ingredientsArray, isEnabled) {
+    console.log("TRYING TO CREATE MINI", ingredientsArray);
     let ingredientCards = [];
     if (ingredientsArray !== undefined) {
         ingredientsArray.forEach(arr => {

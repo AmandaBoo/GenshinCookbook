@@ -81,6 +81,8 @@ export function getAllFoodRecipes() {
         allRecipes.push(new FoodRecipe(serverFoodRecipe.name, localFoodRecipe.qty, serverFoodRecipe.src, localFoodRecipe.want, localFoodRecipe.mastery,
             localFoodRecipe.curProf, serverFoodRecipe.rarity, allCraftsFrom, localFoodRecipe.hasCard, localFoodRecipe.enabled, localFoodRecipe.rank));
     });
+
+    console.log("ALL RECIPES", allRecipes);
     return allRecipes;
 }
 
@@ -109,7 +111,7 @@ function mapRawAndCraftedIngredients(allRawIngredients, allCraftedFoodIngredient
             }
             if (craftObj.ingredient !== undefined) {
                 craftObj.qtyRequired = recipeServer.craftsFrom[i].find(ele => ele.name === recipeIngredient.name).qty;
-                // [craftObj.qtyToObtain, allCraftedIngredientsCopy] = determineQtyToObtain(recipeLocal, craftObj.ingredient, craftObj.qtyRequired, allCraftedFoodIngredients);
+                [craftObj.qtyToObtain, allCraftedIngredientsCopy] = determineQtyToObtain(recipeLocal, craftObj.ingredient, craftObj.qtyRequired, allCraftedFoodIngredients);
                 craftTemp.push(craftObj);
             }
         });
@@ -121,6 +123,9 @@ function mapRawAndCraftedIngredients(allRawIngredients, allCraftedFoodIngredient
 }
 
 function determineQtyToObtain(recipe, ingredient, qtyRequired, allIngredients) {
+    if (!recipe.hasCard || (recipe.hasCard && !recipe.enabled)) {
+        return [0, allIngredients];
+    }
     let inventoryQty = allIngredients.find(ele => ele.name === ingredient.name).qty;
     let totalNeeded = recipe.want * qtyRequired;
     let totalLeftToGather = 0;
