@@ -63,45 +63,53 @@ function mapRawIngredients(allRawIngredients, foodIngredient) {
 // and creates FoodRecipe objects
 export function getAllFoodRecipes() {
     let allRawIngredients = getAllRawIngredients();
-    let allFoodIngredients = getAllFoodIngredients(allRawIngredients);
+    let allRawIngredientsCopy = getAllRawIngredients();
+    let allCraftedIngredients = getAllFoodIngredients(allRawIngredients);
+    let allCraftedIngredientsCopy = getAllFoodIngredients(allRawIngredients);
     let allRecipes = [];
     let foodRecipeLocal = localInterface.getFoodRecipesFromLocalStorage();
     let foodRecipeServer = serverInterface.getFoodRecipesFromServer();
 
-    foodRecipeServer.forEach(recipe => {
-        let localFoodRecipe = foodRecipeLocal.find(ele => ele.name === recipe.name);
-        let allCraftsFrom = mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, recipe)
-        allRecipes.push(new FoodRecipe(recipe.name, localFoodRecipe.qty, recipe.src, localFoodRecipe.want, localFoodRecipe.mastery,
-            localFoodRecipe.curProf, recipe.rarity, allCraftsFrom, localFoodRecipe.hasCard, localFoodRecipe.enabled, localFoodRecipe.rank));
+    foodRecipeLocal.sort((recipe1, recipe2) => {
+        return recipe1.rank - recipe2.rank;
+    });
+
+    foodRecipeLocal.forEach(localFoodRecipe => {
+        let serverFoodRecipe = foodRecipeServer.find(ele => ele.name === localFoodRecipe.name);
+        let allCraftsFrom;
+        [allCraftsFrom, allRawIngredientsCopy, allCraftedIngredientsCopy] = mapRawAndCraftedIngredients(allRawIngredients, allCraftedIngredients, serverFoodRecipe, localFoodRecipe, allRawIngredientsCopy, allCraftedIngredientsCopy);
+        allRecipes.push(new FoodRecipe(serverFoodRecipe.name, localFoodRecipe.qty, serverFoodRecipe.src, localFoodRecipe.want, localFoodRecipe.mastery,
+            localFoodRecipe.curProf, serverFoodRecipe.rarity, allCraftsFrom, localFoodRecipe.hasCard, localFoodRecipe.enabled, localFoodRecipe.rank));
     });
     return allRecipes;
 }
 
-function mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, recipe) {
+function mapRawAndCraftedIngredients(allRawIngredients, allCraftedFoodIngredients, recipeServer, recipeLocal, allRawIngredientsCopy, allCraftedIngredientsCopy) {
     let allRawAndCraftedRecipes = [];
 
     // iterate over each possible way of making recipe
-    for (let i = 0; i < recipe.craftsFrom.length; i++) {
+    for (let i = 0; i < recipeServer.craftsFrom.length; i++) {
         let rawAndCraftTemp = [];
         let rawTemp = [];
         let craftTemp = [];
 
         // iterate over each ingredient within sub recipe
-        recipe.craftsFrom[i].forEach(recipeIngredient => {
-            let rawObj = {ingredient: 0, qtyRequired: 0};
-            let craftObj = {ingredient: 0, qtyRequired: 0};
+        recipeServer.craftsFrom[i].forEach(recipeIngredient => {
+            let rawObj = {ingredient: 0, qtyRequired: 0, qtyToObtain: 0};
+            let craftObj = {ingredient: 0, qtyRequired: 0, qtyToObtain: 0};
 
             // determine if ingredient is raw or crafted
             rawObj.ingredient = allRawIngredients.find(ele => ele.name === recipeIngredient.name);
-            rawObj.qtyRequired = recipe.craftsFrom[i].find(ele => ele.name === recipeIngredient.name).qty;
-
-            craftObj.ingredient = allFoodIngredients.find(ele => ele.name === recipeIngredient.name);
-            craftObj.qtyRequired = recipe.craftsFrom[i].find(ele => ele.name === recipeIngredient.name).qty;
+            craftObj.ingredient = allCraftedFoodIngredients.find(ele => ele.name === recipeIngredient.name);
 
             if (rawObj.ingredient !== undefined) {
+                rawObj.qtyRequired = recipeServer.craftsFrom[i].find(ele => ele.name === recipeIngredient.name).qty;
+                [rawObj.qtyToObtain, allRawIngredientsCopy] = determineQtyToObtain(recipeLocal, rawObj.ingredient, rawObj.qtyRequired, allRawIngredientsCopy);
                 rawTemp.push(rawObj);
             }
             if (craftObj.ingredient !== undefined) {
+                craftObj.qtyRequired = recipeServer.craftsFrom[i].find(ele => ele.name === recipeIngredient.name).qty;
+                // [craftObj.qtyToObtain, allCraftedIngredientsCopy] = determineQtyToObtain(recipeLocal, craftObj.ingredient, craftObj.qtyRequired, allCraftedFoodIngredients);
                 craftTemp.push(craftObj);
             }
         });
@@ -109,7 +117,27 @@ function mapRawAndCraftedIngredients(allRawIngredients, allFoodIngredients, reci
         rawAndCraftTemp.push({crafted:craftTemp});
         allRawAndCraftedRecipes.push(rawAndCraftTemp);
     }
-    return allRawAndCraftedRecipes;
+    return [allRawAndCraftedRecipes, allRawIngredientsCopy, allCraftedIngredientsCopy];
+}
+
+function determineQtyToObtain(recipe, ingredient, qtyRequired, allIngredients) {
+    let inventoryQty = allIngredients.find(ele => ele.name === ingredient.name).qty;
+    let totalNeeded = recipe.want * qtyRequired;
+    let totalLeftToGather = 0;
+
+    if (inventoryQty - totalNeeded > 0) {
+        // inventory has enough and user doesn't need to collect anymore
+        inventoryQty -= totalNeeded;
+    } else {
+        // inventory does not have enough and user may need some partial amount more
+        totalLeftToGather = totalNeeded - inventoryQty;
+        inventoryQty = 0;
+    }
+
+    // update running inventory total
+    allIngredients.find(ele => ele.name === ingredient.name).qty = inventoryQty;
+
+    return [totalLeftToGather, allIngredients];
 }
 
 export function getIngredientToObtainDTOList(recipes, ingredientType) {
@@ -125,20 +153,27 @@ export function getIngredientToObtainDTOList(recipes, ingredientType) {
                     subRecipeIngredientList = subRecipe[1].crafted;
                 }
                 subRecipeIngredientList.forEach(entry => {
-                    let qtyLeftToObtain;
+                    let qtyToObtainInSum;
                     if (ingredientMap.get(entry.ingredient)) {
-                        qtyLeftToObtain = (ingredientMap.get(entry.ingredient) + (entry.qtyRequired * recipe.want)) - entry.ingredient.qty;
+                        qtyToObtainInSum = (ingredientMap.get(entry.ingredient) + (entry.qtyRequired * recipe.want));
                     } else {
-                        qtyLeftToObtain = (entry.qtyRequired * recipe.want) - entry.ingredient.qty;
+                        qtyToObtainInSum = (entry.qtyRequired * recipe.want);
                     }
-                    qtyLeftToObtain < 0 ? ingredientMap.set(entry.ingredient, 0) : ingredientMap.set(entry.ingredient, qtyLeftToObtain);
+                    ingredientMap.set(entry.ingredient, qtyToObtainInSum);
                 });
             });
         }
     });
 
-    ingredientMap.forEach((value, key) => {
-        ingredientDTOList.push(new IngredientAndQtyToObtainDto(key, value));
+    ingredientMap.forEach((qtyToObtainInSum, ingredient) => {
+        let qtyLeftToObtain = ingredient.qty - qtyToObtainInSum;
+        if (qtyLeftToObtain < 0) {
+            // inventory does not have enough and user may need some partial amount more
+            ingredientDTOList.push(new IngredientAndQtyToObtainDto(ingredient, qtyToObtainInSum - ingredient.qty));
+        } else {
+            // inventory has enough so user does not have to gather anymore
+            ingredientDTOList.push(new IngredientAndQtyToObtainDto(ingredient, 0));
+        }
     });
 
     return ingredientDTOList;

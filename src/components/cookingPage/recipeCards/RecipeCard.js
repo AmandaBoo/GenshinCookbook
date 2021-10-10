@@ -3,6 +3,7 @@ import MiniIngredientCard from "../shared/MiniIngredientCard";
 import RecipeQtyEditPopup from "../shared/RecipeQtyEditPopup";
 import DeleteConfirmationPopup from "../shared/DeleteConfirmationPopup";
 
+// TODO : FIX THE STYLING FOR DISABLE HERE
 const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable}) => {
     const [popup, setPopup] = useState(null);
 
@@ -83,31 +84,33 @@ function createRecipeCardBody(recipeData) {
 }
 
 function renderIngredients(ingredientsArray, isEnabled) {
-    let ingredientsList = [];
+    let ingredientCards = [];
     if (ingredientsArray !== undefined) {
         ingredientsArray.forEach(arr => {
             // raw ingredients
             arr[0].raw.forEach(ing => {
-                ingredientsList.push(
+                ingredientCards.push(
                     <MiniIngredientCard
                         ingredientData={ing.ingredient}
                         isEnabled={isEnabled}
+                        qtyRequired={ing.qtyToObtain}
                     />
                 );
             })
 
             // crafted ingredients
             arr[1].crafted.forEach(ing => {
-                ingredientsList.push(
+                ingredientCards.push(
                     <MiniIngredientCard
                         ingredientData={ing.ingredient}
                         isEnabled={isEnabled}
+                        qtyRequired={ing.qtyToObtain}
                     />
                 );
             })
         })
 
-        return ingredientsList;
+        return ingredientCards;
     }
     return null;
 }
