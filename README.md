@@ -37,7 +37,7 @@
 **How to Update Templates (example given for Food Recipes)**
 - Grab relevant images and place them in public/images/foodRecipes
 - Open foodRecipesTemplate.json
-- Add new json entry by copying old entries and only change name (the order must match the in-game UI)
+- Add new json entry by copying old entries and only change name (the order must match the in-game UI for Recipes only)
 - When finished, open foodRecipesTemplate.js and replace the string in there with the contents of the foodRecipesTemplate.json
 - Open up the wiki for relevant new recipes as well as foodRecipesDescription.js and add new entry for each food recipe
 - Clean out local storage and refresh page to see changes
