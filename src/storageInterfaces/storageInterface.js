@@ -5,6 +5,7 @@ import {RawIngredient} from "../classes/ingredients/rawIngredient.js";
 import {CraftedFoodIngredient} from "../classes/ingredients/craftedFoodIngredient.js";
 import {FoodRecipe} from "../classes/foodRecipe.js";
 import {IngredientAndQtyToObtainDto} from "../classes/dtos/ingredientAndQtyToObtain";
+import {MATERIALS, SORTED_FOOD_RECIPES} from "../storage/uiOrder";
 
 export function setUpLocalStorage() {
     localInterface.setUpLocalStorage();
@@ -25,7 +26,7 @@ export function getAllRawIngredients() {
 
 // retrieves food ingredients from localStorageTemplates and local in json form
 // and creates FoodIngredient objects
-export function getAllFoodIngredients(allRawIngredients) {
+export function getAllCraftedFoodIngredients(allRawIngredients) {
     let allFoodIngredients = [];
     let foodIngredientsLocal = localInterface.getFoodIngredientsFromLocalStorage();
     let foodIngredientsServer = serverInterface.getFoodIngredientsFromServer();
@@ -61,11 +62,11 @@ function mapRawIngredients(allRawIngredients, foodIngredient) {
 
 // retrieves recipe ingredients from localStorageTemplates and local in json form
 // and creates FoodRecipe objects
-export function getAllFoodRecipes() {
+export function getAllFoodRecipes(sortByUI = false) {
     let allRawIngredients = getAllRawIngredients();
     let allRawIngredientsCopy = getAllRawIngredients();
-    let allCraftedIngredients = getAllFoodIngredients(allRawIngredients);
-    let allCraftedIngredientsCopy = getAllFoodIngredients(allRawIngredients);
+    let allCraftedIngredients = getAllCraftedFoodIngredients(allRawIngredients);
+    let allCraftedIngredientsCopy = getAllCraftedFoodIngredients(allRawIngredients);
     let allRecipes = [];
     let foodRecipeLocal = localInterface.getFoodRecipesFromLocalStorage();
     let foodRecipeServer = serverInterface.getFoodRecipesFromServer();
@@ -181,6 +182,20 @@ export function getIngredientToObtainDTOList(recipes, ingredientType) {
     });
 
     return ingredientDTOList;
+}
+
+export function sortIngredientsByUIOrder(rawAndCraftedIngredients) {
+    rawAndCraftedIngredients.sort(function (a, b) {
+        return MATERIALS.indexOf(a.name) - MATERIALS.indexOf(b.name);
+    });
+    return rawAndCraftedIngredients;
+}
+
+export function sortFoodRecipesByUIOrder(foodRecipes) {
+    foodRecipes.sort(function(a, b){
+        return SORTED_FOOD_RECIPES.indexOf(a.name) - SORTED_FOOD_RECIPES.indexOf(b.name);
+    });
+    return foodRecipes;
 }
 
 export function saveIngredients(rawIngredients, foodIngredients) {

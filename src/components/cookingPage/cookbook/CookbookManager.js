@@ -83,7 +83,7 @@ export class AddRecipePopup extends Component {
                             }}
                         />
                         <CookbookCardDisplay
-                            cardData={this.filterCards()}
+                            allCardData={this.filterCards()}
                             onUpdate={card => this.onCardClicked(card)}
                         />
                         {this.renderQuantityEditPopup()}

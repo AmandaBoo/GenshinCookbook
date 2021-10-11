@@ -1,26 +1,154 @@
 [
   {
-    "name": "Raw Meat",
+    "name": "Almond",
     "qty": 0
   },
   {
-    "name": "Fowl",
-    "qty": 0
+    "name":"Apple",
+    "qty":0
   },
   {
-    "name": "Bamboo Shoot",
-    "qty": 0
+    "name":"Bamboo Shoot",
+    "qty":0
   },
   {
-    "name": "Mushroom",
-    "qty": 0
+    "name":"Berry",
+    "qty":0
   },
   {
-    "name": "Milk",
-    "qty": 0
+    "name":"Bird Egg",
+    "qty":0
   },
   {
-    "name": "Salt",
-    "qty": 0
+    "name":"Cabbage",
+    "qty":0
+  },
+  {
+    "name":"Calla Lily",
+    "qty":0
+  },
+  {
+    "name":"Carrot",
+    "qty":0
+  },
+  {
+    "name":"Chilled Meat",
+    "qty":0
+  },
+  {
+    "name":"Crab",
+    "qty":0
+  },
+  {
+    "name":"Fowl",
+    "qty":0
+  },
+  {
+    "name":"Horsetail",
+    "qty":0
+  },
+  {
+    "name":"Jueyun Chili",
+    "qty":0
+  },
+  {
+    "name":"Lavender Melon",
+    "qty":0
+  },
+  {
+    "name":"Lotus Head",
+    "qty":0
+  },
+  {
+    "name":"Matsutake",
+    "qty":0
+  },
+  {
+    "name":"Mint",
+    "qty":0
+  },
+  {
+    "name":"Mushroom",
+    "qty":0
+  },
+  {
+    "name":"Onion",
+    "qty":0
+  },
+  {
+    "name":"Pepper",
+    "qty":0
+  },
+  {
+    "name":"Pinecone",
+    "qty":0
+  },
+  {
+    "name":"Potato",
+    "qty":0
+  },
+  {
+    "name":"Qingxin",
+    "qty":0
+  },
+  {
+    "name":"Radish",
+    "qty":0
+  },
+  {
+    "name":"Rice",
+    "qty":0
+  },
+  {
+    "name":"Sakura Bloom",
+    "qty":0
+  },
+  {
+    "name":"Salt",
+    "qty":0
+  },
+  {
+    "name":"Seagrass",
+    "qty":0
+  },
+  {
+    "name":"Shrimp Meat",
+    "qty":0
+  },
+  {
+    "name":"Small Lamp Grass",
+    "qty":0
+  },
+  {
+    "name":"Snapdragon",
+    "qty":0
+  },
+  {
+    "name":"Sunsettia",
+    "qty":0
+  },
+  {
+    "name":"Sweet Flower",
+    "qty":0
+  },
+  {
+    "name":"Tofu",
+    "qty":0
+  },
+  {
+    "name":"Tomato",
+    "qty":0
+  },
+  {
+    "name":"Unagi Meat",
+    "qty":0
+  },
+  {
+    "name":"Violetgrass",
+    "qty":0
+  },
+  {
+    "name":"Wheat",
+    "qty":0
   }
 ]

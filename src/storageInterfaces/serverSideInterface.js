@@ -1,5 +1,5 @@
 import {RAW_INGREDIENTS} from "../storage/serverSideStorageTemplates/rawIngredientsDescription.js";
-import {FOOD_INGREDIENTS} from "../storage/serverSideStorageTemplates/foodIngredientsDescription.js";
+import {FOOD_INGREDIENTS} from "../storage/serverSideStorageTemplates/craftedFoodIngredientsDescription.js";
 import {FOOD_RECIPES} from "../storage/serverSideStorageTemplates/foodRecipesDescription.js";
 
 export function getRawIngredientsFromServer() {

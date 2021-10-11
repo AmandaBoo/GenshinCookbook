@@ -1,0 +1,54 @@
+[
+  {
+    "name":"Flour",
+    "qty":0
+  },
+  {
+    "name":"Raw Meat",
+    "qty":0
+  },
+  {
+    "name":"Fish",
+    "qty":0
+  },
+  {
+    "name":"Cream",
+    "qty":0
+  },
+  {
+    "name":"Butter",
+    "qty":0
+  },
+  {
+    "name":"Sugar",
+    "qty":0
+  },
+  {
+    "name":"Crab Roe",
+    "qty":0
+  },
+  {
+    "name":"Jam",
+    "qty":0
+  },
+  {
+    "name":"Cheese",
+    "qty":0
+  },
+  {
+    "name":"Sausage",
+    "qty":0
+  },
+  {
+    "name":"Smoked Fowl",
+    "qty":0
+  },
+  {
+    "name":"Ham",
+    "qty":0
+  },
+  {
+    "name":"Bacon",
+    "qty":0
+  }
+]
