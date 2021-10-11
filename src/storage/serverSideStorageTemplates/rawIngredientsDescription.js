@@ -19,12 +19,6 @@ export const RAW_INGREDIENTS = {
             obtainedBy: "both",
         },
         {
-            name: "Raw Meat",
-            src: "./images/ingredients/rawMeat.png",
-            rarity: 1,
-            obtainedBy: "both",
-        },
-        {
             name: "Milk",
             src: "./images/ingredients/milk.png",
             rarity: 1,

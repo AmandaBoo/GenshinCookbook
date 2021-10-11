@@ -1,7 +1,4 @@
-export const RAW_INGREDIENTS_TEMPLATE = "[{\n" +
-    "  \"name\": \"Raw Meat\",\n" +
-    "  \"qty\": 0\n" +
-    "},\n" +
+export const RAW_INGREDIENTS_TEMPLATE = "[\n" +
     "  {\n" +
     "    \"name\": \"Fowl\",\n" +
     "    \"qty\": 0\n" +
@@ -21,4 +18,5 @@ export const RAW_INGREDIENTS_TEMPLATE = "[{\n" +
     "  {\n" +
     "    \"name\": \"Salt\",\n" +
     "    \"qty\": 0\n" +
-    "  }]\n";
+    "  }\n" +
+    "]\n";

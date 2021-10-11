@@ -10,11 +10,7 @@ export const FOOD_RECIPES = {
                     {
                         name: "Raw Meat",
                         qty: 2
-                    },
-                    {
-                        name: "Fowl",
-                        qty: 2
-                    },
+                    }
                 ]
             ]
         },
