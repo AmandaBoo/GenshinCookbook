@@ -8,7 +8,7 @@ export function setUpLocalStorage() {
         localStorage.foodIngredients = FOOD_INGREDIENTS_TEMPLATE;
         localStorage.foodRecipes = FOOD_RECIPES_TEMPLATE;
     }
-    // checkStorage();
+    checkStorage();
 }
 
 function localStorageNotSet() {
