@@ -13,7 +13,7 @@ export class CookingPage extends Component {
 
     setSelectedMenu(id) {
         this.setState({selectedMenu: id});
-        this.setState({recipes: storage.getAllFoodRecipes()});
+        this.props.resetStateValues();
     }
 
     getRecipeCards() {
