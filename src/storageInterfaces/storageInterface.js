@@ -82,7 +82,6 @@ export function getAllFoodRecipes() {
             localFoodRecipe.curProf, serverFoodRecipe.rarity, allCraftsFrom, localFoodRecipe.hasCard, localFoodRecipe.enabled, localFoodRecipe.rank));
     });
 
-    console.log("ALL RECIPES", allRecipes);
     return allRecipes;
 }
 
