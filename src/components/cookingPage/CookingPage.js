@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import RecipeCardDisplay from "./recipeCards/RecipeCardDisplay";
 import * as storage from "../../storageInterfaces/storageInterface";
 import SidebarDisplay from "./sidebar/SidebarDisplay";
