@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 
+
 const IngredientCard = ({cardData}) => {
     const [qty, setQty] = useState(cardData.qty);
     return (
@@ -25,18 +26,25 @@ function generateImage(data) {
         />
     );
 }
-
+function resetFieldOnLeave(value, setter) {
+    if (value === "") {
+        setter(0);
+    }
+}
 function generateTextField(data, qty, setQty) {
     return (
         <input
             className={"card-text-field"}
             type={"number"}
             value={qty}
+            onKeyDown={ (evt) => (evt.key === 'e' ||evt.key === '.' ||evt.key === '-') && evt.preventDefault() }
+            
             onChange={event => {
                 data.qty = event.target.value;
                 setQty(event.target.value);
             }}
             onFocus={(event) => event.target.select()}
+            onBlur={(event) => resetFieldOnLeave(event.target.value, setQty)}
         />
     );
 }
