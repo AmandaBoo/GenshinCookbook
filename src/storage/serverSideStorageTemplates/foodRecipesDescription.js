@@ -1709,7 +1709,7 @@ export const FOOD_RECIPES = {
                         qty:4
                     },
                     {
-                        name: "Crab Meat",
+                        name: "Crab",
                         qty:4
                     },
                     {
