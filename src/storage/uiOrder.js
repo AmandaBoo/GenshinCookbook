@@ -16,5 +16,11 @@ export const SORTED_FOOD_RECIPES = ["Chicken Mushroom Skewer", "Teyvat Fried Egg
     "Chili-Mince Cornbread Buns", "Adeptus' Temptation", "Sashimi Platter", "Fragrant Mashed Potatoes", "Golden Chicken Burger", "Golden Fried Chicken"];
 
 
+export const MATERIALS = ["Apple", "Sunsettia", "Horsetail", "Mushroom", "Sweet Flower", "Carrot", "Radish", "Snapdragon",
+    "Mint", "Wheat", "Cabbage", "Pinecone", "Berry", "Calla Lily", "Raw Meat", "Bird Egg", "Fowl", "Crab", "Crab Roe", "Salt",
+    "Onion", "Pepper", "Milk", "Tomato", "Potato", "Fish", "Tofu", "Almond", "Bamboo Shoot", "Rice", "Shrimp Meat", "Chilled Meat",
+    "Unagi Meat", "Seagrass", "Lavender Melon", "Flour", "Cream", "Smoked Fowl", "Butter", "Ham", "Sugar", "Jam", "Cheese", "Bacon",
+    "Sausage", "Lotus Head", "Jueyun Chili", "Qingxin", "Violetgrass", "Small Lamp Grass", "Sakura Bloom"];
+
 
 

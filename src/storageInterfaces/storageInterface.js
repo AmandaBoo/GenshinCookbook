@@ -5,7 +5,7 @@ import {RawIngredient} from "../classes/ingredients/rawIngredient.js";
 import {CraftedFoodIngredient} from "../classes/ingredients/craftedFoodIngredient.js";
 import {FoodRecipe} from "../classes/foodRecipe.js";
 import {IngredientAndQtyToObtainDto} from "../classes/dtos/ingredientAndQtyToObtain";
-import {SORTED_FOOD_RECIPES} from "../storage/uiOrder";
+import {MATERIALS, SORTED_FOOD_RECIPES} from "../storage/uiOrder";
 
 export function setUpLocalStorage() {
     localInterface.setUpLocalStorage();
@@ -185,7 +185,10 @@ export function getIngredientToObtainDTOList(recipes, ingredientType) {
 }
 
 export function sortIngredientsByUIOrder(rawAndCraftedIngredients) {
-
+    rawAndCraftedIngredients.sort(function (a, b) {
+        return MATERIALS.indexOf(a.name) - MATERIALS.indexOf(b.name);
+    });
+    return rawAndCraftedIngredients;
 }
 
 export function sortFoodRecipesByUIOrder(foodRecipes) {

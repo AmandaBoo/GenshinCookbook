@@ -23,8 +23,7 @@ export class InventoryManager extends Component {
 
     determineCardData() {
         if (this.state.selectedTab === "materials-tab") {
-            // return storage.sortIngredientsByUIOrder(this.rawIngredients.concat(this.foodIngredients));
-            return this.rawIngredients.concat(this.foodIngredients);
+            return storage.sortIngredientsByUIOrder(this.rawIngredients.concat(this.foodIngredients));
         }
     }
 
