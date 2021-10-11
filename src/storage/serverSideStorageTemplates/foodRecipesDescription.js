@@ -88,7 +88,7 @@ export const FOOD_RECIPES = {
             name: "Konda Cuisine",
             src: "./images/foodRecipe/kondaCuisine.png",
             type:"Revive",
-            rarity: 1,
+            rarity: 3,
             craftsFrom: [
                 [
                     {

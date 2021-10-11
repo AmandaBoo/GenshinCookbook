@@ -1,18 +1,20 @@
 import React from 'react';
 import CookbookCard from "./CookbookCard";
+import * as storage from "../../../storageInterfaces/storageInterface";
 
-const CookbookCardDisplay = ({cardData, onUpdate}) => {
+const CookbookCardDisplay = ({allCardData, onUpdate}) => {
     return (
         <div className={"cards"}>
-            {renderCards(cardData, onUpdate)}
+            {renderCards(allCardData, onUpdate)}
         </div>
     )
 }
 
-function renderCards(cardData, onUpdate) {
+function renderCards(allCardData, onUpdate) {
+    allCardData = storage.sortFoodRecipesByUIOrder(allCardData);
     let cardList = [];
-    if (cardData !== undefined) {
-        cardData.forEach(data => {
+    if (allCardData !== undefined) {
+        allCardData.forEach(data => {
             cardList.push(
                 <CookbookCard
                     cardData={data}
