@@ -16,7 +16,7 @@ export function NavBarTab ({id, src, name, isSelected, onClick}){
         );
     } else if (name !== undefined) {
         return (
-            <span
+            <button
                 className={
                     `nav-bar-links
                     ${isSelected ? "nav-bar-link-selected" : "nav-bar-link-default"}`
@@ -25,7 +25,7 @@ export function NavBarTab ({id, src, name, isSelected, onClick}){
                 onClick={() => onClick(id)}
             >
                 {name}
-            </span>
+            </button>
        );
     }
 }
