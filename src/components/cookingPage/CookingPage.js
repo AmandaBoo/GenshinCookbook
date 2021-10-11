@@ -13,6 +13,7 @@ export class CookingPage extends Component {
 
     setSelectedMenu(id) {
         this.setState({selectedMenu: id});
+        this.setState({recipes: storage.getAllFoodRecipes()});
     }
 
     getRecipeCards() {
@@ -20,63 +21,32 @@ export class CookingPage extends Component {
     }
 
     removeRecipeCard(recipeCard) {
+        let recipesWithCard = this.props.recipes.filter(recipe => recipe.hasCard);
+        let recipesWithHigherRank = [];
+        if (recipesWithCard.length > 0) {
+            recipesWithHigherRank = recipesWithCard.filter(otherRecipe => recipeCard.rank < otherRecipe.rank);
+        }
+        recipesWithHigherRank.forEach(recipe => recipe.rank = recipe.rank - 1);
+
         recipeCard.hasCard = false;
+        recipeCard.qty = 0;
         recipeCard.want = 0;
-        storage.saveFoodRecipes([recipeCard]);
-        this.setState({recipes: storage.getAllFoodRecipes()});
+        recipeCard.rank = 0;
+        storage.saveFoodRecipes([recipeCard].concat(recipesWithHigherRank));
+        this.props.resetStateValues();
     }
 
     editRecipeCard(recipeCard, currentProficiency, customQty) {
         recipeCard.currentProficiency = currentProficiency;
         recipeCard.want = customQty;
         storage.saveFoodRecipes([recipeCard]);
-        this.setState({recipes: storage.getAllFoodRecipes()});
+        this.props.resetStateValues();
     }
 
     enableDisableRecipeCard(recipeCard) {
         recipeCard.enabled = !recipeCard.enabled;
         storage.saveFoodRecipes([recipeCard]);
-        this.setState({recipes: storage.getAllFoodRecipes()});
-    }
-
-    createRawIngredientsMap() {
-        let ingredientMap = new Map();
-        this.props.recipes.forEach(recipe => {
-            if (recipe.hasCard && recipe.enabled) {
-                recipe.craftsFrom.forEach(subRecipe => {
-                    subRecipe[0].raw.forEach(entry => {
-                        let qtyLeftToObtain;
-                        if (ingredientMap.get(entry.ingredient)) {
-                            qtyLeftToObtain = (ingredientMap.get(entry.ingredient) + (entry.qtyRequired * recipe.want)) - entry.ingredient.qty;
-                        } else {
-                            qtyLeftToObtain = (entry.qtyRequired * recipe.want) - entry.ingredient.qty;
-                        }
-                        qtyLeftToObtain < 0 ? ingredientMap.set(entry.ingredient, 0) : ingredientMap.set(entry.ingredient, qtyLeftToObtain);
-                    });
-                });
-            }
-        });
-        return ingredientMap;
-    }
-
-    createCraftedIngredientsMap() {
-        let ingredientMap = new Map();
-        this.props.recipes.forEach(recipe => {
-            if (recipe.hasCard && recipe.enabled) {
-                recipe.craftsFrom.forEach(subRecipe => {
-                    subRecipe[1].crafted.forEach(entry => {
-                        let qtyLeftToObtain;
-                        if (ingredientMap.get(entry.ingredient)) {
-                            qtyLeftToObtain = (ingredientMap.get(entry.ingredient) + (entry.qtyRequired * recipe.want)) - entry.ingredient.qty;
-                        } else {
-                            qtyLeftToObtain = (entry.qtyRequired * recipe.want) - entry.ingredient.qty;
-                        }
-                        qtyLeftToObtain < 0 ? ingredientMap.set(entry.ingredient, 0) : ingredientMap.set(entry.ingredient, qtyLeftToObtain);
-                    });
-                });
-            }
-        })
-        return ingredientMap;
+        this.props.resetStateValues();
     }
 
     render() {
@@ -90,8 +60,8 @@ export class CookingPage extends Component {
                 />
                 <SidebarDisplay
                     recipes={this.props.recipes}
-                    rawIngredientsMap={this.createRawIngredientsMap()}
-                    craftedIngredientsMap={this.createCraftedIngredientsMap()}
+                    rawIngredientsDTOList={storage.getIngredientToObtainDTOList(this.props.recipes, "raw")}
+                    craftedIngredientsDTOList={storage.getIngredientToObtainDTOList(this.props.recipes, "crafted")}
                     selectedMenu={this.state.selectedMenu}
                     setSelectedMenu={id => this.setSelectedMenu(id)}
                 />
