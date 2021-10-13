@@ -5,6 +5,7 @@ import DeleteConfirmationPopup from "../shared/DeleteConfirmationPopup";
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import PowerSettingsNewRoundedIcon from '@mui/icons-material/PowerSettingsNewRounded';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
+import * as Utils from "../../../util/utils";
 
 // TODO : FIX THE STYLING FOR DISABLE HERE
 const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable}) => {
@@ -32,7 +33,7 @@ function createTopBar(recipeData, setPopup, onCardEnableDisable) {
                     className={"svg-icon"}
                 />
             </>
-            <div className={"recipe-name"}>{recipeData.name}</div>
+            <div className={"recipe-name"}>{Utils.getTruncatedName(recipeData.name, Utils.MAX_CARD_NAME_LENGTH)}</div>
             <>
                 <PowerSettingsNewRoundedIcon
                     onClick={() => onCardEnableDisable(recipeData)}
