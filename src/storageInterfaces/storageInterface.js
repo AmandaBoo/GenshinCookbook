@@ -111,7 +111,7 @@ function mapRawAndCraftedIngredients(allRawIngredients, allCraftedFoodIngredient
             }
             if (craftObj.ingredient !== undefined) {
                 craftObj.qtyRequired = recipeServer.craftsFrom[i].find(ele => ele.name === recipeIngredient.name).qty;
-                [craftObj.qtyToObtain, allCraftedIngredientsCopy] = determineQtyToObtain(recipeLocal, craftObj.ingredient, craftObj.qtyRequired, allCraftedFoodIngredients);
+                [craftObj.qtyToObtain, allCraftedIngredientsCopy] = determineQtyToObtain(recipeLocal, craftObj.ingredient, craftObj.qtyRequired, allCraftedIngredientsCopy);
                 craftTemp.push(craftObj);
             }
         });
@@ -196,6 +196,14 @@ export function sortFoodRecipesByUIOrder(foodRecipes) {
         return SORTED_FOOD_RECIPES.indexOf(a.name) - SORTED_FOOD_RECIPES.indexOf(b.name);
     });
     return foodRecipes;
+}
+
+export function sortRecipeCardsByRank(recipeCards) {
+    recipeCards.sort((recipe1, recipe2) => {
+        return recipe1.rank - recipe2.rank;
+    });
+    console.log(recipeCards);
+    return recipeCards;
 }
 
 export function saveIngredients(rawIngredients, foodIngredients) {

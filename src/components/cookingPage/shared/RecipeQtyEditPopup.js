@@ -10,7 +10,7 @@ const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onClos
     return (
     <div className={"message-modal"}>
         <div className={"edit-popup"}>
-            {createTopBar(topBarText, onCloseClick, setCurProf, setCustomQty)}
+            {createTopBar(topBarText + ": " + getTruncatedName(selectedRecipeCard.name), onCloseClick, setCurProf, setCustomQty)}
             {createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty)}
             {createAmountToCookDiv(customQty, setCustomQty)}
 
@@ -25,6 +25,13 @@ function determineStartCustomQty(topBarText, recipeCard) {
     } else {
         return (recipeCard.rarity * 5) - recipeCard.currentProficiency;
     }
+}
+
+function getTruncatedName(name) {
+    if (name.length > 15) {
+        return name.substring(0, 15) + "...";
+    }
+    return name;
 }
 
 function createTopBar(topBarText, onCloseClick, setCurProf, setCustomQty) {

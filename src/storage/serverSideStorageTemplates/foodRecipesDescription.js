@@ -1485,7 +1485,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Onigiri",
-            src: "./images/foodRecipe/Onigiri.png",
+            src: "./images/foodRecipe/onigiri.png",
             type: "Heal",
             rarity: 2,
             craftsFrom: [

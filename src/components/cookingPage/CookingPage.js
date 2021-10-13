@@ -17,7 +17,7 @@ export class CookingPage extends Component {
     }
 
     getRecipeCards() {
-        return this.props.recipes.filter(card => card.hasCard);
+        return storage.sortRecipeCardsByRank(this.props.recipes.filter(card => card.hasCard));
     }
 
     removeRecipeCard(recipeCard) {

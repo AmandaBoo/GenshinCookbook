@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import MiniIngredientCard from "../shared/MiniIngredientCard";
 import RecipeQtyEditPopup from "../shared/RecipeQtyEditPopup";
 import DeleteConfirmationPopup from "../shared/DeleteConfirmationPopup";
+import EditRoundedIcon from '@mui/icons-material/EditRounded';
+import PowerSettingsNewRoundedIcon from '@mui/icons-material/PowerSettingsNewRounded';
+import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 
 // TODO : FIX THE STYLING FOR DISABLE HERE
 const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable}) => {
@@ -24,26 +27,20 @@ function createTopBar(recipeData, setPopup, onCardEnableDisable) {
     return (
         <div className={"recipe-top-bar"}>
             <>
-                <img
+                <DeleteOutlineRoundedIcon
                     onClick={() => setPopup("trash")}
-                    className={"button"}
-                    src={"./images/icons/trashIcon.png"}
-                    alt={"trash-icon.png"}
+                    className={"svg-icon"}
                 />
             </>
             <div className={"recipe-name"}>{recipeData.name}</div>
             <>
-                <img
+                <PowerSettingsNewRoundedIcon
                     onClick={() => onCardEnableDisable(recipeData)}
-                    className={"button power-button"}
-                    src={"./images/icons/powerIcon.png"}
-                    alt={"edit-icon.png"}
+                    className={"svg-icon power-button-margin"}
                 />
-                <img
+                <EditRoundedIcon
                     onClick={() => setPopup("edit")}
-                    className={"button"}
-                    src={"./images/icons/editIcon.png"}
-                    alt={"edit-icon.png"}
+                    className={"svg-icon"}
                 />
             </>
         </div>
@@ -53,15 +50,17 @@ function createTopBar(recipeData, setPopup, onCardEnableDisable) {
 function createRecipeCardBody(recipeData) {
     return (
         <>
-            <img
-                className={
-                    `recipe-img
-                    ${!recipeData.enabled ? "disabled-img" : ""}`
-                }
-                style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + recipeData.rarity + '_background_cropped.jpg")'}}
-                src={recipeData.src}
-                alt={recipeData.name}
-            />
+            <div className={"recipe-img-div"}>
+                <img
+                    className={
+                        `recipe-img
+                        ${!recipeData.enabled ? "disabled-img" : ""}`
+                    }
+                    style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + recipeData.rarity + '_background_cropped.jpg")'}}
+                    src={recipeData.src}
+                    alt={recipeData.name}
+                />
+            </div>
             <div className={"recipe-progress"}>
                 <p className={
                     `${!recipeData.enabled ? "disabled-progress" : "enabled-progress"}
@@ -83,10 +82,10 @@ function createRecipeCardBody(recipeData) {
     );
 }
 
-function renderIngredients(ingredientsArray, isEnabled) {
+function renderIngredients(allIngredients, isEnabled) {
     let ingredientCards = [];
-    if (ingredientsArray !== undefined) {
-        ingredientsArray.forEach(arr => {
+    if (allIngredients !== undefined) {
+        allIngredients.forEach(arr => {
             // raw ingredients
             arr[0].raw.forEach(ing => {
                 ingredientCards.push(
