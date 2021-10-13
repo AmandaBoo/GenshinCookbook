@@ -26,9 +26,10 @@ function generateImage(data) {
         />
     );
 }
-function resetFieldOnLeave(value, setter) {
+function resetFieldOnLeave(value, setter,data) {
     if (value === "") {
-        setter(0);
+        setter(0); //state of field set to 0
+        data.qty = 0; //inventory obj qty set to 0
     }
 }
 function generateTextField(data, qty, setQty) {
@@ -44,7 +45,7 @@ function generateTextField(data, qty, setQty) {
                 setQty(event.target.value);
             }}
             onFocus={(event) => event.target.select()}
-            onBlur={(event) => resetFieldOnLeave(event.target.value, setQty)}
+            onBlur={(event) => resetFieldOnLeave(event.target.value, setQty,data)}
         />
     );
 }
