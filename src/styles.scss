@@ -38,7 +38,10 @@ body {
   .nav-bar-links {
     padding: 1em;
     cursor: pointer;
-
+    border: none;
+    font-size: $default-font-size;
+    background-color: $panel-color;
+    margin-top: -15px;
     &:hover {
       color: $default-hover-color;
       background-color: $hover-background-color;
