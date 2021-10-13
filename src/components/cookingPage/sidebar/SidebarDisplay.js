@@ -5,7 +5,7 @@ import GroceryDisplay from "./grocery/GroceryDisplay";
 
 const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOList, selectedMenu, setSelectedMenu}) => {
     return (
-        <div className={"sidebar-display card"}>
+        <div className={"sidebar-display"}>
             <div className={"add-recipe-button-div"}>
                 <Icon
                     id={"recipe-card-icon"}
