@@ -141,8 +141,8 @@ body {
 
     display: grid;
     width: 350px;
-    min-height: 250px;
-    max-height: 250px;
+    min-height: 265px;
+    max-height: 265px;
     border-radius: 16px;
     margin-right: 8px;
     color: $default-color;
@@ -163,7 +163,8 @@ body {
       .recipe-name {
         width: 80%;
         text-align: center;
-        margin-top: 0.1em;
+        margin-top: 0.2em;
+        margin-left: 1em;
       }
 
       .svg-icon {
@@ -191,18 +192,48 @@ body {
       font-size: $sub-font-size;
 
       .recipe-progress-fields {
+        padding-right: 0.5em;
+        padding-top: 1.25em;
+        font-size: 12px;
+        min-width: 70px;
+      }
+
+      .progress-field {
+        display: flex;
+        justify-content: center;
+        margin-right: 1.5em;
+      }
+
+      .prof-field {
+        height: 1.25em;
+      }
+
+      .recipe-data-field {
+        font-size: 14px;
+      }
+
+      .cook-button-div {
+        display: flex;
+        justify-content: center;
         width: 90%;
-        border-radius: 10px;
-        padding: 0.25em;
-        text-align: center;
+        margin-bottom: 1em;
+        margin-top: 10px;
       }
 
-      .disabled-progress {
-        background-color: #e3e3e8;
-      }
+      .modal-button {
+        font-size: $sub-font-size;
 
-      .enabled-progress {
-        background-color: $background-color;;
+        .modal-button-no-cook {
+
+        }
+
+        .modal-button-partial-cook {
+
+        }
+
+        .modal-button-full-cook {
+
+        }
       }
     }
 
@@ -230,6 +261,7 @@ body {
       grid-area: ingredients;
       border-top: 1px solid $white-shadow;
       margin: 0 0.5em 5px;
+      padding-top: 0.5em;
     }
   }
 }
@@ -341,7 +373,7 @@ body {
 
   cursor: pointer;
 
-  box-shadow: 0 0 3px $card-shadow-color;
+  box-shadow: 0 0 1px $card-shadow-color;
 }
 
 .cards {
@@ -374,7 +406,7 @@ body {
 
   cursor: pointer;
 
-  box-shadow: 0 0 3px $card-shadow-color;
+  box-shadow: 0 0 1px $card-shadow-color;
 
   transition: all .2s ease-in-out;
 }

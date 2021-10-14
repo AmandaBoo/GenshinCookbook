@@ -6,6 +6,7 @@ import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import PowerSettingsNewRoundedIcon from '@mui/icons-material/PowerSettingsNewRounded';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import * as Utils from "../../../util/utils";
+import {Icon} from "../../shared/Icon";
 
 // TODO : FIX THE STYLING FOR DISABLE HERE
 const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable}) => {
@@ -63,18 +64,24 @@ function createRecipeCardBody(recipeData) {
                 />
             </div>
             <div className={"recipe-progress"}>
-                <p className={
-                    `${!recipeData.enabled ? "disabled-progress" : "enabled-progress"}
-                    recipe-progress-fields`
-                }>
-                    Proficiency: {recipeData.currentProficiency}/{recipeData.rarity * 5}
-                </p>
-                <p className={
-                    `${!recipeData.enabled ? "disabled-progress" : "enabled-progress"}
-                    recipe-progress-fields`
-                }>
-                    Custom Qty: {recipeData.qty}/{recipeData.want}
-                </p>
+                <span className={"progress-field prof-field"}>
+                    <div className={"recipe-progress-fields"}>Proficiency :</div>
+                    <p className={"recipe-data-field"}>{recipeData.currentProficiency}/{recipeData.rarity * 5}</p>
+                </span>
+
+                <span className={"progress-field"}>
+                    <div className={"recipe-progress-fields"}>Custom Qty :</div>
+                    <p className={"recipe-data-field"}>{recipeData.qty}/{recipeData.want * 5}</p>
+                </span>
+
+                <div className={"cook-button-div"}>
+                    <button
+                        className={`modal-button`}
+                        onClick={""}
+                    >
+                        Cook
+                    </button>
+                </div>
             </div>
             <div className={"recipe-ingredient-div"}>
                 {renderIngredients(recipeData.craftsFrom, recipeData.enabled)}

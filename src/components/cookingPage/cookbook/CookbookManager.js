@@ -4,7 +4,7 @@ import * as storage from "../../../storageInterfaces/storageInterface";
 import CookbookCardDisplay from "./CookbookCardDisplay";
 import RecipeQtyEditPopup from "../shared/RecipeQtyEditPopup";
 
-export class AddRecipePopup extends Component {
+export class CookbookManager extends Component {
     constructor(props) {
         super(props);
         this.state = {
