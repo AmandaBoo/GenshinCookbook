@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import CloseButton from "../../shared/CloseButton";
 import SaveButton from "../../shared/SaveButton";
+import * as Utils from "../../../util/utils";
 
 const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onCloseClick}) => {
     const [curProf, setCurProf] = useState(selectedRecipeCard != null ? selectedRecipeCard.currentProficiency: 0);
@@ -10,7 +11,7 @@ const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onClos
     return (
     <div className={"message-modal"}>
         <div className={"edit-popup"}>
-            {createTopBar(topBarText, onCloseClick, setCurProf, setCustomQty)}
+            {createTopBar(topBarText + ": " + Utils.getTruncatedName(selectedRecipeCard.name, Utils.MAX_CONFIGURATION_NAME_LENGTH), onCloseClick, setCurProf, setCustomQty)}
             {createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty)}
             {createAmountToCookDiv(customQty, setCustomQty)}
 

@@ -4,7 +4,7 @@ import * as storage from "../../../storageInterfaces/storageInterface";
 import CookbookCardDisplay from "./CookbookCardDisplay";
 import RecipeQtyEditPopup from "../shared/RecipeQtyEditPopup";
 
-export class AddRecipePopup extends Component {
+export class CookbookManager extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -47,18 +47,12 @@ export class AddRecipePopup extends Component {
     }
 
     onAddNewRecipeSaveClick(recipeCard, currentProficiency, customQty) {
-        let recipesWithCard = this.props.foodRecipes.filter(recipe => recipe.hasCard);
-        let highestRank = -1;
-        if (recipesWithCard.length > 0) {
-            highestRank = recipesWithCard.reduce(function(recipe1, recipe2) {
-                return Math.max(recipe1, recipe2);
-            }).rank;
-        }
-        recipeCard.rank = highestRank !== -1 ? highestRank + 1 : 1;
+        let numRecipesWithCard = this.props.foodRecipes.filter(recipe => recipe.hasCard).length;
+
+        recipeCard.rank = numRecipesWithCard === 0 ? 1 : numRecipesWithCard + 1;
         recipeCard.hasCard = true;
         recipeCard.currentProficiency = currentProficiency;
         recipeCard.want = customQty;
-
         storage.saveFoodRecipes(this.props.foodRecipes);
         this.resetSelectedRecipe();
     }

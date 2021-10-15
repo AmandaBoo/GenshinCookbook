@@ -9,6 +9,7 @@ $default-color: #8592A3;
 $default-hover-color: #657EF8;
 $hover-background-color: #EFF2FF;
 $default-font-size: 16px;
+$sub-font-size: 15px;
 $reduced-font-size: 13px;
 $card-shadow-color: #646566;
 $card-background-color: #e4e6f0;
@@ -77,9 +78,11 @@ body {
 }
 
 .sidebar-display {
-  min-width: 370px;
-  margin-right:8px;
+  min-width: 375px;
   padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: 8px;
+  margin-top: 15px;
 
   .add-recipe-button-div {
     border-radius: 16px;
@@ -113,9 +116,10 @@ body {
       padding-left: 5px;
       padding-right: 5px;
       margin-top: 15px;
+      margin-left: 15%;
+      margin-right: 15%;
     }
   }
-
 }
 
 .card {
@@ -136,14 +140,15 @@ body {
   }
 
   .recipe-card-grid {
-    $recipe-img-size: 170px;
+    $recipe-img-size: 125px;
 
     display: grid;
     width: 350px;
-    min-height: 310px;
-    max-height: 310px;
+    min-height: 265px;
+    max-height: 265px;
     border-radius: 16px;
     margin-right: 8px;
+    color: $default-color;
     grid-template-areas:
     "top-bar top-bar"
     "main-img recipe-progress"
@@ -161,12 +166,23 @@ body {
       .recipe-name {
         width: 80%;
         text-align: center;
+        margin-top: 0.2em;
+        margin-left: 1em;
       }
 
-      .button {
-        width: 20px;
-        height: 20px;
+      .svg-icon {
+        color: $default-color;
+        border-radius: 5px;
         cursor: pointer;
+
+        &:hover {
+          color: $default-hover-color;
+          background-color: $hover-background-color;
+        }
+      }
+
+      .power-button-margin {
+        margin-right: 3px;
       }
 
       .power-button {
@@ -176,31 +192,66 @@ body {
 
     .recipe-progress {
       grid-area: recipe-progress;
+      font-size: $sub-font-size;
 
       .recipe-progress-fields {
+        padding-right: 0.5em;
+        padding-top: 1.25em;
+        font-size: 12px;
+        min-width: 70px;
+      }
+
+      .progress-field {
+        display: flex;
+        justify-content: center;
+        margin-right: 1.5em;
+      }
+
+      .prof-field {
+        height: 1.25em;
+      }
+
+      .recipe-data-field {
+        font-size: 14px;
+      }
+
+      .cook-button-div {
+        display: flex;
+        justify-content: center;
         width: 90%;
-        border-radius: 10px;
-        padding: 0.25em;
-        text-align: center;
+        margin-bottom: 1em;
+        margin-top: 10px;
       }
 
-      .disabled-progress {
-        background-color: #e3e3e8;
-      }
+      .modal-button {
+        font-size: $sub-font-size;
 
-      .enabled-progress {
-        background-color: $background-color;;
+        .modal-button-no-cook {
+
+        }
+
+        .modal-button-partial-cook {
+
+        }
+
+        .modal-button-full-cook {
+
+        }
       }
     }
 
-    .recipe-img {
-      grid-area: main-img;
-      max-width: $recipe-img-size;
-      max-height: $recipe-img-size;
-      background-size: cover;
-      background-repeat: no-repeat;
-      border-radius: 35px;
-      margin: 3%;
+    .recipe-img-div {
+      display: flex;
+      justify-content: center;
+      .recipe-img {
+        grid-area: main-img;
+        max-width: $recipe-img-size;
+        max-height: $recipe-img-size;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 35px;
+        margin: 10px 0;
+      }
     }
 
     .disabled-img {
@@ -211,11 +262,9 @@ body {
       display: flex;
       justify-content: center;
       grid-area: ingredients;
-      padding-left: 5px;
-
-      .ingredient-count-overlay {
-        margin-bottom: 8px;
-      }
+      border-top: 1px solid $white-shadow;
+      margin: 0 0.5em 5px;
+      padding-top: 0.5em;
     }
   }
 }
@@ -223,7 +272,7 @@ body {
 .modal {
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 50px;
   left: 0;
   top: 0;
   width: 100%;
@@ -281,18 +330,14 @@ body {
   .close {
     color: $default-color;
     float: right;
-    font-size: 36px;
-    font-weight: bold;
-    width: 50px;
-    height: 50px;
-    text-align: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
 
     &:hover {
       color: $default-hover-color;
       background-color: $hover-background-color;
-      border-radius: 25px;
-      text-decoration: none;
-      cursor: pointer;
     }
   }
 }
@@ -331,7 +376,7 @@ body {
 
   cursor: pointer;
 
-  box-shadow: 0 0 3px $card-shadow-color;
+  box-shadow: 0 0 1px $card-shadow-color;
 }
 
 .cards {
@@ -364,7 +409,7 @@ body {
 
   cursor: pointer;
 
-  box-shadow: 0 0 3px $card-shadow-color;
+  box-shadow: 0 0 1px $card-shadow-color;
 
   transition: all .2s ease-in-out;
 }
@@ -430,7 +475,7 @@ input[type=number]::-webkit-outer-spin-button {
 
     .top-bar {
       border-bottom: 1px solid $white-shadow;
-      padding: 16px;
+      padding: 15px;
       font-weight: bold;
     }
 
@@ -459,19 +504,16 @@ input[type=number]::-webkit-outer-spin-button {
 
     .modal-button {
       width: 100%;
-      margin-top: 15px;
+      margin-top: 5px;
     }
 
   }
 
   .close {
     color: $default-color;
-    font-size: 30px;
-    font-weight: bold;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    margin-top: -12px;
+    width: 35px;
+    height: 35px;
+    margin-top: -10px;
     float: right;
     cursor: pointer;
 
@@ -484,11 +526,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .mini-ingredient-container {
-  $ingredient-img-size: 70px;
+  $ingredient-img-size: 50px;
 
   position: relative;
   color: white;
   margin-left: 2px;
+  padding: 4px;
 
   .mini-ingredient-card {
     width: $ingredient-img-size;
@@ -500,7 +543,8 @@ input[type=number]::-webkit-outer-spin-button {
   .ingredient-count-overlay {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+    margin-left: 4px;
     width: $ingredient-img-size;
     position: absolute;
     text-align: center;

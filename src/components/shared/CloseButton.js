@@ -1,13 +1,13 @@
 import React from 'react';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 const CloseButton = ({onCloseClick}) => {
     return (
-        <span
+        <CloseRoundedIcon
             id={"inventory-close-btn"}
             className={"close"}
             onClick={() => onCloseClick()}
-        >&times;
-        </span>
+        />
     )
 }
 export default CloseButton
