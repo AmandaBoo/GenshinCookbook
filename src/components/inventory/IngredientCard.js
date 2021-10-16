@@ -26,7 +26,7 @@ function generateImage(data) {
         />
     );
 }
-function resetFieldOnLeave(value, setter,data) {
+function resetFieldOnLeave(value, setter, data) {
     if (value === "") {
         setter(0); //state of field set to 0
         data.qty = 0; //inventory obj qty set to 0

@@ -348,6 +348,19 @@ body {
       background-color: $hover-background-color;
     }
   }
+
+  .message-modal-body {
+    padding: 2em 2em 3em;
+    text-align: center;
+  }
+
+  .save-cancel-buttons {
+    display: flex;
+
+    .modal-button {
+      margin-right: 0.5em;
+    }
+  }
 }
 
 .disabled-img {
@@ -542,7 +555,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .cooking-field-title {
-      font-size: $reduced-font-size;
+      font-size: 14px;
       text-align: center;
       margin-top: 2em;
     }
@@ -598,7 +611,7 @@ input[type=number]::-webkit-outer-spin-button {
         border-top: 1px solid $white-shadow;
 
         .ingredient-cards-title {
-          font-size: $reduced-font-size;
+          font-size: 14px;
         }
 
         .ingredient-cards {
@@ -609,6 +622,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .ingredient-warning-text {
+      background-color: rgba(0,0,0,0.4);
       color : #ff4f4f;
     }
 

@@ -205,6 +205,20 @@ export function sortRecipeCardsByRank(recipeCards) {
     return recipeCards;
 }
 
+export function ingredientsHaveChanges(changedIngredients, originalIngredients) {
+    let hasChanges = false;
+    changedIngredients.forEach(ing => {
+        const originalIng = originalIngredients.find(ele => ele.name === ing.name);
+        if (originalIng !== undefined) {
+            if (originalIng.qty !== ing.qty) {
+                hasChanges = true;
+                return hasChanges;
+            }
+        }
+    });
+    return hasChanges;
+}
+
 export function saveIngredients(rawIngredients, foodIngredients) {
     localInterface.setRawIngredientsInLocalStorage(rawIngredients);
     localInterface.setFoodIngredientsInLocalStorage(foodIngredients);
