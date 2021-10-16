@@ -120,6 +120,10 @@ body {
       margin-right: 15%;
     }
   }
+
+  .modal-button {
+    margin: 0 1em;
+  }
 }
 
 .card {
@@ -266,6 +270,10 @@ body {
       margin: 0 0.5em 5px;
       padding-top: 0.5em;
     }
+
+    .message-modal .edit-popup .top-bar {
+      color: $text-color;
+    }
   }
 }
 
@@ -352,11 +360,8 @@ body {
 }
 
 .card-text-field {
-  text-align: center;
   width: 44px;
   margin-bottom: 4px;
-  border: 1px solid #b0b0b0;
-  border-radius: 4px;
 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -481,6 +486,7 @@ input[type=number]::-webkit-outer-spin-button {
 
     .input-field {
       width: 20%;
+      height: 100%;
     }
 
     .input-label {
@@ -499,6 +505,7 @@ input[type=number]::-webkit-outer-spin-button {
       .inner-field-div {
         display: flex;
         justify-content: center;
+        margin-bottom: 0.4em;
       }
     }
 
@@ -507,6 +514,107 @@ input[type=number]::-webkit-outer-spin-button {
       margin-top: 5px;
     }
 
+  }
+
+  .cooking-popup {
+    background-color: white;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+    max-height: 380px;
+    min-width: 650px;
+    padding: 1em;
+
+    .top-bar {
+      border-bottom: 1px solid $white-shadow;
+      padding: 15px;
+      font-weight: bold;
+
+      .cook-header-text {
+        color: $text-color;
+        font-weight: bold;
+      }
+
+      .cook-recipe-name-text {
+        font-size: $reduced-font-size;
+      }
+    }
+
+    .cooking-field-title {
+      font-size: $reduced-font-size;
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    .cooking-parent {
+      display: flex;
+      flex-direction: column;
+    }
+    .cooking-body {
+      display: flex;
+      justify-content: center;
+      margin: 0 2em 1em 4em;
+
+      .cooking-field-div {
+        .text-field {
+          width: 3em;
+          height: 2em;
+          margin-top: 0.4em;
+        }
+      }
+
+      .info-icon {
+        height: 20px;
+        width: 20px;
+        opacity: 0.7;
+        color: $default-hover-color;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .progress-display-div {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: $reduced-font-size;
+      margin-bottom: 2em;
+    }
+
+    .ingredients-div {
+      display: flex;
+      justify-content: center;
+
+      .ingredients-border {
+        border-right: 1px solid $white-shadow;
+      }
+
+      .ingredients-wrapper {
+        text-align: center;
+        padding: 1em 2em;
+        border-top: 1px solid $white-shadow;
+
+        .ingredient-cards-title {
+          font-size: $reduced-font-size;
+        }
+
+        .ingredient-cards {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+
+    .ingredient-warning-text {
+      color : #ff4f4f;
+    }
+
+    .modal-button {
+      padding: 1em 2em;
+    }
   }
 
   .close {
@@ -555,6 +663,15 @@ input[type=number]::-webkit-outer-spin-button {
     left: 0;
     cursor: pointer;
   }
+}
+
+.text-field {
+  text-align: center;
+  cursor: pointer;
+  background-color: $background-color;
+  padding: 0 5px;
+  border-radius: 4px;
+  border: none
 }
 
 

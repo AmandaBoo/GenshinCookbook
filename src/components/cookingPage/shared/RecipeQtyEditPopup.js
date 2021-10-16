@@ -50,7 +50,7 @@ function createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, set
                     id={"curProfInputField"}
                     type={"number"}
                     value={curProf}
-                    className={"input-field"}
+                    className={"input-field text-field"}
                     onChange={event => {
                         setCurProf(parseInt(event.target.value));
                         updateFields(recipeProficiency, event.target.value, setCurProf, setCustomQty);
@@ -77,7 +77,7 @@ function createAmountToCookDiv(customQty, setCustomQty) {
                     id={"amtToCookInputField"}
                     type={"number"}
                     value={customQty}
-                    className={"input-field"}
+                    className={"input-field text-field"}
                     onChange={event => {
                         setCustomQty(parseInt(event.target.value));
                     }}

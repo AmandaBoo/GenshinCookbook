@@ -12,6 +12,11 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
                     text={"Add Recipe Card"}
                     onClick={i => setSelectedMenu(i)}
                 />
+                <Icon
+                    id={"priority-icon"}
+                    text={"Manage Priority"}
+                    onClick={i => setSelectedMenu(i)}
+                />
             </div>
             <CookbookManager
                 doRender={selectedMenu === "recipe-card-icon"}

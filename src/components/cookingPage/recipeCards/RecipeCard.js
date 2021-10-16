@@ -4,12 +4,12 @@ import RecipeQtyEditPopup from "../shared/RecipeQtyEditPopup";
 import DeleteConfirmationPopup from "../shared/DeleteConfirmationPopup";
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import PowerSettingsNewRoundedIcon from '@mui/icons-material/PowerSettingsNewRounded';
-import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
+import DeleteIcon from '@mui/icons-material/Delete';
 import * as Utils from "../../../util/utils";
-import {Icon} from "../../shared/Icon";
+import {CookingPopup} from "./CookingPopup";
 
 // TODO : FIX THE STYLING FOR DISABLE HERE
-const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable}) => {
+const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable, onCardCook}) => {
     const [popup, setPopup] = useState(null);
 
     return (
@@ -18,9 +18,10 @@ const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable})
             ${!recipeData.enabled ? "disabled-card": "enabled-card"}
             `}>
             {createTopBar(recipeData, setPopup, onCardEnableDisable)}
-            {createRecipeCardBody(recipeData)}
+            {createRecipeCardBody(recipeData, setPopup)}
             {renderQuantityEditPopup(popup, setPopup, recipeData, onCardEdit)}
             {renderDeleteConfirmationPopup(popup, setPopup, recipeData, onCardDelete)}
+            {renderCookingPopup(recipeData, popup, setPopup, onCardCook)}
         </div>
     );
 }
@@ -29,7 +30,7 @@ function createTopBar(recipeData, setPopup, onCardEnableDisable) {
     return (
         <div className={"recipe-top-bar"}>
             <>
-                <DeleteOutlineRoundedIcon
+                <DeleteIcon
                     onClick={() => setPopup("trash")}
                     className={"svg-icon"}
                 />
@@ -49,7 +50,7 @@ function createTopBar(recipeData, setPopup, onCardEnableDisable) {
     );
 }
 
-function createRecipeCardBody(recipeData) {
+function createRecipeCardBody(recipeData, setPopup) {
     return (
         <>
             <div className={"recipe-img-div"}>
@@ -71,13 +72,13 @@ function createRecipeCardBody(recipeData) {
 
                 <span className={"progress-field"}>
                     <div className={"recipe-progress-fields"}>Custom Qty :</div>
-                    <p className={"recipe-data-field"}>{recipeData.qty}/{recipeData.want * 5}</p>
+                    <p className={"recipe-data-field"}>{recipeData.qty}/{recipeData.want}</p>
                 </span>
 
                 <div className={"cook-button-div"}>
                     <button
                         className={`modal-button`}
-                        onClick={""}
+                        onClick={() => setPopup("cooking")}
                     >
                         Cook
                     </button>
@@ -148,6 +149,18 @@ function renderDeleteConfirmationPopup(popup, setPopup, recipeCard, onCardDelete
                     onCardDelete(recipeCard);
                     onCloseClick(setPopup);
                 }}
+            />
+        )
+    }
+}
+
+function renderCookingPopup(recipe, popup, setPopup, onCardCook) {
+    if (popup === "cooking") {
+        return (
+            <CookingPopup
+                recipe={recipe}
+                onCloseClick={() => onCloseClick(setPopup)}
+                onSaveClick={(card) => onCardCook(card)}
             />
         )
     }

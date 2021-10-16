@@ -49,6 +49,18 @@ export class CookingPage extends Component {
         this.props.resetStateValues();
     }
 
+    onCardCook(recipeCard) {
+
+        let rawIngredientsToSave = recipeCard.craftsFrom[0][0].raw.map(ingMap => ingMap.ingredient);
+        let craftIngredientsToSave = recipeCard.craftsFrom[0][1].crafted.map(ingMap => ingMap.ingredient);
+        console.log('RECIPE CARD POST COOK', recipeCard);
+        console.log('RAW INGREDIENTS', rawIngredientsToSave);
+        console.log('CRAFT INGREDIENTS', craftIngredientsToSave);
+        storage.saveFoodRecipes([recipeCard]);
+        storage.saveIngredients(rawIngredientsToSave, craftIngredientsToSave);
+        this.props.resetStateValues();
+    }
+
     render() {
         return (
             <div className={"cooking-page-display"}>
@@ -57,6 +69,7 @@ export class CookingPage extends Component {
                     removeRecipeCard={card => this.removeRecipeCard(card)}
                     editRecipeCard={(card, curProf, customQty) => this.editRecipeCard(card, curProf, customQty)}
                     enableDisableRecipeCard={(card) => this.enableDisableRecipeCard(card)}
+                    onCardCook={(card) => this.onCardCook(card)}
                 />
                 <SidebarDisplay
                     recipes={this.props.recipes}

@@ -30,7 +30,10 @@ export function getFoodRecipesFromLocalStorage() {
 export function setRawIngredientsInLocalStorage(rawIngredients) {
     let rawIngredientsJSON = getRawIngredientsFromLocalStorage();
     rawIngredientsJSON.forEach(ing => {
-        ing.qty = parseInt(rawIngredients.find(ele => ele.name === ing.name).qty);
+        let rawIngredient = rawIngredients.find(ele => ele.name === ing.name);
+        if (rawIngredient !== undefined) {
+            ing.qty = parseInt(rawIngredients.find(ele => ele.name === ing.name).qty);
+        }
     });
     localStorage.rawIngredients = JSON.stringify(rawIngredientsJSON);
 }
@@ -38,7 +41,10 @@ export function setRawIngredientsInLocalStorage(rawIngredients) {
 export function setFoodIngredientsInLocalStorage(foodIngredients) {
     let foodIngredientsJSON = getFoodIngredientsFromLocalStorage();
     foodIngredientsJSON.forEach(ing => {
-        ing.qty = parseInt(foodIngredients.find(ele => ele.name === ing.name).qty);
+        let foodIngredient = foodIngredients.find(ele => ele.name === ing.name);
+        if (foodIngredient !== undefined) {
+            ing.qty = parseInt(foodIngredients.find(ele => ele.name === ing.name).qty);
+        }
     });
     localStorage.foodIngredients = JSON.stringify(foodIngredientsJSON);
 }
