@@ -219,6 +219,9 @@ function updateRecipeBeforeSave(cookQty, recipe) {
     let recipeQtyPostCook = recipe.qty + cookQty;
     recipe.qty = recipeQtyPostCook > recipe.want ? recipe.want : recipeQtyPostCook;
 
+    if (recipe.qty === recipe.want) {
+        recipe.hasCard = false;
+    }
     return recipe;
 }
 
@@ -233,7 +236,7 @@ function createConfirmCookButton(cookQty, recipe, saveClick, onCloseClick) {
                     saveClick(recipe);
                     onCloseClick();
                 }}
-                isDisabled={isNaN(cookQty)}
+                isDisabled={isNaN(cookQty) || cookQty === 0}
             />
         </div>
     );
