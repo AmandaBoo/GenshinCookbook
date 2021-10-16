@@ -35,7 +35,7 @@ function resetFieldOnLeave(value, setter,data) {
 function generateTextField(data, qty, setQty) {
     return (
         <input
-            className={"card-text-field"}
+            className={"card-text-field text-field"}
             type={"number"}
             value={qty}
             onKeyDown={ (evt) => (evt.key === 'e' ||evt.key === '.' ||evt.key === '-') && evt.preventDefault() }

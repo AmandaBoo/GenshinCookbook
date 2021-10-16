@@ -3,7 +3,6 @@ import {NavBar} from "../shared/NavBar";
 import * as storage from "../../storageInterfaces/storageInterface";
 import IngredientCardDisplay from "./IngredientCardDisplay";
 import SaveButton from "../shared/SaveButton";
-import {sortIngredientsByUIOrder} from "../../storageInterfaces/storageInterface";
 
 export class InventoryManager extends Component {
     constructor(props) {
@@ -13,8 +12,6 @@ export class InventoryManager extends Component {
         };
         this.imgSrcList = ["images/icons/ingredientsIcon.png", "images/icons/furnitureIcon.png"];
         this.imgSrcListIds = ["materials-tab", "furniture-tab"];
-        this.rawIngredients = storage.getAllRawIngredients();
-        this.foodIngredients = storage.getAllCraftedFoodIngredients(this.rawIngredients);
     }
 
     updateSelectedInventoryTab(tabId) {
@@ -23,12 +20,12 @@ export class InventoryManager extends Component {
 
     determineCardData() {
         if (this.state.selectedTab === "materials-tab") {
-            return storage.sortIngredientsByUIOrder(this.rawIngredients.concat(this.foodIngredients));
+            return storage.sortIngredientsByUIOrder(this.props.rawIngredients.concat(this.props.craftIngredients));
         }
     }
 
     onSaveClick() {
-        storage.saveIngredients(this.rawIngredients, this.foodIngredients);
+        storage.saveIngredients(this.props.rawIngredients, this.props.craftIngredients);
         this.props.onSaveClick();
         this.props.onCloseClick();
     }

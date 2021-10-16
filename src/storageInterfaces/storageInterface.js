@@ -202,7 +202,6 @@ export function sortRecipeCardsByRank(recipeCards) {
     recipeCards.sort((recipe1, recipe2) => {
         return recipe1.rank - recipe2.rank;
     });
-    console.log(recipeCards);
     return recipeCards;
 }
 
