@@ -6,8 +6,8 @@ $site-nav-bar-height: 60px;
 $white-shadow: #d4d5d9;
 $text-color: #2f3f56;
 $default-color: #8592A3;
-$default-hover-color: #657EF8;
-$hover-background-color: #EFF2FF;
+$default-hover-color: #667ffd;
+$hover-background-color: #d6dcfa;
 $default-font-size: 16px;
 $sub-font-size: 15px;
 $reduced-font-size: 13px;
@@ -37,6 +37,8 @@ body {
   z-index: 1;
 
   .nav-bar-links {
+    text-decoration: none;
+    color: $default-color;
     padding: 1em;
     cursor: pointer;
     border: none;
@@ -50,6 +52,7 @@ body {
     }
   }
 
+  // TODO : APPLY THIS TO THE SELECTED TAB
   .nav-bar-link-selected {
     color: $default-hover-color;
     font-weight: bold;

@@ -1,14 +1,18 @@
 import React, {useState} from 'react';
-import {NavBarTab} from "../shared/NavBarTab";
 import {Icon} from "../shared/Icon";
 import {InventoryManager} from "../inventory/InventoryManager";
+import {Link} from "react-router-dom";
 
-const MainNavBar = ({ids, names, setSelectedPage, selectedPage, onInventorySave, onInventoryClose, rawIngredients, craftIngredients}) => {
+const MainNavBar = ({selectedPage, onInventorySave, onInventoryClose, rawIngredients, craftIngredients}) => {
     const [selectedMenu, setSelectedMenu] = useState(null);
-
     return (
         <div className={"inner-nav-bar"}>
-            {renderMainNavBarLinks(selectedPage, ids, setSelectedPage, names)}
+            <Link
+                className={
+                    `nav-bar-links
+                    ${selectedPage === "summaryPage" ? "nav-bar-link-selected" : "nav-bar-link-default"}`
+                } to={"/"}>Summary</Link>
+            <Link className="nav-bar-links nav-bar-links-default" to={"/cooking"}>Cooking</Link>
             <div className={"inventory-icon"}>
                 <Icon
                     id={"inventory-icon"}
@@ -28,25 +32,6 @@ const MainNavBar = ({ids, names, setSelectedPage, selectedPage, onInventorySave,
             />
         </div>
     );
-}
-
-function renderMainNavBarLinks(selectedPage, ids, setSelectedPage, names) {
-    let navBarLinks = [];
-    for (let i = 0; i < ids.length; i++) {
-        // TODO : FIX UNIQUE KEY PROP WARNING
-        let tabId = ids[i];
-        navBarLinks.push(
-            <NavBarTab
-                name={names[i]}
-                id={tabId}
-                isSelected={selectedPage === tabId}
-                onClick={() => setSelectedPage(tabId)}
-            />
-        )
-    }
-    return (
-        navBarLinks
-    )
 }
 
 export default MainNavBar;
