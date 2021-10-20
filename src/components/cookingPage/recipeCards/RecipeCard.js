@@ -13,16 +13,19 @@ const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable, 
     const [popup, setPopup] = useState(null);
 
     return (
-        <div className={
-            `recipe-card-grid card
+        <div>
+            <div className={
+                `recipe-card-grid card
             ${!recipeData.enabled ? "disabled-card": "enabled-card"}
             `}>
-            {createTopBar(recipeData, setPopup, onCardEnableDisable)}
-            {createRecipeCardBody(recipeData, setPopup)}
+                {createTopBar(recipeData, setPopup, onCardEnableDisable)}
+                {createRecipeCardBody(recipeData, setPopup)}
+            </div>
             {renderQuantityEditPopup(popup, setPopup, recipeData, onCardEdit)}
             {renderDeleteConfirmationPopup(popup, setPopup, recipeData, onCardDelete)}
             {renderCookingPopup(recipeData, popup, setPopup, onCardCook)}
         </div>
+
     );
 }
 
@@ -55,10 +58,7 @@ function createRecipeCardBody(recipeData, setPopup) {
         <>
             <div className={"recipe-img-div"}>
                 <img
-                    className={
-                        `recipe-img
-                        ${!recipeData.enabled ? "disabled-img" : ""}`
-                    }
+                    className={"recipe-img"}
                     style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + recipeData.rarity + '_background_cropped.jpg")'}}
                     src={recipeData.src}
                     alt={recipeData.name}
