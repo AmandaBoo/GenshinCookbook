@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import RecipeCardDisplay from "./recipeCards/RecipeCardDisplay";
 import * as storage from "../../storageInterfaces/storageInterface";
 import SidebarDisplay from "./sidebar/SidebarDisplay";
+import {KofiIcon} from "../shared/KofiIcon";
+import {DonatePopup} from "../shared/DonatePopup";
 
 export class CookingPage extends Component {
     constructor(props) {
@@ -50,7 +52,6 @@ export class CookingPage extends Component {
     }
 
     onCardCook(recipeCard) {
-
         let rawIngredientsToSave = recipeCard.craftsFrom[0][0].raw.map(ingMap => ingMap.ingredient);
         let craftIngredientsToSave = recipeCard.craftsFrom[0][1].crafted.map(ingMap => ingMap.ingredient);
         console.log('RECIPE CARD POST COOK', recipeCard);

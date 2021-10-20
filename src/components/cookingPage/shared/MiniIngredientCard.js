@@ -5,10 +5,7 @@ const MiniIngredientCard = ({ingredientData, qtyRequired, isEnabled = true, need
     return (
         <div className={"mini-ingredient-container"}>
             <img
-                className={
-                    `mini-ingredient-card
-                    ${!isEnabled ? "disabled-img" : ""}`
-                }
+                className={"mini-ingredient-card"}
                 src={ingredientData.src}
                 alt={ingredientData.name}
                 style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + ingredientData.rarity + '_background_cropped.jpg")'}}
