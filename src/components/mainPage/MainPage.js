@@ -3,11 +3,14 @@ import {CookingPage} from "../cookingPage/CookingPage";
 import MainNavBar from "./MainNavBar";
 import * as storage from "../../storageInterfaces/storageInterface";
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {DonatePopup} from "../shared/DonatePopup";
+import {KofiIcon} from "../shared/KofiIcon";
 
 const MainPage = () => {
     const [recipes, setRecipes] = useState(storage.getAllFoodRecipes());
     const [rawIngredients, setRawIngredients] = useState(storage.getAllRawIngredients);
     const [craftIngredients, setCraftIngredients] = useState(storage.getAllCraftedFoodIngredients(storage.getAllRawIngredients()));
+    const [currentPopup, setCurrentPopup] = useState("");
     return (
         <div>
             <Router>
@@ -36,6 +39,10 @@ const MainPage = () => {
                     </Switch>
                 </div>
             </Router>
+            <KofiIcon
+                onClick={() => setCurrentPopup("kofi-icon")}
+            />
+            {renderDonatePopup(currentPopup, setCurrentPopup)}
         </div>
     );
 }
@@ -73,6 +80,18 @@ function renderSmithingPage() {
         </div>
     );
 }
+
+function renderDonatePopup(currentPopup, setCurrentPopup) {
+    if (currentPopup === "kofi-icon") {
+        return (
+            <DonatePopup
+                onCloseClick={() => setCurrentPopup("")}
+            />
+        );
+    }
+    return null;
+}
+
 function resetStateValues(setRecipes, setRawIngredients, setCraftIngredients) {
     setRecipes(storage.getAllFoodRecipes());
     setRawIngredients(storage.getAllRawIngredients());
