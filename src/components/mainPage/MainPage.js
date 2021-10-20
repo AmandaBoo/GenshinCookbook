@@ -27,6 +27,12 @@ const MainPage = () => {
                         <Route path={"/cooking"}>
                             {renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngredients)}
                         </Route>
+                        <Route path={"/potions"}>
+                            {renderPotionsPage()}
+                        </Route>
+                        <Route path={"/smithing"}>
+                            {renderSmithingPage()}
+                        </Route>
                     </Switch>
                 </div>
             </Router>
@@ -36,7 +42,9 @@ const MainPage = () => {
 
 function renderSummaryPage() {
     return (
-        <div>Hi I'm summary!</div>
+        <div>
+            Hi I'm Summary!
+        </div>
     );
 
 }
@@ -47,6 +55,22 @@ function renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngre
             recipes={recipes}
             resetStateValues={() => resetStateValues(setRecipes, setRawIngredients, setCraftIngredients)}
         />
+    );
+}
+
+function renderPotionsPage() {
+    return (
+        <div>
+            Hi I'm Potions!
+        </div>
+    );
+}
+
+function renderSmithingPage() {
+    return (
+        <div>
+            Hi I'm Smithing!
+        </div>
     );
 }
 function resetStateValues(setRecipes, setRawIngredients, setCraftIngredients) {
