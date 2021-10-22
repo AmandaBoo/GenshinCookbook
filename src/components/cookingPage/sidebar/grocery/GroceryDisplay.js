@@ -1,21 +1,24 @@
 import React from 'react';
 import GroceryItemsDisplay from "./GroceryItemsDisplay";
 
-const GroceryDisplay = ({rawIngredientsDTOList, craftedIngredientsDTOList})=> {
+const GroceryDisplay = ({rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick})=> {
 
     return (
         <div className={"sidebar-card-display"}>
             <GroceryItemsDisplay
                 topBarText={"FORAGE"}
                 ingredientsMap={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "forage")}
+                onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
             />
             <GroceryItemsDisplay
                 topBarText={"SHOP"}
                 ingredientsMap={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "shop")}
+                onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
             />
             <GroceryItemsDisplay
                 topBarText={"SHOP + FORAGE"}
                 ingredientsMap={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "both")}
+                onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
             />
         </div>
     )

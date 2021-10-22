@@ -8,22 +8,21 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import * as Utils from "../../../util/utils";
 import {CookingPopup} from "./CookingPopup";
 
-// TODO : FIX THE STYLING FOR DISABLE HERE
-const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable, onCardCook}) => {
+const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable, onCardCook, onMiniIngredientEditSaveClick}) => {
     const [popup, setPopup] = useState(null);
 
     return (
         <div>
             <div className={
                 `recipe-card-grid card
-            ${!recipeData.enabled ? "disabled-card": "enabled-card"}
+                ${!recipeData.enabled ? "disabled-card": ""}
             `}>
                 {createTopBar(recipeData, setPopup, onCardEnableDisable)}
-                {createRecipeCardBody(recipeData, setPopup)}
+                {createRecipeCardBody(recipeData, setPopup, onMiniIngredientEditSaveClick)}
             </div>
             {renderQuantityEditPopup(popup, setPopup, recipeData, onCardEdit)}
             {renderDeleteConfirmationPopup(popup, setPopup, recipeData, onCardDelete)}
-            {renderCookingPopup(recipeData, popup, setPopup, onCardCook)}
+            {renderCookingPopup(recipeData, popup, setPopup, onCardCook, onMiniIngredientEditSaveClick)}
         </div>
 
     );
@@ -53,7 +52,7 @@ function createTopBar(recipeData, setPopup, onCardEnableDisable) {
     );
 }
 
-function createRecipeCardBody(recipeData, setPopup) {
+function createRecipeCardBody(recipeData, setPopup, onMiniIngredientEditSaveClick) {
     return (
         <>
             <div className={"recipe-img-div"}>
@@ -85,13 +84,13 @@ function createRecipeCardBody(recipeData, setPopup) {
                 </div>
             </div>
             <div className={"recipe-ingredient-div"}>
-                {renderIngredients(recipeData.craftsFrom, recipeData.enabled)}
+                {renderIngredients(recipeData.craftsFrom, recipeData.enabled, onMiniIngredientEditSaveClick)}
             </div>
         </>
     );
 }
 
-function renderIngredients(allIngredients, isEnabled) {
+function renderIngredients(allIngredients, isEnabled, onEditSaveClick) {
     let ingredientCards = [];
     if (allIngredients !== undefined) {
         allIngredients.forEach(arr => {
@@ -102,6 +101,7 @@ function renderIngredients(allIngredients, isEnabled) {
                         ingredientData={ing.ingredient}
                         isEnabled={isEnabled}
                         qtyRequired={ing.qtyToObtain}
+                        onEditSaveClick={(ingredient, ingredientQty) => onEditSaveClick(ingredient, ingredientQty)}
                     />
                 );
             })
@@ -113,6 +113,7 @@ function renderIngredients(allIngredients, isEnabled) {
                         ingredientData={ing.ingredient}
                         isEnabled={isEnabled}
                         qtyRequired={ing.qtyToObtain}
+                        onEditSaveClick={(ingredient, ingredientQty) => onEditSaveClick(ingredient, ingredientQty)}
                     />
                 );
             })
@@ -154,13 +155,14 @@ function renderDeleteConfirmationPopup(popup, setPopup, recipeCard, onCardDelete
     }
 }
 
-function renderCookingPopup(recipe, popup, setPopup, onCardCook) {
+function renderCookingPopup(recipe, popup, setPopup, onCardCook, onMiniIngredientEditSaveClick) {
     if (popup === "cooking") {
         return (
             <CookingPopup
                 recipe={recipe}
                 onCloseClick={() => onCloseClick(setPopup)}
                 onSaveClick={(card) => onCardCook(card)}
+                onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
             />
         )
     }

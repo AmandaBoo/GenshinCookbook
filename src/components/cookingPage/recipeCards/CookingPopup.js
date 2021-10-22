@@ -6,30 +6,32 @@ import InfoIcon from '@mui/icons-material/Info';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 
-export const CookingPopup = ({recipe, onCloseClick, onSaveClick}) => {
+export const CookingPopup = ({recipe, onCloseClick, onSaveClick, onMiniIngredientEditSaveClick}) => {
     const [cookQty, setCookQty] = useState(calculateMaxCraftQty(recipe));
     const maxQty = calculateMaxCraftQty(recipe);
     return (
         <div className={"message-modal"}>
-            <div className={"cooking-popup"}>
-                {createTopBar(recipe, onCloseClick)}
-                {createCookingField(recipe, cookQty, setCookQty, maxQty)}
-                {createProgressDisplay(cookQty, recipe)}
-                <div>
-                    <div className={"ingredients-div"}>
-                        <div className={"ingredients-wrapper"}>
-                            <div className={"ingredient-cards-title"}>
-                                INGREDIENTS REQUIRED
+            <div className={"vertical-center"}>
+                <div className={"cooking-popup"}>
+                    {createTopBar(recipe, onCloseClick)}
+                    {createCookingField(recipe, cookQty, setCookQty, maxQty)}
+                    {createProgressDisplay(cookQty, recipe)}
+                    <div>
+                        <div className={"ingredients-div"}>
+                            <div className={"ingredients-wrapper"}>
+                                <div className={"ingredient-cards-title"}>
+                                    INGREDIENTS REQUIRED
+                                </div>
+                                <div className={"ingredient-cards"}>
+                                    {createIngredientsRequiredDisplay(recipe, cookQty, onMiniIngredientEditSaveClick)}
+                                </div>
                             </div>
-                            <div className={"ingredient-cards"}>
-                                {createIngredientsRequiredDisplay(recipe, cookQty)}
-                            </div>
+                            {createIngredientsBorder(getMissingIngredients(recipe, cookQty))}
+                            {createMissingIngredientsDiv(recipe, cookQty, getMissingIngredients(recipe, cookQty), onMiniIngredientEditSaveClick)}
                         </div>
-                        {createIngredientsBorder(getMissingIngredients(recipe, cookQty))}
-                        {createMissingIngredientsDiv(recipe, cookQty, getMissingIngredients(recipe, cookQty))}
                     </div>
+                    {createConfirmCookButton(cookQty, recipe, onSaveClick, onCloseClick)}
                 </div>
-                {createConfirmCookButton(cookQty, recipe, onSaveClick, onCloseClick)}
             </div>
         </div>
     );
@@ -128,7 +130,7 @@ function calculateMaxCraftQty(recipe) {
     return Math.min(...maxCraftQty);
 }
 
-function createIngredientsRequiredDisplay(recipe, cookQty) {
+function createIngredientsRequiredDisplay(recipe, cookQty, onMiniIngredientEditSaveClick) {
     let miniIngredientCards = [];
     let allIngredients = recipe.craftsFrom[0][0].raw.concat(recipe.craftsFrom[0][1].crafted);
     allIngredients.forEach(ingMap => {
@@ -141,6 +143,7 @@ function createIngredientsRequiredDisplay(recipe, cookQty) {
                 ingredientData={ingMap.ingredient}
                 qtyRequired={overlayText}
                 needsWarning={isMissingIngredients}
+                onEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
             />
         );
     });
@@ -158,7 +161,7 @@ function createIngredientsBorder(missingIngredientsList) {
     }
 }
 
-function createMissingIngredientsDiv(recipe, cookQty, missingIngredientsList) {
+function createMissingIngredientsDiv(recipe, cookQty, missingIngredientsList, onMiniIngredientEditSaveClick) {
     if (missingIngredientsList.length !== 0) {
         return (
             <div className={"ingredients-wrapper"}>
@@ -166,7 +169,7 @@ function createMissingIngredientsDiv(recipe, cookQty, missingIngredientsList) {
                     INGREDIENTS MISSING
                 </div>
                 <div className={"ingredient-cards"}>
-                    {createIngredientsMissingDisplay(recipe, cookQty, getMissingIngredients(recipe, cookQty))}
+                    {createIngredientsMissingDisplay(recipe, cookQty, getMissingIngredients(recipe, cookQty), onMiniIngredientEditSaveClick)}
                 </div>
             </div>
         );
@@ -174,7 +177,7 @@ function createMissingIngredientsDiv(recipe, cookQty, missingIngredientsList) {
     return null;
 }
 
-function createIngredientsMissingDisplay(recipe, cookQty, missingIngredientList) {
+function createIngredientsMissingDisplay(recipe, cookQty, missingIngredientList, onMiniIngredientEditSaveClick) {
     let miniIngredientCards = [];
     if (missingIngredientList.length !== 0) {
         missingIngredientList.forEach(ingMap => {
@@ -183,6 +186,7 @@ function createIngredientsMissingDisplay(recipe, cookQty, missingIngredientList)
                 <MiniIngredientCard
                     ingredientData={ingMap.ingredient}
                     qtyRequired={qtyRequired}
+                    onEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
                 />
             )
         });
