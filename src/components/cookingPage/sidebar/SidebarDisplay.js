@@ -3,7 +3,7 @@ import {CookbookManager} from "../cookbook/CookbookManager";
 import {Icon} from "../../shared/Icon";
 import GroceryDisplay from "./grocery/GroceryDisplay";
 
-const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOList, selectedMenu, setSelectedMenu}) => {
+const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOList, selectedMenu, setSelectedMenu, onMiniIngredientEditSaveClick}) => {
     return (
         <div className={"sidebar-display"}>
             <div className={"add-recipe-button-div"}>
@@ -27,6 +27,7 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
                 <GroceryDisplay
                     rawIngredientsDTOList={rawIngredientsDTOList}
                     craftedIngredientsDTOList={craftedIngredientsDTOList}
+                    onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
                 />
             </div>
         </div>

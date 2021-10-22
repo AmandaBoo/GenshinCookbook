@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import RecipeCardDisplay from "./recipeCards/RecipeCardDisplay";
 import * as storage from "../../storageInterfaces/storageInterface";
 import SidebarDisplay from "./sidebar/SidebarDisplay";
-import {KofiIcon} from "../shared/KofiIcon";
-import {DonatePopup} from "../shared/DonatePopup";
+import {ingredientsHaveChanges} from "../../storageInterfaces/storageInterface";
 
 export class CookingPage extends Component {
     constructor(props) {
@@ -54,11 +53,14 @@ export class CookingPage extends Component {
     onCardCook(recipeCard) {
         let rawIngredientsToSave = recipeCard.craftsFrom[0][0].raw.map(ingMap => ingMap.ingredient);
         let craftIngredientsToSave = recipeCard.craftsFrom[0][1].crafted.map(ingMap => ingMap.ingredient);
-        console.log('RECIPE CARD POST COOK', recipeCard);
-        console.log('RAW INGREDIENTS', rawIngredientsToSave);
-        console.log('CRAFT INGREDIENTS', craftIngredientsToSave);
         storage.saveFoodRecipes([recipeCard]);
         storage.saveIngredients(rawIngredientsToSave, craftIngredientsToSave);
+        this.props.resetStateValues();
+    }
+
+    onMiniIngredientEditSaveClick(ingredient, ingredientQty) {
+        ingredient.qty = ingredientQty;
+        storage.saveIngredients([ingredient], [ingredient]);
         this.props.resetStateValues();
     }
 
@@ -71,6 +73,7 @@ export class CookingPage extends Component {
                     editRecipeCard={(card, curProf, customQty) => this.editRecipeCard(card, curProf, customQty)}
                     enableDisableRecipeCard={(card) => this.enableDisableRecipeCard(card)}
                     onCardCook={(card) => this.onCardCook(card)}
+                    onMiniIngredientEditSaveClick={(ingredient, ingredientQty) => this.onMiniIngredientEditSaveClick(ingredient, ingredientQty)}
                 />
                 <SidebarDisplay
                     recipes={this.props.recipes}
@@ -78,6 +81,7 @@ export class CookingPage extends Component {
                     craftedIngredientsDTOList={storage.getIngredientToObtainDTOList(this.props.recipes, "crafted")}
                     selectedMenu={this.state.selectedMenu}
                     setSelectedMenu={id => this.setSelectedMenu(id)}
+                    onMiniIngredientEditSaveClick={(ingredient, ingredientQty) => this.onMiniIngredientEditSaveClick(ingredient, ingredientQty)}
                 />
             </div>
         );

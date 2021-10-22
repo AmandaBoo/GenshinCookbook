@@ -1,15 +1,15 @@
 import React from 'react';
 import RecipeCard from "./RecipeCard";
 
-const RecipeCardDisplay = ({allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard, onCardCook}) => {
+const RecipeCardDisplay = ({allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard, onCardCook, onMiniIngredientEditSaveClick}) => {
     return (
         <div className={"recipe-card-display"}>
-            {renderCards(allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard, onCardCook)}
+            {renderCards(allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard, onCardCook, onMiniIngredientEditSaveClick)}
         </div>
     );
 }
 
-function renderCards(allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard, onCardCook) {
+function renderCards(allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard, onCardCook, onMiniIngredientEditSaveClick) {
     let cardList = [];
     if (allRecipes !== undefined) {
         allRecipes.forEach(data => {
@@ -21,6 +21,7 @@ function renderCards(allRecipes, removeRecipeCard, editRecipeCard, enableDisable
                     onCardEdit={(card, curProf, customQty) => editRecipeCard(card, curProf, customQty)}
                     onCardEnableDisable={(card) => enableDisableRecipeCard(card)}
                     onCardCook={(card) => onCardCook(card)}
+                    onMiniIngredientEditSaveClick={(ingredient, ingredientQty) => onMiniIngredientEditSaveClick(ingredient, ingredientQty)}
                 />
             );
         });

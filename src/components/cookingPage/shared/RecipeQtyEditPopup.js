@@ -9,15 +9,18 @@ const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onClos
 
     const recipeProficiency = selectedRecipeCard.rarity * 5;
     return (
-    <div className={"message-modal"}>
-        <div className={"edit-popup"}>
-            {createTopBar(topBarText + ": " + Utils.getTruncatedName(selectedRecipeCard.name, Utils.MAX_CONFIGURATION_NAME_LENGTH), onCloseClick, setCurProf, setCustomQty)}
-            {createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty)}
-            {createAmountToCookDiv(customQty, setCustomQty)}
+        <div className={"message-modal"}>
+            <div className={"vertical-center"}>
+                <div className={"edit-popup"}>
+                    {createTopBar(topBarText + ": " + Utils.getTruncatedName(selectedRecipeCard.name, Utils.MAX_CONFIGURATION_NAME_LENGTH), onCloseClick, setCurProf, setCustomQty)}
+                    {createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty)}
+                    {createAmountToCookDiv(customQty, setCustomQty)}
 
-            {createSaveButton(onSaveClick, curProf, setCurProf, customQty, setCustomQty, selectedRecipeCard)}
+                    {createSaveButton(onSaveClick, curProf, setCurProf, customQty, setCustomQty, selectedRecipeCard)}
+                </div>
+            </div>
         </div>
-    </div>);
+    );
 }
 
 function determineStartCustomQty(topBarText, recipeCard) {
@@ -50,7 +53,7 @@ function createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, set
                     id={"curProfInputField"}
                     type={"number"}
                     value={curProf}
-                    className={"input-field text-field"}
+                    className={"text-field"}
                     onChange={event => {
                         setCurProf(parseInt(event.target.value));
                         updateFields(recipeProficiency, event.target.value, setCurProf, setCustomQty);
@@ -77,7 +80,7 @@ function createAmountToCookDiv(customQty, setCustomQty) {
                     id={"amtToCookInputField"}
                     type={"number"}
                     value={customQty}
-                    className={"input-field text-field"}
+                    className={"text-field"}
                     onChange={event => {
                         setCustomQty(parseInt(event.target.value));
                     }}
@@ -87,7 +90,7 @@ function createAmountToCookDiv(customQty, setCustomQty) {
             </div>
             <label
                 className={"input-label"}
-                form={"amtToCook"}
+                form={"amtToCookInputField"}
             >Amount To Cook
             </label>
         </div>

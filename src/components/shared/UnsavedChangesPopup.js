@@ -6,10 +6,12 @@ import Button from "./Button";
 export const UnsavedChangesPopup = ({onYesClick, onNoClick, onCloseClick}) => {
     return (
         <div className={"message-modal"}>
-            <div className={"edit-popup"}>
-                {createTopBar(onCloseClick)}
-                {createBody()}
-                {createSaveCancelButtons(onYesClick, onNoClick)}
+            <div className={"vertical-center"}>
+                <div className={"edit-popup"}>
+                    {createTopBar(onCloseClick)}
+                    {createBody()}
+                    {createSaveCancelButtons(onYesClick, onNoClick)}
+                </div>
             </div>
         </div>
     );

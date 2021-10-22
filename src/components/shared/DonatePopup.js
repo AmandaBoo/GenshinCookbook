@@ -3,13 +3,15 @@ import CloseButton from "./CloseButton";
 
 export const DonatePopup = ({onCloseClick}) => {
     return (
-        <div className={"message-modal donate-modal"}>
-            <div className={"donate-popup"}>
-                {renderTopBar(onCloseClick)}
-                {renderSubTitle()}
-                <div>
-                    {renderKofiLink()}
-                    {renderPatreonLink()}
+        <div className={"message-modal"}>
+            <div className={"vertical-center"}>
+                <div className={"donate-popup"}>
+                    {renderTopBar(onCloseClick)}
+                    {renderSubTitle()}
+                    <div>
+                        {renderKofiLink()}
+                        {renderPatreonLink()}
+                    </div>
                 </div>
             </div>
         </div>

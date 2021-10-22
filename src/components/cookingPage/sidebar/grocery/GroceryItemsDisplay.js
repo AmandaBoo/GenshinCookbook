@@ -1,12 +1,12 @@
 import React from 'react';
 import MiniIngredientCard from "../../shared/MiniIngredientCard";
 
-const GroceryItemsDisplay = ({ingredientsMap: ingredientDTOList, topBarText}) => {
+const GroceryItemsDisplay = ({ingredientsMap: ingredientDTOList, topBarText, onMiniIngredientEditSaveClick}) => {
     return (
         <div>
             {renderTopBar(topBarText)}
             <div className={"grocery-list-cards-div"}>
-                {renderIngredients(ingredientDTOList)}
+                {renderIngredients(ingredientDTOList, onMiniIngredientEditSaveClick)}
             </div>
         </div>
     )
@@ -20,7 +20,7 @@ function renderTopBar(topBarText) {
     );
 }
 
-function renderIngredients(ingredientDTOList) {
+function renderIngredients(ingredientDTOList, onMiniIngredientEditSaveClick) {
     let ingredientCards = [];
     if (ingredientDTOList !== undefined) {
         ingredientDTOList.forEach(dto => {
@@ -29,6 +29,7 @@ function renderIngredients(ingredientDTOList) {
                     <MiniIngredientCard
                         ingredientData={dto.ingredient}
                         qtyRequired={dto.qtyToObtain}
+                        onEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
                     />
                 )
             }
