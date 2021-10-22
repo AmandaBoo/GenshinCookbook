@@ -84,6 +84,9 @@ body {
 
 .sidebar-display {
   grid-area: sidebar;
+
+  position: fixed;
+
   width: 375px;
   padding-bottom: 10px;
   margin-left: auto;
@@ -144,7 +147,7 @@ body {
   grid-area: cards;
   display: flex;
   flex-wrap: wrap;
-
+  padding-right: 375px;
   .disabled-card {
     opacity: 60%;
     background-color: white;
@@ -167,7 +170,7 @@ body {
     "top-bar top-bar"
     "main-img recipe-progress"
     "ingredients ingredients";
-
+    
     .recipe-top-bar {
       grid-area: top-bar;
       display: flex;
