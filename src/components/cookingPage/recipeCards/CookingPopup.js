@@ -227,6 +227,7 @@ function updateRecipeBeforeSave(cookQty, recipe) {
 
 function createConfirmCookButton(cookQty, recipe, saveClick, onCloseClick) {
     // TODO : UPDATE STYLING IF DISABLED
+    console.log(isNaN(cookQty) || cookQty === 0);
     return (
         <div>
             <SaveButton

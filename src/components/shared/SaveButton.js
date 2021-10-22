@@ -6,7 +6,10 @@ const SaveButton = ({saveText = "Save", onSaveClick, isDisabled = false}) => {
         <div className="flex-center-container">
             <button
                 id={"save-btn"}
-                className={"modal-button"}
+                className={`
+                    ${isDisabled ? "disabled-button" : ""}
+                    modal-button
+                `}
                 disabled={isDisabled}
                 onClick={onSaveClick}
             >
