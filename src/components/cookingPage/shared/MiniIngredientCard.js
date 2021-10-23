@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 import {MiniIngredientEditPopup} from "./MiniIngredientEditPopup";
 
-const MiniIngredientCard = ({ingredientData, qtyRequired, needsWarning = false, onEditSaveClick}) => {
+const MiniIngredientCard = ({ingredientData, qtyRequired, isEnabled = false, needsWarning = false, onEditSaveClick}) => {
     const [isEditClicked, setEditClicked] = useState(false);
     return (
         <div
             className={"mini-ingredient-container"}
         >
-            <div onClick={() => setEditClicked(true)}>
+            <div onClick={() => setEditClicked(true)} className={`${!isEnabled  ? "disabled-card" : ""}`}>
                 <img
-                    className={"mini-ingredient-card"}
+                    className={`mini-ingredient-card`}
                     src={ingredientData.src}
                     alt={ingredientData.name}
                     style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + ingredientData.rarity + '_background_cropped.jpg")'}}

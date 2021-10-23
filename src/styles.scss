@@ -792,7 +792,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .disabled-button {
-  opacity: 60%;
+  opacity: 0.6;
   cursor: auto;
   &:hover {
     background-color: $z2-color;
