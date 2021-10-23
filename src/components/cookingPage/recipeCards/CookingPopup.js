@@ -67,9 +67,12 @@ function createCookingField(recipe, cookQty, setCookQty, maxQty) {
                         className={"text-field"}
                         type={"number"}
                         value={cookQty}
-                        onChange={event => {
-                            setCookQty(parseInt(event.target.value));
+                        onKeyDown={(event) => {
+                            if (event.key === "-") {
+                                event.preventDefault();
+                            }
                         }}
+                        onChange={event => setValuesIfValid(event.target.value, setCookQty)}
                         onFocus={(event) => event.target.select()}
                         onBlur={(event) => resetFieldOnLeave(event.target.value, setCookQty)}
                     >
@@ -85,6 +88,12 @@ function createCookingField(recipe, cookQty, setCookQty, maxQty) {
             </div>
         </div>
     )
+}
+
+function setValuesIfValid(eventValue, setter) {
+    if (!isNaN(eventValue)) {
+        setter(parseInt(eventValue));
+    }
 }
 
 function createProgressDisplay(cookQty, recipe) {

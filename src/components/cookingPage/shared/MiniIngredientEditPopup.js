@@ -54,12 +54,12 @@ function renderInventoryInputField(ingredient, addSubtractQty, setAddSubtractQty
                     type={"number"}
                     className={"text-field"}
                     value={inventoryQty}
-                    onChange={event => {
-                        if (event.target.value === "-") {
+                    onKeyDown={(event) => {
+                        if (event.key === "-") {
                             event.preventDefault();
                         }
-                        onInventoryInputFieldChange(event.target.value, ingredient.qty, setAddSubtractQty, setInventoryQty);
                     }}
+                    onChange={event => onInventoryInputFieldChange(event.target.value, ingredient.qty, setAddSubtractQty, setInventoryQty)}
                     onFocus={(event) => event.target.select()}
                     onBlur={(event) => resetFieldOnLeave(event.target.value, setInventoryQty)}
                 />
