@@ -1,6 +1,5 @@
 import React from 'react';
 
-// TODO : FIX THE STYLING... NOT SURE IF FLEX CONTAINER IS RIGHT
 const SaveButton = ({saveText = "Save", onSaveClick, isDisabled = false}) => {
     return (
         <div className="flex-center-container">

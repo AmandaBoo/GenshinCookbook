@@ -54,14 +54,21 @@ function createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, set
                     type={"number"}
                     value={curProf}
                     className={"text-field"}
+                    onKeyDown={(event) => {
+                        if (event.key === "-") {
+                            event.preventDefault();
+                        }
+                    }}
                     onChange={event => {
-                        setCurProf(parseInt(event.target.value));
+                        setValuesIfValid(event.target.value, setCurProf);
                         updateFields(recipeProficiency, event.target.value, setCurProf, setCustomQty);
                     }}
                     onFocus={(event) => event.target.select()}
                     onBlur={(event) => resetFieldOnLeave(event.target.value, setCurProf)}
                 />
-                <span className={"text-label"}> / {recipeProficiency}</span>
+                <div className={"vertical-center"}>
+                    <span className={"text-label"}> / {recipeProficiency}</span>
+                </div>
             </div>
             <label
                 className={"input-label"}
@@ -81,9 +88,12 @@ function createAmountToCookDiv(customQty, setCustomQty) {
                     type={"number"}
                     value={customQty}
                     className={"text-field"}
-                    onChange={event => {
-                        setCustomQty(parseInt(event.target.value));
+                    onKeyDown={(event) => {
+                        if (event.key === "-") {
+                            event.preventDefault();
+                        }
                     }}
+                    onChange={event => setValuesIfValid(event.target.value, setCustomQty)}
                     onFocus={(event) => event.target.select()}
                     onBlur={(event) => resetFieldOnLeave(event.target.value, setCustomQty)}
                 />
@@ -108,6 +118,12 @@ function createSaveButton(onSaveClick, curProf, setCurProf, customQty, setCustom
     );
 }
 
+function setValuesIfValid(eventValue, setter) {
+    if (!isNaN(eventValue)) {
+        setter(parseInt(eventValue));
+    }
+}
+
 function resetFieldOnLeave(value, setter) {
     if (value === "") {
         setter(0);
@@ -116,7 +132,7 @@ function resetFieldOnLeave(value, setter) {
 
 function updateFields(recipeProficiency, curProfValue, setCurProf, setCurQty) {
     if (curProfValue > recipeProficiency) {
-        setCurProf(parseInt(recipeProficiency));
+        setValuesIfValid(recipeProficiency, setCurProf);
         setCurQty(0);
     } else {
         setCurQty(recipeProficiency - curProfValue);
