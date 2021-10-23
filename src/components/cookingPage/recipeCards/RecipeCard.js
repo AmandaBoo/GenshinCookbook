@@ -13,10 +13,7 @@ const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable, 
 
     return (
         <div>
-            <div className={
-                `recipe-card-grid card
-                ${!recipeData.enabled ? "disabled-card": ""}
-            `}>
+            <div className={"recipe-card-grid card"}>
                 {createTopBar(recipeData, setPopup, onCardEnableDisable)}
                 {createRecipeCardBody(recipeData, setPopup, onMiniIngredientEditSaveClick)}
             </div>
@@ -55,7 +52,7 @@ function createTopBar(recipeData, setPopup, onCardEnableDisable) {
 function createRecipeCardBody(recipeData, setPopup, onMiniIngredientEditSaveClick) {
     return (
         <>
-            <div className={"recipe-img-div"}>
+            <div className={`recipe-img-div ${!recipeData.enabled ? "disabled-card": ""}`}>
                 <img
                     className={"recipe-img"}
                     style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + recipeData.rarity + '_background_cropped.jpg")'}}
@@ -63,7 +60,7 @@ function createRecipeCardBody(recipeData, setPopup, onMiniIngredientEditSaveClic
                     alt={recipeData.name}
                 />
             </div>
-            <div className={"recipe-progress"}>
+            <div className={`recipe-progress ${!recipeData.enabled ? "disabled-card": ""}`}>
                 <span className={"progress-field prof-field"}>
                     <div className={"recipe-progress-fields"}>Proficiency :</div>
                     <p className={"recipe-data-field"}>{recipeData.currentProficiency}/{recipeData.rarity * 5}</p>
@@ -74,7 +71,7 @@ function createRecipeCardBody(recipeData, setPopup, onMiniIngredientEditSaveClic
                     <p className={"recipe-data-field"}>{recipeData.qty}/{recipeData.want}</p>
                 </span>
 
-                <div className={"cook-button-div"}>
+                <div className={`cook-button-div ${!recipeData.enabled ? "disabled-card": ""}`}>
                     <button
                         className={`modal-button`}
                         onClick={() => setPopup("cooking")}
