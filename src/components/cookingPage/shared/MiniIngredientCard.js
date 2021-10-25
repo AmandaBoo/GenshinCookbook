@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {MiniIngredientEditPopup} from "./MiniIngredientEditPopup";
+import CheckIcon from '@mui/icons-material/Check';
 
-const MiniIngredientCard = ({ingredientData, qtyRequired, isEnabled = false, needsWarning = false, onEditSaveClick}) => {
+const MiniIngredientCard = ({ingredientData, qtyRequired, isEnabled = true, isRecipeCard = false, needsWarning = false, onEditSaveClick}) => {
     const [isEditClicked, setEditClicked] = useState(false);
     return (
         <div
@@ -14,17 +15,36 @@ const MiniIngredientCard = ({ingredientData, qtyRequired, isEnabled = false, nee
                     alt={ingredientData.name}
                     style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + ingredientData.rarity + '_background_cropped.jpg")'}}
                 />
-                <div
-                    className={
-                        `ingredient-count-overlay
-                        ${needsWarning ? "ingredient-warning-text": ""}
-                    `}
-                > {qtyRequired}
-                </div>
+                {renderOverlay(ingredientData, qtyRequired, needsWarning, isRecipeCard, isEnabled)}
             </div>
             {renderMiniIngredientEditPopup(isEditClicked, setEditClicked, ingredientData, onEditSaveClick)}
         </div>
     )
+}
+
+function renderOverlay(ingredientData, qtyRequired, needsWarning, isRecipeCard, isEnabled) {
+    if (qtyRequired <= 0 && isRecipeCard && isEnabled) {
+        return (
+            <div
+                className={
+                    `ingredient-count-overlay
+            `}
+            > <CheckIcon/>
+            </div>
+        );
+    } else if (isEnabled) {
+        return (
+            <div
+                className={
+                    `ingredient-count-overlay
+                        ${needsWarning ? "ingredient-warning-text": ""}
+                    `}
+            > {qtyRequired}
+            </div>
+        );
+    } else {
+        return null;
+    }
 }
 
 function renderMiniIngredientEditPopup(isEditClicked, setEditClicked, ingredientData, onSaveClick) {
