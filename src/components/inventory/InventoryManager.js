@@ -77,6 +77,7 @@ export class InventoryManager extends Component {
                         <IngredientCardDisplay
                             cardData={this.determineCardData()}
                         />
+                        <div className={"modal-bar"}></div>
                         <SaveButton
                             saveText={"Save and Close All Tabs"}
                             onSaveClick={() => this.onSaveClick()}
