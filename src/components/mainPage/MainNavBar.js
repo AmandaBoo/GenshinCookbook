@@ -7,14 +7,13 @@ const MainNavBar = ({selectedPage, onInventorySave, onInventoryClose, rawIngredi
     const [selectedMenu, setSelectedMenu] = useState(null);
     return (
         <div className={"inner-nav-bar"}>
-            <Link
-                className={
-                    `nav-bar-links
-                    ${selectedPage === "summaryPage" ? "nav-bar-link-selected" : "nav-bar-link-default"}`
-                } to={"/"}>Summary</Link>
+            {/*<Link className={*/}
+            {/*        `nav-bar-links*/}
+            {/*        ${selectedPage === "summaryPage" ? "nav-bar-link-selected" : "nav-bar-link-default"}`*/}
+            {/*    } to={"/"}>Summary</Link>*/}
             <Link className="nav-bar-links nav-bar-links-default" to={"/cooking"}>Cooking</Link>
-            <Link className="nav-bar-links nav-bar-links-default" to={"/potions"}>Potions</Link>
-            <Link className="nav-bar-links nav-bar-links-default" to={"/smithing"}>Smithing</Link>
+            {/*<Link className="nav-bar-links nav-bar-links-default" to={"/potions"}>Potions</Link>*/}
+            {/*<Link className="nav-bar-links nav-bar-links-default" to={"/smithing"}>Smithing</Link>*/}
             <div className={"inventory-icon"}>
                 <Icon
                     id={"inventory-icon"}
