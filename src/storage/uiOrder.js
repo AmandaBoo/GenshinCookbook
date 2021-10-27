@@ -2,13 +2,13 @@ export const SORTED_FOOD_RECIPES = [
     // 1 STAR
     "Chicken-Mushroom Skewer", "Teyvat Fried Egg", "Steak", "Radish Veggie Soup",
     "Mondstadt Grilled Fish", "Mint Jelly", "Mora Meat", "Stir-Fried Filet", "Grilled Tiger Fish", "Rice Buns", "Egg Roll",
-    "Dry-Braised Salted Fish", "Miso Soup", "Sweet Shrimp Sushi", "Bird Egg Sushi",
+    "Dry-Braised Salted Fish", "Miso Soup", "Sweet Shrimp Sushi", "Bird Egg Sushi", "Soba Noodles",
 
     // 2 STAR
     "Flaming Red Bolognese", "Sweet Madame", "Northern Smoked Chicken", "Cream Stew", "Tea Break Pancake", "Fried Radish Balls", "Satisfying Salad", "Fisherman's Toast",
     "Goulash", "Almond Tofu", "Jueyun Chili Chicken", "Jewelry Soup", "Matsutake Meat Rolls", "Crystal Shrimp", "Lotus Seed and Bird Egg Soup",
     "Noodles with Mountain Delicacies", "Vegetarian Abalone", "Stone Harbor Delicacies", "Mint Salad", "Crab Roe Tofu",
-    "Stir-Fried Fish Noodles", "Tuna Sushi", "Onigiri", "Mixed Yakisoba", "Crab Roe Kourayaki", "Grilled Unagi Fillet",
+    "Stir-Fried Fish Noodles", "Tuna Sushi", "Onigiri", "Mixed Yakisoba", "Crab Roe Kourayaki", "Grilled Unagi Fillet", "Wakatakeni", "Radish and Fish Stew", "Berry Mizu Manjuu",
 
     // 3 STAR
     "Golden Shrimp Balls", "Calla Lily Seafood Soup", "Sautéed Matsutake", "Cold Cut Platter", "Sticky Honey Roast", "Crab, Ham & Veggie Bake",

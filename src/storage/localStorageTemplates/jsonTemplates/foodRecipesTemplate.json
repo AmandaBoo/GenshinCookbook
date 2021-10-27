@@ -957,5 +957,45 @@
   "hasCard":false,
   "enabled":true,
   "rank":0
+},
+{
+  "name":"Soba Noodles",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Radish and Fish Stew",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Berry Mizu Manjuu",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Wakatakeni",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
 }
 ]
