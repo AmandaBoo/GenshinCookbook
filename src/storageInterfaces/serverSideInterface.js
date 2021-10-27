@@ -6,7 +6,7 @@ export function getRawIngredientsFromServer() {
     return RAW_INGREDIENTS.rawIngredients;
 }
 
-export function getFoodIngredientsFromServer() {
+export function getCraftedFoodIngredientsFromServer() {
     return FOOD_INGREDIENTS.foodIngredients;
 }
 

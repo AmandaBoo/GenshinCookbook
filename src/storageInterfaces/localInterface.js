@@ -19,7 +19,7 @@ export function getRawIngredientsFromLocalStorage() {
     return JSON.parse(localStorage.rawIngredients);
 }
 
-export function getFoodIngredientsFromLocalStorage() {
+export function getCraftedFoodIngredientsFromLocalStorage() {
     return JSON.parse(localStorage.foodIngredients);
 }
 
@@ -39,7 +39,7 @@ export function setRawIngredientsInLocalStorage(rawIngredients) {
 }
 
 export function setFoodIngredientsInLocalStorage(foodIngredients) {
-    let foodIngredientsJSON = getFoodIngredientsFromLocalStorage();
+    let foodIngredientsJSON = getCraftedFoodIngredientsFromLocalStorage();
     foodIngredientsJSON.forEach(ing => {
         let foodIngredient = foodIngredients.find(ele => ele.name === ing.name);
         if (foodIngredient !== undefined) {
