@@ -10,7 +10,6 @@ import {CookingPopup} from "./CookingPopup";
 
 const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable, onCardCook, onMiniIngredientEditSaveClick}) => {
     const [popup, setPopup] = useState(null);
-
     return (
         <div>
             <div className={"recipe-card-grid card"}>

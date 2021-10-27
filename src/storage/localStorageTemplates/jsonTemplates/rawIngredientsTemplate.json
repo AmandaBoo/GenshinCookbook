@@ -150,5 +150,13 @@
   {
     "name":"Wheat",
     "qty":0
+  },
+  {
+    "name":"Milk",
+    "qty":0
+  },
+  {
+    "name":"Fish",
+    "qty":0
   }
 ]

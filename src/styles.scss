@@ -145,10 +145,6 @@ body {
   display: flex;
   flex-wrap: wrap;
 
-  .disabled-card {
-    opacity: 0.6;
-  }
-
   .recipe-card-grid {
     $recipe-img-size: 125px;
     background-color: white;
@@ -800,6 +796,18 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: $z2-color;
     color: $z2-text-color;
   }
+}
+
+.toggle-text {
+  color: $default-color;
+  font-size: $reduced-font-size;
+}
+.toggle {
+  color: $z2-text-color;
+}
+
+.disabled-card {
+  opacity: 0.6;
 }
 
 ::-webkit-scrollbar {

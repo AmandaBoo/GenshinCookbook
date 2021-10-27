@@ -150,5 +150,13 @@ export const RAW_INGREDIENTS_TEMPLATE = "[\n" +
     "  {\n" +
     "    \"name\":\"Wheat\",\n" +
     "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Milk\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Fish\",\n" +
+    "    \"qty\":0\n" +
     "  }\n" +
     "]\n";

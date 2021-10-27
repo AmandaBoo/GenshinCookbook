@@ -4,7 +4,7 @@ import CheckIcon from '@mui/icons-material/Check';
 
 const MiniIngredientCard = ({ingredientData, qtyRequired, isEnabled = true, isRecipeCard = false, needsWarning = false, onEditSaveClick}) => {
     const [isEditClicked, setEditClicked] = useState(false);
-    return (
+        return (
         <div
             className={"mini-ingredient-container"}
         >
