@@ -2192,6 +2192,86 @@ export const FOOD_RECIPES = {
                     }
                 ]
             ]
-        }
+        },
+        {
+            name: "Radish and Fish Stew",
+            src: "./images/foodRecipe/radishAndFishStew.png",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fish",
+                        qty:2
+                    },
+                    {
+                        name: "Radish",
+                        qty:2
+                    },
+                    {
+                        name: "Salt",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Berry Mizu Manjuu",
+            src: "./images/foodRecipe/berryMizuManjuu.png",
+            type: "Heal",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Rice",
+                        qty:2
+                    },
+                    {
+                        name: "Berry",
+                        qty:2
+                    },
+                    {
+                        name: "Sugar",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Soba Noodles",
+            src: "./images/foodRecipe/sobaNoodles.png",
+            type: "Heal",
+            rarity: 1,
+            craftsFrom: [
+                [
+                    {
+                        name: "Flour",
+                        qty:1
+                    },
+                    {
+                        name: "Seagrass",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Wakatakeni",
+            src: "./images/foodRecipe/wakatakeni.png",
+            type: "Defense",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Bamboo Shoot",
+                        qty:2
+                    },
+                    {
+                        name: "Seagrass",
+                        qty:2
+                    }
+                ]
+            ]
+        },
     ]
 }
