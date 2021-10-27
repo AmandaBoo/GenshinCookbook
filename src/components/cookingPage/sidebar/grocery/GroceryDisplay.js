@@ -118,23 +118,26 @@ function findRawBreakdownOfCraftedIngredients(filteredCraftIngredients, obtained
 }
 
 function mergeBreakdownLists(filteredOtherIngredients, craftedByRaw) {
-    let newIngredientsList = [];
+    let newIngredientsDTOList = [];
     craftedByRaw.forEach(rawIngDTO => {
         let otherDTO = filteredOtherIngredients.find(dto => dto.ingredient.name === rawIngDTO.ingredient.name);
+        let existingDTO = newIngredientsDTOList.find(dto => dto.ingredient.name === rawIngDTO.ingredient.name);
         if (otherDTO !== undefined) {
-            newIngredientsList.push(new IngredientAndQtyToObtainDto(rawIngDTO.ingredient, otherDTO.qtyToObtain + rawIngDTO.qtyToObtain));
+            newIngredientsDTOList.push(new IngredientAndQtyToObtainDto(rawIngDTO.ingredient, otherDTO.qtyToObtain + rawIngDTO.qtyToObtain));
+        } else if (existingDTO !== undefined) {
+            existingDTO.qtyToObtain += rawIngDTO.qtyToObtain;
         } else {
-            newIngredientsList.push(rawIngDTO);
+            newIngredientsDTOList.push(rawIngDTO);
         }
     });
 
     filteredOtherIngredients.forEach(rawIngDTO => {
-        if (newIngredientsList.find(dto => dto.ingredient.name === rawIngDTO.ingredient.name) === undefined) {
-            newIngredientsList.push(rawIngDTO);
+        if (newIngredientsDTOList.find(dto => dto.ingredient.name === rawIngDTO.ingredient.name) === undefined) {
+            newIngredientsDTOList.push(rawIngDTO);
         }
     });
 
-    return newIngredientsList;
+    return newIngredientsDTOList;
 }
 
 function renderToggleContainer(isToggleOn, setIsToggleOn) {
