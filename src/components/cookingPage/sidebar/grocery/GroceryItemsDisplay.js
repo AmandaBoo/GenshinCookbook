@@ -14,7 +14,7 @@ const GroceryItemsDisplay = ({ingredientDTOList, topBarText, onMiniIngredientEdi
 
 function renderTopBar(topBarText) {
     return (
-        <div className={"grocery-list-top-bar"}>
+        <div className={"header-text grocery-list-top-bar"}>
             {topBarText}
         </div>
     );

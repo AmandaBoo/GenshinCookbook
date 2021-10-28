@@ -10,11 +10,18 @@ const GroceryDisplay = ({rawIngredientsDTOList, craftedIngredientsDTOList, onMin
     const [isToggleOn, setIsToggleOn] = useState(false);
     return (
         <div className={"sidebar-card-display"}>
+            {renderTopBar()}
             {renderToggleContainer(isToggleOn, setIsToggleOn)}
             {renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick)}
         </div>
     )
 };
+
+function renderTopBar() {
+    return (
+      <div className={"flex-center header-text large-font top-bar"}>GROCERY LIST</div>
+    );
+}
 
 function renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick) {
     if (isToggleOn) {

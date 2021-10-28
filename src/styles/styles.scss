@@ -108,13 +108,22 @@ body {
       padding-bottom: 70px;
     }
 
-    .grocery-list-top-bar {
+    .header-text {
       color: $default-color;
       text-align: center;
-      border-bottom: 1px solid $default-color;
+      padding: 1em;
+    }
+
+    .top-bar {
+      border-top-right-radius: 16px;
+      border-top-left-radius: 16px;
+      box-shadow: 0 2px 4px -1px #d4d5d9;
+    }
+
+    .grocery-list-top-bar {
       margin-left: 15%;
       margin-right: 15%;
-      padding: 1em;
+      border-bottom: 1px solid $default-color;
     }
 
     .grocery-list-cards-div {
@@ -808,6 +817,15 @@ input[type=number]::-webkit-outer-spin-button {
 
 .disabled-card {
   opacity: 0.6;
+}
+
+.large-font {
+  font-size: 20px;
+}
+
+.fade {
+  background-image: linear-gradient(
+                  90deg,transparent,$default-hover-color,transparent);
 }
 
 ::-webkit-scrollbar {
