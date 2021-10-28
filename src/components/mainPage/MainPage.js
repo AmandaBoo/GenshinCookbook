@@ -5,6 +5,7 @@ import * as storage from "../../storageInterfaces/storageInterface";
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import {DonatePopup} from "../shared/DonatePopup";
 import {KofiIcon} from "../shared/KofiIcon";
+import {PotionsPage} from "../potionsPage/PotionsPage";
 
 const MainPage = () => {
     const [recipes, setRecipes] = useState(storage.getAllFoodRecipes());
@@ -24,18 +25,21 @@ const MainPage = () => {
                 </div>
                 <div className={"sub-page-body"}>
                     <Switch>
-                        {/*<Route exact path={"/"}>*/}
-                        {/*    {renderSummaryPage()}*/}
-                        {/*</Route>*/}
+                        <Route exact path={"/"}>
+                            {renderHomePage()}
+                        </Route>
+                        <Route path={"/summary"}>
+                            {renderSummaryPage()}
+                        </Route>
                         <Route path={"/cooking"}>
                             {renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngredients)}
                         </Route>
-                        {/*<Route path={"/potions"}>*/}
-                        {/*    {renderPotionsPage()}*/}
-                        {/*</Route>*/}
-                        {/*<Route path={"/smithing"}>*/}
-                        {/*    {renderSmithingPage()}*/}
-                        {/*</Route>*/}
+                        <Route path={"/potions"}>
+                            {renderPotionsPage()}
+                        </Route>
+                        <Route path={"/smithing"}>
+                            {renderSmithingPage()}
+                        </Route>
                     </Switch>
                 </div>
             </Router>
@@ -47,11 +51,15 @@ const MainPage = () => {
     );
 }
 
+function renderHomePage() {
+    return (
+        <PotionsPage/>
+    );
+}
+
 function renderSummaryPage() {
     return (
-        <div>
-            Hi I'm Summary!
-        </div>
+        <PotionsPage/>
     );
 
 }
@@ -67,17 +75,13 @@ function renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngre
 
 function renderPotionsPage() {
     return (
-        <div>
-            Hi I'm Potions!
-        </div>
+        <PotionsPage/>
     );
 }
 
 function renderSmithingPage() {
     return (
-        <div>
-            Hi I'm Smithing!
-        </div>
+        <PotionsPage/>
     );
 }
 

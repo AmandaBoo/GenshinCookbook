@@ -24,6 +24,9 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
                 foodRecipes={recipes}
             />
             <div className={"grocery-div"}>
+
+            </div>
+            <div className={"grocery-div"}>
                 <GroceryDisplay
                     rawIngredientsDTOList={rawIngredientsDTOList}
                     craftedIngredientsDTOList={craftedIngredientsDTOList}

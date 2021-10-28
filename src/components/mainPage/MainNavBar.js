@@ -1,19 +1,19 @@
 import React, {useState} from 'react';
 import {Icon} from "../shared/Icon";
 import {InventoryManager} from "../inventory/InventoryManager";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
-const MainNavBar = ({selectedPage, onInventorySave, onInventoryClose, rawIngredients, craftIngredients}) => {
+const MainNavBar = ({onInventorySave, onInventoryClose, rawIngredients, craftIngredients}) => {
     const [selectedMenu, setSelectedMenu] = useState(null);
     return (
         <div className={"inner-nav-bar"}>
-            {/*<Link className={*/}
-            {/*        `nav-bar-links*/}
-            {/*        ${selectedPage === "summaryPage" ? "nav-bar-link-selected" : "nav-bar-link-default"}`*/}
-            {/*    } to={"/"}>Summary</Link>*/}
-            <Link className="nav-bar-links nav-bar-links-default" to={"/cooking"}>Cooking</Link>
-            {/*<Link className="nav-bar-links nav-bar-links-default" to={"/potions"}>Potions</Link>*/}
-            {/*<Link className="nav-bar-links nav-bar-links-default" to={"/smithing"}>Smithing</Link>*/}
+            <NavLink className={"logo-link"} exact={true} to={"/"}>
+                <img className={"logo"} src={"./images/icons/genshinCookbook.svg"} alt={"genshinCookbookLogo"}/>
+            </NavLink>
+            <NavLink className={"nav-bar-links"} to={"/summary"} activeClassName={"nav-bar-link-selected"}>Summary</NavLink>
+            <NavLink className={"nav-bar-links"} to={"/cooking"} activeClassName={"nav-bar-link-selected"}>Cooking</NavLink>
+            <NavLink className={"nav-bar-links"} to={"/potions"} activeClassName={"nav-bar-link-selected"}>Potions</NavLink>
+            <NavLink className={"nav-bar-links"} to={"/smithing"} activeClassName={"nav-bar-link-selected"}>Smithing</NavLink>
             <div className={"inventory-icon"}>
                 <Icon
                     id={"inventory-icon"}

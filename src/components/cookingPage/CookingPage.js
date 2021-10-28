@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import RecipeCardDisplay from "./recipeCards/RecipeCardDisplay";
 import * as storage from "../../storageInterfaces/storageInterface";
 import SidebarDisplay from "./sidebar/SidebarDisplay";
-import {ingredientsHaveChanges} from "../../storageInterfaces/storageInterface";
 
 export class CookingPage extends Component {
     constructor(props) {
