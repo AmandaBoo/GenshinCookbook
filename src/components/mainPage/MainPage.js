@@ -5,6 +5,7 @@ import * as storage from "../../storageInterfaces/storageInterface";
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import {DonatePopup} from "../shared/DonatePopup";
 import {KofiIcon} from "../shared/KofiIcon";
+import {PotionsPage} from "../potionsPage/PotionsPage";
 
 const MainPage = () => {
     const [recipes, setRecipes] = useState(storage.getAllFoodRecipes());
@@ -52,17 +53,13 @@ const MainPage = () => {
 
 function renderHomePage() {
     return (
-      <div>
-          HOMEPAGE
-      </div>
+        <PotionsPage/>
     );
 }
 
 function renderSummaryPage() {
     return (
-        <div>
-            Hi I'm Summary!
-        </div>
+        <PotionsPage/>
     );
 
 }
@@ -78,17 +75,13 @@ function renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngre
 
 function renderPotionsPage() {
     return (
-        <div>
-            Hi I'm Potions!
-        </div>
+        <PotionsPage/>
     );
 }
 
 function renderSmithingPage() {
     return (
-        <div>
-            Hi I'm Smithing!
-        </div>
+        <PotionsPage/>
     );
 }
 

@@ -830,6 +830,11 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 20px;
 }
 
+.placeholder-div {
+  text-align: center;
+  height: 100vh;
+}
+
 ::-webkit-scrollbar {
   width: 16px;
 }
