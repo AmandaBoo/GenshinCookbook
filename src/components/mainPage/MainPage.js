@@ -24,18 +24,21 @@ const MainPage = () => {
                 </div>
                 <div className={"sub-page-body"}>
                     <Switch>
-                        {/*<Route exact path={"/"}>*/}
-                        {/*    {renderSummaryPage()}*/}
-                        {/*</Route>*/}
+                        <Route exact path={"/"}>
+                            {renderHomePage()}
+                        </Route>
+                        <Route path={"/summary"}>
+                            {renderSummaryPage()}
+                        </Route>
                         <Route path={"/cooking"}>
                             {renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngredients)}
                         </Route>
-                        {/*<Route path={"/potions"}>*/}
-                        {/*    {renderPotionsPage()}*/}
-                        {/*</Route>*/}
-                        {/*<Route path={"/smithing"}>*/}
-                        {/*    {renderSmithingPage()}*/}
-                        {/*</Route>*/}
+                        <Route path={"/potions"}>
+                            {renderPotionsPage()}
+                        </Route>
+                        <Route path={"/smithing"}>
+                            {renderSmithingPage()}
+                        </Route>
                     </Switch>
                 </div>
             </Router>
@@ -44,6 +47,14 @@ const MainPage = () => {
             />
             {renderDonatePopup(currentPopup, setCurrentPopup)}
         </div>
+    );
+}
+
+function renderHomePage() {
+    return (
+      <div>
+          HOMEPAGE
+      </div>
     );
 }
 

@@ -25,26 +25,22 @@ body {
   padding: 0;
 }
 
-.panel {
-  background-color: $panel-color;
-}
-
 .site-nav-bar {
   width: 100%;
   height: $site-nav-bar-height;
   box-shadow: 0 2px 4px $white-shadow; // Have Emily check this
   position: fixed;
   z-index: 1;
+  background-color: $panel-color;
 
   .nav-bar-links {
     text-decoration: none;
     color: $default-color;
     padding: 1em;
     cursor: pointer;
-    border: none;
+    border: 3px solid white;
     font-size: $default-font-size;
-    background-color: $panel-color;
-    margin-top: -15px;
+
     &:hover {
       color: $default-hover-color;
       background-color: $hover-background-color;
@@ -52,10 +48,20 @@ body {
     }
   }
 
-  // TODO : APPLY THIS TO THE SELECTED TAB
+  .logo {
+    position: relative;
+    top: 10px;
+  }
+
+  .logo-link {
+    padding: 0.9em;
+    cursor: pointer;
+    border-radius: 0;
+    border: 3px solid $hover-background-color;
+  }
+
   .nav-bar-link-selected {
     color: $default-hover-color;
-    font-weight: bold;
   }
 
   .nav-bar-link-default {
@@ -63,12 +69,11 @@ body {
   }
 
   .inner-nav-bar {
-    padding: 20px;
+    padding: 5px;
   }
 
   .inventory-icon {
     float: right;
-    margin-top: -15px;
   }
 }
 
@@ -109,18 +114,19 @@ body {
     }
 
     .header-text {
-      color: $default-color;
       text-align: center;
       padding: 1em;
     }
 
     .top-bar {
+      color: $text-color;
       border-top-right-radius: 16px;
       border-top-left-radius: 16px;
       box-shadow: 0 2px 4px -1px #d4d5d9;
     }
 
     .grocery-list-top-bar {
+      color: $default-color;
       margin-left: 15%;
       margin-right: 15%;
       border-bottom: 1px solid $default-color;
@@ -163,7 +169,6 @@ body {
     height: 265px;
     border-radius: 16px;
     margin-right: 8px;
-    color: $default-color;
     grid-template-areas:
     "top-bar top-bar"
     "main-img recipe-progress"
@@ -179,6 +184,7 @@ body {
       padding: 1em 1em 0.25em;
 
       .recipe-name {
+        color: $text-color;
         width: 80%;
         text-align: center;
         margin-top: 0.2em;
@@ -208,6 +214,7 @@ body {
     .recipe-progress {
       grid-area: recipe-progress;
       font-size: $sub-font-size;
+      color: $default-color;
 
       .recipe-progress-fields {
         padding-right: 0.5em;
@@ -537,7 +544,6 @@ input[type=number]::-webkit-outer-spin-button {
       font-weight: bold;
 
       .cook-header-text {
-        color: $text-color;
         font-weight: bold;
       }
 
@@ -587,6 +593,7 @@ input[type=number]::-webkit-outer-spin-button {
       text-align: center;
       font-size: $reduced-font-size;
       margin-bottom: 2em;
+      color: $default-color;
     }
 
     .ingredients-div {
@@ -812,7 +819,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: $reduced-font-size;
 }
 .toggle {
-  color: $z2-text-color;
+  color: #b6c2fc;
 }
 
 .disabled-card {
@@ -821,11 +828,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .large-font {
   font-size: 20px;
-}
-
-.fade {
-  background-image: linear-gradient(
-                  90deg,transparent,$default-hover-color,transparent);
 }
 
 ::-webkit-scrollbar {
