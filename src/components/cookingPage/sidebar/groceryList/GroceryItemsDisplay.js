@@ -24,7 +24,7 @@ function renderIngredients(ingredientDTOList, onMiniIngredientEditSaveClick, isE
     let ingredientCards = [];
     if (ingredientDTOList !== undefined) {
         ingredientDTOList.forEach(dto => {
-            if (dto.qtyToObtain !== 0) {
+            if (dto.qtyToObtain > 0) {
                 ingredientCards.push(
                     <MiniIngredientCard
                         ingredientData={dto.ingredient}

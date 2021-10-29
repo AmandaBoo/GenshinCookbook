@@ -63,6 +63,11 @@ export class CookingPage extends Component {
         this.props.resetStateValues();
     }
 
+    onCraftIngredientCookSaveClick(craftIngredientCooked, subIngredientsUsed) {
+        storage.saveIngredients(subIngredientsUsed, subIngredientsUsed.concat(craftIngredientCooked.ingredient));
+        this.props.resetStateValues();
+    }
+
     render() {
         return (
             <div className={"cooking-page-display"}>
@@ -81,6 +86,7 @@ export class CookingPage extends Component {
                     selectedMenu={this.state.selectedMenu}
                     setSelectedMenu={id => this.setSelectedMenu(id)}
                     onMiniIngredientEditSaveClick={(ingredient, ingredientQty) => this.onMiniIngredientEditSaveClick(ingredient, ingredientQty)}
+                    onCraftIngredientCookSaveClick={(craftIngredientCooked, subIngredientsUsed) => this.onCraftIngredientCookSaveClick(craftIngredientCooked, subIngredientsUsed)}
                 />
             </div>
         );

@@ -5,7 +5,6 @@ import ToggleOnIcon from '@mui/icons-material/ToggleOn';
 import {IngredientAndQtyToObtainDto} from "../../../../classes/dtos/ingredientAndQtyToObtain";
 import * as Utils from "../../../../util/utils";
 
-
 const GroceryDisplay = ({rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick})=> {
     const [isToggleOn, setIsToggleOn] = useState(false);
     return (
@@ -105,7 +104,8 @@ function createRawIngredientBreakdown(craftIng, craftsFromList) {
     let rawIngredients = [];
     craftsFromList.forEach(ingDto => {
         if (ingDto.ingredient.obtainedBy === "process") {
-            rawIngredients.push(createRawIngredientBreakdown(new IngredientAndQtyToObtainDto(ingDto.ingredient, craftIng.qtyToObtain * ingDto.qtyRequired), ingDto.ingredient.craftsFrom[0]));
+            rawIngredients.push(createRawIngredientBreakdown(new IngredientAndQtyToObtainDto(ingDto.ingredient,
+                craftIng.qtyToObtain * ingDto.qtyRequired), ingDto.ingredient.craftsFrom[0]));
         } else {
             rawIngredients.push(new IngredientAndQtyToObtainDto(ingDto.ingredient, craftIng.qtyToObtain * ingDto.qtyRequired));
         }
@@ -126,9 +126,12 @@ function findRawBreakdownOfCraftedIngredients(filteredCraftIngredients, obtained
 
 function mergeBreakdownLists(filteredOtherIngredients, craftedByRaw) {
     let newIngredientsDTOList = [];
+
     craftedByRaw.forEach(rawIngDTO => {
         let otherDTO = filteredOtherIngredients.find(dto => dto.ingredient.name === rawIngDTO.ingredient.name);
         let existingDTO = newIngredientsDTOList.find(dto => dto.ingredient.name === rawIngDTO.ingredient.name);
+
+        rawIngDTO.qtyToObtain -= rawIngDTO.ingredient.qty;
         if (otherDTO !== undefined) {
             newIngredientsDTOList.push(new IngredientAndQtyToObtainDto(rawIngDTO.ingredient, otherDTO.qtyToObtain + rawIngDTO.qtyToObtain));
         } else if (existingDTO !== undefined) {

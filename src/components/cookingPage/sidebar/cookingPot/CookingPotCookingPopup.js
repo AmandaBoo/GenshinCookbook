@@ -1,21 +1,21 @@
 import React, {useState} from 'react';
-import CloseButton from "../../shared/CloseButton";
-import SaveButton from "../../shared/SaveButton";
-import MiniIngredientCard from "../shared/MiniIngredientCard";
-import InfoIcon from '@mui/icons-material/Info';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
+import CloseButton from "../../../shared/CloseButton";
+import Tooltip from "@mui/material/Tooltip";
+import IconButton from "@mui/material/IconButton";
+import InfoIcon from "@mui/icons-material/Info";
+import MiniIngredientCard from "../../shared/MiniIngredientCard";
+import SaveButton from "../../../shared/SaveButton";
 
-export const CookingPopup = ({recipe, onCloseClick, onSaveClick, onMiniIngredientEditSaveClick}) => {
-    const [cookQty, setCookQty] = useState(calculateMaxCraftQty(recipe));
-    const maxQty = calculateMaxCraftQty(recipe);
+export const CookingPotCookingPopup = ({processedIngredient, onCloseClick, onSaveClick, onMiniIngredientEditSaveClick}) => {
+    const [cookQty, setCookQty] = useState(calculateMaxCraftQty(processedIngredient));
+    const maxQty = calculateMaxCraftQty(processedIngredient);
+
     return (
         <div className={"message-modal"}>
             <div className={"vertical-center"}>
                 <div className={"cooking-popup"}>
-                    {createTopBar(recipe, onCloseClick)}
-                    {createCookingField(recipe, cookQty, setCookQty, maxQty)}
-                    {createProgressDisplay(cookQty, recipe)}
+                    {createTopBar(processedIngredient, onCloseClick)}
+                    {createCookingField(processedIngredient, cookQty, setCookQty, maxQty)}
                     <div>
                         <div className={"ingredients-div"}>
                             <div className={"ingredients-wrapper"}>
@@ -23,31 +23,30 @@ export const CookingPopup = ({recipe, onCloseClick, onSaveClick, onMiniIngredien
                                     INGREDIENTS REQUIRED
                                 </div>
                                 <div className={"ingredient-cards"}>
-                                    {createIngredientsRequiredDisplay(recipe, cookQty, onMiniIngredientEditSaveClick)}
+                                    {createIngredientsRequiredDisplay(processedIngredient, cookQty, onMiniIngredientEditSaveClick)}
                                 </div>
                             </div>
-                            {createIngredientsBorder(getMissingIngredients(recipe, cookQty))}
-                            {createMissingIngredientsDiv(recipe, cookQty, getMissingIngredients(recipe, cookQty), onMiniIngredientEditSaveClick)}
+                            {createIngredientsBorder(getMissingIngredients(processedIngredient, cookQty))}
+                            {createMissingIngredientsDiv(processedIngredient, cookQty, getMissingIngredients(processedIngredient, cookQty), onMiniIngredientEditSaveClick)}
                         </div>
                     </div>
-                    {createConfirmCookButton(cookQty, recipe, onSaveClick, onCloseClick)}
+                    {createConfirmCookButton(cookQty, processedIngredient, onSaveClick, onCloseClick)}
                 </div>
             </div>
         </div>
     );
 }
 
-function createTopBar(recipe, onCloseClick) {
+function createTopBar(processedIngredient, onCloseClick) {
     return (
         <div className={"top-bar"}>
             <div>
                 <span className={"cook-header-text"}>
-                    Cook {recipe.name}
+                    Process {processedIngredient.ingredient.name}
                 </span>
                 <CloseButton
                     onCloseClick={() => {
                         onCloseClick();
-                        resetState();
                     }}
                 >
                 </CloseButton>
@@ -56,7 +55,7 @@ function createTopBar(recipe, onCloseClick) {
     );
 }
 
-function createCookingField(recipe, cookQty, setCookQty, maxQty) {
+function createCookingField(processedIngredientDTO, cookQty, setCookQty, maxQty) {
     return (
         <div className={"cooking-parent"}>
             <div className={"cooking-field-title"}>HOW MANY</div>
@@ -79,7 +78,7 @@ function createCookingField(recipe, cookQty, setCookQty, maxQty) {
                     </input>
                 </div>
                 <Tooltip
-                    title={"Based on your Inventory, you should be able to make " + maxQty + " dishes"}
+                    title={"Based on your Inventory, you should be able to make " + maxQty + " " + processedIngredientDTO.ingredient.name + " of the " + processedIngredientDTO.qtyToObtain + " you need"}
                 >
                     <IconButton>
                         <InfoIcon className={"info-icon"}/>
@@ -96,37 +95,15 @@ function setValuesIfValid(eventValue, setter) {
     }
 }
 
-function createProgressDisplay(cookQty, recipe) {
-    let recipeProfPostCook;
-    let recipeQtyPostCook;
-    if (isNaN(cookQty)) {
-        recipeProfPostCook = recipe.currentProficiency;
-        recipeQtyPostCook = recipe.qty;
-    } else {
-        recipeProfPostCook = recipe.currentProficiency + cookQty;
-        let recipeMaxProf = recipe.rarity * 5;
-
-        recipeProfPostCook = recipeProfPostCook > recipeMaxProf ? recipeMaxProf : recipeProfPostCook;
-        recipeQtyPostCook = recipe.qty + cookQty;
-        recipeQtyPostCook = recipeQtyPostCook > recipe.want ? recipe.want : recipeQtyPostCook;
-    }
-    return (
-        <div className={"progress-display-div"}>
-            <span>Proficiency: {recipeProfPostCook} / {recipe.rarity * 5}</span>
-            <span>Custom Qty: {recipeQtyPostCook} / {recipe.want}</span>
-        </div>
-    );
-}
-
 function resetFieldOnLeave(value, setter) {
     if (value === "") {
         setter(0);
     }
 }
 
-function calculateMaxCraftQty(recipe) {
+function calculateMaxCraftQty(processedIngredientDTO) {
     let maxCraftQty = [];
-    let allIngredients = recipe.craftsFrom[0][0].raw.concat(recipe.craftsFrom[0][1].crafted);
+    let allIngredients = processedIngredientDTO.ingredient.craftsFrom[0];
 
     allIngredients.forEach(ingMap => {
         let curQty = ingMap.ingredient.qty;
@@ -135,13 +112,13 @@ function calculateMaxCraftQty(recipe) {
         maxCraftQty.push(maxCookQtyForIngredient);
     });
 
-    maxCraftQty.push(recipe.want);
+    maxCraftQty.push(processedIngredientDTO.qtyToObtain);
     return Math.min(...maxCraftQty);
 }
 
-function createIngredientsRequiredDisplay(recipe, cookQty, onMiniIngredientEditSaveClick) {
+function createIngredientsRequiredDisplay(processedIngredientDTO, cookQty, onMiniIngredientEditSaveClick) {
     let miniIngredientCards = [];
-    let allIngredients = recipe.craftsFrom[0][0].raw.concat(recipe.craftsFrom[0][1].crafted);
+    let allIngredients = processedIngredientDTO.ingredient.craftsFrom[0];
     allIngredients.forEach(ingMap => {
         let qtyToDeduct = isNaN(cookQty) ? 0 : cookQty * ingMap.qtyRequired;
         let curQty = ingMap.ingredient.qty;
@@ -170,7 +147,7 @@ function createIngredientsBorder(missingIngredientsList) {
     }
 }
 
-function createMissingIngredientsDiv(recipe, cookQty, missingIngredientsList, onMiniIngredientEditSaveClick) {
+function createMissingIngredientsDiv(processedIngredient, cookQty, missingIngredientsList, onMiniIngredientEditSaveClick) {
     if (missingIngredientsList.length !== 0) {
         return (
             <div className={"ingredients-wrapper"}>
@@ -178,7 +155,7 @@ function createMissingIngredientsDiv(recipe, cookQty, missingIngredientsList, on
                     INGREDIENTS MISSING
                 </div>
                 <div className={"ingredient-cards"}>
-                    {createIngredientsMissingDisplay(recipe, cookQty, getMissingIngredients(recipe, cookQty), onMiniIngredientEditSaveClick)}
+                    {createIngredientsMissingDisplay(cookQty, getMissingIngredients(processedIngredient, cookQty), onMiniIngredientEditSaveClick)}
                 </div>
             </div>
         );
@@ -186,7 +163,7 @@ function createMissingIngredientsDiv(recipe, cookQty, missingIngredientsList, on
     return null;
 }
 
-function createIngredientsMissingDisplay(recipe, cookQty, missingIngredientList, onMiniIngredientEditSaveClick) {
+function createIngredientsMissingDisplay(cookQty, missingIngredientList, onMiniIngredientEditSaveClick) {
     let miniIngredientCards = [];
     if (missingIngredientList.length !== 0) {
         missingIngredientList.forEach(ingMap => {
@@ -203,9 +180,9 @@ function createIngredientsMissingDisplay(recipe, cookQty, missingIngredientList,
     return miniIngredientCards;
 }
 
-function getMissingIngredients(recipe, cookQty) {
+function getMissingIngredients(processedIngredientDTO, cookQty) {
     let missingIngredientList = [];
-    let allIngredients = recipe.craftsFrom[0][0].raw.concat(recipe.craftsFrom[0][1].crafted);
+    let allIngredients = processedIngredientDTO.ingredient.craftsFrom[0];
     allIngredients.forEach(ingMap => {
         let qtyToDeduct = isNaN(cookQty) ? 0 : cookQty * ingMap.qtyRequired;
         let curQty = ingMap.ingredient.qty;
@@ -216,41 +193,31 @@ function getMissingIngredients(recipe, cookQty) {
     return missingIngredientList;
 }
 
-function updateRecipeBeforeSave(cookQty, recipe) {
-    let allIngredients = recipe.craftsFrom[0][0].raw.concat(recipe.craftsFrom[0][1].crafted);
+function updateRecipeBeforeSave(cookQty, processedIngredientDTO) {
+    let allIngredients = processedIngredientDTO.ingredient.craftsFrom[0];
     allIngredients.forEach(ingMap => {
         let qtyToDeduct = cookQty * ingMap.qtyRequired;
         let qtyLeft = ingMap.ingredient.qty - qtyToDeduct;
         ingMap.ingredient.qty = qtyLeft < 0 ? 0 : qtyLeft;
     })
 
-    let recipeProfPostCook = recipe.currentProficiency + cookQty;
-    let recipeMaxProf = recipe.rarity * 5;
-    recipe.currentProficiency = recipeProfPostCook > recipeMaxProf ? recipeMaxProf : recipeProfPostCook;
-    recipe.mastery = recipe.currentProficiency === recipeMaxProf;
-
-    let recipeQtyPostCook = recipe.qty + cookQty;
-    recipe.qty = recipeQtyPostCook > recipe.want ? recipe.want : recipeQtyPostCook;
-
-    return recipe;
+    processedIngredientDTO.ingredient.qty = processedIngredientDTO.ingredient.qty + cookQty;
+    return [processedIngredientDTO, allIngredients.map(ing => ing.ingredient)];
 }
 
-function createConfirmCookButton(cookQty, recipe, saveClick, onCloseClick) {
+function createConfirmCookButton(cookQty, processedIngredientDTO, saveClick, onCloseClick) {
+    let allIngredientsUsed;
     return (
         <div>
             <SaveButton
                 saveText={"Cook"}
                 onSaveClick={() => {
-                    recipe = updateRecipeBeforeSave(cookQty, recipe)
-                    saveClick(recipe);
+                    [processedIngredientDTO, allIngredientsUsed] = updateRecipeBeforeSave(cookQty, processedIngredientDTO)
+                    saveClick(processedIngredientDTO, allIngredientsUsed);
                     onCloseClick();
                 }}
                 isDisabled={isNaN(cookQty) || cookQty === 0}
             />
         </div>
     );
-}
-
-function resetState() {
-
 }
