@@ -86,6 +86,7 @@ body {
   display: grid;
   grid-template-areas:
   "cards sidebar";
+  grid-template-columns: auto 375px;
 }
 
 .sidebar-display {
@@ -169,6 +170,7 @@ body {
   grid-area: cards;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   .recipe-card-grid {
     $recipe-img-size: 125px;
