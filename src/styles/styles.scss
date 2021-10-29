@@ -15,6 +15,7 @@ $card-shadow-color: #646566;
 $card-background-color: #e4e6f0;
 $z2-color: #e1e7ff;
 $z2-text-color: #657ef8;
+$ingredient-img-size: 50px;
 
 body {
   font: 100% $main-font;
@@ -111,25 +112,25 @@ body {
 
     .sidebar-card-display {
       padding-bottom: 70px;
+      margin-bottom: 10px;
     }
 
     .header-text {
       text-align: center;
       padding: 1em;
+      border-bottom: 1px solid $default-color;
     }
 
     .top-bar {
       color: $text-color;
       border-top-right-radius: 16px;
       border-top-left-radius: 16px;
-      box-shadow: 0 2px 4px -1px #d4d5d9;
     }
 
     .grocery-list-top-bar {
       color: $default-color;
       margin-left: 15%;
       margin-right: 15%;
-      border-bottom: 1px solid $default-color;
     }
 
     .grocery-list-cards-div {
@@ -143,6 +144,15 @@ body {
       margin-top: 15px;
       margin-left: 15%;
       margin-right: 15%;
+    }
+
+    .cooking-pot-ingredient-container {
+      padding: 4px;
+      .cooking-pot-ingredient-img {
+        width: $ingredient-img-size;
+        height: $ingredient-img-size;
+        border-radius: 16px;
+      }
     }
   }
 
@@ -460,6 +470,24 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
+.small-button {
+  background-color: $z2-color;
+  color: $z2-text-color;
+  width: $ingredient-img-size;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: $reduced-font-size;
+  padding: 0.25em;
+
+  transition: all .1s ease-in-out;
+
+  &:hover {
+    background-color: $z2-text-color;
+    color: #fff;
+  }
+}
+
 .vertical-center {
   display: flex;
   justify-content: center;
@@ -682,8 +710,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .mini-ingredient-container {
-  $ingredient-img-size: 50px;
-
   position: relative;
   color: white;
   margin-left: 2px;
@@ -832,7 +858,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .placeholder-div {
   text-align: center;
-  height: 100vh;
+  height: calc(100vh - 60px);
 }
 
 ::-webkit-scrollbar {

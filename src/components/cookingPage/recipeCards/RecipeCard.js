@@ -6,7 +6,7 @@ import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import PowerSettingsNewRoundedIcon from '@mui/icons-material/PowerSettingsNewRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
 import * as Utils from "../../../util/utils";
-import {CookingPopup} from "./CookingPopup";
+import {RecipeCookingPopup} from "./RecipeCookingPopup";
 
 const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable, onCardCook, onMiniIngredientEditSaveClick}) => {
     const [popup, setPopup] = useState(null);
@@ -156,7 +156,7 @@ function renderDeleteConfirmationPopup(popup, setPopup, recipeCard, onCardDelete
 function renderCookingPopup(recipe, popup, setPopup, onCardCook, onMiniIngredientEditSaveClick) {
     if (popup === "cooking") {
         return (
-            <CookingPopup
+            <RecipeCookingPopup
                 recipe={recipe}
                 onCloseClick={() => onCloseClick(setPopup)}
                 onSaveClick={(card) => onCardCook(card)}

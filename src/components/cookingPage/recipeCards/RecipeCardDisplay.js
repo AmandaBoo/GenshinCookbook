@@ -3,8 +3,10 @@ import RecipeCard from "./RecipeCard";
 
 const RecipeCardDisplay = ({allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard, onCardCook, onMiniIngredientEditSaveClick}) => {
     return (
-        <div className={"recipe-card-display"}>
-            {renderCards(allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard, onCardCook, onMiniIngredientEditSaveClick)}
+        <div>
+            <div className={"recipe-card-display"}>
+                {renderCards(allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard, onCardCook, onMiniIngredientEditSaveClick)}
+            </div>
         </div>
     );
 }
@@ -13,7 +15,6 @@ function renderCards(allRecipes, removeRecipeCard, editRecipeCard, enableDisable
     let cardList = [];
     if (allRecipes !== undefined) {
         allRecipes.forEach(data => {
-            // TODO : FIX UNIQUE KEY PROP WARNING
             cardList.push(
                 <RecipeCard
                     recipeData={data}

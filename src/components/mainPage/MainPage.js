@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import {CookingPage} from "../cookingPage/CookingPage";
 import MainNavBar from "./MainNavBar";
 import * as storage from "../../storageInterfaces/storageInterface";
