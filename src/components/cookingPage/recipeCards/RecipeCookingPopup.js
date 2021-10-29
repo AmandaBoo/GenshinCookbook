@@ -23,11 +23,11 @@ export const RecipeCookingPopup = ({recipe, onCloseClick, onSaveClick, onMiniIng
                                     INGREDIENTS REQUIRED
                                 </div>
                                 <div className={"ingredient-cards"}>
-                                    {createIngredientsRequiredDisplay(recipe, cookQty, onMiniIngredientEditSaveClick)}
+                                    {createIngredientsRequiredDisplay(recipe, cookQty, setCookQty, onMiniIngredientEditSaveClick)}
                                 </div>
                             </div>
                             {createIngredientsBorder(getMissingIngredients(recipe, cookQty))}
-                            {createMissingIngredientsDiv(recipe, cookQty, getMissingIngredients(recipe, cookQty), onMiniIngredientEditSaveClick)}
+                            {createMissingIngredientsDiv(recipe, cookQty, setCookQty, getMissingIngredients(recipe, cookQty), onMiniIngredientEditSaveClick)}
                         </div>
                     </div>
                     {createConfirmCookButton(cookQty, recipe, onSaveClick, onCloseClick)}
@@ -138,7 +138,7 @@ function calculateMaxCraftQty(recipe) {
     return Math.min(...maxCraftQty);
 }
 
-function createIngredientsRequiredDisplay(recipe, cookQty, onMiniIngredientEditSaveClick) {
+function createIngredientsRequiredDisplay(recipe, cookQty, setCookQty, onMiniIngredientEditSaveClick) {
     let miniIngredientCards = [];
     let allIngredients = recipe.craftsFrom[0][0].raw.concat(recipe.craftsFrom[0][1].crafted);
     allIngredients.forEach(ingMap => {
@@ -151,7 +151,10 @@ function createIngredientsRequiredDisplay(recipe, cookQty, onMiniIngredientEditS
                 ingredientData={ingMap.ingredient}
                 qtyRequired={overlayText}
                 needsWarning={isMissingIngredients}
-                onEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
+                onEditSaveClick={(ingredient, newQty) => {
+                    onMiniIngredientEditSaveClick(ingredient, newQty);
+                    setCookQty(calculateMaxCraftQty(recipe));
+                }}
             />
         );
     });
@@ -169,7 +172,7 @@ function createIngredientsBorder(missingIngredientsList) {
     }
 }
 
-function createMissingIngredientsDiv(recipe, cookQty, missingIngredientsList, onMiniIngredientEditSaveClick) {
+function createMissingIngredientsDiv(recipe, cookQty, setCookQty, missingIngredientsList, onMiniIngredientEditSaveClick) {
     if (missingIngredientsList.length !== 0) {
         return (
             <div className={"ingredients-wrapper"}>
@@ -177,7 +180,7 @@ function createMissingIngredientsDiv(recipe, cookQty, missingIngredientsList, on
                     INGREDIENTS MISSING
                 </div>
                 <div className={"ingredient-cards"}>
-                    {createIngredientsMissingDisplay(recipe, cookQty, getMissingIngredients(recipe, cookQty), onMiniIngredientEditSaveClick)}
+                    {createIngredientsMissingDisplay(recipe, cookQty, setCookQty, getMissingIngredients(recipe, cookQty), onMiniIngredientEditSaveClick)}
                 </div>
             </div>
         );
@@ -185,7 +188,7 @@ function createMissingIngredientsDiv(recipe, cookQty, missingIngredientsList, on
     return null;
 }
 
-function createIngredientsMissingDisplay(recipe, cookQty, missingIngredientList, onMiniIngredientEditSaveClick) {
+function createIngredientsMissingDisplay(recipe, cookQty, setCookQty, missingIngredientList, onMiniIngredientEditSaveClick) {
     let miniIngredientCards = [];
     if (missingIngredientList.length !== 0) {
         missingIngredientList.forEach(ingMap => {
@@ -194,7 +197,10 @@ function createIngredientsMissingDisplay(recipe, cookQty, missingIngredientList,
                 <MiniIngredientCard
                     ingredientData={ingMap.ingredient}
                     qtyRequired={qtyRequired}
-                    onEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
+                    onEditSaveClick={(ingredient, newQty) => {
+                        onMiniIngredientEditSaveClick(ingredient, newQty);
+                        setCookQty(calculateMaxCraftQty(recipe));
+                    }}
                 />
             )
         });

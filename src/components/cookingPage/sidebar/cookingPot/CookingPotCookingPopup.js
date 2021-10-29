@@ -23,7 +23,7 @@ export const CookingPotCookingPopup = ({processedIngredient, onCloseClick, onSav
                                     INGREDIENTS REQUIRED
                                 </div>
                                 <div className={"ingredient-cards"}>
-                                    {createIngredientsRequiredDisplay(processedIngredient, cookQty, onMiniIngredientEditSaveClick)}
+                                    {createIngredientsRequiredDisplay(processedIngredient, cookQty, setCookQty, onMiniIngredientEditSaveClick)}
                                 </div>
                             </div>
                             {createIngredientsBorder(getMissingIngredients(processedIngredient, cookQty))}
@@ -116,7 +116,7 @@ function calculateMaxCraftQty(processedIngredientDTO) {
     return Math.min(...maxCraftQty);
 }
 
-function createIngredientsRequiredDisplay(processedIngredientDTO, cookQty, onMiniIngredientEditSaveClick) {
+function createIngredientsRequiredDisplay(processedIngredientDTO, cookQty, setCookQty, onMiniIngredientEditSaveClick) {
     let miniIngredientCards = [];
     let allIngredients = processedIngredientDTO.ingredient.craftsFrom[0];
     allIngredients.forEach(ingMap => {
@@ -129,7 +129,10 @@ function createIngredientsRequiredDisplay(processedIngredientDTO, cookQty, onMin
                 ingredientData={ingMap.ingredient}
                 qtyRequired={overlayText}
                 needsWarning={isMissingIngredients}
-                onEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
+                onEditSaveClick={(ingredient, newQty) => {
+                    onMiniIngredientEditSaveClick(ingredient, newQty);
+                    setCookQty(calculateMaxCraftQty(processedIngredientDTO));
+                }}
             />
         );
     });
