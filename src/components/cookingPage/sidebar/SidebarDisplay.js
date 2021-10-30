@@ -14,12 +14,13 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
                     text={"Add Recipe Card"}
                     onClick={i => setSelectedMenu(i)}
                 />
+                <Icon
+                    id={"help-guide-icon"}
+                    text={"Help Guide"}
+                    onClick={() => setSelectedMenu("help-guide-icon")}
+                />
             </div>
-            <CookbookManager
-                doRender={selectedMenu === "recipe-card-icon"}
-                onCloseClick={() => setSelectedMenu(null)}
-                foodRecipes={recipes}
-            />
+            {renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes)}
             <div className={"grocery-div"}>
                 <CookingPotDisplay
                     craftIngredientsDTOList={craftedIngredientsDTOList}
@@ -36,7 +37,19 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
                 />
             </div>
         </div>
-    )
+    );
+}
+
+function renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes) {
+    if (selectedMenu === "recipe-card-icon") {
+        return (
+            <CookbookManager
+                onCloseClick={() => setSelectedMenu(null)}
+                foodRecipes={recipes}
+            />
+        );
+    }
+    return null;
 }
 
 export default SidebarDisplay;

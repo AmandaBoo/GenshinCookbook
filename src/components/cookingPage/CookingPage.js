@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import RecipeCardDisplay from "./recipeCards/RecipeCardDisplay";
 import * as storage from "../../storageInterfaces/storageInterface";
 import SidebarDisplay from "./sidebar/SidebarDisplay";
+import {PlaceholderPage} from "../helpGuide/PlaceholderPage";
 
 export class CookingPage extends Component {
     constructor(props) {
@@ -68,9 +69,18 @@ export class CookingPage extends Component {
         this.props.resetStateValues();
     }
 
-    render() {
-        return (
-            <div className={"cooking-page-display"}>
+    renderRecipeDisplay() {
+        if (this.getRecipeCards().length === 0) {
+            return (
+                <PlaceholderPage
+                    imgPath={"./images/icons/xianlingFlowers.png"}
+                    addButtonText={"Add Recipe Card"}
+                    onAddButtonClick={() => this.setSelectedMenu("recipe-card-icon")}
+                    onHelpGuideButtonClick={() => this.setSelectedMenu("help-guide-icon")}
+                />
+            );
+        } else {
+            return (
                 <RecipeCardDisplay
                     allRecipes={this.getRecipeCards()}
                     removeRecipeCard={card => this.removeRecipeCard(card)}
@@ -79,6 +89,14 @@ export class CookingPage extends Component {
                     onCardCook={(card) => this.onCardCook(card)}
                     onMiniIngredientEditSaveClick={(ingredient, ingredientQty) => this.onMiniIngredientEditSaveClick(ingredient, ingredientQty)}
                 />
+            );
+        }
+    }
+
+    render() {
+        return (
+            <div className={"cooking-page-display"}>
+                {this.renderRecipeDisplay()}
                 <SidebarDisplay
                     recipes={this.props.recipes}
                     rawIngredientsDTOList={storage.getIngredientToObtainDTOList(this.props.recipes, "raw")}
