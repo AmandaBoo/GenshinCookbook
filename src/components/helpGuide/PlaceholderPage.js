@@ -7,7 +7,7 @@ export const PlaceholderPage = ({imgPath, addButtonText, onAddButtonClick, onHel
             <div className={"vertical-center"}>
                 {createPlaceholderCharacterImage(imgPath)}
                 <div>
-                    {createMessageBody(onAddButtonClick, addButtonText)}
+                    {createMessageBody(onAddButtonClick, addButtonText, onHelpGuideButtonClick)}
                 </div>
             </div>
         </div>
@@ -26,14 +26,14 @@ function createPlaceholderCharacterImage(imgPath) {
     );
 }
 
-function createMessageBody(onAddButtonClick, addButtonText) {
+function createMessageBody(onAddButtonClick, addButtonText, onHelpGuideButtonClick) {
     return (
         <div>
             <div>
                 Welcome to the Cooking Page! It doesn't look like you're tracking any recipes...
             </div>
             {createAddActionBody(onAddButtonClick, addButtonText)}
-            {createHelpGuideActionBody()}
+            {createHelpGuideActionBody(onHelpGuideButtonClick)}
         </div>
     );
 }
@@ -57,13 +57,16 @@ function createAddActionBody(onAddButtonClick, addButtonText) {
     )
 }
 
-function createHelpGuideActionBody() {
+function createHelpGuideActionBody(onHelpGuideButtonClick) {
     return (
         <div className={"help-text-container"}>
             <span>
                 Otherwise, click on
             </span>
-            <button className={"modal-button"}>
+            <button
+                className={"modal-button"}
+                onClick={() => onHelpGuideButtonClick()}
+            >
                 Help Guide
             </button>
             <span>

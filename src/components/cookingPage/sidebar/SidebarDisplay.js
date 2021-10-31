@@ -3,6 +3,7 @@ import {CookbookManager} from "../cookbook/CookbookManager";
 import {Icon} from "../../shared/Icon";
 import GroceryDisplay from "./groceryList/GroceryDisplay";
 import {CookingPotDisplay} from "./cookingPot/CookingPotDisplay";
+import {HelpGuideContainer} from "../../helpGuide/HelpGuideContainer";
 
 const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOList, selectedMenu, setSelectedMenu,
                             onMiniIngredientEditSaveClick, onCraftIngredientCookSaveClick}) => {
@@ -11,7 +12,7 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
             <div className={"add-recipe-button-div"}>
                 <Icon
                     id={"recipe-card-icon"}
-                    text={"Add Recipe Card"}
+                    text={"Recipes"}
                     onClick={i => setSelectedMenu(i)}
                 />
                 <Icon
@@ -21,6 +22,7 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
                 />
             </div>
             {renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes)}
+            {renderHelpGuidePopup(selectedMenu, setSelectedMenu)}
             <div className={"grocery-div"}>
                 <CookingPotDisplay
                     craftIngredientsDTOList={craftedIngredientsDTOList}
@@ -50,6 +52,17 @@ function renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes) {
         );
     }
     return null;
+}
+
+function renderHelpGuidePopup(selectedMenu, setSelectedMenu) {
+    if (selectedMenu === "help-guide-icon") {
+        return (
+            <HelpGuideContainer
+                pageName={"cooking"}
+                onCloseClick={() => setSelectedMenu(null)}
+            />
+        )
+    }
 }
 
 export default SidebarDisplay;
