@@ -158,7 +158,7 @@ body {
   }
 
   .modal-button {
-    margin: 0 1em;
+    margin: 0 0.5em;
   }
 }
 
@@ -861,6 +861,28 @@ input[type=number]::-webkit-outer-spin-button {
 .placeholder-div {
   text-align: center;
   height: calc(100vh - 60px);
+}
+
+.help-container {
+  height: 70vh;
+
+  .help-text-container {
+    text-align: center;
+    margin: 0.5em;
+  }
+
+  .tutorial-character {
+    height: 200px;
+    width: 200px;
+  }
+
+  .modal-button {
+    margin: 0.5em;
+  };
+}
+
+.text-align-center {
+  text-align: center;
 }
 
 ::-webkit-scrollbar {

@@ -62,29 +62,27 @@ export class CookbookManager extends Component {
     }
 
     render() {
-        if (this.props.doRender) {
-            return (
-                <div id={"inventory-popup"} className={"modal"}>
-                    <div className={"modal-card"}>
-                        <NavBar
-                            navBarIcon={"images/icons/foodIcon.png"}
-                            imgSrcList={this.imgSrcList}
-                            imgSrcListIds={this.imgSrcListIds}
-                            selectedTab={this.state.selectedTab}
-                            onInventoryTabClick={tabId => this.updateSelectedInventoryTab(tabId)}
-                            onCloseClick={() => {
-                                this.props.onCloseClick();
-                            }}
-                        />
-                        <CookbookCardDisplay
-                            allCardData={this.filterCards()}
-                            onUpdate={card => this.onCardClicked(card)}
-                        />
-                        {this.renderQuantityEditPopup()}
-                    </div>
+        return (
+            <div id={"inventory-popup"} className={"modal"}>
+                <div className={"modal-card"}>
+                    <NavBar
+                        navBarIcon={"images/icons/foodIcon.png"}
+                        imgSrcList={this.imgSrcList}
+                        imgSrcListIds={this.imgSrcListIds}
+                        selectedTab={this.state.selectedTab}
+                        onInventoryTabClick={tabId => this.updateSelectedInventoryTab(tabId)}
+                        onCloseClick={() => {
+                            this.props.onCloseClick();
+                        }}
+                    />
+                    <CookbookCardDisplay
+                        allCardData={this.filterCards()}
+                        onUpdate={card => this.onCardClicked(card)}
+                    />
+                    {this.renderQuantityEditPopup()}
                 </div>
-            );
-        }
-        return null;
+            </div>
+        );
     }
+
 }
