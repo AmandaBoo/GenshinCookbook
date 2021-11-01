@@ -231,9 +231,9 @@ export function getIngredientToObtainDTOList(recipes, ingredientType) {
                 subRecipeIngredientList.forEach(entry => {
                     let qtyToObtainInSum;
                     if (ingredientMap.get(entry.ingredient)) {
-                        qtyToObtainInSum = (ingredientMap.get(entry.ingredient) + (entry.qtyRequired * recipe.want));
+                        qtyToObtainInSum = (ingredientMap.get(entry.ingredient) + (entry.qtyRequired * recipe.want - recipe.qty));
                     } else {
-                        qtyToObtainInSum = (entry.qtyRequired * recipe.want);
+                        qtyToObtainInSum = (entry.qtyRequired * recipe.want) - recipe.qty;
                     }
                     ingredientMap.set(entry.ingredient, qtyToObtainInSum);
                 });
