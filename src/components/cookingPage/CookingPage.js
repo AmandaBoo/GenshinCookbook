@@ -40,6 +40,9 @@ export class CookingPage extends Component {
     editRecipeCard(recipeCard, currentProficiency, customQty) {
         recipeCard.currentProficiency = currentProficiency;
         recipeCard.want = customQty;
+        if (recipeCard.want < recipeCard.qty) {
+            recipeCard.qty = recipeCard.want;
+        }
         storage.saveFoodRecipes([recipeCard]);
         this.props.resetStateValues();
     }

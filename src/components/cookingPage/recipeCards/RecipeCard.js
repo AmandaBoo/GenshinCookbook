@@ -66,7 +66,7 @@ function createRecipeCardBody(recipeData, setPopup, onMiniIngredientEditSaveClic
                 </span>
 
                 <span className={"progress-field"}>
-                    <div className={"recipe-progress-fields"}>Custom Qty :</div>
+                    <div className={"recipe-progress-fields"}>Amount to Cook :</div>
                     <p className={"recipe-data-field"}>{recipeData.qty}/{recipeData.want}</p>
                 </span>
 
