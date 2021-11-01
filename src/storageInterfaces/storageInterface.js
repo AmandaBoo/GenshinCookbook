@@ -198,7 +198,7 @@ function determineQtyToObtain(recipe, ingredient, qtyRequired, allIngredients) {
         return [0, allIngredients];
     }
     let inventoryQty = allIngredients.find(ele => ele.name === ingredient.name).qty;
-    let totalNeeded = recipe.want * qtyRequired;
+    let totalNeeded = (recipe.want * qtyRequired) - recipe.qty;
     let totalLeftToGather = 0;
 
     if (inventoryQty - totalNeeded > 0) {
