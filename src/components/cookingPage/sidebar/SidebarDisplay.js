@@ -1,5 +1,5 @@
 import React from 'react'
-import {CookbookManager} from "../cookbook/CookbookManager";
+import {RecipesManager} from "../cookbook/RecipesManager";
 import {Icon} from "../../shared/Icon";
 import GroceryDisplay from "./groceryList/GroceryDisplay";
 import {CookingPotDisplay} from "./cookingPot/CookingPotDisplay";
@@ -45,7 +45,7 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
 function renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes) {
     if (selectedMenu === "recipe-card-icon") {
         return (
-            <CookbookManager
+            <RecipesManager
                 onCloseClick={() => setSelectedMenu(null)}
                 foodRecipes={recipes}
             />
