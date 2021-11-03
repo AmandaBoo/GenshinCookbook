@@ -26,6 +26,7 @@
 
 **Priorities for 1.0**
 - Help guide and placeholder text for sidebar display
+- Grocery list settings
 - Update WIP page styling 
 - Recipe cards overhaul
 - Smoother styling on button clicks and popups appearing
