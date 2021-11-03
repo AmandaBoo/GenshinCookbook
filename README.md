@@ -24,15 +24,14 @@
 - "Cookbook": Popup that maps to Genshin's cooking screen and allows for users to add Recipe Cards to the Cooking Manager page
 - "Recipe Cards": Cards displayed in the recipe manager that aim to give users information about their progress on obtaining mastery or a custom quantity
 
-**Priorities for 0.0**
-- Top Nav Bar
-- Food Page
-  -  Cook card popup
-  -  Recipe cards
-  -  Priority system
-  -  Grocery list
-- Style Overhaul
-- DB Content Fill
+**Priorities for 1.0**
+- Help guide and placeholder text for sidebar display
+- Update WIP page styling 
+- Recipe cards overhaul
+- Smoother styling on button clicks and popups appearing
+- Update kofi and patreon links
+- Mobile styling
+- Dark mode styling
 
 **How to Update Templates (example given for Food Recipes)**
 - Grab relevant images and place them in public/images/foodRecipes
