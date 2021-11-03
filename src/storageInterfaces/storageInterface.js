@@ -198,7 +198,7 @@ function determineQtyToObtain(recipe, ingredient, qtyRequired, allIngredients) {
         return [0, allIngredients];
     }
     let inventoryQty = allIngredients.find(ele => ele.name === ingredient.name).qty;
-    let totalNeeded = recipe.want * qtyRequired;
+    let totalNeeded = (recipe.want * qtyRequired) - recipe.qty;
     let totalLeftToGather = 0;
 
     if (inventoryQty - totalNeeded > 0) {
@@ -231,9 +231,9 @@ export function getIngredientToObtainDTOList(recipes, ingredientType) {
                 subRecipeIngredientList.forEach(entry => {
                     let qtyToObtainInSum;
                     if (ingredientMap.get(entry.ingredient)) {
-                        qtyToObtainInSum = (ingredientMap.get(entry.ingredient) + (entry.qtyRequired * recipe.want));
+                        qtyToObtainInSum = (ingredientMap.get(entry.ingredient) + (entry.qtyRequired * recipe.want - recipe.qty));
                     } else {
-                        qtyToObtainInSum = (entry.qtyRequired * recipe.want);
+                        qtyToObtainInSum = (entry.qtyRequired * recipe.want) - recipe.qty;
                     }
                     ingredientMap.set(entry.ingredient, qtyToObtainInSum);
                 });

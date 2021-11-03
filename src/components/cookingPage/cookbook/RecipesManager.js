@@ -4,7 +4,7 @@ import * as storage from "../../../storageInterfaces/storageInterface";
 import CookbookCardDisplay from "./CookbookCardDisplay";
 import RecipeQtyEditPopup from "../shared/RecipeQtyEditPopup";
 
-export class CookbookManager extends Component {
+export class RecipesManager extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,7 +33,7 @@ export class CookbookManager extends Component {
         if (this.state.selectedRecipeCard != null) {
             return (
                 <RecipeQtyEditPopup
-                    topBarText={"Add Recipe"}
+                    topBarText={"Configure Recipe"}
                     selectedRecipeCard={this.state.selectedRecipeCard}
                     onSaveClick={(recipeCard, currentProf, customQty) => this.onAddNewRecipeSaveClick(recipeCard, currentProf, customQty)}
                     onCloseClick={() => this.onConfirmationCloseClick()}
@@ -50,9 +50,11 @@ export class CookbookManager extends Component {
         let numRecipesWithCard = this.props.foodRecipes.filter(recipe => recipe.hasCard).length;
 
         recipeCard.rank = numRecipesWithCard === 0 ? 1 : numRecipesWithCard + 1;
-        recipeCard.hasCard = true;
         recipeCard.currentProficiency = currentProficiency;
         recipeCard.want = customQty;
+        if (recipeCard.want !== 0) {
+            recipeCard.hasCard = true;
+        }
         storage.saveFoodRecipes(this.props.foodRecipes);
         this.resetSelectedRecipe();
     }

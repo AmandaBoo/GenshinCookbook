@@ -13,8 +13,11 @@ const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onClos
             <div className={"vertical-center"}>
                 <div className={"edit-popup"}>
                     {createTopBar(topBarText + ": " + Utils.getTruncatedName(selectedRecipeCard.name, Utils.MAX_CONFIGURATION_NAME_LENGTH), onCloseClick, setCurProf, setCustomQty)}
-                    {createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty)}
-                    {createAmountToCookDiv(customQty, setCustomQty)}
+                    <div className={"flex-center"}>
+                        {createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty)}
+                        <div className={"ingredients-border"}/>
+                        {createAmountToCookDiv(customQty, setCustomQty)}
+                    </div>
 
                     {createSaveButton(onSaveClick, curProf, setCurProf, customQty, setCustomQty, selectedRecipeCard)}
                 </div>
@@ -101,7 +104,7 @@ function createAmountToCookDiv(customQty, setCustomQty) {
             <label
                 className={"input-label"}
                 form={"amtToCookInputField"}
-            >Amount To Cook
+            >How many do you want to cook?
             </label>
         </div>
     );

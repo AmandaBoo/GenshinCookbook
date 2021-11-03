@@ -525,6 +525,10 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 16px;
     padding: 1em;
 
+    .ingredients-border {
+      border-right: 1px solid $white-shadow;
+    }
+
     .top-bar {
       border-bottom: 1px solid $white-shadow;
       padding: 15px;
@@ -533,6 +537,7 @@ input[type=number]::-webkit-outer-spin-button {
 
     .input-label {
       text-align: center;
+      inline-size: 10em;
     }
 
     .text-label {
@@ -883,6 +888,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 .text-align-center {
   text-align: center;
+}
+
+.column-flex {
+  flex-direction: column;
 }
 
 ::-webkit-scrollbar {
