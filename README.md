@@ -33,6 +33,7 @@
 - Update kofi and patreon links
 - Mobile styling
 - Dark mode styling
+- Analytics
 
 **How to Update Templates (example given for Food Recipes)**
 - Grab relevant images and place them in public/images/foodRecipes
