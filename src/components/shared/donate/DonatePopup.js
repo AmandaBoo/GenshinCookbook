@@ -1,6 +1,8 @@
 import React from 'react';
-import CloseButton from "./CloseButton";
-import {ModalComponent} from "./ModalComponent";
+import CloseButton from "../buttons/CloseButton";
+import {ModalComponent} from "../ModalComponent";
+import {KofiIcon} from "./KofiIcon";
+import {PatreonIcon} from "./PatreonIcon";
 
 export const DonatePopup = ({onCloseClick}) => {
     return (
@@ -9,8 +11,8 @@ export const DonatePopup = ({onCloseClick}) => {
                 {renderTopBar(onCloseClick)}
                 {renderSubTitle()}
                 <div>
-                    {renderKofiLink()}
-                    {renderPatreonLink()}
+                    <KofiIcon/>
+                    <PatreonIcon/>
                 </div>
             </div>
         </ModalComponent>
@@ -40,34 +42,6 @@ function renderSubTitle() {
                 This site was made by 1 broke college student XD <br/>
                 Donations are totally optional, but greatly appreciated~
             </span>
-        </div>
-    );
-}
-
-function renderKofiLink() {
-    return (
-        <div className={"donate-icon-div"}>
-            <a href={"https://ko-fi.com/kitbon" } target="_blank">
-                <img
-                    src={"./images/icons/kofiIcon.png"}
-                    alt={"Kofi Icon"}
-                    className={"kofi-icon"}
-                />
-            </a>
-        </div>
-    );
-}
-
-function renderPatreonLink() {
-    return (
-        <div className={"donate-icon-div"}>
-            <a href={"https://www.patreon.com/"} target={"_blank"}>
-                <img
-                    src={"./images/icons/patreonIcon.png"}
-                    alt={"Patreon Icon"}
-                    className={"patreon-icon"}
-                />
-            </a>
         </div>
     );
 }

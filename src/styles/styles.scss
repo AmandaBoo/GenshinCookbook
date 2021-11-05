@@ -129,7 +129,6 @@ body {
     }
 
     .grocery-list-top-bar {
-      color: $default-color;
       margin-left: 15%;
       margin-right: 15%;
     }
@@ -798,30 +797,29 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 0.5em;
   }
 
-  .donate-icon-div {
-    display: flex;
-    justify-content: center;
-    margin: 1em;
-    .kofi-icon {
-      padding-bottom: 1em;
-      width: 200px;
-      cursor: pointer;
-      transition: all .2s ease-in-out;
+}
 
+.donate-icon-div {
+  margin: 1em;
 
-      &:hover {
-        transform: scale(1.1);
-      }
+  .kofi-icon {
+    padding-bottom: 1em;
+    width: 200px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
     }
+  }
 
-    .patreon-icon {
-      width: 50px;
-      cursor: pointer;
-      transition: all .2s ease-in-out;
+  .patreon-icon {
+    width: 50px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
 
-      &:hover {
-        transform: scale(1.1);
-      }
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
@@ -854,7 +852,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .placeholder-div {
   text-align: center;
-  height: calc(100vh - 60px);
+  height: 70vh;
 }
 
 .help-container {
@@ -904,6 +902,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 .right-padding {
   padding-right: 0.5em;
+}
+
+.paimon {
+  width: 200px;
+  height: 200px;
 }
 
 ::-webkit-scrollbar {

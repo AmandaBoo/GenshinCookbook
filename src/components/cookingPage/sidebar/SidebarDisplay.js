@@ -4,21 +4,21 @@ import {Icon} from "../../shared/Icon";
 import GroceryDisplay from "./groceryList/GroceryDisplay";
 import {CookingPotDisplay} from "./cookingPot/CookingPotDisplay";
 import {HelpGuideContainer} from "../../helpGuide/HelpGuideContainer";
+import {HELP_GUIDE_ID, RECIPES_POPUP_ID} from "../../../constants/constants";
+import Button from "../../shared/buttons/Button";
 
 const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOList, selectedMenu, setSelectedMenu,
                             onMiniIngredientEditSaveClick, onCraftIngredientCookSaveClick}) => {
     return (
         <div className={"sidebar-display"}>
             <div className={"add-recipe-button-div"}>
-                <Icon
-                    id={"recipe-card-icon"}
+                <Button
                     text={"Recipes"}
-                    onClick={i => setSelectedMenu(i)}
+                    onClick={() => setSelectedMenu(RECIPES_POPUP_ID)}
                 />
-                <Icon
-                    id={"help-guide-icon"}
+                <Button
                     text={"Help Guide"}
-                    onClick={() => setSelectedMenu("help-guide-icon")}
+                    onClick={() => setSelectedMenu(HELP_GUIDE_ID)}
                 />
             </div>
             {renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes)}
@@ -43,7 +43,7 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
 }
 
 function renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes) {
-    if (selectedMenu === "recipe-card-icon") {
+    if (selectedMenu === RECIPES_POPUP_ID) {
         return (
             <RecipesManager
                 onCloseClick={() => setSelectedMenu(null)}
@@ -55,7 +55,7 @@ function renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes) {
 }
 
 function renderHelpGuidePopup(selectedMenu, setSelectedMenu) {
-    if (selectedMenu === "help-guide-icon") {
+    if (selectedMenu === HELP_GUIDE_ID) {
         return (
             <HelpGuideContainer
                 pageName={"cooking"}

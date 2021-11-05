@@ -6,6 +6,13 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import * as storage from "../../../../storageInterfaces/storageInterface";
 import {GroceryListSettings} from "./GroceryListSettings";
 import {ToggleContainer} from "../../../shared/ToggleContainer";
+import {
+    FORAGEABLE,
+    NO_INGREDIENTS_FORAGE, NO_INGREDIENTS_PROCESS,
+    NO_INGREDIENTS_SHOP,
+    PROCESSED,
+    SHOP_ONLY
+} from "../../../../constants/constants";
 
 const GroceryDisplay = ({rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick})=> {
     const [isToggleOn, setIsToggleOn] = useState(false);
@@ -41,23 +48,26 @@ function renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredients
         return (
             <>
                 <GroceryItemsDisplay
-                    topBarText={"FORAGEABLE"}
+                    topBarText={FORAGEABLE}
                     ingredientDTOList={findRawIngredientsForBothRawAndCrafted(rawIngredientsDTOList, craftedIngredientsDTOList)}
                     onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
                     showCompletedIng={showCompletedIng}
+                    placeholderText={NO_INGREDIENTS_FORAGE}
                 />
                 <GroceryItemsDisplay
-                    topBarText={"SHOP ONLY"}
+                    topBarText={SHOP_ONLY}
                     ingredientDTOList={findRawIngredientsForBothShopAndCrafted(rawIngredientsDTOList, craftedIngredientsDTOList)}
                     onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
                     showCompletedIng={showCompletedIng}
+                    placeholderText={NO_INGREDIENTS_SHOP}
                 />
                 <GroceryItemsDisplay
-                    topBarText={"PROCESSED"}
+                    topBarText={PROCESSED}
                     ingredientDTOList={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "process")}
                     onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
                     showCompletedIng={showCompletedIng}
                     isEnabled={false}
+                    placeholderText={NO_INGREDIENTS_PROCESS}
                 />
             </>
         );
@@ -65,22 +75,25 @@ function renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredients
         return (
             <>
                 <GroceryItemsDisplay
-                    topBarText={"FORAGEABLE"}
+                    topBarText={FORAGEABLE}
                     ingredientDTOList={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "forage")}
                     onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
                     showCompletedIng={showCompletedIng}
+                    placeholderText={NO_INGREDIENTS_FORAGE}
                 />
                 <GroceryItemsDisplay
-                    topBarText={"SHOP ONLY"}
+                    topBarText={SHOP_ONLY}
                     ingredientDTOList={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "shop")}
                     onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
                     showCompletedIng={showCompletedIng}
+                    placeholderText={NO_INGREDIENTS_SHOP}
                 />
                 <GroceryItemsDisplay
-                    topBarText={"PROCESSED"}
+                    topBarText={PROCESSED}
                     ingredientDTOList={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "process")}
                     onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
                     showCompletedIng={showCompletedIng}
+                    placeholderText={NO_INGREDIENTS_PROCESS}
                 />
             </>
         );

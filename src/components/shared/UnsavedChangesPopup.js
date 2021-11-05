@@ -1,7 +1,7 @@
 import React from 'react';
-import CloseButton from "./CloseButton";
-import SaveButton from "./SaveButton";
-import Button from "./Button";
+import CloseButton from "./buttons/CloseButton";
+import SaveButton from "./buttons/SaveButton";
+import Button from "./buttons/Button";
 import {ModalComponent} from "./ModalComponent";
 
 export const UnsavedChangesPopup = ({onYesClick, onNoClick, onCloseClick}) => {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {NavBar} from "../shared/NavBar";
+import {NavBar} from "../shared/navBar/NavBar";
 import * as storage from "../../storageInterfaces/storageInterface";
 import IngredientCardDisplay from "./IngredientCardDisplay";
-import SaveButton from "../shared/SaveButton";
+import SaveButton from "../shared/buttons/SaveButton";
 import {UnsavedChangesPopup} from "../shared/UnsavedChangesPopup";
 
 export class InventoryManager extends Component {

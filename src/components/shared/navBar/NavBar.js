@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {NavBarTab} from "./NavBarTab";
-import CloseButton from "./CloseButton";
+import CloseButton from "../buttons/CloseButton";
 
 export class NavBar extends Component {
     /* PROPS

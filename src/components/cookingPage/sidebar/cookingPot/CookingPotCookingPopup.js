@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import CloseButton from "../../../shared/CloseButton";
+import CloseButton from "../../../shared/buttons/CloseButton";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
 import MiniIngredientCard from "../../shared/MiniIngredientCard";
-import SaveButton from "../../../shared/SaveButton";
+import SaveButton from "../../../shared/buttons/SaveButton";
 import {ModalComponent} from "../../../shared/ModalComponent";
 
 export const CookingPotCookingPopup = ({processedIngredient, onCloseClick, onSaveClick, onMiniIngredientEditSaveClick}) => {
