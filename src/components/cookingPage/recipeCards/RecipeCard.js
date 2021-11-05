@@ -98,7 +98,6 @@ function renderIngredients(allIngredients, isEnabled, onEditSaveClick) {
                         isEnabled={isEnabled}
                         qtyRequired={ing.qtyToObtain}
                         onEditSaveClick={(ingredient, ingredientQty) => onEditSaveClick(ingredient, ingredientQty)}
-                        isRecipeCard={true}
                     />
                 );
             })
@@ -111,7 +110,6 @@ function renderIngredients(allIngredients, isEnabled, onEditSaveClick) {
                         isEnabled={isEnabled}
                         qtyRequired={ing.qtyToObtain}
                         onEditSaveClick={(ingredient, ingredientQty) => onEditSaveClick(ingredient, ingredientQty)}
-                        isRecipeCard={true}
                     />
                 );
             })

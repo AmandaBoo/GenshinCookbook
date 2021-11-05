@@ -1,28 +1,45 @@
 import React from 'react';
 import CloseButton from "../../shared/CloseButton";
 import SaveButton from "../../shared/SaveButton";
+import {ModalComponent} from "../../shared/ModalComponent";
 
 const DeleteConfirmationPopup = ({deleteMessage, closeClick, saveClick}) => {
     return (
-        <div className={"message-modal"}>
-            <div className={"vertical-center"}>
-                <div className={"delete-popup"}>
-                    <div className={"top-bar"}>
-                        <CloseButton
-                            onCloseClick={() => {
-                                closeClick();
-                            }}
-                        />
-                    </div>
-                    <p>Are you sure you want to delete this {deleteMessage}?</p>
-                    <SaveButton
-                        saveText={"Confirm"}
-                        onSaveClick={() => saveClick()}
-                    />
-                </div>
+        <ModalComponent>
+            <div className={"delete-popup popup"}>
+                {createTopBar(closeClick)}
+                {createBody(deleteMessage)}
+                {createSaveButton(saveClick)}
             </div>
+        </ModalComponent>
+    );
+}
+
+function createTopBar(closeClick) {
+    return (
+        <div className={"top-bar"}>
+            <CloseButton
+                onCloseClick={() => {
+                    closeClick();
+                }}
+            />
         </div>
-    )
+    );
+}
+
+function createBody(deleteMessage) {
+    return (
+        <p>Are you sure you want to delete this {deleteMessage}?</p>
+    );
+}
+
+function createSaveButton(saveClick) {
+    return (
+        <SaveButton
+            saveText={"Confirm"}
+            onSaveClick={() => saveClick()}
+        />
+    );
 }
 
 export default DeleteConfirmationPopup;

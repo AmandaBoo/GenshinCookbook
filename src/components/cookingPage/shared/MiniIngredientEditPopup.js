@@ -1,22 +1,21 @@
 import React, {useState} from "react";
 import CloseButton from "../../shared/CloseButton";
 import SaveButton from "../../shared/SaveButton";
+import {ModalComponent} from "../../shared/ModalComponent";
 
 export const MiniIngredientEditPopup = ({ingredientData, onCloseClick, onSaveClick}) => {
     const [inventoryQty, setInventoryQty] = useState(ingredientData.qty);
     const [addSubtractQty, setAddSubtractQty] = useState(0);
     return (
-        <div className={"message-modal"}>
-            <div className={"vertical-center"}>
-                <div className={"edit-mini-ingredient-popup"}>
-                    {renderTopBar(ingredientData.name, onCloseClick)}
-                    {renderIngredientImage(ingredientData)}
-                    {renderInventoryInputField(ingredientData, addSubtractQty, setAddSubtractQty, inventoryQty, setInventoryQty)}
-                    {renderAddSubtractField(ingredientData, addSubtractQty, setAddSubtractQty, inventoryQty, setInventoryQty)}
-                    {renderSaveButton(ingredientData, inventoryQty, onSaveClick, onCloseClick)}
-                </div>
+        <ModalComponent>
+            <div className={"edit-mini-ingredient-popup popup"}>
+                {renderTopBar(ingredientData.name, onCloseClick)}
+                {renderIngredientImage(ingredientData)}
+                {renderInventoryInputField(ingredientData, addSubtractQty, setAddSubtractQty, inventoryQty, setInventoryQty)}
+                {renderAddSubtractField(ingredientData, addSubtractQty, setAddSubtractQty, inventoryQty, setInventoryQty)}
+                {renderSaveButton(ingredientData, inventoryQty, onSaveClick, onCloseClick)}
             </div>
-        </div>
+        </ModalComponent>
     );
 }
 

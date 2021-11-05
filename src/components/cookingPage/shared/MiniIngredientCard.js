@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {MiniIngredientEditPopup} from "./MiniIngredientEditPopup";
 import CheckIcon from '@mui/icons-material/Check';
 
-const MiniIngredientCard = ({ingredientData, qtyRequired, isEnabled = true, isRecipeCard = false, needsWarning = false, onEditSaveClick}) => {
+const MiniIngredientCard = ({ingredientData, qtyRequired, isEnabled = true, needsWarning = false, onEditSaveClick}) => {
     const [isEditClicked, setEditClicked] = useState(false);
         return (
         <div
@@ -15,20 +15,18 @@ const MiniIngredientCard = ({ingredientData, qtyRequired, isEnabled = true, isRe
                     alt={ingredientData.name}
                     style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + ingredientData.rarity + '_background_cropped.jpg")'}}
                 />
-                {renderOverlay(ingredientData, qtyRequired, needsWarning, isRecipeCard, isEnabled)}
+                {renderOverlay(ingredientData, qtyRequired, needsWarning, isEnabled)}
             </div>
             {renderMiniIngredientEditPopup(isEditClicked, setEditClicked, ingredientData, onEditSaveClick)}
         </div>
     )
 }
 
-function renderOverlay(ingredientData, qtyRequired, needsWarning, isRecipeCard, isEnabled) {
-    if (qtyRequired <= 0 && isRecipeCard && isEnabled) {
+function renderOverlay(ingredientData, qtyRequired, needsWarning, isEnabled) {
+    if (qtyRequired <= 0 && isEnabled) {
         return (
             <div
-                className={
-                    `ingredient-count-overlay
-            `}
+                className={`ingredient-count-overlay`}
             > <CheckIcon/>
             </div>
         );

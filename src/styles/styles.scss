@@ -203,17 +203,6 @@ body {
         margin-left: 1em;
       }
 
-      .svg-icon {
-        color: $default-color;
-        border-radius: 5px;
-        cursor: pointer;
-
-        &:hover {
-          color: $default-hover-color;
-          background-color: $hover-background-color;
-        }
-      }
-
       .power-button-margin {
         margin-right: 3px;
       }
@@ -507,9 +496,13 @@ input[type=number]::-webkit-outer-spin-button {
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
 
-  .delete-popup {
+  .popup {
     background-color: white;
     border-radius: 16px;
+    padding: 1em;
+  }
+
+  .delete-popup {
     display: flex;
     flex-direction: column;
     max-height: 150px;
@@ -521,10 +514,6 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .edit-popup {
-    background-color: white;
-    border-radius: 16px;
-    padding: 1em;
-
     .ingredients-border {
       border-right: 1px solid $white-shadow;
     }
@@ -564,14 +553,11 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .cooking-popup {
-    background-color: white;
-    border-radius: 16px;
     display: flex;
     flex-direction: column;
     min-height: 380px;
     max-height: 380px;
     min-width: 650px;
-    padding: 1em;
 
     .top-bar {
       border-bottom: 1px solid $white-shadow;
@@ -667,13 +653,10 @@ input[type=number]::-webkit-outer-spin-button {
 
   .edit-mini-ingredient-popup {
     color: $text-color;
-    background-color: white;
-    border-radius: 16px;
     display: flex;
     flex-direction: column;
     max-height: 310px;
     width: 275px;
-    padding: 1em;
 
     .edit-mini-ingredient-top-bar {
       border-bottom: 1px solid $white-shadow;
@@ -697,6 +680,14 @@ input[type=number]::-webkit-outer-spin-button {
         border-radius: 16px;
         margin-top: 1em;
       }
+    }
+  }
+
+  .settings-popup {
+    .top-bar {
+      border-bottom: 1px solid $white-shadow;
+      padding: 15px;
+      font-weight: bold;
     }
   }
 
@@ -789,12 +780,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .donate-popup {
-  background-color: white;
-  border-radius: 16px;
   display: flex;
   flex-direction: column;
   max-height: 270px;
-  padding: 1em;
   border: 10px solid $z2-color;
 
   .top-bar {
@@ -851,6 +839,7 @@ input[type=number]::-webkit-outer-spin-button {
   color: $default-color;
   font-size: $reduced-font-size;
 }
+
 .toggle {
   color: #b6c2fc;
 }
@@ -886,12 +875,35 @@ input[type=number]::-webkit-outer-spin-button {
   };
 }
 
+.svg-icon {
+  color: $default-color;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    color: $default-hover-color;
+    background-color: $hover-background-color;
+  }
+}
+
 .text-align-center {
   text-align: center;
 }
 
 .column-flex {
   flex-direction: column;
+}
+
+.padding {
+  padding: 1em;
+}
+
+.reduced-font-size {
+  font-size: $reduced-font-size;
+}
+
+.right-padding {
+  padding-right: 0.5em;
 }
 
 ::-webkit-scrollbar {

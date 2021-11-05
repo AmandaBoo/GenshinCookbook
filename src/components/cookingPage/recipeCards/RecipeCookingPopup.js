@@ -5,35 +5,34 @@ import MiniIngredientCard from "../shared/MiniIngredientCard";
 import InfoIcon from '@mui/icons-material/Info';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
+import {ModalComponent} from "../../shared/ModalComponent";
 
 export const RecipeCookingPopup = ({recipe, onCloseClick, onSaveClick, onMiniIngredientEditSaveClick}) => {
     const [cookQty, setCookQty] = useState(calculateMaxCraftQty(recipe));
     const maxQty = calculateMaxCraftQty(recipe);
     return (
-        <div className={"message-modal"}>
-            <div className={"vertical-center"}>
-                <div className={"cooking-popup"}>
-                    {createTopBar(recipe, onCloseClick)}
-                    {createCookingField(recipe, cookQty, setCookQty, maxQty)}
-                    {createProgressDisplay(cookQty, recipe)}
-                    <div>
-                        <div className={"ingredients-div"}>
-                            <div className={"ingredients-wrapper"}>
-                                <div className={"ingredient-cards-title"}>
-                                    INGREDIENTS REQUIRED
-                                </div>
-                                <div className={"ingredient-cards"}>
-                                    {createIngredientsRequiredDisplay(recipe, cookQty, setCookQty, onMiniIngredientEditSaveClick)}
-                                </div>
+        <ModalComponent>
+            <div className={"cooking-popup popup"}>
+                {createTopBar(recipe, onCloseClick)}
+                {createCookingField(recipe, cookQty, setCookQty, maxQty)}
+                {createProgressDisplay(cookQty, recipe)}
+                <div>
+                    <div className={"ingredients-div"}>
+                        <div className={"ingredients-wrapper"}>
+                            <div className={"ingredient-cards-title"}>
+                                INGREDIENTS REQUIRED
                             </div>
-                            {createIngredientsBorder(getMissingIngredients(recipe, cookQty))}
-                            {createMissingIngredientsDiv(recipe, cookQty, setCookQty, getMissingIngredients(recipe, cookQty), onMiniIngredientEditSaveClick)}
+                            <div className={"ingredient-cards"}>
+                                {createIngredientsRequiredDisplay(recipe, cookQty, setCookQty, onMiniIngredientEditSaveClick)}
+                            </div>
                         </div>
+                        {createIngredientsBorder(getMissingIngredients(recipe, cookQty))}
+                        {createMissingIngredientsDiv(recipe, cookQty, setCookQty, getMissingIngredients(recipe, cookQty), onMiniIngredientEditSaveClick)}
                     </div>
-                    {createConfirmCookButton(cookQty, recipe, onSaveClick, onCloseClick)}
                 </div>
+                {createConfirmCookButton(cookQty, recipe, onSaveClick, onCloseClick)}
             </div>
-        </div>
+        </ModalComponent>
     );
 }
 
@@ -45,11 +44,8 @@ function createTopBar(recipe, onCloseClick) {
                     Cook {recipe.name}
                 </span>
                 <CloseButton
-                    onCloseClick={() => {
-                        onCloseClick();
-                    }}
-                >
-                </CloseButton>
+                    onCloseClick={() => onCloseClick()}
+                />
             </div>
         </div>
     );

@@ -8,11 +8,18 @@ export function setUpLocalStorage() {
         localStorage.foodIngredients = FOOD_INGREDIENTS_TEMPLATE;
         localStorage.foodRecipes = FOOD_RECIPES_TEMPLATE;
     }
+
+    // TODO : MOVE THIS INTO THE localStorageNotSet BLOCK ONCE RYE'S LOCAL IS FIXED
+    if (localStorage.showCompletedIng === undefined) {
+        localStorage.showCompletedIng = "false";
+    }
     // checkStorage();
 }
 
 function localStorageNotSet() {
-    return localStorage.rawIngredients === undefined || localStorage.foodIngredients === undefined || localStorage.foodRecipes === undefined;
+    return localStorage.rawIngredients === undefined
+        || localStorage.foodIngredients === undefined
+        || localStorage.foodRecipes === undefined;
 }
 
 export function getRawIngredientsFromLocalStorage() {
@@ -64,6 +71,14 @@ export function setFoodRecipesInLocalStorage(foodRecipes) {
         }
     });
     localStorage.foodRecipes = JSON.stringify(foodRecipesJSON);
+}
+
+export function doShowCompletedIngredients() {
+    return localStorage.showCompletedIng === "true";
+}
+
+export function saveDoShowCompletedIngredients(doShowCompletedIngredient) {
+    localStorage.showCompletedIng = doShowCompletedIngredient;
 }
 
 function checkStorage() {

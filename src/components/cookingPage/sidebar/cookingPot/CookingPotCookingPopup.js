@@ -5,35 +5,34 @@ import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
 import MiniIngredientCard from "../../shared/MiniIngredientCard";
 import SaveButton from "../../../shared/SaveButton";
+import {ModalComponent} from "../../../shared/ModalComponent";
 
 export const CookingPotCookingPopup = ({processedIngredient, onCloseClick, onSaveClick, onMiniIngredientEditSaveClick}) => {
     const [cookQty, setCookQty] = useState(calculateMaxCraftQty(processedIngredient));
     const maxQty = calculateMaxCraftQty(processedIngredient);
 
     return (
-        <div className={"message-modal"}>
-            <div className={"vertical-center"}>
-                <div className={"cooking-popup"}>
-                    {createTopBar(processedIngredient, onCloseClick)}
-                    {createCookingField(processedIngredient, cookQty, setCookQty, maxQty)}
-                    <div>
-                        <div className={"ingredients-div"}>
-                            <div className={"ingredients-wrapper"}>
-                                <div className={"ingredient-cards-title"}>
-                                    INGREDIENTS REQUIRED
-                                </div>
-                                <div className={"ingredient-cards"}>
-                                    {createIngredientsRequiredDisplay(processedIngredient, cookQty, setCookQty, onMiniIngredientEditSaveClick)}
-                                </div>
+        <ModalComponent>
+            <div className={"cooking-popup popup"}>
+                {createTopBar(processedIngredient, onCloseClick)}
+                {createCookingField(processedIngredient, cookQty, setCookQty, maxQty)}
+                <div>
+                    <div className={"ingredients-div"}>
+                        <div className={"ingredients-wrapper"}>
+                            <div className={"ingredient-cards-title"}>
+                                INGREDIENTS REQUIRED
                             </div>
-                            {createIngredientsBorder(getMissingIngredients(processedIngredient, cookQty))}
-                            {createMissingIngredientsDiv(processedIngredient, cookQty, getMissingIngredients(processedIngredient, cookQty), onMiniIngredientEditSaveClick)}
+                            <div className={"ingredient-cards"}>
+                                {createIngredientsRequiredDisplay(processedIngredient, cookQty, setCookQty, onMiniIngredientEditSaveClick)}
+                            </div>
                         </div>
+                        {createIngredientsBorder(getMissingIngredients(processedIngredient, cookQty))}
+                        {createMissingIngredientsDiv(processedIngredient, cookQty, getMissingIngredients(processedIngredient, cookQty), onMiniIngredientEditSaveClick)}
                     </div>
-                    {createConfirmCookButton(cookQty, processedIngredient, onSaveClick, onCloseClick)}
                 </div>
+                {createConfirmCookButton(cookQty, processedIngredient, onSaveClick, onCloseClick)}
             </div>
-        </div>
+        </ModalComponent>
     );
 }
 
