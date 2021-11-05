@@ -1,5 +1,6 @@
 import React from 'react';
 import {CraftIngredientCard} from "../../shared/CraftIngredientCard";
+import {NO_INGREDIENTS_PROCESS} from "../../../../constants/constants";
 
 export const CookingPotItemsDisplay = ({craftIngredientDTOList, onCraftIngredientCookSaveClick, onMiniIngredientEditSaveClick})=> {
     return (
@@ -11,7 +12,7 @@ export const CookingPotItemsDisplay = ({craftIngredientDTOList, onCraftIngredien
 
 function renderCookingPotItems(craftIngredientDTOList, onCraftIngredientCookSaveClick, onMiniIngredientEditSaveClick) {
     let craftIngredientCards = [];
-    if (craftIngredientDTOList !== undefined) {
+    if (craftIngredientDTOList !== undefined && craftIngredientDTOList.length !== 0) {
         craftIngredientDTOList.forEach(dto => {
             if (dto.qtyToObtain > 0) {
                 craftIngredientCards.push(
@@ -24,6 +25,12 @@ function renderCookingPotItems(craftIngredientDTOList, onCraftIngredientCookSave
                 )
             }
         });
+        return craftIngredientCards;
+    } else {
+        return (
+            <span className={'reduced-font-size'}>
+                {NO_INGREDIENTS_PROCESS}
+            </span>
+        )
     }
-    return craftIngredientCards;
 }

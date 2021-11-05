@@ -2,12 +2,12 @@ import React from 'react';
 import MiniIngredientCard from "../../shared/MiniIngredientCard";
 
 const GroceryItemsDisplay = ({ingredientDTOList, topBarText, onMiniIngredientEditSaveClick, isEnabled = true,
-                                 showCompletedIng}) => {
+                                 showCompletedIng, placeholderText}) => {
     return (
         <div>
             {renderTopBar(topBarText)}
             <div className={"grocery-list-cards-div"}>
-                {renderIngredients(ingredientDTOList, onMiniIngredientEditSaveClick, isEnabled, showCompletedIng)}
+                {renderIngredients(placeholderText, ingredientDTOList, onMiniIngredientEditSaveClick, isEnabled, showCompletedIng)}
             </div>
         </div>
     )
@@ -21,11 +21,12 @@ function renderTopBar(topBarText) {
     );
 }
 
-function renderIngredients(ingredientDTOList, onMiniIngredientEditSaveClick, isEnabled, doShowCompletedIng) {
+function renderIngredients(placeholderText, ingredientDTOList, onMiniIngredientEditSaveClick,
+                           isEnabled, doShowCompletedIng) {
     let ingredientCards = [];
     if (ingredientDTOList !== undefined) {
         ingredientDTOList.forEach(dto => {
-            if (doShowCompletedIng || (dto.qtyToObtain > 0  && !doShowCompletedIng)) {
+            if (doShowCompletedIng || (dto.qtyToObtain > 0 && !doShowCompletedIng)) {
                 ingredientCards.push(
                     <MiniIngredientCard
                         ingredientData={dto.ingredient}
@@ -36,9 +37,17 @@ function renderIngredients(ingredientDTOList, onMiniIngredientEditSaveClick, isE
                 );
             }
         })
-        return ingredientCards;
     }
-    return null;
+
+    if (ingredientCards.length !== 0) {
+        return ingredientCards;
+    } else {
+        return (
+            <span className={"reduced-font-size"}>
+                {placeholderText}
+            </span>
+        )
+    }
 }
 
 export default GroceryItemsDisplay;

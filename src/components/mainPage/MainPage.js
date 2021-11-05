@@ -3,9 +3,9 @@ import {CookingPage} from "../cookingPage/CookingPage";
 import MainNavBar from "./MainNavBar";
 import * as storage from "../../storageInterfaces/storageInterface";
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import {DonatePopup} from "../shared/DonatePopup";
-import {KofiIcon} from "../shared/KofiIcon";
+import {DonatePopup} from "../shared/donate/DonatePopup";
 import {PotionsPage} from "../potionsPage/PotionsPage";
+import {DonateIcon} from "../shared/donate/DonateIcon";
 
 const MainPage = () => {
     const [recipes, setRecipes] = useState(storage.getAllFoodRecipes());
@@ -43,9 +43,7 @@ const MainPage = () => {
                     </Switch>
                 </div>
             </Router>
-            <KofiIcon
-                onClick={() => setCurrentPopup("kofi-icon")}
-            />
+            <DonateIcon onClick={() => setCurrentPopup("kofi-icon")}/>
             {renderDonatePopup(currentPopup, setCurrentPopup)}
         </div>
     );

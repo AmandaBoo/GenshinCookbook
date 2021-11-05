@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const KofiIcon = ({onClick}) => {
+export const DonateIcon = ({onClick}) => {
     return (
         <div
             className={"kofi-icon-div"}
@@ -9,7 +9,7 @@ export const KofiIcon = ({onClick}) => {
             <img
                 className={'kofi-icon'}
                 src={'/images/icons/barbaraBlush.png'}
-                alt={'raidenSakura'}
+                alt={'barbaraBlush'}
             />
             <div className={"kofi-text-div"}>
                 <span className={"kofi-text"}>Donate<br/> {"<3"}</span>

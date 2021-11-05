@@ -1,22 +1,13 @@
-// STRINGS
-export const INGREDIENTS = "Ingredients";
-export const CRAFT_INGREDIENTS = "Craft Ingredients";
+// IDS
+export const INVENTORY_POPUP_ID = "inventory-popup";
+export const RECIPES_POPUP_ID = "recipes-popup";
+export const HELP_GUIDE_ID = "help-guide";
 
-// IMAGE PATHS
-export const CRAFTING_ICON = "./images/craftingIcon.png";
+// TEXT
+export const FORAGEABLE = "FORAGEABLE";
+export const SHOP_ONLY = 'SHOP ONLY';
+export const PROCESSED = 'PROCESSED';
 
-// TAB NAMES
-
-
-// MODAL CONTENT IDS
-export const INVENTORY_DIV = "inventory-div";
-export const RECIPE_MANAGER_DIV = "recipe-manager-div";
-
-export const MATERIAL_CONTENT = "materials-content";
-export const DISHES_CONTENT = "dishes-content";
-export const FURNITURE_CONTENT = "furniture-content";
-export const FOOD_RECIPE_CONTENT = "food-recipe-content";
-
-export const MATERIAL_TAB = "materials-tab";
-export const DISHES_TAB = "dishes-tab";
-export const FURNITURE_TAB = "furniture-tab";
+export const NO_INGREDIENTS_FORAGE = 'No Ingredients Left to Collect~';
+export const NO_INGREDIENTS_SHOP = 'No Ingredients Left to Buy~';
+export const NO_INGREDIENTS_PROCESS = 'No Ingredients Left to Process~';

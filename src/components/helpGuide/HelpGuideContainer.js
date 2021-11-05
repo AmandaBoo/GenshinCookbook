@@ -1,5 +1,5 @@
 import React from 'react';
-import CloseButton from "../shared/CloseButton";
+import CloseButton from "../shared/buttons/CloseButton";
 
 export const HelpGuideContainer = ({pageName, onCloseClick}) => {
 

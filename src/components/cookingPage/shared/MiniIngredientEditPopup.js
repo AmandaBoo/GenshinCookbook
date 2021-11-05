@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import CloseButton from "../../shared/CloseButton";
-import SaveButton from "../../shared/SaveButton";
+import CloseButton from "../../shared/buttons/CloseButton";
+import SaveButton from "../../shared/buttons/SaveButton";
 import {ModalComponent} from "../../shared/ModalComponent";
 
 export const MiniIngredientEditPopup = ({ingredientData, onCloseClick, onSaveClick}) => {

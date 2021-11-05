@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import CloseButton from "../../shared/CloseButton";
-import SaveButton from "../../shared/SaveButton";
+import CloseButton from "../../shared/buttons/CloseButton";
+import SaveButton from "../../shared/buttons/SaveButton";
 import MiniIngredientCard from "../shared/MiniIngredientCard";
 import InfoIcon from '@mui/icons-material/Info';
 import IconButton from '@mui/material/IconButton';

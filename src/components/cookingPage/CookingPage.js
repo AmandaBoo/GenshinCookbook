@@ -3,6 +3,7 @@ import RecipeCardDisplay from "./recipeCards/RecipeCardDisplay";
 import * as storage from "../../storageInterfaces/storageInterface";
 import SidebarDisplay from "./sidebar/SidebarDisplay";
 import {PlaceholderPage} from "../helpGuide/PlaceholderPage";
+import {HELP_GUIDE_ID, RECIPES_POPUP_ID} from "../../constants/constants";
 
 export class CookingPage extends Component {
     constructor(props) {
@@ -78,8 +79,8 @@ export class CookingPage extends Component {
                 <PlaceholderPage
                     imgPath={"./images/icons/xianlingFlowers.png"}
                     addButtonText={"Recipes"}
-                    onAddButtonClick={() => this.setSelectedMenu("recipe-card-icon")}
-                    onHelpGuideButtonClick={() => this.setSelectedMenu("help-guide-icon")}
+                    onAddButtonClick={() => this.setSelectedMenu(RECIPES_POPUP_ID)}
+                    onHelpGuideButtonClick={() => this.setSelectedMenu(HELP_GUIDE_ID)}
                 />
             );
         } else {

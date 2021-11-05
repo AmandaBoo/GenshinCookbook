@@ -1,6 +1,6 @@
 import React from 'react';
-import CloseButton from "../../shared/CloseButton";
-import SaveButton from "../../shared/SaveButton";
+import CloseButton from "../../shared/buttons/CloseButton";
+import SaveButton from "../../shared/buttons/SaveButton";
 import {ModalComponent} from "../../shared/ModalComponent";
 
 const DeleteConfirmationPopup = ({deleteMessage, closeClick, saveClick}) => {
