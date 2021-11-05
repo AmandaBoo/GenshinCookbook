@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import {DonatePopup} from "../shared/donate/DonatePopup";
 import {PotionsPage} from "../potionsPage/PotionsPage";
 import {DonateIcon} from "../shared/donate/DonateIcon";
+import RouteChangeTracker from "../../analytics/RouteChangeTracker";
 
 const MainPage = () => {
     const [recipes, setRecipes] = useState(storage.getAllFoodRecipes());
@@ -42,6 +43,7 @@ const MainPage = () => {
                         </Route>
                     </Switch>
                 </div>
+                <RouteChangeTracker/>
             </Router>
             <DonateIcon onClick={() => setCurrentPopup("kofi-icon")}/>
             {renderDonatePopup(currentPopup, setCurrentPopup)}
