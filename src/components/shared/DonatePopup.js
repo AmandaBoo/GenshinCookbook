@@ -1,20 +1,19 @@
 import React from 'react';
 import CloseButton from "./CloseButton";
+import {ModalComponent} from "./ModalComponent";
 
 export const DonatePopup = ({onCloseClick}) => {
     return (
-        <div className={"message-modal"}>
-            <div className={"vertical-center"}>
-                <div className={"donate-popup"}>
-                    {renderTopBar(onCloseClick)}
-                    {renderSubTitle()}
-                    <div>
-                        {renderKofiLink()}
-                        {renderPatreonLink()}
-                    </div>
+        <ModalComponent>
+            <div className={"donate-popup popup"}>
+                {renderTopBar(onCloseClick)}
+                {renderSubTitle()}
+                <div>
+                    {renderKofiLink()}
+                    {renderPatreonLink()}
                 </div>
             </div>
-        </div>
+        </ModalComponent>
     )
 }
 

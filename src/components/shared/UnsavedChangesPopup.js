@@ -2,18 +2,17 @@ import React from 'react';
 import CloseButton from "./CloseButton";
 import SaveButton from "./SaveButton";
 import Button from "./Button";
+import {ModalComponent} from "./ModalComponent";
 
 export const UnsavedChangesPopup = ({onYesClick, onNoClick, onCloseClick}) => {
     return (
-        <div className={"message-modal"}>
-            <div className={"vertical-center"}>
-                <div className={"edit-popup"}>
-                    {createTopBar(onCloseClick)}
-                    {createBody()}
-                    {createSaveCancelButtons(onYesClick, onNoClick)}
-                </div>
+        <ModalComponent>
+            <div className={"edit-popup popup"}>
+                {createTopBar(onCloseClick)}
+                {createBody()}
+                {createSaveCancelButtons(onYesClick, onNoClick)}
             </div>
-        </div>
+        </ModalComponent>
     );
 }
 
@@ -42,12 +41,12 @@ function createSaveCancelButtons(onYesClick, onNoClick) {
     return (
         <div className={"save-cancel-buttons"}>
             <Button
-                onClick={() => {onYesClick()}}
-                text={"Yes"}
-            />
-            <Button
                 onClick={() => onNoClick()}
                 text={"No"}
+            />
+            <Button
+                onClick={() => {onYesClick()}}
+                text={"Yes"}
             />
         </div>
     );

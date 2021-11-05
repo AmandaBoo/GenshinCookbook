@@ -298,3 +298,11 @@ export function saveIngredients(rawIngredients, craftedFoodIngredient) {
 export function saveFoodRecipes(foodRecipes) {
     localInterface.setFoodRecipesInLocalStorage(foodRecipes);
 }
+
+export function doShowCompletedIngredients() {
+    return localInterface.doShowCompletedIngredients();
+}
+
+export function saveDoShowCompletedIngredients(doShowCompletedIng) {
+    localInterface.saveDoShowCompletedIngredients(doShowCompletedIng);
+}

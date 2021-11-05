@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import CloseButton from "../../shared/CloseButton";
 import SaveButton from "../../shared/SaveButton";
 import * as Utils from "../../../util/utils";
+import {ModalComponent} from "../../shared/ModalComponent";
 
 const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onCloseClick}) => {
     const [curProf, setCurProf] = useState(selectedRecipeCard != null ? selectedRecipeCard.currentProficiency: 0);
@@ -9,20 +10,18 @@ const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onClos
 
     const recipeProficiency = selectedRecipeCard.rarity * 5;
     return (
-        <div className={"message-modal"}>
-            <div className={"vertical-center"}>
-                <div className={"edit-popup"}>
-                    {createTopBar(topBarText + ": " + Utils.getTruncatedName(selectedRecipeCard.name, Utils.MAX_CONFIGURATION_NAME_LENGTH), onCloseClick, setCurProf, setCustomQty)}
-                    <div className={"flex-center"}>
-                        {createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty)}
-                        <div className={"ingredients-border"}/>
-                        {createAmountToCookDiv(customQty, setCustomQty)}
-                    </div>
-
-                    {createSaveButton(onSaveClick, curProf, setCurProf, customQty, setCustomQty, selectedRecipeCard)}
+        <ModalComponent>
+            <div className={"edit-popup popup"}>
+                {createTopBar(topBarText + ": " + Utils.getTruncatedName(selectedRecipeCard.name, Utils.MAX_CONFIGURATION_NAME_LENGTH), onCloseClick, setCurProf, setCustomQty)}
+                <div className={"flex-center"}>
+                    {createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty)}
+                    <div className={"ingredients-border"}/>
+                    {createAmountToCookDiv(customQty, setCustomQty)}
                 </div>
+
+                {createSaveButton(onSaveClick, curProf, setCurProf, customQty, setCustomQty, selectedRecipeCard)}
             </div>
-        </div>
+        </ModalComponent>
     );
 }
 

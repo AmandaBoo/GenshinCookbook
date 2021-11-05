@@ -1,12 +1,13 @@
 import React from 'react';
 import MiniIngredientCard from "../../shared/MiniIngredientCard";
 
-const GroceryItemsDisplay = ({ingredientDTOList, topBarText, onMiniIngredientEditSaveClick, isEnabled = true}) => {
+const GroceryItemsDisplay = ({ingredientDTOList, topBarText, onMiniIngredientEditSaveClick, isEnabled = true,
+                                 showCompletedIng}) => {
     return (
         <div>
             {renderTopBar(topBarText)}
             <div className={"grocery-list-cards-div"}>
-                {renderIngredients(ingredientDTOList, onMiniIngredientEditSaveClick, isEnabled)}
+                {renderIngredients(ingredientDTOList, onMiniIngredientEditSaveClick, isEnabled, showCompletedIng)}
             </div>
         </div>
     )
@@ -20,11 +21,11 @@ function renderTopBar(topBarText) {
     );
 }
 
-function renderIngredients(ingredientDTOList, onMiniIngredientEditSaveClick, isEnabled) {
+function renderIngredients(ingredientDTOList, onMiniIngredientEditSaveClick, isEnabled, doShowCompletedIng) {
     let ingredientCards = [];
     if (ingredientDTOList !== undefined) {
         ingredientDTOList.forEach(dto => {
-            if (dto.qtyToObtain > 0) {
+            if (doShowCompletedIng || (dto.qtyToObtain > 0  && !doShowCompletedIng)) {
                 ingredientCards.push(
                     <MiniIngredientCard
                         ingredientData={dto.ingredient}
@@ -32,7 +33,7 @@ function renderIngredients(ingredientDTOList, onMiniIngredientEditSaveClick, isE
                         onEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
                         isEnabled={isEnabled}
                     />
-                )
+                );
             }
         })
         return ingredientCards;

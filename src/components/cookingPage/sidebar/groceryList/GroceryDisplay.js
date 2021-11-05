@@ -1,28 +1,42 @@
 import React, {useState} from 'react';
 import GroceryItemsDisplay from "./GroceryItemsDisplay";
-import ToggleOffIcon from '@mui/icons-material/ToggleOff';
-import ToggleOnIcon from '@mui/icons-material/ToggleOn';
 import {IngredientAndQtyToObtainDto} from "../../../../classes/dtos/ingredientAndQtyToObtain";
 import * as Utils from "../../../../util/utils";
+import SettingsIcon from '@mui/icons-material/Settings';
+import * as storage from "../../../../storageInterfaces/storageInterface";
+import {GroceryListSettings} from "./GroceryListSettings";
+import {ToggleContainer} from "../../../shared/ToggleContainer";
 
 const GroceryDisplay = ({rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick})=> {
     const [isToggleOn, setIsToggleOn] = useState(false);
+    const [doRenderSettings, setRenderSettings] = useState(false);
+    const [showCompletedIng, setShowCompletedIng] = useState(storage.doShowCompletedIngredients());
+
     return (
         <div className={"sidebar-card-display"}>
-            {renderTopBar()}
+            {renderTopBar(setRenderSettings)}
             {renderToggleContainer(isToggleOn, setIsToggleOn)}
-            {renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick)}
+            {renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick, showCompletedIng)}
+            {renderSettingsPopup(doRenderSettings, setRenderSettings, showCompletedIng, setShowCompletedIng)}
         </div>
     )
 };
 
-function renderTopBar() {
+function renderTopBar(setRenderSettings) {
     return (
-      <div className={"flex-center header-text large-font top-bar"}>GROCERY LIST</div>
+      <div className={"top-bar header-text"}>
+          <div className={"large-font"}>
+            GROCERY LIST
+          </div>
+          <SettingsIcon
+              className={"svg-icon"}
+              onClick={() => setRenderSettings(true)}
+          />
+      </div>
     );
 }
 
-function renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick) {
+function renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick, showCompletedIng) {
     if (isToggleOn) {
         return (
             <>
@@ -30,16 +44,19 @@ function renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredients
                     topBarText={"FORAGEABLE"}
                     ingredientDTOList={findRawIngredientsForBothRawAndCrafted(rawIngredientsDTOList, craftedIngredientsDTOList)}
                     onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
+                    showCompletedIng={showCompletedIng}
                 />
                 <GroceryItemsDisplay
                     topBarText={"SHOP ONLY"}
                     ingredientDTOList={findRawIngredientsForBothShopAndCrafted(rawIngredientsDTOList, craftedIngredientsDTOList)}
                     onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
+                    showCompletedIng={showCompletedIng}
                 />
                 <GroceryItemsDisplay
                     topBarText={"PROCESSED"}
                     ingredientDTOList={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "process")}
                     onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
+                    showCompletedIng={showCompletedIng}
                     isEnabled={false}
                 />
             </>
@@ -51,16 +68,19 @@ function renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredients
                     topBarText={"FORAGEABLE"}
                     ingredientDTOList={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "forage")}
                     onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
+                    showCompletedIng={showCompletedIng}
                 />
                 <GroceryItemsDisplay
                     topBarText={"SHOP ONLY"}
                     ingredientDTOList={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "shop")}
                     onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
+                    showCompletedIng={showCompletedIng}
                 />
                 <GroceryItemsDisplay
                     topBarText={"PROCESSED"}
                     ingredientDTOList={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "process")}
                     onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
+                    showCompletedIng={showCompletedIng}
                 />
             </>
         );
@@ -152,36 +172,33 @@ function mergeBreakdownLists(filteredOtherIngredients, craftedByRaw) {
 
 function renderToggleContainer(isToggleOn, setIsToggleOn) {
     return (
-        <div className={"flex-center"}>
-            <div className={"vertical-center"}>
-                <span className={"toggle-text"}>Placeholder 1</span>
-            </div>
-            {renderToggle(isToggleOn, setIsToggleOn)}
-            <div className={"vertical-center"}>
-                <span className={"toggle-text"}>Placeholder 2</span>
-            </div>
-        </div>
+        <ToggleContainer
+            title={"Show Ingredients for Processed Items"}
+            isToggleOn={isToggleOn}
+            setIsToggleOn={(value) => setIsToggleOn(value)}
+        />
     )
 }
 
-function renderToggle(isToggleOn, setIsToggleOn) {
-    if (isToggleOn) {
+function renderSettingsPopup(doRenderSettings, setRenderSettings, showCompletedIng, setShowCompletedIng) {
+    if (doRenderSettings) {
         return (
-            <ToggleOnIcon
-                fontSize={"large"}
-                onClick={() => setIsToggleOn(false)}
-                className={"toggle"}
+            <GroceryListSettings
+                onCloseClick={() => setRenderSettings(false)}
+                onSaveClick={(value) => {
+                    saveGroceryListSettings(value, showCompletedIng, setShowCompletedIng);
+                    setRenderSettings(false);
+                }}
             />
-        );
-    } else {
-        return (
-            <ToggleOffIcon
-                fontSize={"large"}
-                onClick={() => setIsToggleOn(true)}
-                className={"toggle"}
-            />
-        );
+        )
     }
+}
+
+function saveGroceryListSettings(doShowCompletedIng, showCompletedIngState, setShowCompletedIngState) {
+    if (showCompletedIngState !== doShowCompletedIng) {
+        setShowCompletedIngState(doShowCompletedIng);
+    }
+    storage.saveDoShowCompletedIngredients(doShowCompletedIng);
 }
 
 export default GroceryDisplay;
