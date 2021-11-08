@@ -3,16 +3,19 @@ import CloseButton from "../../shared/buttons/CloseButton";
 import SaveButton from "../../shared/buttons/SaveButton";
 import * as Utils from "../../../util/utils";
 import {ModalComponent} from "../../shared/ModalComponent";
+import {UnsavedChangesPopup} from "../../shared/UnsavedChangesPopup";
 
 const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onCloseClick}) => {
     const [curProf, setCurProf] = useState(selectedRecipeCard != null ? selectedRecipeCard.currentProficiency: 0);
     const [customQty, setCustomQty] = useState(selectedRecipeCard != null ? determineStartCustomQty(topBarText, selectedRecipeCard) : 0);
+    const [hasUnsavedChanges, setUnsavedChanges] = useState(false);
 
     const recipeProficiency = selectedRecipeCard.rarity * 5;
     return (
         <ModalComponent>
             <div className={"edit-popup popup"}>
-                {createTopBar(topBarText + ": " + Utils.getTruncatedName(selectedRecipeCard.name, Utils.MAX_CONFIGURATION_NAME_LENGTH), onCloseClick, setCurProf, setCustomQty)}
+                {createTopBar( topBarText + ": " + Utils.getTruncatedName(selectedRecipeCard.name, Utils.MAX_CONFIGURATION_NAME_LENGTH),
+                    onCloseClick, setCurProf, setCustomQty, curProf, customQty, setUnsavedChanges, selectedRecipeCard, topBarText)}
                 <div className={"flex-center"}>
                     {createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty)}
                     <div className={"ingredients-border"}/>
@@ -20,6 +23,8 @@ const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onClos
                 </div>
 
                 {createSaveButton(onSaveClick, curProf, setCurProf, customQty, setCustomQty, selectedRecipeCard)}
+                {createUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, onCloseClick, onSaveClick,
+                    setCurProf, setCustomQty, curProf, customQty, selectedRecipeCard)}
             </div>
         </ModalComponent>
     );
@@ -33,18 +38,26 @@ function determineStartCustomQty(topBarText, recipeCard) {
     }
 }
 
-function createTopBar(topBarText, onCloseClick, setCurProf, setCustomQty) {
+function createTopBar(title, onCloseClick, setCurProf, setCustomQty, curProf, customQty, setUnsavedChanges, recipeCard, topBarText) {
     return (
         <div className={"top-bar"}>
-            <span>{topBarText}</span>
+            <span>{title}</span>
             <CloseButton
                 onCloseClick={() => {
-                    onCloseClick();
-                    resetState(setCurProf, setCustomQty);
+                    if (hasUnsavedChanges(topBarText, curProf, customQty, recipeCard, setUnsavedChanges)) {
+                        setUnsavedChanges(true);
+                    } else {
+                        onCloseClick();
+                        resetState(setCurProf, setCustomQty);
+                    }
                 }}
             />
         </div>
     );
+}
+
+function hasUnsavedChanges(topBarText, curProf, customQty, recipeCard) {
+    return (curProf !== recipeCard.currentProficiency) || (customQty !== determineStartCustomQty(topBarText, recipeCard));
 }
 
 function createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty) {
@@ -118,6 +131,26 @@ function createSaveButton(onSaveClick, curProf, setCurProf, customQty, setCustom
             }}
         />
     );
+}
+
+function createUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, onCloseClick, onSaveClick, setCurProf,
+                                   setCustomQty, curProf, customQty, selectedRecipeCard) {
+    if (hasUnsavedChanges) {
+        return (
+            <UnsavedChangesPopup
+                onYesClick={() => {
+                    onSaveClick(selectedRecipeCard, curProf, customQty);
+                    resetState(setCurProf, setCustomQty);
+                    setUnsavedChanges(false)
+                }}
+                onNoClick={() => {
+                    onCloseClick();
+                    setUnsavedChanges(false);
+                }}
+                onCloseClick={() => setUnsavedChanges(false)}
+            />
+        );
+    }
 }
 
 function setValuesIfValid(eventValue, setter) {

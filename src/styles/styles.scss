@@ -351,11 +351,6 @@ body {
     }
   }
 
-  .message-modal-body {
-    padding: 2em 2em 3em;
-    text-align: center;
-  }
-
   .save-cancel-buttons {
     display: flex;
 
@@ -363,6 +358,11 @@ body {
       margin-right: 0.5em;
     }
   }
+}
+
+.message-modal-body {
+  padding: 2em 2em 3em;
+  text-align: center;
 }
 
 .card-icon {
@@ -900,7 +900,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: $reduced-font-size;
 }
 
-.right-padding {
+.padding-right {
   padding-right: 0.5em;
 }
 

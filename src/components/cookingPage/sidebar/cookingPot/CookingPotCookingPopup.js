@@ -6,15 +6,17 @@ import InfoIcon from "@mui/icons-material/Info";
 import MiniIngredientCard from "../../shared/MiniIngredientCard";
 import SaveButton from "../../../shared/buttons/SaveButton";
 import {ModalComponent} from "../../../shared/ModalComponent";
+import {UnsavedChangesPopup} from "../../../shared/UnsavedChangesPopup";
 
 export const CookingPotCookingPopup = ({processedIngredient, onCloseClick, onSaveClick, onMiniIngredientEditSaveClick}) => {
     const [cookQty, setCookQty] = useState(calculateMaxCraftQty(processedIngredient));
+    const [hasUnsavedChanges, setUnsavedChanges] = useState(false);
     const maxQty = calculateMaxCraftQty(processedIngredient);
 
     return (
         <ModalComponent>
             <div className={"cooking-popup popup"}>
-                {createTopBar(processedIngredient, onCloseClick)}
+                {createTopBar(processedIngredient, onCloseClick, setUnsavedChanges, cookQty, maxQty)}
                 {createCookingField(processedIngredient, cookQty, setCookQty, maxQty)}
                 <div>
                     <div className={"ingredients-div"}>
@@ -31,12 +33,13 @@ export const CookingPotCookingPopup = ({processedIngredient, onCloseClick, onSav
                     </div>
                 </div>
                 {createConfirmCookButton(cookQty, processedIngredient, onSaveClick, onCloseClick)}
+                {createUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, onCloseClick, onSaveClick, cookQty, processedIngredient)}
             </div>
         </ModalComponent>
     );
 }
 
-function createTopBar(processedIngredient, onCloseClick) {
+function createTopBar(processedIngredient, onCloseClick, setUnsavedChanges, desiredCookQty, originalCookQty) {
     return (
         <div className={"top-bar"}>
             <div>
@@ -45,7 +48,11 @@ function createTopBar(processedIngredient, onCloseClick) {
                 </span>
                 <CloseButton
                     onCloseClick={() => {
-                        onCloseClick();
+                        if (desiredCookQty !== originalCookQty) {
+                            setUnsavedChanges(true);
+                        } else {
+                            onCloseClick();
+                        }
                     }}
                 >
                 </CloseButton>
@@ -207,7 +214,7 @@ function updateRecipeBeforeSave(cookQty, processedIngredientDTO) {
     return [processedIngredientDTO, allIngredients.map(ing => ing.ingredient)];
 }
 
-function createConfirmCookButton(cookQty, processedIngredientDTO, saveClick, onCloseClick) {
+function createConfirmCookButton(cookQty, processedIngredientDTO, onSaveClick, onCloseClick) {
     let allIngredientsUsed;
     return (
         <div>
@@ -215,11 +222,32 @@ function createConfirmCookButton(cookQty, processedIngredientDTO, saveClick, onC
                 saveText={"Cook"}
                 onSaveClick={() => {
                     [processedIngredientDTO, allIngredientsUsed] = updateRecipeBeforeSave(cookQty, processedIngredientDTO)
-                    saveClick(processedIngredientDTO, allIngredientsUsed);
+                    onSaveClick(processedIngredientDTO, allIngredientsUsed);
                     onCloseClick();
                 }}
                 isDisabled={isNaN(cookQty) || cookQty === 0}
             />
         </div>
     );
+}
+
+function createUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, onCloseClick, onSaveClick, cookQty, processedIngredientDTO) {
+    if (hasUnsavedChanges) {
+        let allIngredientsUsed;
+        return (
+            <UnsavedChangesPopup
+                onYesClick={() => {
+                    setUnsavedChanges(false);
+                    [processedIngredientDTO, allIngredientsUsed] = updateRecipeBeforeSave(cookQty, processedIngredientDTO)
+                    onSaveClick(processedIngredientDTO, allIngredientsUsed);
+                    onCloseClick();
+                }}
+                onNoClick={() => {
+                    onCloseClick();
+                    setUnsavedChanges(false);
+                }}
+                onCloseClick={() => setUnsavedChanges(false)}
+            />
+        )
+    }
 }
