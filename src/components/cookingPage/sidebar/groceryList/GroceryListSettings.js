@@ -4,21 +4,24 @@ import CloseButton from "../../../shared/buttons/CloseButton";
 import SaveButton from "../../../shared/buttons/SaveButton";
 import * as storage from "../../../../storageInterfaces/storageInterface";
 import {ToggleContainer} from "../../../shared/ToggleContainer";
+import {UnsavedChangesPopup} from "../../../shared/UnsavedChangesPopup";
 
 export const GroceryListSettings = ({onCloseClick, onSaveClick}) => {
     const [showCompletedIng, setShowCompletedIng] = useState(storage.doShowCompletedIngredients());
+    const [hasUnsavedChanges, setUnsavedChanges] = useState(false);
     return (
         <ModalComponent>
             <div className={"settings-popup popup"}>
-                {createTopBar(onCloseClick)}
+                {createTopBar(onCloseClick, setUnsavedChanges, showCompletedIng, storage.doShowCompletedIngredients())}
                 {createBody(showCompletedIng, setShowCompletedIng)}
                 {createSaveButton(onSaveClick, showCompletedIng)}
+                {createUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, onSaveClick, onCloseClick, showCompletedIng)}
             </div>
         </ModalComponent>
     );
 };
 
-function createTopBar(onCloseClick) {
+function createTopBar(onCloseClick, setUnsavedChanges, completedIngSetting, originalCompletedIngSetting) {
     return (
         <div className={"top-bar"}>
             <div>
@@ -26,7 +29,14 @@ function createTopBar(onCloseClick) {
                     Settings
                 </span>
                 <CloseButton
-                    onCloseClick={() => onCloseClick()}
+                    onCloseClick={() => {
+                        if (completedIngSetting !== originalCompletedIngSetting) {
+                            setUnsavedChanges(true);
+                        } else {
+                            onCloseClick();
+                        }
+
+                    }}
                 />
             </div>
         </div>
@@ -52,4 +62,23 @@ function createSaveButton(onSaveClick, showCompletedIng) {
             onSaveClick={() => onSaveClick(showCompletedIng)}
         />
     );
+}
+
+function createUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, onSaveClick, onCloseClick, showCompletedIng) {
+    if (hasUnsavedChanges) {
+        return (
+            <UnsavedChangesPopup
+                onYesClick={() => {
+                    setUnsavedChanges(false);
+                    onSaveClick(showCompletedIng)
+                    onCloseClick();
+                }}
+                onNoClick={() => {
+                    onCloseClick();
+                    setUnsavedChanges(false);
+                }}
+                onCloseClick={() => setUnsavedChanges(false)}
+            />
+        )
+    }
 }

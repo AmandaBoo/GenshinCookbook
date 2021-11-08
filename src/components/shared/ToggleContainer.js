@@ -6,10 +6,10 @@ export const ToggleContainer = ({isToggleOn, setIsToggleOn, title}) => {
     return (
         <div>
             <div className={"flex-center"}>
-                <div className={"vertical-center right-padding"}>
+                <div className={"vertical-center padding-right"}>
                     <span className={'text-align-center toggle-text'}>{title} </span>
                 </div>
-                <div className={"vertical-center right-padding toggle-text"}>
+                <div className={"vertical-center padding-right toggle-text"}>
                     :
                 </div>
                 <div className={"vertical-center"}>

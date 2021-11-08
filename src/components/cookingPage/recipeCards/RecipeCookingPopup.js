@@ -6,14 +6,16 @@ import InfoIcon from '@mui/icons-material/Info';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import {ModalComponent} from "../../shared/ModalComponent";
+import {UnsavedChangesPopup} from "../../shared/UnsavedChangesPopup";
 
 export const RecipeCookingPopup = ({recipe, onCloseClick, onSaveClick, onMiniIngredientEditSaveClick}) => {
     const [cookQty, setCookQty] = useState(calculateMaxCraftQty(recipe));
+    const [hasUnsavedChanges, setUnsavedChanges] = useState(false);
     const maxQty = calculateMaxCraftQty(recipe);
     return (
         <ModalComponent>
             <div className={"cooking-popup popup"}>
-                {createTopBar(recipe, onCloseClick)}
+                {createTopBar(recipe, onCloseClick, setUnsavedChanges, cookQty, maxQty)}
                 {createCookingField(recipe, cookQty, setCookQty, maxQty)}
                 {createProgressDisplay(cookQty, recipe)}
                 <div>
@@ -31,12 +33,13 @@ export const RecipeCookingPopup = ({recipe, onCloseClick, onSaveClick, onMiniIng
                     </div>
                 </div>
                 {createConfirmCookButton(cookQty, recipe, onSaveClick, onCloseClick)}
+                {createUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, onCloseClick, onSaveClick, cookQty, recipe)}
             </div>
         </ModalComponent>
     );
 }
 
-function createTopBar(recipe, onCloseClick) {
+function createTopBar(recipe, onCloseClick, setUnsavedChanges, desiredCookQty, originalCookQty) {
     return (
         <div className={"top-bar"}>
             <div>
@@ -44,7 +47,13 @@ function createTopBar(recipe, onCloseClick) {
                     Cook {recipe.name}
                 </span>
                 <CloseButton
-                    onCloseClick={() => onCloseClick()}
+                    onCloseClick={() => {
+                        if (desiredCookQty !== originalCookQty) {
+                            setUnsavedChanges(true);
+                        } else {
+                            onCloseClick();
+                        }
+                    }}
                 />
             </div>
         </div>
@@ -236,18 +245,38 @@ function updateRecipeBeforeSave(cookQty, recipe) {
     return recipe;
 }
 
-function createConfirmCookButton(cookQty, recipe, saveClick, onCloseClick) {
+function createConfirmCookButton(cookQty, recipe, onSaveClick, onCloseClick) {
     return (
         <div>
             <SaveButton
                 saveText={"Cook"}
                 onSaveClick={() => {
                     recipe = updateRecipeBeforeSave(cookQty, recipe)
-                    saveClick(recipe);
+                    onSaveClick(recipe);
                     onCloseClick();
                 }}
                 isDisabled={isNaN(cookQty) || cookQty === 0}
             />
         </div>
     );
+}
+
+function createUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, onCloseClick, onSaveClick, cookQty, recipe) {
+    if (hasUnsavedChanges) {
+        return (
+            <UnsavedChangesPopup
+                onYesClick={() => {
+                    setUnsavedChanges(false)
+                    recipe = updateRecipeBeforeSave(cookQty, recipe)
+                    onSaveClick(recipe);
+                    onCloseClick();
+                }}
+                onNoClick={() => {
+                    onCloseClick();
+                    setUnsavedChanges(false);
+                }}
+                onCloseClick={() => setUnsavedChanges(false)}
+            />
+        );
+    }
 }

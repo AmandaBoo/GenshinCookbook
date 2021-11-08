@@ -2,30 +2,38 @@ import React, {useState} from "react";
 import CloseButton from "../../shared/buttons/CloseButton";
 import SaveButton from "../../shared/buttons/SaveButton";
 import {ModalComponent} from "../../shared/ModalComponent";
+import {UnsavedChangesPopup} from "../../shared/UnsavedChangesPopup";
 
 export const MiniIngredientEditPopup = ({ingredientData, onCloseClick, onSaveClick}) => {
     const [inventoryQty, setInventoryQty] = useState(ingredientData.qty);
     const [addSubtractQty, setAddSubtractQty] = useState(0);
+    const [hasUnsavedChanges, setUnsavedChanges] = useState(false);
     return (
         <ModalComponent>
             <div className={"edit-mini-ingredient-popup popup"}>
-                {renderTopBar(ingredientData.name, onCloseClick)}
+                {renderTopBar(ingredientData.name, onCloseClick, setUnsavedChanges, addSubtractQty)}
                 {renderIngredientImage(ingredientData)}
                 {renderInventoryInputField(ingredientData, addSubtractQty, setAddSubtractQty, inventoryQty, setInventoryQty)}
                 {renderAddSubtractField(ingredientData, addSubtractQty, setAddSubtractQty, inventoryQty, setInventoryQty)}
                 {renderSaveButton(ingredientData, inventoryQty, onSaveClick, onCloseClick)}
+                {renderUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, ingredientData, inventoryQty, onSaveClick, onCloseClick)}
             </div>
         </ModalComponent>
     );
 }
 
-
-function renderTopBar(name, onCloseClick) {
+function renderTopBar(name, onCloseClick, setUnsavedChanges, addSubtractQty) {
     return (
         <div className={"edit-mini-ingredient-top-bar"}>
             <span>Edit {name}</span>
             <CloseButton
-                onCloseClick={() => onCloseClick()}
+                onCloseClick={() => {
+                    if (addSubtractQty !== 0) {
+                        setUnsavedChanges(true);
+                    } else {
+                        onCloseClick();
+                    }
+                }}
             />
         </div>
     );
@@ -135,4 +143,23 @@ function renderSaveButton(ingredient, inventoryQty, onSaveClick, onCloseClick) {
             }}
         />
     );
+}
+
+function renderUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, ingredient, inventoryQty, onSaveClick, onCloseClick) {
+    if (hasUnsavedChanges) {
+        return (
+            <UnsavedChangesPopup
+                onYesClick={() => {
+                    onSaveClick(ingredient, inventoryQty);
+                    setUnsavedChanges(false);
+                    onCloseClick();
+                }}
+                onNoClick={() => {
+                    onCloseClick();
+                    setUnsavedChanges(false);
+                }}
+                onCloseClick={() => setUnsavedChanges(false)}
+            />
+        );
+    }
 }

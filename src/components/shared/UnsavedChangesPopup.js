@@ -39,11 +39,12 @@ function createBody() {
 
 function createSaveCancelButtons(onYesClick, onNoClick) {
     return (
-        <div className={"save-cancel-buttons"}>
+        <div className={"flex-center"}>
             <Button
                 onClick={() => onNoClick()}
                 text={"No"}
             />
+            <span className={'padding-right'}/>
             <Button
                 onClick={() => {onYesClick()}}
                 text={"Yes"}
