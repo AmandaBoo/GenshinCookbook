@@ -16,10 +16,10 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
                     text={"Recipes"}
                     onClick={() => setSelectedMenu(RECIPES_POPUP_ID)}
                 />
-                <Button
-                    text={"Help Guide"}
-                    onClick={() => setSelectedMenu(HELP_GUIDE_ID)}
-                />
+                {/*<Button*/}
+                {/*    text={"Help Guide"}*/}
+                {/*    onClick={() => setSelectedMenu(HELP_GUIDE_ID)}*/}
+                {/*/>*/}
             </div>
             {renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes)}
             {renderHelpGuidePopup(selectedMenu, setSelectedMenu)}

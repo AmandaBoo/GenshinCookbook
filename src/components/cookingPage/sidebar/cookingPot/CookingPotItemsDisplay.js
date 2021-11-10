@@ -28,7 +28,7 @@ function renderCookingPotItems(craftIngredientDTOList, onCraftIngredientCookSave
         return craftIngredientCards;
     } else {
         return (
-            <span className={'reduced-font-size'}>
+            <span className={'reduced-font-size default-color'}>
                 {NO_INGREDIENTS_PROCESS}
             </span>
         )

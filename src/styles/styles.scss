@@ -10,12 +10,13 @@ $default-hover-color: #667ffd;
 $hover-background-color: #d6dcfa;
 $default-font-size: 16px;
 $sub-font-size: 15px;
-$reduced-font-size: 13px;
+$reduced-font-size: 14px;
 $card-shadow-color: #646566;
 $card-background-color: #e4e6f0;
 $z2-color: #e1e7ff;
 $z2-text-color: #657ef8;
 $ingredient-img-size: 50px;
+$green: #aed848;
 
 body {
   font: 100% $main-font;
@@ -376,29 +377,33 @@ body {
   font-size: 10px; /* if an image ever fails, this helps the alt display inside the card */
 }
 
-.card-text-field {
-  width: 44px;
-  margin-bottom: 4px;
-
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+.recipe-label-field {
+  cursor: pointer;
+  padding-top: 0.5em;
+  display: block;
 }
 
 .ingredient-card {
   width: 60px;
   height: 86px;
   border-radius: 5px;
-  background-color: $card-background-color;
-  margin: 6px;
+  margin: 6px 6px 1em;
 
   text-align: center;
-  background-size: 60px;
-  background-repeat: no-repeat;
 
-  cursor: pointer;
+  .card-img {
+    background-repeat: no-repeat;
+    border-radius: 10px;
+  }
 
-  box-shadow: 0 0 1px $card-shadow-color;
+  .card-text-field {
+    margin-top: 0.5em;
+    width: 46px !important;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 }
 
 .cards {
@@ -423,10 +428,10 @@ body {
 }
 
 .cookbook-card {
+  position: relative;
   min-height: 130px;
   width: 100px;
-  border-radius: 9px;
-  background-color: $card-background-color;
+  border-radius: 10px;
   margin: 6px;
   font-size: $reduced-font-size;
 
@@ -435,10 +440,20 @@ body {
   background-repeat: no-repeat;
 
   cursor: pointer;
+  padding: 0.5em;
 
-  box-shadow: 0 0 1px $card-shadow-color;
+  border: 2px solid $white-shadow;
 
   transition: all .2s ease-in-out;
+
+  .card-img {
+    border-radius: 10px;
+  }
+
+  .checkmark-overlay {
+    position: absolute;
+    color: $green;
+  }
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -550,6 +565,10 @@ input[type=number]::-webkit-outer-spin-button {
       }
     }
 
+    .checkmark-overlay {
+      color: $green;
+    }
+
     .modal-button {
       width: 100%;
       margin-top: 5px;
@@ -560,18 +579,11 @@ input[type=number]::-webkit-outer-spin-button {
   .cooking-popup {
     display: flex;
     flex-direction: column;
-    min-height: 380px;
-    max-height: 380px;
     min-width: 650px;
 
     .top-bar {
       border-bottom: 1px solid $white-shadow;
       padding: 15px;
-      font-weight: bold;
-
-      .cook-header-text {
-        font-weight: bold;
-      }
 
       .cook-recipe-name-text {
         font-size: $reduced-font-size;
@@ -745,7 +757,7 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: $background-color;
   padding: 0 5px;
   border-radius: 4px;
-  border: none;
+  border: 1px solid $white-shadow;
   width: 3em;
   height: 2em;
 }
@@ -910,9 +922,17 @@ input[type=number]::-webkit-outer-spin-button {
   padding-right: 0.5em;
 }
 
+.padding-left {
+  padding-left: 0.5em;
+}
+
 .paimon {
   width: 200px;
   height: 200px;
+}
+
+.default-color {
+  color: $default-color;
 }
 
 ::-webkit-scrollbar {
