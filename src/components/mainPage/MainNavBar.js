@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
-import {Icon} from "../shared/Icon";
-import {InventoryManager} from "../inventory/InventoryManager";
 import {NavLink} from "react-router-dom";
 import Button from "../shared/buttons/Button";
 import {INVENTORY_POPUP_ID} from "../../constants/constants";
+import {InventoryContainer} from "../inventory/InventoryContainer";
 
-const MainNavBar = ({onInventorySave, onInventoryClose, rawIngredients, craftIngredients}) => {
+export const MainNavBar = ({onInventorySave, onInventoryClose, rawIngredients, craftIngredients}) => {
     const [selectedMenu, setSelectedMenu] = useState(null);
     return (
         <div className={"inner-nav-bar"}>
@@ -22,18 +21,24 @@ const MainNavBar = ({onInventorySave, onInventoryClose, rawIngredients, craftIng
                     onClick={() => setSelectedMenu(INVENTORY_POPUP_ID)}
                 />
             </div>
-            <InventoryManager
-                doRender={selectedMenu === INVENTORY_POPUP_ID}
-                onCloseClick={() => {
-                    setSelectedMenu(null);
-                    onInventoryClose();
-                }}
-                onSaveClick={() => onInventorySave()}
-                rawIngredients={rawIngredients}
-                craftIngredients={craftIngredients}
-            />
+            {renderInventory(selectedMenu === INVENTORY_POPUP_ID, rawIngredients, craftIngredients,
+                onInventorySave, onInventoryClose, setSelectedMenu)}
         </div>
     );
 }
 
-export default MainNavBar;
+function renderInventory(doRender, rawIngredients, craftIngredients, onSaveClick, onCloseClick, setSelectedMenu) {
+    if (doRender) {
+        return (
+            <InventoryContainer
+                rawIngredients={rawIngredients}
+                craftIngredients={craftIngredients}
+                onSaveClick={() => onSaveClick()}
+                onCloseClick={() => {
+                    setSelectedMenu(null);
+                    onCloseClick();
+                }}
+            />
+        );
+    }
+}

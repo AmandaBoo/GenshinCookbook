@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import CloseButton from "../../shared/buttons/CloseButton";
 import SaveButton from "../../shared/buttons/SaveButton";
-import {ModalComponent} from "../../shared/ModalComponent";
+import {SubModalComponent} from "../../shared/SubModalComponent";
 import {UnsavedChangesPopup} from "../../shared/UnsavedChangesPopup";
 
 export const MiniIngredientEditPopup = ({ingredientData, onCloseClick, onSaveClick}) => {
@@ -9,7 +9,7 @@ export const MiniIngredientEditPopup = ({ingredientData, onCloseClick, onSaveCli
     const [addSubtractQty, setAddSubtractQty] = useState(0);
     const [hasUnsavedChanges, setUnsavedChanges] = useState(false);
     return (
-        <ModalComponent>
+        <SubModalComponent>
             <div className={"edit-mini-ingredient-popup popup"}>
                 {renderTopBar(ingredientData.name, onCloseClick, setUnsavedChanges, addSubtractQty)}
                 {renderIngredientImage(ingredientData)}
@@ -18,7 +18,7 @@ export const MiniIngredientEditPopup = ({ingredientData, onCloseClick, onSaveCli
                 {renderSaveButton(ingredientData, inventoryQty, onSaveClick, onCloseClick)}
                 {renderUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, ingredientData, inventoryQty, onSaveClick, onCloseClick)}
             </div>
-        </ModalComponent>
+        </SubModalComponent>
     );
 }
 

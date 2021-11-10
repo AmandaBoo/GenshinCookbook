@@ -1,17 +1,17 @@
 import React from 'react';
 import CloseButton from "../../shared/buttons/CloseButton";
 import SaveButton from "../../shared/buttons/SaveButton";
-import {ModalComponent} from "../../shared/ModalComponent";
+import {SubModalComponent} from "../../shared/SubModalComponent";
 
 const DeleteConfirmationPopup = ({deleteMessage, closeClick, saveClick}) => {
     return (
-        <ModalComponent>
+        <SubModalComponent>
             <div className={"delete-popup popup"}>
                 {createTopBar(closeClick)}
                 {createBody(deleteMessage)}
                 {createSaveButton(saveClick)}
             </div>
-        </ModalComponent>
+        </SubModalComponent>
     );
 }
 

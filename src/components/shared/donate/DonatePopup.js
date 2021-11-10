@@ -1,12 +1,12 @@
 import React from 'react';
 import CloseButton from "../buttons/CloseButton";
-import {ModalComponent} from "../ModalComponent";
+import {SubModalComponent} from "../SubModalComponent";
 import {KofiIcon} from "./KofiIcon";
 import {PatreonIcon} from "./PatreonIcon";
 
 export const DonatePopup = ({onCloseClick}) => {
     return (
-        <ModalComponent>
+        <SubModalComponent>
             <div className={"donate-popup popup"}>
                 {renderTopBar(onCloseClick)}
                 {renderSubTitle()}
@@ -15,7 +15,7 @@ export const DonatePopup = ({onCloseClick}) => {
                     <PatreonIcon/>
                 </div>
             </div>
-        </ModalComponent>
+        </SubModalComponent>
     )
 }
 

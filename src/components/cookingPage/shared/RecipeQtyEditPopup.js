@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import CloseButton from "../../shared/buttons/CloseButton";
 import SaveButton from "../../shared/buttons/SaveButton";
 import * as Utils from "../../../util/utils";
-import {ModalComponent} from "../../shared/ModalComponent";
+import {SubModalComponent} from "../../shared/SubModalComponent";
 import {UnsavedChangesPopup} from "../../shared/UnsavedChangesPopup";
 
 const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onCloseClick}) => {
@@ -12,7 +12,7 @@ const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onClos
 
     const recipeProficiency = selectedRecipeCard.rarity * 5;
     return (
-        <ModalComponent>
+        <SubModalComponent>
             <div className={"edit-popup popup"}>
                 {createTopBar( topBarText + ": " + Utils.getTruncatedName(selectedRecipeCard.name, Utils.MAX_CONFIGURATION_NAME_LENGTH),
                     onCloseClick, setCurProf, setCustomQty, curProf, customQty, setUnsavedChanges, selectedRecipeCard, topBarText)}
@@ -26,7 +26,7 @@ const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onClos
                 {createUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, onCloseClick, onSaveClick,
                     setCurProf, setCustomQty, curProf, customQty, selectedRecipeCard)}
             </div>
-        </ModalComponent>
+        </SubModalComponent>
     );
 }
 
