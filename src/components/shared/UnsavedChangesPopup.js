@@ -2,17 +2,17 @@ import React from 'react';
 import CloseButton from "./buttons/CloseButton";
 import SaveButton from "./buttons/SaveButton";
 import Button from "./buttons/Button";
-import {ModalComponent} from "./ModalComponent";
+import {SubModalComponent} from "./SubModalComponent";
 
 export const UnsavedChangesPopup = ({onYesClick, onNoClick, onCloseClick}) => {
     return (
-        <ModalComponent>
+        <SubModalComponent>
             <div className={"edit-popup popup"}>
                 {createTopBar(onCloseClick)}
                 {createBody()}
                 {createSaveCancelButtons(onYesClick, onNoClick)}
             </div>
-        </ModalComponent>
+        </SubModalComponent>
     );
 }
 

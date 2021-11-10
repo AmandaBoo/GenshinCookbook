@@ -1,6 +1,5 @@
 import React, { useState} from 'react';
 
-
 const IngredientCard = ({cardData}) => {
     const [qty, setQty] = useState(cardData.qty);
     return (

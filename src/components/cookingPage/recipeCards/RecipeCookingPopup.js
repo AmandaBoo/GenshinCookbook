@@ -5,7 +5,7 @@ import MiniIngredientCard from "../shared/MiniIngredientCard";
 import InfoIcon from '@mui/icons-material/Info';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import {ModalComponent} from "../../shared/ModalComponent";
+import {SubModalComponent} from "../../shared/SubModalComponent";
 import {UnsavedChangesPopup} from "../../shared/UnsavedChangesPopup";
 
 export const RecipeCookingPopup = ({recipe, onCloseClick, onSaveClick, onMiniIngredientEditSaveClick}) => {
@@ -13,7 +13,7 @@ export const RecipeCookingPopup = ({recipe, onCloseClick, onSaveClick, onMiniIng
     const [hasUnsavedChanges, setUnsavedChanges] = useState(false);
     const maxQty = calculateMaxCraftQty(recipe);
     return (
-        <ModalComponent>
+        <SubModalComponent>
             <div className={"cooking-popup popup"}>
                 {createTopBar(recipe, onCloseClick, setUnsavedChanges, cookQty, maxQty)}
                 {createCookingField(recipe, cookQty, setCookQty, maxQty)}
@@ -35,7 +35,7 @@ export const RecipeCookingPopup = ({recipe, onCloseClick, onSaveClick, onMiniIng
                 {createConfirmCookButton(cookQty, recipe, onSaveClick, onCloseClick)}
                 {createUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, onCloseClick, onSaveClick, cookQty, recipe)}
             </div>
-        </ModalComponent>
+        </SubModalComponent>
     );
 }
 

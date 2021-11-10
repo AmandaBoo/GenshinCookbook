@@ -1,11 +1,11 @@
 import React from 'react'
-import {RecipesManager} from "../cookbook/RecipesManager";
 import {Icon} from "../../shared/Icon";
 import GroceryDisplay from "./groceryList/GroceryDisplay";
 import {CookingPotDisplay} from "./cookingPot/CookingPotDisplay";
 import {HelpGuideContainer} from "../../helpGuide/HelpGuideContainer";
 import {HELP_GUIDE_ID, RECIPES_POPUP_ID} from "../../../constants/constants";
 import Button from "../../shared/buttons/Button";
+import {RecipesContainer} from "../cookbook/RecipesContainer";
 
 const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOList, selectedMenu, setSelectedMenu,
                             onMiniIngredientEditSaveClick, onCraftIngredientCookSaveClick}) => {
@@ -45,7 +45,7 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
 function renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes) {
     if (selectedMenu === RECIPES_POPUP_ID) {
         return (
-            <RecipesManager
+            <RecipesContainer
                 onCloseClick={() => setSelectedMenu(null)}
                 foodRecipes={recipes}
             />

@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {CookingPage} from "../cookingPage/CookingPage";
-import MainNavBar from "./MainNavBar";
 import * as storage from "../../storageInterfaces/storageInterface";
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import {DonatePopup} from "../shared/donate/DonatePopup";
 import {PotionsPage} from "../potionsPage/PotionsPage";
 import {DonateIcon} from "../shared/donate/DonateIcon";
 import RouteChangeTracker from "../../analytics/RouteChangeTracker";
+import {MainNavBar} from "./MainNavBar";
 
 const MainPage = () => {
     const [recipes, setRecipes] = useState(storage.getAllFoodRecipes());

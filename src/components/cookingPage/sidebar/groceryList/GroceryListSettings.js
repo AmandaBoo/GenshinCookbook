@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {ModalComponent} from "../../../shared/ModalComponent";
+import {SubModalComponent} from "../../../shared/SubModalComponent";
 import CloseButton from "../../../shared/buttons/CloseButton";
 import SaveButton from "../../../shared/buttons/SaveButton";
 import * as storage from "../../../../storageInterfaces/storageInterface";
@@ -10,14 +10,14 @@ export const GroceryListSettings = ({onCloseClick, onSaveClick}) => {
     const [showCompletedIng, setShowCompletedIng] = useState(storage.doShowCompletedIngredients());
     const [hasUnsavedChanges, setUnsavedChanges] = useState(false);
     return (
-        <ModalComponent>
+        <SubModalComponent>
             <div className={"settings-popup popup"}>
                 {createTopBar(onCloseClick, setUnsavedChanges, showCompletedIng, storage.doShowCompletedIngredients())}
                 {createBody(showCompletedIng, setShowCompletedIng)}
                 {createSaveButton(onSaveClick, showCompletedIng)}
                 {createUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, onSaveClick, onCloseClick, showCompletedIng)}
             </div>
-        </ModalComponent>
+        </SubModalComponent>
     );
 };
 
