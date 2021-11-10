@@ -3,26 +3,28 @@ import React, { useState} from 'react';
 const IngredientCard = ({cardData}) => {
     const [qty, setQty] = useState(cardData.qty);
     return (
-        <div>
-            <div
-                id={cardData.name}
-                className={"ingredient-card"}
-                style={{ backgroundImage: 'url("./images/backgrounds/Rarity_' + cardData.rarity + '_background_cropped.jpg")'}}
-            >
-                {generateImage(cardData)}
-                {generateTextField(cardData, qty, setQty)}
-            </div>
+        <div
+            id={cardData.name}
+            className={"ingredient-card"}
+        >
+            {generateImage(cardData)}
+            {generateTextField(cardData, qty, setQty)}
         </div>
     );
 }
 
-function generateImage(data) {
+function generateImage(ingredientData) {
     return (
-        <img
-            className={"card-icon"}
-            src={data.src}
-            alt={data.name}
-        />
+        <div
+            style={{ backgroundImage: 'url("./images/backgrounds/Rarity_' + ingredientData.rarity + '_background_cropped.jpg")'}}
+            className={'card-img'}
+        >
+            <img
+                className={"card-icon"}
+                src={ingredientData.src}
+                alt={ingredientData.name}
+            />
+        </div>
     );
 }
 function resetFieldOnLeave(value, setter, data) {
@@ -34,7 +36,7 @@ function resetFieldOnLeave(value, setter, data) {
 function generateTextField(data, qty, setQty) {
     return (
         <input
-            className={"card-text-field text-field"}
+            className={"text-field card-text-field"}
             type={"number"}
             value={qty}
             onKeyDown={ (evt) => (evt.key === 'e' ||evt.key === '.' ||evt.key === '-') && evt.preventDefault() }

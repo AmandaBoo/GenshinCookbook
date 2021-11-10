@@ -33,7 +33,7 @@ function createMessageBody(onAddButtonClick, addButtonText, onHelpGuideButtonCli
                 Welcome to the Cooking Page! It doesn't look like you're tracking any recipes...
             </div>
             {createAddActionBody(onAddButtonClick, addButtonText)}
-            {createHelpGuideActionBody(onHelpGuideButtonClick)}
+            {/*{createHelpGuideActionBody(onHelpGuideButtonClick)}*/}
         </div>
     );
 }

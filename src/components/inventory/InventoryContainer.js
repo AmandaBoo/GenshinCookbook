@@ -10,8 +10,8 @@ export const InventoryContainer = ({rawIngredients, craftIngredients, onSaveClic
     const [hasUnsavedChanges, setUnsavedChanges] = useState(false);
     const [selectedTab, setSelectedTab] = useState('materials-tab');
 
-    const imgSrcList = ["images/icons/ingredientsIcon.png", "images/icons/furnitureIcon.png"];
-    const imgSrcListIds = ["materials-tab", "furniture-tab"];
+    const imgSrcList = ["images/icons/ingredientsIcon.png"];
+    const imgSrcListIds = ["materials-tab"];
 
     return (
         <ModalComponent>

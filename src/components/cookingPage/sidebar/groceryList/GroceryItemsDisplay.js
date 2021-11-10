@@ -43,7 +43,7 @@ function renderIngredients(placeholderText, ingredientDTOList, onMiniIngredientE
         return ingredientCards;
     } else {
         return (
-            <span className={"reduced-font-size"}>
+            <span className={"reduced-font-size default-color"}>
                 {placeholderText}
             </span>
         )

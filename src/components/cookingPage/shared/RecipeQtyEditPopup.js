@@ -4,6 +4,8 @@ import SaveButton from "../../shared/buttons/SaveButton";
 import * as Utils from "../../../util/utils";
 import {SubModalComponent} from "../../shared/SubModalComponent";
 import {UnsavedChangesPopup} from "../../shared/UnsavedChangesPopup";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CheckCircleTwoToneIcon from "@mui/icons-material/CheckCircleTwoTone";
 
 const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onCloseClick}) => {
     const [curProf, setCurProf] = useState(selectedRecipeCard != null ? selectedRecipeCard.currentProficiency: 0);
@@ -17,7 +19,7 @@ const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onClos
                 {createTopBar( topBarText + ": " + Utils.getTruncatedName(selectedRecipeCard.name, Utils.MAX_CONFIGURATION_NAME_LENGTH),
                     onCloseClick, setCurProf, setCustomQty, curProf, customQty, setUnsavedChanges, selectedRecipeCard, topBarText)}
                 <div className={"flex-center"}>
-                    {createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty)}
+                    {createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty, selectedRecipeCard)}
                     <div className={"ingredients-border"}/>
                     {createAmountToCookDiv(customQty, setCustomQty)}
                 </div>
@@ -60,7 +62,7 @@ function hasUnsavedChanges(topBarText, curProf, customQty, recipeCard) {
     return (curProf !== recipeCard.currentProficiency) || (customQty !== determineStartCustomQty(topBarText, recipeCard));
 }
 
-function createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty) {
+function createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty, recipeCard) {
     return (
         <div className={"input-field-div"}>
             <div className={"inner-field-div"}>
@@ -84,6 +86,7 @@ function createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, set
                 <div className={"vertical-center"}>
                     <span className={"text-label"}> / {recipeProficiency}</span>
                 </div>
+                {renderMasteryCheckbox(recipeCard)}
             </div>
             <label
                 className={"input-label"}
@@ -92,6 +95,16 @@ function createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, set
             </label>
         </div>
     );
+}
+
+function renderMasteryCheckbox(recipeCard) {
+    if (recipeCard.currentProficiency === recipeCard.rarity * 5) {
+        return (
+            <div className={'padding-left checkmark-overlay vertical-center'}>
+                <CheckCircleTwoToneIcon/>
+            </div>
+        );
+    }
 }
 
 function createAmountToCookDiv(customQty, setCustomQty) {
