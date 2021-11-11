@@ -1,26 +1,15 @@
 $main-font: 'Roboto', sans-serif;
-$panel-color: white;
-$background-color: #f5f6fb;
 $site-nav-bar-height: 60px;
-$white-shadow: #d4d5d9;
-$text-color: #2f3f56;
-$default-color: #8592A3;
-$default-hover-color: #657ef8;
-$hover-background-color: #d6dcfa;
-$default-font-size: 16px;
+$main-font-size: 16px;
 $sub-font-size: 15px;
-$reduced-font-size: 14px;
-$card-shadow-color: #646566;
-$card-background-color: #e4e6f0;
-$z2-color: #e1e7ff;
-$z2-text-color: #657ef8;
+$mini-font-size: 14px;
 $ingredient-img-size: 50px;
-$green: #aed848;
+$border-radius: 16px;
 
 body {
   font: 100% $main-font;
-  font-size: $default-font-size;
-  background-color: $background-color;
+  font-size: $main-font-size;
+  background-color: $main-bg-color;
   color: $text-color;
   margin: 0;
   padding: 0;
@@ -29,24 +18,31 @@ body {
 .site-nav-bar {
   width: 100%;
   height: $site-nav-bar-height;
-  box-shadow: 0 2px 4px $white-shadow; // Have Emily check this
+  box-shadow: 0 2px 4px $z1-shadow-color;
   position: fixed;
   z-index: 1;
-  background-color: $panel-color;
+  background-color: $z1-bg-color;
 
   .nav-bar-links {
     text-decoration: none;
-    color: $default-color;
+    color: $muted-color;
     padding: 1em;
     cursor: pointer;
-    border: 3px solid white;
-    font-size: $default-font-size;
+    border: 3px solid $z1-bg-color;
 
     &:hover {
-      color: $default-hover-color;
-      background-color: $hover-background-color;
-      border-radius: 16px;
+      color: $button-text-color;
+      background-color: $button-bg-color;
+      border-radius: $border-radius;
     }
+  }
+
+  .nav-bar-link-selected {
+    color: $button-text-color;
+  }
+
+  .nav-bar-link-default {
+    color: $muted-color;
   }
 
   .logo {
@@ -58,15 +54,7 @@ body {
     padding: 0.9em;
     cursor: pointer;
     border-radius: 0;
-    border: 3px solid $hover-background-color;
-  }
-
-  .nav-bar-link-selected {
-    color: $default-hover-color;
-  }
-
-  .nav-bar-link-default {
-    color: $default-color;
+    border: 3px solid $button-bg-color;
   }
 
   .inner-nav-bar {
@@ -98,18 +86,16 @@ body {
   margin-top: 15px;
 
   .add-recipe-button-div {
-    border-radius: 16px;
-    background-color: white;
-    display: flex;
-    justify-content: center;
+    border-radius: $border-radius;
+    background-color: $z1-bg-color;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-bottom: 10px;
   }
 
   .grocery-div {
-    border-radius: 16px;
-    background-color: white;
+    border-radius: $border-radius;
+    background-color: $z1-bg-color;
 
     .sidebar-card-display {
       padding-bottom: 70px;
@@ -119,7 +105,7 @@ body {
     .header-text {
       text-align: center;
       padding: 1em;
-      border-bottom: 1px solid $default-color;
+      border-bottom: 1px solid $muted-color;
     }
 
     .top-bar {
@@ -134,9 +120,7 @@ body {
     }
 
     .grocery-list-cards-div {
-      display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       min-height: 20px;
       padding-bottom: 15px;
       padding-left: 5px;
@@ -148,10 +132,11 @@ body {
 
     .cooking-pot-ingredient-container {
       padding: 4px;
+
       .cooking-pot-ingredient-img {
         width: $ingredient-img-size;
         height: $ingredient-img-size;
-        border-radius: 16px;
+        border-radius: $border-radius;
       }
     }
   }
@@ -161,19 +146,13 @@ body {
   }
 }
 
-.card {
-  margin: 15px;
-}
-
 .recipe-card-display {
   grid-area: cards;
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 
   .recipe-card-grid {
     $recipe-img-size: 125px;
-    background-color: white;
+    background-color: $z1-bg-color;
 
     display: grid;
     width: 350px;
@@ -187,9 +166,7 @@ body {
 
     .recipe-top-bar {
       grid-area: top-bar;
-      display: flex;
-      justify-content: center;
-      border-bottom: 1px solid $white-shadow;
+      border-bottom: 1px solid $z1-shadow-color;
       margin-left: 0.5em;
       margin-right: 0.5em;
       padding: 1em 1em 0.25em;
@@ -213,19 +190,17 @@ body {
 
     .recipe-progress {
       grid-area: recipe-progress;
-      font-size: $sub-font-size;
-      color: $default-color;
+      font-size: $mini-font-size;
+      color: $muted-color;
 
       .recipe-progress-fields {
         padding-right: 0.5em;
-        padding-top: 1.25em;
-        font-size: 12px;
+        padding-top: 1em;
+        font-size: $mini-font-size;
         min-width: 70px;
       }
 
       .progress-field {
-        display: flex;
-        justify-content: center;
         margin-right: 1.5em;
       }
 
@@ -234,41 +209,33 @@ body {
       }
 
       .recipe-data-field {
-        font-size: 14px;
+        font-size: $mini-font-size;
       }
 
       .cook-button-div {
-        display: flex;
-        justify-content: center;
         width: 90%;
         margin-bottom: 1em;
         margin-top: 10px;
       }
 
       .modal-button {
-        font-size: $sub-font-size;
+        font-size: $mini-font-size;
       }
     }
 
-    .recipe-img-div {
-      display: flex;
-      justify-content: center;
-      .recipe-img {
-        grid-area: main-img;
-        max-width: $recipe-img-size;
-        max-height: $recipe-img-size;
-        background-size: cover;
-        background-repeat: no-repeat;
-        border-radius: 35px;
-        margin: 10px 0;
-      }
+    .recipe-img {
+      grid-area: main-img;
+      max-width: $recipe-img-size;
+      max-height: $recipe-img-size;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 35px;
+      margin: 10px 0;
     }
 
     .recipe-ingredient-div {
-      display: flex;
-      justify-content: center;
       grid-area: ingredients;
-      border-top: 1px solid $white-shadow;
+      border-top: 1px solid $z1-shadow-color;
       margin: 0 0.5em 5px;
       padding-top: 0.5em;
     }
@@ -282,7 +249,6 @@ body {
 .modal {
   position: fixed;
   z-index: 1;
-  //padding-top: 25px;
   padding: 1em;
   left: 0;
   top: 0;
@@ -294,10 +260,9 @@ body {
 
   .modal-card {
     border-radius: 16px;
-    background-color: $panel-color;
+    background-color: $z1-bg-color;
     width: 70%;
     height: 100%;
-    //overflow: scroll;
     overflow-y: scroll;
     margin-left: 15%;
   }
@@ -307,11 +272,11 @@ body {
   }
 
   .modal-nav-bar {
+    display: flex;
     justify-content: space-between;
     margin-left: 15%;
-    display: flex;
     width: 70%;
-    border-bottom: 3px solid $white-shadow;
+    border-bottom: 3px solid $z1-shadow-color;
   }
 
   .modal-nav-bar-icon {
@@ -324,15 +289,15 @@ body {
   }
 
   .modal-nav-bar-tab-selected {
-    background-color: #c0c8f0;
+    background-color: $button-bg-color;
     border-radius: 8px;
-    color: $default-hover-color;
+    color: $button-text-color;
     opacity: 0.8;
   }
 
   .modal-nav-bar-tab-default:hover,
   .modal-nav-bar-tab-selected:hover {
-    background-color: #c0c8f0;
+    background-color: $button-bg-color;
     border-radius: 8px;
   }
 
@@ -344,7 +309,7 @@ body {
   }
 
   .close {
-    color: $default-color;
+    color: $muted-color;
     float: right;
     width: 35px;
     height: 35px;
@@ -352,8 +317,8 @@ body {
     cursor: pointer;
 
     &:hover {
-      color: $default-hover-color;
-      background-color: $hover-background-color;
+      color: $button-text-color;
+      background-color: $button-bg-color;
     }
   }
 
@@ -368,12 +333,15 @@ body {
 
 .message-modal-body {
   padding: 2em 2em 3em;
-  text-align: center;
+}
+
+.card {
+  margin: 15px;
 }
 
 .card-icon {
   width: 85%;
-  font-size: 10px; /* if an image ever fails, this helps the alt display inside the card */
+  font-size: 10px;
 }
 
 .recipe-label-field {
@@ -387,8 +355,6 @@ body {
   height: 86px;
   border-radius: 5px;
   margin: 6px 6px 1em;
-
-  text-align: center;
 
   .card-img {
     background-repeat: no-repeat;
@@ -406,10 +372,7 @@ body {
 }
 
 .cards {
-  /* manages the basic card layout */
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   padding-top: 5px;
   margin-left: 15%;
   width: 70%;
@@ -426,22 +389,27 @@ body {
   justify-content: center;
 }
 
+.vertical-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .cookbook-card {
   position: relative;
   min-height: 130px;
   width: 100px;
   border-radius: 10px;
   margin: 6px;
-  font-size: $reduced-font-size;
+  font-size: $mini-font-size;
 
-  text-align: center;
   background-size: 100px;
   background-repeat: no-repeat;
 
   cursor: pointer;
   padding: 0.5em;
 
-  border: 2px solid $white-shadow;
+  border: 2px solid $z1-shadow-color;
 
   transition: all .2s ease-in-out;
 
@@ -451,22 +419,14 @@ body {
 
   .checkmark-overlay {
     position: absolute;
-    color: $green;
+    color: $green-color;
   }
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0;
-}
-
 .modal-button {
-  font-size: $default-font-size;
-  background-color: $z2-color;
-  color: $z2-text-color;
+  font-size: $main-font-size;
+  background-color: $button-bg-color;
+  color: $button-action-bg-color;
   border: none;
   border-radius: 16px;
   cursor: pointer;
@@ -475,33 +435,27 @@ input[type=number]::-webkit-outer-spin-button {
   transition: all .1s ease-in-out;
 
   &:hover {
-    background-color: $z2-text-color;
-    color: #fff;
+    background-color: $button-action-bg-color;
+    color: $button-action-text-color;
   }
 }
 
 .small-button {
-  background-color: $z2-color;
-  color: $z2-text-color;
+  background-color: $button-bg-color;
+  color: $button-text-color;
   width: $ingredient-img-size;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: $reduced-font-size;
+  font-size: $mini-font-size;
   padding: 0.25em;
 
   transition: all .1s ease-in-out;
 
   &:hover {
-    background-color: $z2-text-color;
+    background-color: $button-text-color;
     color: #fff;
   }
-}
-
-.vertical-center {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .message-modal {
@@ -509,38 +463,33 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 2;
   left: 0;
   top: 0;
-  display: flex;
   width: 100%;
   height: 100%;
-  justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
 
   .popup {
-    background-color: white;
+    background-color: $z1-bg-color;
     border-radius: 16px;
     padding: 1em;
   }
 
   .delete-popup {
-    display: flex;
-    flex-direction: column;
-    max-height: 150px;
     padding: 1em 2em;
 
     .top-bar {
       float: right;
+      padding-top: 15px;
     }
   }
 
   .edit-popup {
     .ingredients-border {
-      border-right: 1px solid $white-shadow;
+      border-right: 1px solid $z1-shadow-color;
     }
 
     .top-bar {
-      border-bottom: 1px solid $white-shadow;
+      border-bottom: 1px solid $z1-shadow-color;
       padding: 15px;
-      font-weight: bold;
     }
 
     .input-label {
@@ -558,14 +507,12 @@ input[type=number]::-webkit-outer-spin-button {
       flex-direction: column;
 
       .inner-field-div {
-        display: flex;
-        justify-content: center;
         margin-bottom: 0.4em;
       }
     }
 
     .checkmark-overlay {
-      color: $green;
+      color: $green-color;
     }
 
     .modal-button {
@@ -581,11 +528,11 @@ input[type=number]::-webkit-outer-spin-button {
     min-width: 650px;
 
     .top-bar {
-      border-bottom: 1px solid $white-shadow;
+      border-bottom: 1px solid $z1-shadow-color;
       padding: 15px;
 
       .cook-recipe-name-text {
-        font-size: $reduced-font-size;
+        font-size: $mini-font-size;
       }
     }
 
@@ -599,9 +546,8 @@ input[type=number]::-webkit-outer-spin-button {
       display: flex;
       flex-direction: column;
     }
+
     .cooking-body {
-      display: flex;
-      justify-content: center;
       margin: 0 2em 1em 4em;
 
       .cooking-field-div {
@@ -616,7 +562,7 @@ input[type=number]::-webkit-outer-spin-button {
         height: 20px;
         width: 20px;
         opacity: 0.7;
-        color: $default-hover-color;
+        color: $button-text-color;
 
         &:hover {
           opacity: 1;
@@ -628,31 +574,23 @@ input[type=number]::-webkit-outer-spin-button {
       display: flex;
       flex-direction: column;
       text-align: center;
-      font-size: $reduced-font-size;
+      font-size: $mini-font-size;
       margin-bottom: 2em;
-      color: $default-color;
+      color: $muted-color;
     }
 
     .ingredients-div {
-      display: flex;
-      justify-content: center;
-
       .ingredients-border {
-        border-right: 1px solid $white-shadow;
+        border-right: 1px solid $z1-shadow-color;
       }
 
       .ingredients-wrapper {
         text-align: center;
         padding: 1em 2em;
-        border-top: 1px solid $white-shadow;
+        border-top: 1px solid $z1-shadow-color;
 
         .ingredient-cards-title {
-          font-size: 14px;
-        }
-
-        .ingredient-cards {
-          display: flex;
-          justify-content: center;
+          font-size: $mini-font-size;
         }
       }
     }
@@ -675,9 +613,8 @@ input[type=number]::-webkit-outer-spin-button {
     width: 275px;
 
     .edit-mini-ingredient-top-bar {
-      border-bottom: 1px solid $white-shadow;
+      border-bottom: 1px solid $z1-shadow-color;
       padding: 15px;
-      font-weight: bold;
     }
 
     .input-field-div {
@@ -687,28 +624,22 @@ input[type=number]::-webkit-outer-spin-button {
       text-align: center;
     }
 
-    .centered-div {
-      display: flex;
-      justify-content: center;
-
-      .ingredient-img {
-        width: 50px;
-        border-radius: 16px;
-        margin-top: 1em;
-      }
+    .ingredient-img {
+      width: 50px;
+      border-radius: $border-radius;
+      margin-top: 1em;
     }
   }
 
   .settings-popup {
     .top-bar {
-      border-bottom: 1px solid $white-shadow;
+      border-bottom: 1px solid $z1-shadow-color;
       padding: 15px;
-      font-weight: bold;
     }
   }
 
   .close {
-    color: $default-color;
+    color: $muted-color;
     width: 35px;
     height: 35px;
     margin-top: -10px;
@@ -716,7 +647,7 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
 
     &:hover {
-      color: $default-hover-color;
+      color: $muted-color;
       background-color: white;
     }
   }
@@ -725,7 +656,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mini-ingredient-container {
   position: relative;
-  color: white;
+  color: $z1-bg-color;
   margin-left: 2px;
   padding: 4px;
 
@@ -743,7 +674,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: $ingredient-img-size;
     position: absolute;
     text-align: center;
-    font-size: $reduced-font-size;
+    font-size: $mini-font-size;
     background-color: rgba(0,0,0,0.2);
     bottom: 0;
     cursor: pointer;
@@ -753,10 +684,10 @@ input[type=number]::-webkit-outer-spin-button {
 .text-field {
   text-align: center;
   cursor: pointer;
-  background-color: $background-color;
+  background-color: $main-bg-color;
   padding: 0 5px;
   border-radius: 4px;
-  border: 1px solid $white-shadow;
+  border: 1px solid $z1-shadow-color;
   width: 3em;
   height: 2em;
 }
@@ -770,20 +701,13 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer;
   border: 5px solid white;
   border-radius: 12px;
-  background-color: $z2-color;
-  color: $z2-text-color;
-  box-shadow: 0 2px 4px $white-shadow; // Have Emily check this
+  background-color: $button-bg-color;
+  color: $button-text-color;
+  box-shadow: 0 2px 4px $z1-shadow-color;
   text-align: center;
   padding-right: 0.5em;
 
   transition: all .2s ease-in-out;
-
-  .kofi-text-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-  }
 
   .kofi-icon {
     width: 70px;
@@ -799,12 +723,11 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   max-height: 270px;
-  border: 10px solid $z2-color;
+  border: 10px solid $button-bg-color;
 
   .top-bar {
-    border-bottom: 1px solid $white-shadow;
+    border-bottom: 1px solid $z1-shadow-color;
     padding: 15px;
-    font-weight: bold;
   }
 
   .sub-title {
@@ -813,7 +736,6 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     padding: 0.5em;
   }
-
 }
 
 .donate-icon-div {
@@ -844,15 +766,16 @@ input[type=number]::-webkit-outer-spin-button {
 .disabled-button {
   opacity: 0.6;
   cursor: auto;
+
   &:hover {
-    background-color: $z2-color;
-    color: $z2-text-color;
+    background-color: $button-bg-color;
+    color: $button-text-color;
   }
 }
 
 .toggle-text {
-  color: $default-color;
-  font-size: $reduced-font-size;
+  color: $muted-color;
+  font-size: $mini-font-size;
 }
 
 .toggle {
@@ -891,13 +814,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .svg-icon {
-  color: $default-color;
+  color: $muted-color;
   border-radius: 5px;
   cursor: pointer;
 
   &:hover {
-    color: $default-hover-color;
-    background-color: $hover-background-color;
+    color: $button-text-color;
+    background-color: $button-bg-color;
   }
 }
 
@@ -914,7 +837,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .reduced-font-size {
-  font-size: $reduced-font-size;
+  font-size: $mini-font-size;
 }
 
 .padding-right {
@@ -931,7 +854,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .default-color {
-  color: $default-color;
+  color: $muted-color;
 }
 
 ::-webkit-scrollbar {
@@ -950,6 +873,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 ::-webkit-scrollbar-track-piece {
- background-color: transparent;
+  background-color: transparent;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 

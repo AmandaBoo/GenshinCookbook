@@ -24,7 +24,7 @@ export const RecipeCookingPopup = ({recipe, onCloseClick, onSaveClick, onMiniIng
                             <div className={"ingredient-cards-title"}>
                                 INGREDIENTS REQUIRED
                             </div>
-                            <div className={"ingredient-cards"}>
+                            <div className={"flex-center"}>
                                 {createIngredientsRequiredDisplay(recipe, cookQty, setCookQty, onMiniIngredientEditSaveClick)}
                             </div>
                         </div>
@@ -64,7 +64,7 @@ function createCookingField(recipe, cookQty, setCookQty, maxQty) {
     return (
         <div className={"cooking-parent"}>
             <div className={"cooking-field-title"}>HOW MANY</div>
-            <div className={"cooking-body"}>
+            <div className={"cooking-body flex-center"}>
                 <div className={"cooking-field-div"}>
                     <input
                         id={"cooking-text-field"}
@@ -184,7 +184,7 @@ function createMissingIngredientsDiv(recipe, cookQty, setCookQty, missingIngredi
                 <div className={"ingredient-cards-title"}>
                     INGREDIENTS MISSING
                 </div>
-                <div className={"ingredient-cards"}>
+                <div className={"flex-center"}>
                     {createIngredientsMissingDisplay(recipe, cookQty, setCookQty, getMissingIngredients(recipe, cookQty), onMiniIngredientEditSaveClick)}
                 </div>
             </div>

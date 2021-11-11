@@ -5,7 +5,7 @@ const IngredientCard = ({cardData}) => {
     return (
         <div
             id={cardData.name}
-            className={"ingredient-card"}
+            className={"ingredient-card text-align-center"}
         >
             {generateImage(cardData)}
             {generateTextField(cardData, qty, setQty)}

@@ -19,12 +19,12 @@ export const CookingPotCookingPopup = ({processedIngredient, onCloseClick, onSav
                 {createTopBar(processedIngredient, onCloseClick, setUnsavedChanges, cookQty, maxQty)}
                 {createCookingField(processedIngredient, cookQty, setCookQty, maxQty)}
                 <div>
-                    <div className={"ingredients-div"}>
+                    <div className={"ingredients-div flex-center"}>
                         <div className={"ingredients-wrapper"}>
                             <div className={"ingredient-cards-title"}>
                                 INGREDIENTS REQUIRED
                             </div>
-                            <div className={"ingredient-cards"}>
+                            <div className={"flex-center"}>
                                 {createIngredientsRequiredDisplay(processedIngredient, cookQty, setCookQty, onMiniIngredientEditSaveClick)}
                             </div>
                         </div>
@@ -65,7 +65,7 @@ function createCookingField(processedIngredientDTO, cookQty, setCookQty, maxQty)
     return (
         <div className={"cooking-parent"}>
             <div className={"cooking-field-title"}>HOW MANY</div>
-            <div className={"cooking-body"}>
+            <div className={"cooking-body flex-center"}>
                 <div className={"cooking-field-div"}>
                     <input
                         id={"cooking-text-field"}
@@ -163,7 +163,7 @@ function createMissingIngredientsDiv(processedIngredient, cookQty, missingIngred
                 <div className={"ingredient-cards-title"}>
                     INGREDIENTS MISSING
                 </div>
-                <div className={"ingredient-cards"}>
+                <div className={"flex-center"}>
                     {createIngredientsMissingDisplay(cookQty, getMissingIngredients(processedIngredient, cookQty), onMiniIngredientEditSaveClick)}
                 </div>
             </div>

@@ -5,7 +5,7 @@ const CookbookCard = ({cardData, onCardClick}) => {
     return (
         <div
             id={cardData.name}
-            className={"cookbook-card"}
+            className={"cookbook-card text-align-center"}
             onClick={onCardClick}
         >
             {renderCheckmark(cardData.currentProficiency === cardData.rarity * 5)}

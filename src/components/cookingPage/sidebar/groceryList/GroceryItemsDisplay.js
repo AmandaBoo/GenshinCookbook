@@ -6,7 +6,7 @@ const GroceryItemsDisplay = ({ingredientDTOList, topBarText, onMiniIngredientEdi
     return (
         <div>
             {renderTopBar(topBarText)}
-            <div className={"grocery-list-cards-div"}>
+            <div className={"grocery-list-cards-div flex-center"}>
                 {renderIngredients(placeholderText, ingredientDTOList, onMiniIngredientEditSaveClick, isEnabled, showCompletedIng)}
             </div>
         </div>

@@ -4,7 +4,7 @@ import {NO_INGREDIENTS_PROCESS} from "../../../../constants/constants";
 
 export const CookingPotItemsDisplay = ({craftIngredientDTOList, onCraftIngredientCookSaveClick, onMiniIngredientEditSaveClick})=> {
     return (
-        <div className={"grocery-list-cards-div"}>
+        <div className={"grocery-list-cards-div flex-center"}>
             {renderCookingPotItems(craftIngredientDTOList, onCraftIngredientCookSaveClick, onMiniIngredientEditSaveClick)}
         </div>
     );

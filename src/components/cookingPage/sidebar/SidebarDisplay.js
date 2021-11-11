@@ -11,7 +11,7 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
                             onMiniIngredientEditSaveClick, onCraftIngredientCookSaveClick}) => {
     return (
         <div className={"sidebar-display"}>
-            <div className={"add-recipe-button-div"}>
+            <div className={"add-recipe-button-div flex-center"}>
                 <Button
                     text={"Recipes"}
                     onClick={() => setSelectedMenu(RECIPES_POPUP_ID)}

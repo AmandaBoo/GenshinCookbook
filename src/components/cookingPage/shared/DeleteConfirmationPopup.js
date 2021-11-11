@@ -6,7 +6,7 @@ import {SubModalComponent} from "../../shared/SubModalComponent";
 const DeleteConfirmationPopup = ({deleteMessage, closeClick, saveClick}) => {
     return (
         <SubModalComponent>
-            <div className={"delete-popup popup"}>
+            <div className={"delete-popup vertical-center popup"}>
                 {createTopBar(closeClick)}
                 {createBody(deleteMessage)}
                 {createSaveButton(saveClick)}
