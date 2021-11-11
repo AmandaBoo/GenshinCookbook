@@ -11,7 +11,7 @@ export const DonateIcon = ({onClick}) => {
                 src={'/images/icons/barbaraBlush.png'}
                 alt={'barbaraBlush'}
             />
-            <div className={"kofi-text-div"}>
+            <div className={"vertical-center"}>
                 <span className={"kofi-text"}>Donate<br/> {"<3"}</span>
             </div>
         </div>

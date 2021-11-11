@@ -12,7 +12,6 @@ export const DonatePopup = ({onCloseClick}) => {
                 {renderSubTitle()}
                 <div>
                     <KofiIcon/>
-                    <PatreonIcon/>
                 </div>
             </div>
         </SubModalComponent>

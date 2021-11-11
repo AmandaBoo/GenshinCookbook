@@ -4,7 +4,7 @@ import RecipeCard from "./RecipeCard";
 const RecipeCardDisplay = ({allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard, onCardCook, onMiniIngredientEditSaveClick}) => {
     return (
         <div>
-            <div className={"recipe-card-display"}>
+            <div className={"recipe-card-display flex-center"}>
                 {renderCards(allRecipes, removeRecipeCard, editRecipeCard, enableDisableRecipeCard, onCardCook, onMiniIngredientEditSaveClick)}
             </div>
         </div>

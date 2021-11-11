@@ -65,7 +65,7 @@ function hasUnsavedChanges(topBarText, curProf, customQty, recipeCard) {
 function createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty, recipeCard) {
     return (
         <div className={"input-field-div"}>
-            <div className={"inner-field-div"}>
+            <div className={"inner-field-div flex-center"}>
                 <input
                     id={"curProfInputField"}
                     type={"number"}
@@ -110,7 +110,7 @@ function renderMasteryCheckbox(recipeCard) {
 function createAmountToCookDiv(customQty, setCustomQty) {
     return (
         <div className={"input-field-div"}>
-            <div className={"inner-field-div"}>
+            <div className={"inner-field-div flex-center"}>
                 <input
                     id={"amtToCookInputField"}
                     type={"number"}

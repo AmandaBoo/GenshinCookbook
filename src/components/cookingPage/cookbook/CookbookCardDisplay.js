@@ -11,7 +11,7 @@ const CookbookCardDisplay = ({allCardData, onUpdate}) => {
             {/*<div className={"cards"}>*/}
             {/*    {renderMasteryFilter(filterByMastery, setFilterByMastery)}*/}
             {/*</div>*/}
-            <div className={"cards"}>
+            <div className={"cards flex-center"}>
                 {renderCards(allCardData, onUpdate)}
             </div>
         </div>

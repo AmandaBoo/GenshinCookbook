@@ -29,7 +29,7 @@ function createTopBar(onCloseClick) {
 
 function createBody() {
     return (
-        <div className={"message-modal-body"}>
+        <div className={"message-modal-body text-align-center"}>
             You have unsaved changes
             <br/>
             Would you like to save before closing?

@@ -1,6 +1,5 @@
 import React from 'react';
 import {KofiIcon} from "../shared/donate/KofiIcon";
-import {PatreonIcon} from "../shared/donate/PatreonIcon";
 
 export const WIPPage = () => {
     return (

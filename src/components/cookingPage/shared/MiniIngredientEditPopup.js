@@ -41,7 +41,7 @@ function renderTopBar(name, onCloseClick, setUnsavedChanges, addSubtractQty) {
 
 function renderIngredientImage(ingredient) {
     return (
-      <div className={"centered-div"}>
+      <div className={"flex-center"}>
           <img
               className={"ingredient-img"}
               src={ingredient.src}

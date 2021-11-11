@@ -26,7 +26,7 @@ const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable, 
 
 function createTopBar(recipeData, setPopup, onCardEnableDisable) {
     return (
-        <div className={"recipe-top-bar"}>
+        <div className={"recipe-top-bar flex-center"}>
             <>
                 <DeleteIcon
                     onClick={() => setPopup("trash")}
@@ -51,7 +51,7 @@ function createTopBar(recipeData, setPopup, onCardEnableDisable) {
 function createRecipeCardBody(recipeData, setPopup, onMiniIngredientEditSaveClick) {
     return (
         <>
-            <div className={`recipe-img-div ${!recipeData.enabled ? "disabled-card": ""}`}>
+            <div className={`flex-center ${!recipeData.enabled ? "disabled-card": ""}`}>
                 <img
                     className={"recipe-img"}
                     style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + recipeData.rarity + '_background_cropped.jpg")'}}
@@ -60,17 +60,17 @@ function createRecipeCardBody(recipeData, setPopup, onMiniIngredientEditSaveClic
                 />
             </div>
             <div className={`recipe-progress ${!recipeData.enabled ? "disabled-card": ""}`}>
-                <span className={"progress-field prof-field"}>
+                <span className={"progress-field flex-center prof-field"}>
                     <div className={"recipe-progress-fields"}>Proficiency :</div>
                     <p className={"recipe-data-field"}>{recipeData.currentProficiency}/{recipeData.rarity * 5}</p>
                 </span>
 
-                <span className={"progress-field"}>
+                <span className={"progress-field flex-center"}>
                     <div className={"recipe-progress-fields"}>Amount to Cook :</div>
                     <p className={"recipe-data-field"}>{recipeData.qty}/{recipeData.want}</p>
                 </span>
 
-                <div className={`cook-button-div ${!recipeData.enabled ? "disabled-card": ""}`}>
+                <div className={`cook-button-div flex-center ${!recipeData.enabled ? "disabled-card": ""}`}>
                     <button
                         className={`modal-button`}
                         onClick={() => setPopup("cooking")}
@@ -79,7 +79,7 @@ function createRecipeCardBody(recipeData, setPopup, onMiniIngredientEditSaveClic
                     </button>
                 </div>
             </div>
-            <div className={"recipe-ingredient-div"}>
+            <div className={"recipe-ingredient-div flex-center"}>
                 {renderIngredients(recipeData.craftsFrom, recipeData.enabled, onMiniIngredientEditSaveClick)}
             </div>
         </>

@@ -3,7 +3,7 @@ import IngredientCard from "./IngredientCard";
 
 const IngredientCardDisplay = ({cardData}) => {
     return (
-        <div className={"cards"}>
+        <div className={"cards flex-center"}>
             {renderCards(cardData)}
         </div>
     )
