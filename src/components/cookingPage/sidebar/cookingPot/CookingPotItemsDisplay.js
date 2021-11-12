@@ -12,18 +12,17 @@ export const CookingPotItemsDisplay = ({craftIngredientDTOList, onCraftIngredien
 
 function renderCookingPotItems(craftIngredientDTOList, onCraftIngredientCookSaveClick, onMiniIngredientEditSaveClick) {
     let craftIngredientCards = [];
+    craftIngredientDTOList = craftIngredientDTOList.filter(dto => dto.qtyToObtain > 0);
     if (craftIngredientDTOList !== undefined && craftIngredientDTOList.length !== 0) {
         craftIngredientDTOList.forEach(dto => {
-            if (dto.qtyToObtain > 0) {
-                craftIngredientCards.push(
-                    <CraftIngredientCard
-                        ingredientDTO={dto}
-                        onCraftIngredientCookSaveClick={(craftIngredientCooked, subIngredientsUsed) =>
-                            onCraftIngredientCookSaveClick(craftIngredientCooked, subIngredientsUsed)}
-                        onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
-                    />
-                )
-            }
+            craftIngredientCards.push(
+                <CraftIngredientCard
+                    ingredientDTO={dto}
+                    onCraftIngredientCookSaveClick={(craftIngredientCooked, subIngredientsUsed) =>
+                        onCraftIngredientCookSaveClick(craftIngredientCooked, subIngredientsUsed)}
+                    onMiniIngredientEditSaveClick={(ingredient, newQty) => onMiniIngredientEditSaveClick(ingredient, newQty)}
+                />
+            )
         });
         return craftIngredientCards;
     } else {

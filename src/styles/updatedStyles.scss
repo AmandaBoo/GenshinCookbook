@@ -221,6 +221,10 @@ body {
       .modal-button {
         font-size: $mini-font-size;
       }
+
+      .checkmark-overlay {
+        padding-top: 0.5em;
+      }
     }
 
     .recipe-img {
@@ -419,7 +423,6 @@ body {
 
   .checkmark-overlay {
     position: absolute;
-    color: $green-color;
   }
 }
 
@@ -509,10 +512,6 @@ body {
       .inner-field-div {
         margin-bottom: 0.4em;
       }
-    }
-
-    .checkmark-overlay {
-      color: $green-color;
     }
 
     .modal-button {
@@ -855,6 +854,10 @@ body {
 
 .default-color {
   color: $muted-color;
+}
+
+.checkmark-overlay {
+  color: $green-color;
 }
 
 ::-webkit-scrollbar {
