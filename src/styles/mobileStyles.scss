@@ -1,0 +1,52 @@
+
+//site nav bar needs to disappear and instead show a hamburger in the top left
+
+.site-nav-bar {
+
+  .mobile-nav-bar-links {
+    text-decoration: none;
+    color: $muted-color;
+    padding: 1em;
+    cursor: pointer;
+
+    &:hover, &:active {
+      color: $button-text-color;
+      background-color: $button-bg-color;
+      border-radius: $border-radius;
+    }
+  }
+
+  .vertical-center {
+    margin: 0;
+  }
+
+  .nav-bar-links {
+    display: none;
+  }
+
+  .side-menu {
+    display: inline
+  }
+
+  .side-panel {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $z1-bg-color;
+    overflow-x: hidden;
+    transition: 0.5s;
+
+    .side-panel-top-bar {
+      margin-bottom: 1em;
+    }
+
+    .svg-icon {
+      float: right;
+      width: 100%;
+    }
+  }
+
+}

@@ -12,4 +12,8 @@ $button-bg-color: #d6dcfa;
 
 $green-color: #aed848;
 
-@import 'updatedStyles.scss';
+@import 'desktopStyles.scss';
+
+@media only screen and (max-width: 768px) {
+  @import 'mobileStyles.scss';
+}

@@ -23,7 +23,7 @@ body {
   z-index: 1;
   background-color: $z1-bg-color;
 
-  .nav-bar-links {
+  .desktop-nav-bar-links {
     text-decoration: none;
     color: $muted-color;
     padding: 1em;
@@ -63,6 +63,12 @@ body {
 
   .inventory-icon {
     float: right;
+  }
+
+  .side-menu {
+    display: none;
+    color: $muted-color;
+    padding: 1em;
   }
 }
 
