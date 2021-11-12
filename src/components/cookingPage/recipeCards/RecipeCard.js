@@ -7,6 +7,7 @@ import PowerSettingsNewRoundedIcon from '@mui/icons-material/PowerSettingsNewRou
 import DeleteIcon from '@mui/icons-material/Delete';
 import * as Utils from "../../../util/utils";
 import {RecipeCookingPopup} from "./RecipeCookingPopup";
+import CheckCircleTwoToneIcon from '@mui/icons-material/CheckCircleTwoTone';
 
 const RecipeCard = ({recipeData, onCardDelete, onCardEdit, onCardEnableDisable, onCardCook, onMiniIngredientEditSaveClick}) => {
     const [popup, setPopup] = useState(null);
@@ -63,11 +64,13 @@ function createRecipeCardBody(recipeData, setPopup, onMiniIngredientEditSaveClic
                 <span className={"progress-field flex-center prof-field"}>
                     <div className={"recipe-progress-fields"}>Proficiency :</div>
                     <p className={"recipe-data-field"}>{recipeData.currentProficiency}/{recipeData.rarity * 5}</p>
+                    {renderCompletedCheckmark(recipeData.currentProficiency === recipeData.rarity * 5)}
                 </span>
 
                 <span className={"progress-field flex-center"}>
                     <div className={"recipe-progress-fields"}>Amount to Cook :</div>
                     <p className={"recipe-data-field"}>{recipeData.qty}/{recipeData.want}</p>
+                    {renderCompletedCheckmark(recipeData.qty === recipeData.want)}
                 </span>
 
                 <div className={`cook-button-div flex-center ${!recipeData.enabled ? "disabled-card": ""}`}>
@@ -166,6 +169,17 @@ function renderCookingPopup(recipe, popup, setPopup, onCardCook, onMiniIngredien
 
 function onCloseClick(setPopup) {
     setPopup(null);
+}
+
+function renderCompletedCheckmark(isComplete) {
+    if (isComplete) {
+        return (
+            <CheckCircleTwoToneIcon
+                className={'checkmark-overlay padding-left'}
+                fontSize={"small"}
+            />
+        );
+    }
 }
 
 export default RecipeCard;
