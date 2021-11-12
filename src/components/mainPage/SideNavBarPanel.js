@@ -6,13 +6,24 @@ export const SideNavBarPanel = ({onCloseClick}) => {
     return (
         <div className="side-panel">
             {renderTopBar(onCloseClick)}
-            <div className={'vertical-center'}>
-                <NavLink className={"mobile-nav-bar-links"} to={"/summary"} activeClassName={"nav-bar-link-selected"}>Summary</NavLink>
-                <NavLink className={"mobile-nav-bar-links"} to={"/cooking"} activeClassName={"nav-bar-link-selected"}>Cooking</NavLink>
-                <NavLink className={"mobile-nav-bar-links"} to={"/potions"} activeClassName={"nav-bar-link-selected"}>Potions</NavLink>
-                <NavLink className={"mobile-nav-bar-links"} to={"/smithing"} activeClassName={"nav-bar-link-selected"}>Smithing</NavLink>
+            <div>
+                {createNavLink('/summary', 'Summary', onCloseClick)}
+                {createNavLink('/cooking', 'Cooking', onCloseClick)}
+                {createNavLink('/potions', 'Potions', onCloseClick)}
+                {createNavLink('/smithing', 'Smithing', onCloseClick)}
             </div>
         </div>
+    );
+}
+
+function createNavLink(toLink, linkName, onCloseClick) {
+    return (
+        <NavLink className={"mobile-nav-bar-links"}
+                 to={toLink}
+                 activeClassName={"nav-bar-link-selected"}
+                 onClick={() => onCloseClick()}
+        >{linkName}
+        </NavLink>
     );
 }
 

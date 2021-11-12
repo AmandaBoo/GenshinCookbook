@@ -8,6 +8,9 @@
     color: $muted-color;
     padding: 1em;
     cursor: pointer;
+    display: block;
+    clear: right;
+    margin: 1em;
 
     &:hover, &:active {
       color: $button-text-color;
@@ -40,11 +43,11 @@
     transition: 0.5s;
 
     .side-panel-top-bar {
-      margin-bottom: 1em;
+      float: right;
+      clear: both;
     }
 
     .svg-icon {
-      float: right;
       width: 100%;
     }
   }
