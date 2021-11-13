@@ -13,6 +13,7 @@ body {
   color: $text-color;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .site-nav-bar {
@@ -48,6 +49,7 @@ body {
   .logo {
     position: relative;
     top: 10px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
   }
 
   .logo-link {
@@ -55,6 +57,7 @@ body {
     cursor: pointer;
     border-radius: 0;
     border: 3px solid $button-bg-color;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
   }
 
   .inner-nav-bar {
@@ -442,6 +445,7 @@ body {
   padding: 1em;
 
   transition: all .1s ease-in-out;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 
   &:hover {
     background-color: $button-action-bg-color;

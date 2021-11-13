@@ -12,6 +12,8 @@
     clear: right;
     margin: 1em;
 
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
     &:hover {
       color: $button-text-color;
       background-color: $button-bg-color;
