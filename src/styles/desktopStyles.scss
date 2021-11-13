@@ -823,10 +823,11 @@ body {
   border-radius: 5px;
   cursor: pointer;
 
-  &:not(.noHover):hover {
+  &:hover {
     color: $button-text-color;
     background-color: $button-bg-color;
   }
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .text-align-center {
