@@ -7,8 +7,8 @@ export const SideMenu = () => {
     return (
         <div className={'side-menu'}>
             <MenuRoundedIcon
-                style={{ fontSize: 30}}
-                className={'svg-icon'}
+                style={{ fontSize: 30, transform: 'translateY(25%)'}}
+                className={'svg-icon noHover'}
                 onClick={() => setNavBarOpen(true)}
             />
             {renderSideNavBar(isNavBarOpen, setNavBarOpen)}

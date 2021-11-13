@@ -823,7 +823,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
 
-  &:hover {
+  &:not(.noHover):hover {
     color: $button-text-color;
     background-color: $button-bg-color;
   }

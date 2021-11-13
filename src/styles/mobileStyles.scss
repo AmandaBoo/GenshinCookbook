@@ -12,7 +12,7 @@
     clear: right;
     margin: 1em;
 
-    &:hover, &:active {
+    &:hover {
       color: $button-text-color;
       background-color: $button-bg-color;
       border-radius: $border-radius;
@@ -28,11 +28,11 @@
   }
 
   .side-menu {
-    display: inline
+    display: inline;
   }
 
   .side-panel {
-    height: 100%;
+    height: 100vh;
     width: 250px;
     position: fixed;
     z-index: 1;
@@ -45,10 +45,6 @@
     .side-panel-top-bar {
       float: right;
       clear: both;
-    }
-
-    .svg-icon {
-      width: 100%;
     }
   }
 
