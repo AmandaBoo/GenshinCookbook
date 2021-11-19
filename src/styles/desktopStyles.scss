@@ -39,7 +39,7 @@ body {
   }
 
   .nav-bar-link-selected {
-    color: $button-text-color;
+    color: $button-text-color !important;
   }
 
   .nav-bar-link-default {
