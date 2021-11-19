@@ -1,6 +1,3 @@
-
-//site nav bar needs to disappear and instead show a hamburger in the top left
-
 .site-nav-bar {
 
   .mobile-nav-bar-links {
@@ -9,7 +6,7 @@
     padding: 1em;
     cursor: pointer;
     display: block;
-    clear: right;
+    clear: both;
     margin: 1em;
 
     -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -19,6 +16,23 @@
       background-color: $button-bg-color;
       border-radius: $border-radius;
     }
+  }
+
+  .inventory-icon {
+    position: absolute;
+    right: 0;
+    .modal-button {
+      margin-right: 5px;
+    }
+  }
+
+  .mobile-logo-link-container {
+    text-align: center;
+    width: 100%;
+  }
+
+  .inner-nav-bar {
+    display: flex;
   }
 
   .vertical-center {
@@ -31,8 +45,15 @@
 
   .side-menu {
     display: inline;
+    position: absolute;
+    padding: 0;
+    margin-left: 10px;
   }
 
+  .side-panel-container {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
   .side-panel {
     height: 100vh;
     width: 250px;
@@ -45,9 +66,17 @@
     transition: 0.5s;
 
     .side-panel-top-bar {
-      float: right;
+      float: left;
       clear: both;
     }
   }
 
+}
+
+.message-modal .cooking-popup {
+  min-width: 80vw;
+}
+
+.sidebar-card-display .dropdown-arrow {
+  display: block;
 }

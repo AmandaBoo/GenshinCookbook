@@ -10,9 +10,11 @@ export const MainNavBar = ({onInventorySave, onInventoryClose, rawIngredients, c
     return (
         <div className={"inner-nav-bar"}>
             <SideMenu/>
-            <NavLink className={"logo-link"} exact={true} to={"/"}>
-                <img className={"logo"} src={"./images/icons/genshinCookbook.svg"} alt={"genshinCookbookLogo"}/>
-            </NavLink>
+            <div className={'mobile-logo-link-container'}>
+                <NavLink className={"logo-link"} exact={true} to={"/"}>
+                    <img className={"logo"} src={"./images/icons/genshinCookbook.svg"} alt={"genshinCookbookLogo"}/>
+                </NavLink>
+            </div>
             <NavLink className={"desktop-nav-bar-links"} to={"/summary"} activeClassName={"nav-bar-link-selected"}>Summary</NavLink>
             <NavLink className={"desktop-nav-bar-links"} to={"/cooking"} activeClassName={"nav-bar-link-selected"}>Cooking</NavLink>
             <NavLink className={"desktop-nav-bar-links"} to={"/potions"} activeClassName={"nav-bar-link-selected"}>Potions</NavLink>

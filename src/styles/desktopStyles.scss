@@ -46,6 +46,10 @@ body {
     color: $muted-color;
   }
 
+  .mobile-logo-link-container {
+    display: inline;
+  }
+
   .logo {
     position: relative;
     top: 10px;
@@ -115,6 +119,23 @@ body {
       border-bottom: 1px solid $muted-color;
     }
 
+    .header-text-container {
+      display: flex;
+      padding: 1em;
+      border-bottom: 1px solid $muted-color;
+
+      .title {
+        text-align: center;
+        width: 100%;
+      }
+
+      .settings-container {
+        position: absolute;
+        right: 0;
+        margin-right: 10px;
+      }
+    }
+
     .top-bar {
       color: $text-color;
       border-top-right-radius: 16px;
@@ -150,6 +171,10 @@ body {
 
   .modal-button {
     margin: 0 0.5em;
+  }
+
+  .dropdown-display-none {
+    display: none;
   }
 }
 

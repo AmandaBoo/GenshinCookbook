@@ -7,6 +7,7 @@ export const SideNavBarPanel = ({onCloseClick}) => {
         <div className="side-panel">
             {renderTopBar(onCloseClick)}
             <div>
+                {createNavLink('/', 'Home', onCloseClick)}
                 {createNavLink('/summary', 'Summary', onCloseClick)}
                 {createNavLink('/cooking', 'Cooking', onCloseClick)}
                 {createNavLink('/potions', 'Potions', onCloseClick)}
@@ -20,6 +21,7 @@ function createNavLink(toLink, linkName, onCloseClick) {
     return (
         <NavLink className={"mobile-nav-bar-links"}
                  to={toLink}
+                 exact={true}
                  activeClassName={"nav-bar-link-selected"}
                  onClick={() => onCloseClick()}
         >{linkName}
