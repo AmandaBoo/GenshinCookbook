@@ -78,6 +78,16 @@
   min-width: 80vw;
 }
 
-.sidebar-card-display .dropdown-arrow {
-  display: block;
+.cooking-page-display {
+  grid-template-areas:
+    'sidebar sidebar'
+    'cards cards';
+
+  .sidebar-display {
+    width: 100%;
+
+    .recipe-popup-button {
+      width: 100%;
+    }
+  }
 }
