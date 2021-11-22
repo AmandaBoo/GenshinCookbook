@@ -18,7 +18,7 @@ const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onClos
             <div className={"edit-popup popup"}>
                 {createTopBar( topBarText + ": " + Utils.getTruncatedName(selectedRecipeCard.name, Utils.MAX_CONFIGURATION_NAME_LENGTH),
                     onCloseClick, setCurProf, setCustomQty, curProf, customQty, setUnsavedChanges, selectedRecipeCard, topBarText)}
-                <div className={"flex-center"}>
+                <div className={"flex-center qty-edit-popup-container"}>
                     {createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, setCustomQty, selectedRecipeCard)}
                     <div className={"ingredients-border"}/>
                     {createAmountToCookDiv(customQty, setCustomQty)}

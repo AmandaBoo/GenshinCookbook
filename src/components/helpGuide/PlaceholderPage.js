@@ -29,7 +29,7 @@ function createPlaceholderCharacterImage(imgPath) {
 function createMessageBody(onAddButtonClick, addButtonText, onHelpGuideButtonClick) {
     return (
         <div>
-            <div>
+            <div className={'text-align-center'}>
                 Welcome to the Cooking Page! It doesn't look like you're tracking any recipes...
             </div>
             {createAddActionBody(onAddButtonClick, addButtonText)}
