@@ -79,9 +79,8 @@
 }
 
 .cooking-page-display {
-  grid-template-areas:
-    'sidebar sidebar'
-    'cards cards';
+  display: flex;
+  flex-wrap: wrap;
 
   .sidebar-display {
     width: 100%;
