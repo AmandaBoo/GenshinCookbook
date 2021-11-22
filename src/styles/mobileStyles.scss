@@ -101,4 +101,8 @@
 
 .qty-edit-popup-container {
   flex-wrap: wrap;
+
+  .ingredients-border {
+    display: none;
+  }
 }
