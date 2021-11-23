@@ -100,7 +100,6 @@ export class CookingPage extends Component {
     render() {
         return (
             <div className={"cooking-page-display"}>
-                {this.renderRecipeDisplay()}
                 <SidebarDisplay
                     recipes={this.props.recipes}
                     rawIngredientsDTOList={storage.getIngredientToObtainDTOList(this.props.recipes, "raw")}
@@ -110,6 +109,7 @@ export class CookingPage extends Component {
                     onMiniIngredientEditSaveClick={(ingredient, ingredientQty) => this.onMiniIngredientEditSaveClick(ingredient, ingredientQty)}
                     onCraftIngredientCookSaveClick={(craftIngredientCooked, subIngredientsUsed) => this.onCraftIngredientCookSaveClick(craftIngredientCooked, subIngredientsUsed)}
                 />
+                {this.renderRecipeDisplay()}
             </div>
         );
     }

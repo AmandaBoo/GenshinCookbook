@@ -7,6 +7,8 @@ export const HELP_GUIDE_ID = "help-guide";
 export const FORAGEABLE = "FORAGEABLE";
 export const SHOP_ONLY = 'SHOP ONLY';
 export const PROCESSED = 'PROCESSED';
+export const GROCERY_LIST = 'GROCERY LIST';
+export const COOKING_POT = 'COOKING POT';
 
 export const NO_INGREDIENTS_FORAGE = 'No Ingredients Left to Collect~';
 export const NO_INGREDIENTS_SHOP = 'No Ingredients Left to Buy~';

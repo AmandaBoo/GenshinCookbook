@@ -13,6 +13,7 @@ body {
   color: $text-color;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .site-nav-bar {
@@ -23,7 +24,7 @@ body {
   z-index: 1;
   background-color: $z1-bg-color;
 
-  .nav-bar-links {
+  .desktop-nav-bar-links {
     text-decoration: none;
     color: $muted-color;
     padding: 1em;
@@ -38,11 +39,15 @@ body {
   }
 
   .nav-bar-link-selected {
-    color: $button-text-color;
+    color: $button-text-color !important;
   }
 
   .nav-bar-link-default {
     color: $muted-color;
+  }
+
+  .mobile-logo-link-container {
+    display: inline;
   }
 
   .logo {
@@ -63,6 +68,12 @@ body {
 
   .inventory-icon {
     float: right;
+  }
+
+  .side-menu {
+    display: none;
+    color: $muted-color;
+    padding: 1em;
   }
 }
 
@@ -108,6 +119,22 @@ body {
       border-bottom: 1px solid $muted-color;
     }
 
+    .header-text-container {
+      display: flex;
+      padding: 1em;
+      border-bottom: 1px solid $muted-color;
+
+      .title {
+        text-align: center;
+        width: 100%;
+      }
+
+      .settings-container {
+        float: right;
+        margin-right: 10px;
+      }
+    }
+
     .top-bar {
       color: $text-color;
       border-top-right-radius: 16px;
@@ -143,6 +170,10 @@ body {
 
   .modal-button {
     margin: 0 0.5em;
+  }
+
+  .dropdown-display-none {
+    display: none;
   }
 }
 
@@ -265,21 +296,19 @@ body {
   .modal-card {
     border-radius: 16px;
     background-color: $z1-bg-color;
-    width: 70%;
-    height: 100%;
     overflow-y: scroll;
-    margin-left: 15%;
+    width: 100%;
+    max-width: 1000px;
   }
 
   .modal-content {
     padding: 1em 0;
+    max-width: 700px;
   }
 
   .modal-nav-bar {
     display: flex;
     justify-content: space-between;
-    margin-left: 15%;
-    width: 70%;
     border-bottom: 3px solid $z1-shadow-color;
   }
 
@@ -308,8 +337,7 @@ body {
   .modal-content {
     margin: auto;
     padding: 20px;
-    width: 80%;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: $z1-bg-color;
   }
 
   .close {
@@ -378,8 +406,6 @@ body {
 .cards {
   flex-wrap: wrap;
   padding-top: 5px;
-  margin-left: 15%;
-  width: 70%;
 }
 
 .flex-center-container {
@@ -796,6 +822,7 @@ body {
 
 .help-container {
   height: 70vh;
+  width: 100%;
 
   .help-text-container {
     text-align: center;

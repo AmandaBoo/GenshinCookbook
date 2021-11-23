@@ -1,0 +1,117 @@
+.site-nav-bar {
+
+  .mobile-nav-bar-links {
+    text-decoration: none;
+    color: $muted-color;
+    padding: 1em;
+    cursor: pointer;
+    display: block;
+    clear: both;
+    margin: 1em;
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &:hover {
+      color: $button-text-color;
+      background-color: $button-bg-color;
+      border-radius: $border-radius;
+    }
+  }
+
+  .inventory-icon {
+    position: absolute;
+    right: 0;
+    .modal-button {
+      margin-right: 5px;
+    }
+  }
+
+  .mobile-logo-link-container {
+    text-align: center;
+    width: 100%;
+  }
+
+  .inner-nav-bar {
+    display: flex;
+  }
+
+  .vertical-center {
+    margin: 0;
+  }
+
+  .desktop-nav-bar-links {
+    display: none;
+  }
+
+  .side-menu {
+    display: inline;
+    position: absolute;
+    padding: 0;
+    margin-left: 10px;
+  }
+
+  .side-panel-container {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .side-panel {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $z1-bg-color;
+    overflow-x: hidden;
+    transition: 0.5s;
+
+    .side-panel-top-bar {
+      float: left;
+      clear: both;
+    }
+  }
+
+}
+
+.message-modal .cooking-popup {
+  min-width: 80vw;
+}
+
+.cooking-page-display {
+  display: flex;
+  flex-wrap: wrap;
+
+  .sidebar-display {
+    width: 100%;
+
+    .recipe-popup-button {
+      width: 100%;
+    }
+  }
+}
+
+.grocery-div {
+  margin-left: 10px;
+}
+
+.add-recipe-button-div {
+  margin-left: 10px;
+}
+
+.qty-edit-popup-container {
+  flex-wrap: wrap;
+
+  .ingredients-border {
+    display: none;
+  }
+}
+
+.inventory-icon .modal-button {
+  padding: 0.9em;
+}

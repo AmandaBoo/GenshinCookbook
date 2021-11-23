@@ -13,6 +13,7 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
         <div className={"sidebar-display"}>
             <div className={"add-recipe-button-div flex-center"}>
                 <Button
+                    classNames={'recipe-popup-button'}
                     text={"Recipes"}
                     onClick={() => setSelectedMenu(RECIPES_POPUP_ID)}
                 />

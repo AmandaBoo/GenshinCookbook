@@ -7,46 +7,74 @@ import * as storage from "../../../../storageInterfaces/storageInterface";
 import {GroceryListSettings} from "./GroceryListSettings";
 import {ToggleContainer} from "../../../shared/ToggleContainer";
 import {
-    FORAGEABLE,
+    FORAGEABLE, GROCERY_LIST,
     NO_INGREDIENTS_FORAGE, NO_INGREDIENTS_PROCESS,
     NO_INGREDIENTS_SHOP,
     PROCESSED,
     SHOP_ONLY
 } from "../../../../constants/constants";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const GroceryDisplay = ({rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick})=> {
+    const [isOpen, setIsOpen] = useState(true);
     const [isToggleOn, setIsToggleOn] = useState(false);
     const [doRenderSettings, setRenderSettings] = useState(false);
     const [showCompletedIng, setShowCompletedIng] = useState(storage.doShowCompletedIngredients());
 
     return (
         <div className={"sidebar-card-display"}>
-            {renderTopBar(setRenderSettings)}
+            {renderTopBar(setRenderSettings, isOpen, setIsOpen)}
             {renderToggleContainer(isToggleOn, setIsToggleOn)}
-            {renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick, showCompletedIng)}
+            {renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick, showCompletedIng, isOpen)}
             {renderSettingsPopup(doRenderSettings, setRenderSettings, showCompletedIng, setShowCompletedIng)}
         </div>
     )
 };
 
-function renderTopBar(setRenderSettings) {
+function renderTopBar(setRenderSettings, isOpen, setIsOpen) {
     return (
-      <div className={"top-bar header-text"}>
-          <div className={"large-font"}>
-            GROCERY LIST
+      <div className={"top-bar header-text-container"}>
+          {renderArrows(isOpen, setIsOpen)}
+          <div className={"large-font title"}>
+              {GROCERY_LIST}
           </div>
-          <SettingsIcon
-              className={"svg-icon"}
-              onClick={() => setRenderSettings(true)}
-          />
+          <div className={'settings-container'}>
+              <SettingsIcon
+                  className={"svg-icon"}
+                  onClick={() => setRenderSettings(true)}
+              />
+          </div>
       </div>
     );
 }
 
-function renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick, showCompletedIng) {
+function renderArrows(isOpen, setIsOpen) {
+    if (isOpen) {
+        return (
+            <div className={'dropdown-arrow'}>
+                <ExpandLessIcon
+                    className={'svg-icon'}
+                    onClick={() => setIsOpen(false)}
+                />
+            </div>
+        );
+    } else {
+        return (
+            <div className={'dropdown-arrow'}>
+                <ExpandMoreIcon
+                    className={'svg-icon'}
+                    onClick={() => setIsOpen(true)}
+                />
+            </div>
+        );
+    }
+}
+
+function renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick, showCompletedIng, isOpen) {
     if (isToggleOn) {
         return (
-            <>
+            <div className={`${isOpen? "" : "dropdown-display-none"}`}>
                 <GroceryItemsDisplay
                     topBarText={FORAGEABLE}
                     ingredientDTOList={findRawIngredientsForBothRawAndCrafted(rawIngredientsDTOList, craftedIngredientsDTOList)}
@@ -69,11 +97,11 @@ function renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredients
                     isEnabled={false}
                     placeholderText={NO_INGREDIENTS_PROCESS}
                 />
-            </>
+            </div>
         );
     } else {
         return (
-            <>
+            <div className={`${isOpen? "" : "dropdown-display-none"}`}>
                 <GroceryItemsDisplay
                     topBarText={FORAGEABLE}
                     ingredientDTOList={filterIngredients(rawIngredientsDTOList, craftedIngredientsDTOList, "forage")}
@@ -95,7 +123,7 @@ function renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredients
                     showCompletedIng={showCompletedIng}
                     placeholderText={NO_INGREDIENTS_PROCESS}
                 />
-            </>
+            </div>
         );
     }
 }
