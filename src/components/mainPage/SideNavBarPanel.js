@@ -4,14 +4,16 @@ import {NavLink} from "react-router-dom";
 
 export const SideNavBarPanel = ({onCloseClick}) => {
     return (
-        <div className="side-panel">
-            {renderTopBar(onCloseClick)}
-            <div>
-                {createNavLink('/', 'Home', onCloseClick)}
-                {createNavLink('/summary', 'Summary', onCloseClick)}
-                {createNavLink('/cooking', 'Cooking', onCloseClick)}
-                {createNavLink('/potions', 'Potions', onCloseClick)}
-                {createNavLink('/smithing', 'Smithing', onCloseClick)}
+        <div className={'side-panel-container'}>
+            <div className="side-panel">
+                {renderTopBar(onCloseClick)}
+                <div>
+                    {createNavLink('/', 'Home', onCloseClick)}
+                    {createNavLink('/summary', 'Summary', onCloseClick)}
+                    {createNavLink('/cooking', 'Cooking', onCloseClick)}
+                    {createNavLink('/potions', 'Potions', onCloseClick)}
+                    {createNavLink('/smithing', 'Smithing', onCloseClick)}
+                </div>
             </div>
         </div>
     );
