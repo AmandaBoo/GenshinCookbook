@@ -12,8 +12,8 @@ export const WIPPage = () => {
                         src={"./images/icons/paimonSpoop.png"}
                     />
                 </div>
-                <div className={'padding'}>Oops! This page isn't quite ready yet...</div>
-                <div className={'padding'}>In the meantime, you can support the development of the site at my KoFi or Paypal~</div>
+                <div className={'padding offside-font large-font'}>Oops! This page isn't quite ready yet...</div>
+                <div className={'padding offside-font large-font'}>In the meantime, you can support the development of the site at my KoFi or Paypal~</div>
                 <div className={'flex-center'}>
                     <DonateIcons/>
                 </div>
