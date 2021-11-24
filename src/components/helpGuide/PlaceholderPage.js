@@ -29,7 +29,7 @@ function createPlaceholderCharacterImage(imgPath) {
 function createMessageBody(onAddButtonClick, addButtonText, onHelpGuideButtonClick) {
     return (
         <div>
-            <div className={'text-align-center'}>
+            <div className={'text-align-center offside-font large-font'}>
                 Welcome to the Cooking Page! It doesn't look like you're tracking any recipes...
             </div>
             {createAddActionBody(onAddButtonClick, addButtonText)}
@@ -41,7 +41,7 @@ function createMessageBody(onAddButtonClick, addButtonText, onHelpGuideButtonCli
 function createAddActionBody(onAddButtonClick, addButtonText) {
     return (
         <div className={"help-text-container"}>
-            <span>
+            <span className={'offside-font large-font'}>
                 Click on
             </span>
             <button
@@ -50,7 +50,7 @@ function createAddActionBody(onAddButtonClick, addButtonText) {
             >
                 {addButtonText}
             </button>
-            <span>
+            <span className={'offside-font large-font'}>
                 to get started
             </span>
         </div>
