@@ -18,13 +18,13 @@ export const SORTED_FOOD_RECIPES = [
     "Lotus Flower Crisp", "Universal Peace", "Jueyun Guoba", "Fullmoon Egg", "Minty Meat Rolls", "Cured Pork Dry Hotpot",
     "Stir-Fried Shrimp", "Tricolor Dango", "Tonkotsu Ramen", "Tri-Flavored Skewer", "Imported Poultry", "Sakura Mochi", "Konda Cuisine",
     "Rice Cake Soup", "Sakura Tempura", "Rice Pudding", "Braised Meat", "Oncidium Tofu", "Invigorating Kitty Meal", "Omelette Rice",
-    "Taiyaki", "More-and-More",
+    "Taiyaki", "More-and-More", "Golden Chicken Burger", "Fragrant Mashed Potatoes",
 
     // 4 STAR
-    "Moon Pie", "Jade Parcels", "Golden Crab", "Tianshu Meat", "Chicken Tofu Pudding", "Butter Crab", "Chili-Mince Cornbread Buns",
+    "Moon Pie", "Jade Parcels", "Golden Crab", "Tianshu Meat", "Golden Fried Chicken", "Sashimi Platter", "Chicken Tofu Pudding", "Butter Crab", "Chili-Mince Cornbread Buns",
 
     // 5 STAR + TO SORT RECIPES
-    "Adeptus' Temptation", "Sashimi Platter", "Fragrant Mashed Potatoes", "Golden Chicken Burger", "Golden Fried Chicken"];
+    "Adeptus' Temptation"];
 
 
 export const MATERIALS = ["Apple", "Sunsettia", "Horsetail", "Mushroom", "Sweet Flower", "Carrot", "Radish", "Snapdragon",

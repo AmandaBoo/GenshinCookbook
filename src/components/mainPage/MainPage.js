@@ -7,12 +7,17 @@ import {WIPPage} from "../WIP/WIPPage";
 import {DonateIcon} from "../shared/donate/DonateIcon";
 import RouteChangeTracker from "../../analytics/RouteChangeTracker";
 import {MainNavBar} from "./MainNavBar";
+import {HomePage} from "../homePage/HomePage";
+import {FooterComponent} from "./FooterComponent";
+import {CookiePopup} from "./CookiePopup";
 
 const MainPage = () => {
     const [recipes, setRecipes] = useState(storage.getAllFoodRecipes());
     const [rawIngredients, setRawIngredients] = useState(storage.getAllRawIngredients);
     const [craftIngredients, setCraftIngredients] = useState(storage.getAllCraftedFoodIngredients(storage.getAllRawIngredients()));
     const [currentPopup, setCurrentPopup] = useState("");
+    const [isCookiePopupOpen, setCookiePopupStatus] = useState(false);
+
     return (
         <div>
             <Router>
@@ -44,16 +49,36 @@ const MainPage = () => {
                     </Switch>
                 </div>
                 <RouteChangeTracker/>
+                {renderFooter(setCookiePopupStatus)}
             </Router>
+            {renderCookiePopup(isCookiePopupOpen, setCookiePopupStatus)}
             <DonateIcon onClick={() => setCurrentPopup("kofi-icon")}/>
             {renderDonatePopup(currentPopup, setCurrentPopup)}
         </div>
     );
 }
 
+function renderFooter(setCookiePopupStatus) {
+    return (
+        <FooterComponent
+            onCookieClick={() => setCookiePopupStatus(true)}
+        />
+    )
+}
+
+function renderCookiePopup(isCookiePopupOpen, setCookiePopupStatus) {
+    if (isCookiePopupOpen) {
+        return (
+            <CookiePopup
+                onCloseClick={() => setCookiePopupStatus(false)}
+            />
+        );
+    }
+}
+
 function renderHomePage() {
     return (
-        <WIPPage/>
+        <HomePage/>
     );
 }
 

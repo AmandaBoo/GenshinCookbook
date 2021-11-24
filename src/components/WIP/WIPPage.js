@@ -1,5 +1,5 @@
 import React from 'react';
-import {KofiIcon} from "../shared/donate/KofiIcon";
+import {DonateIcons} from "../shared/donate/DonateIcons";
 
 export const WIPPage = () => {
     return (
@@ -13,9 +13,9 @@ export const WIPPage = () => {
                     />
                 </div>
                 <div className={'padding'}>Oops! This page isn't quite ready yet...</div>
-                <div className={'padding'}>In the meantime, you can support the development of the site at my KoFi~</div>
+                <div className={'padding'}>In the meantime, you can support the development of the site at my KoFi or Paypal~</div>
                 <div className={'flex-center'}>
-                    <KofiIcon/>
+                    <DonateIcons/>
                 </div>
             </div>
 

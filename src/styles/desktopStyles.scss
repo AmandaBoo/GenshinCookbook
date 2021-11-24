@@ -340,20 +340,6 @@ body {
     background-color: $z1-bg-color;
   }
 
-  .close {
-    color: $muted-color;
-    float: right;
-    width: 35px;
-    height: 35px;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:hover {
-      color: $button-text-color;
-      background-color: $button-bg-color;
-    }
-  }
-
   .save-cancel-buttons {
     display: flex;
 
@@ -406,12 +392,6 @@ body {
 .cards {
   flex-wrap: wrap;
   padding-top: 5px;
-}
-
-.flex-center-container {
-  display: flex;
-  justify-content: center;
-  margin: 1em;
 }
 
 .flex-center {
@@ -605,6 +585,9 @@ body {
     }
 
     .ingredients-div {
+      display: flex;
+      justify-content: center;
+
       .ingredients-border {
         border-right: 1px solid $z1-shadow-color;
       }
@@ -766,9 +749,10 @@ body {
 .donate-icon-div {
   margin: 1em;
 
-  .kofi-icon {
+  .donate-icon {
     padding-bottom: 1em;
-    width: 200px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     transition: all .2s ease-in-out;
 
@@ -815,13 +799,17 @@ body {
   font-size: 20px;
 }
 
+.xlarge-font {
+  font-size: 50px;
+}
+
 .placeholder-div {
   text-align: center;
-  height: 70vh;
+  height: 90vh;
 }
 
 .help-container {
-  height: 70vh;
+  height: 90vh;
   width: 100%;
 
   .help-text-container {
@@ -887,12 +875,76 @@ body {
   color: $green-color;
 }
 
+.home-page-container {
+  min-height: calc(100vh - 100px);
+
+  .welcome-banner {
+    padding-bottom: 20px;
+  }
+
+  .message-body {
+    padding-bottom: 60px;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 60px;
+  background-color: $sub-bg-color;
+  align-items: center;
+
+  .footer-icons {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+  }
+
+  .discord-icon {
+    width: 35px;
+    height: 30px;
+    cursor: pointer;
+  }
+}
+
+.home-page-img {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.offside-font {
+  font-family: 'Offside', sans-serif;
+}
+
+.top-bar {
+  border-bottom: 1px solid $z1-shadow-color;
+}
+
+.close {
+  color: $muted-color;
+  float: right;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    color: $button-text-color;
+    background-color: $button-bg-color;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 16px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #dde3ec;
+  background-color: $sub-bg-color;
   border-radius: 9px;
   border: 4px solid transparent;
   background-clip: content-box;
