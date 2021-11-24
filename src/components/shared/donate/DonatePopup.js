@@ -1,7 +1,7 @@
 import React from 'react';
 import CloseButton from "../buttons/CloseButton";
 import {SubModalComponent} from "../SubModalComponent";
-import {KofiIcon} from "./KofiIcon";
+import {DonateIcons} from "./DonateIcons";
 import {PatreonIcon} from "./PatreonIcon";
 
 export const DonatePopup = ({onCloseClick}) => {
@@ -11,7 +11,7 @@ export const DonatePopup = ({onCloseClick}) => {
                 {renderTopBar(onCloseClick)}
                 {renderSubTitle()}
                 <div>
-                    <KofiIcon/>
+                    <DonateIcons/>
                 </div>
             </div>
         </SubModalComponent>

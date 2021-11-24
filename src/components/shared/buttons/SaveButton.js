@@ -2,7 +2,7 @@ import React from 'react';
 
 const SaveButton = ({saveText = "Save", onSaveClick, isDisabled = false}) => {
     return (
-        <div className="flex-center-container">
+        <div className="flex-center">
             <button
                 id={"save-btn"}
                 className={`

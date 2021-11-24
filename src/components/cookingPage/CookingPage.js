@@ -97,6 +97,14 @@ export class CookingPage extends Component {
         }
     }
 
+    createFooter() {
+        return (
+            <div className={'footer'}>
+
+            </div>
+        )
+    }
+
     render() {
         return (
             <div className={"cooking-page-display"}>

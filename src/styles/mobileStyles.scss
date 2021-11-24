@@ -115,3 +115,13 @@
 .inventory-icon .modal-button {
   padding: 0.9em;
 }
+
+.message-modal .cooking-popup .ingredients-div {
+  display: block;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
