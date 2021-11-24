@@ -862,6 +862,10 @@ body {
   padding-left: 0.5em;
 }
 
+.padding-top {
+  margin-top: 0.5em;
+}
+
 .paimon {
   width: 200px;
   height: 200px;
@@ -889,6 +893,11 @@ body {
   .image-container {
     display: flex;
     justify-content: center;
+  }
+
+  .sparkling-icon {
+    width: 30px;
+    height: 30px;
   }
 }
 

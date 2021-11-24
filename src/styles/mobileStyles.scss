@@ -123,5 +123,16 @@
 .image-container {
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.home-page-img {
+  width: 100px;
+  height: 100px;
+}
+
+@media only screen and (max-width: 480px) {
+  .kofi-icon-div {
+    display: none;
+  }
 }
