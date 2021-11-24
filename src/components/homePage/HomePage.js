@@ -14,7 +14,7 @@ export const HomePage = () => {
 
 function createWelcomeBanner() {
     return (
-        <div className={'offside-font xlarge-font welcome-banner padding-left padding-right'}>
+        <div className={'offside-font xlarge-font welcome-banner padding-left padding-right padding-top'}>
             {WELCOME}
         </div>
     )
@@ -31,7 +31,19 @@ function createMessageBody() {
 function createCards() {
     return (
         <div>
-            <p className={'offside-font'}>&#x2728; {"Explore new recipes added in 2.2"} &#x2728;</p>
+            <div className={'flex-center'}>
+                <img
+                    className={'sparkling-icon'}
+                    src={'./images/icons/sparkling.png'}
+                    alt={'sparkling icon'}
+                />
+                <div className={'offside-font vertical-center'}>{"Explore new recipes added in 2.2"}</div>
+                <img
+                    className={'sparkling-icon'}
+                    src={'./images/icons/sparkling.png'}
+                    alt={'sparkling icon'}
+                />
+            </div>
             <div className={'image-container'}>
                 {createCookingPageItem('./images/foodRecipe/berryMizuManjuu.png')}
                 {createCookingPageItem('./images/foodRecipe/radishAndFishStew.png')}
