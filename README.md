@@ -37,8 +37,9 @@
 
 **How to Update Templates (example given for Food Recipes)**
 - Grab relevant images and place them in public/images/foodRecipes
-- Open foodRecipesTemplate.json
-- Add new json entry by copying old entries and only change name (the order must match the in-game UI for Recipes only)
+- Open foodRecipesTemplate.json and add new json entry by copying old entries and only changing the name
+- Update the uiOrder.js with the new food entries (follow the order of the in-game UI)
 - When finished, open foodRecipesTemplate.js and replace the string in there with the contents of the foodRecipesTemplate.json
 - Open up the wiki for relevant new recipes as well as foodRecipesDescription.js and add new entry for each food recipe
-- Clean out local storage and refresh page to see changes
+- Test migration by refreshing screen (new recipes should appear without issues and pre-configured old recipes should still be valid)
+- Test new user flow by cleaning out local storage and refreshing (new recipes should appear without issues)
