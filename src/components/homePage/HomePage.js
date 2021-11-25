@@ -1,6 +1,7 @@
 import React from 'react';
 import {WELCOME, WELCOME_MESSAGE} from "../../constants/constants";
 import {NavLink} from "react-router-dom";
+import IconButton from "@mui/material/IconButton";
 
 export const HomePage = () => {
     return (
@@ -56,11 +57,13 @@ function createCards() {
 function createCookingPageItem(imageSrc) {
     return (
         <NavLink to={'/cooking'}>
-            <img
-                src={imageSrc}
-                alt={'newrecipe'}
-                className={'home-page-img'}
-            />
+            <IconButton>
+                <img
+                    src={imageSrc}
+                    alt={'newrecipe'}
+                    className={'home-page-img'}
+                />
+            </IconButton>
         </NavLink>
     )
 }
