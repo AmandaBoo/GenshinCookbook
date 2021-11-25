@@ -1,4 +1,5 @@
 import React from 'react';
+import IconButton from "@mui/material/IconButton";
 
 export const FooterComponent = ({onCookieClick}) => {
     return (
@@ -14,11 +15,13 @@ export const FooterComponent = ({onCookieClick}) => {
 function createKofiIcon() {
     return (
         <a href={"https://ko-fi.com/kitbon" } target="_blank">
-            <img
-                src={'./images/icons/kofiRound.png'}
-                alt={'kofi-icon'}
-                className={'footer-icons padding-right'}
-            />
+            <IconButton>
+                <img
+                    src={'./images/icons/kofiRound.png'}
+                    alt={'kofi-icon'}
+                    className={'footer-icons'}
+                />
+            </IconButton>
         </a>
     );
 }
@@ -26,33 +29,39 @@ function createKofiIcon() {
 function createPaypalIcon() {
     return (
         <a href={"https://ko-fi.com/kitbon" } target="_blank">
-            <img
-                src={'./images/icons/paypal.png'}
-                alt={'paypal-icon'}
-                className={'footer-icons padding-right'}
-            />
+            <IconButton>
+                <img
+                    src={'./images/icons/paypal.png'}
+                    alt={'paypal-icon'}
+                    className={'footer-icons'}
+                />
+            </IconButton>
         </a>
     );
 }
 
 function createCookiePolicyIcon(onCookieClick) {
     return (
-        <img
-            src={'./images/icons/cookie.png'}
-            alt={'cookie-icon'}
-            className={'footer-icons padding-right'}
-            onClick={() => onCookieClick()}
-        />
+        <IconButton>
+            <img
+                src={'./images/icons/cookie.png'}
+                alt={'cookie-icon'}
+                className={'footer-icons'}
+                onClick={() => onCookieClick()}
+            />
+        </IconButton>
     );
 }
 
 function createDiscordIcon() {
     return (
-        <img
-            src={'./images/icons/discordIcon.png'}
-            alt={'discord-icon'}
-            className={'discord-icon'}
-        />
+        <IconButton>
+            <img
+                src={'./images/icons/discordIcon.png'}
+                alt={'discord-icon'}
+                className={'discord-icon'}
+            />
+        </IconButton>
     );
 }
 

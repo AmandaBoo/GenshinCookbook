@@ -33,7 +33,7 @@ export function getAllRawIngredients() {
                 "  }\n" +
                 "]\n";
 
-            localStorage.rawIngredients = RAW_INGREDIENTS_TEMPLATE.substring(0, RAW_INGREDIENTS_TEMPLATE.length - 3) + newIngEntry;
+            localStorage.rawIngredients = rawIngredientsLocal.substring(0, RAW_INGREDIENTS_TEMPLATE.length - 3) + newIngEntry;
             getAllRawIngredients();
         }});
     return allRawIngredients;
@@ -59,7 +59,7 @@ export function getAllCraftedFoodIngredients(allRawIngredients) {
                 "  }\n" +
                 "]\n";
 
-            localStorage.foodIngredients = FOOD_INGREDIENTS_TEMPLATE.substring(0, FOOD_INGREDIENTS_TEMPLATE.length - 3) + newIngEntry;
+            localStorage.foodIngredients = craftedFoodIngredientsLocal.substring(0, FOOD_INGREDIENTS_TEMPLATE.length - 3) + newIngEntry;
             getAllCraftedFoodIngredients(allRawIngredients);
         }
     });
@@ -151,7 +151,7 @@ function updateLocalStorageForFoodRecipes() {
             "  \"rank\":0\n" +
             "}\n";
 
-            localStorage.foodRecipes = FOOD_RECIPES_TEMPLATE.substring(0, FOOD_RECIPES_TEMPLATE.length - 2) + newRecipeEntry + "]";
+            localStorage.foodRecipes = foodRecipeLocal.substring(0, FOOD_RECIPES_TEMPLATE.length - 2) + newRecipeEntry + "]";
             updateLocalStorageForFoodRecipes();
         }
     });

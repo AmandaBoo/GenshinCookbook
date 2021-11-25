@@ -1,6 +1,7 @@
 import React from 'react';
 import {WELCOME, WELCOME_MESSAGE} from "../../constants/constants";
 import {NavLink} from "react-router-dom";
+import IconButton from "@mui/material/IconButton";
 
 export const HomePage = () => {
     return (
@@ -37,7 +38,7 @@ function createCards() {
                     src={'./images/icons/sparkling.png'}
                     alt={'sparkling icon'}
                 />
-                <div className={'offside-font vertical-center'}>{"Explore new recipes added in 2.2"}</div>
+                <div className={'offside-font vertical-center'}>{"Explore new recipes added in 2.3"}</div>
                 <img
                     className={'sparkling-icon'}
                     src={'./images/icons/sparkling.png'}
@@ -45,10 +46,9 @@ function createCards() {
                 />
             </div>
             <div className={'image-container'}>
-                {createCookingPageItem('./images/foodRecipe/berryMizuManjuu.png')}
-                {createCookingPageItem('./images/foodRecipe/radishAndFishStew.png')}
-                {createCookingPageItem('./images/foodRecipe/wakatakeni.png')}
-                {createCookingPageItem('./images/foodRecipe/sobaNoodles.png')}
+                {createCookingPageItem('./images/foodRecipe/unagiChazuke.png')}
+                {createCookingPageItem('./images/foodRecipe/sakuraShrimpCrackers.png')}
+                {createCookingPageItem('./images/foodRecipe/fivePickledTreasures.png')}
             </div>
         </div>
     )
@@ -57,11 +57,13 @@ function createCards() {
 function createCookingPageItem(imageSrc) {
     return (
         <NavLink to={'/cooking'}>
-            <img
-                src={imageSrc}
-                alt={'newrecipe'}
-                className={'home-page-img'}
-            />
+            <IconButton>
+                <img
+                    src={imageSrc}
+                    alt={'newrecipe'}
+                    className={'home-page-img'}
+                />
+            </IconButton>
         </NavLink>
     )
 }

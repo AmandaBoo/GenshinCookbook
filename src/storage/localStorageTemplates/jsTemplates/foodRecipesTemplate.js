@@ -997,5 +997,35 @@ export const FOOD_RECIPES_TEMPLATE = "[{\n" +
     "  \"hasCard\":false,\n" +
     "  \"enabled\":true,\n" +
     "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Unagi Chazuke\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Five Pickled Treasures\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Sakura Shrimp Crackers\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
     "}\n" +
     "]";

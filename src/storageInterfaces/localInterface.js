@@ -7,10 +7,6 @@ export function setUpLocalStorage() {
         localStorage.rawIngredients = RAW_INGREDIENTS_TEMPLATE;
         localStorage.foodIngredients = FOOD_INGREDIENTS_TEMPLATE;
         localStorage.foodRecipes = FOOD_RECIPES_TEMPLATE;
-    }
-
-    // TODO : MOVE THIS INTO THE localStorageNotSet BLOCK ONCE RYE'S LOCAL IS FIXED
-    if (localStorage.showCompletedIng === undefined) {
         localStorage.showCompletedIng = "false";
     }
     // checkStorage();
@@ -19,7 +15,8 @@ export function setUpLocalStorage() {
 function localStorageNotSet() {
     return localStorage.rawIngredients === undefined
         || localStorage.foodIngredients === undefined
-        || localStorage.foodRecipes === undefined;
+        || localStorage.foodRecipes === undefined
+        || localStorage.showCompleteIng === undefined;
 }
 
 export function getRawIngredientsFromLocalStorage() {
