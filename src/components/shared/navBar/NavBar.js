@@ -3,9 +3,6 @@ import {NavBarTab} from "./NavBarTab";
 import CloseButton from "../buttons/CloseButton";
 
 export class NavBar extends Component {
-    /* PROPS
-    * selectedTab, navBarTabList
-    * */
     constructor(props) {
         super(props);
     }
@@ -40,9 +37,11 @@ export class NavBar extends Component {
                 <div>
                     {this.renderNavBarTabs()}
                 </div>
-                <CloseButton
-                    onCloseClick={() => this.props.onCloseClick()}
-                />
+                <div className={'vertical-center'}>
+                    <CloseButton
+                        onCloseClick={() => this.props.onCloseClick()}
+                    />
+                </div>
             </div>
         );
     }

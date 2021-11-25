@@ -6,7 +6,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 export const CookingPotDisplay = ({craftIngredientsDTOList, onCraftIngredientCookSaveClick, onMiniIngredientEditSaveClick})=> {
     const [isOpen, setIsOpen] = useState(true);
     return (
-        <div className={"sidebar-card-display"}>
+        <div className={"sidebar-card-display donate-bottom-padding"}>
             {renderTopBar(isOpen, setIsOpen)}
             {renderCookingPotItems(craftIngredientsDTOList, onCraftIngredientCookSaveClick, onMiniIngredientEditSaveClick, isOpen)}
         </div>

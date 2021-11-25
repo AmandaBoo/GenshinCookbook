@@ -109,7 +109,6 @@ body {
     background-color: $z1-bg-color;
 
     .sidebar-card-display {
-      padding-bottom: 70px;
       margin-bottom: 10px;
     }
 
@@ -926,6 +925,11 @@ body {
   cursor: pointer;
 }
 
+.cookie-png {
+  width: 35px;
+  height: 35px;
+}
+
 .offside-font {
   font-family: 'Offside', sans-serif;
 }
@@ -934,11 +938,29 @@ body {
   border-bottom: 1px solid $z1-shadow-color;
 }
 
+.font-bold {
+  font-weight: bold;
+}
+
 .close {
   color: $muted-color;
   float: right;
-  width: 35px;
-  height: 35px;
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: -10px;
+
+  &:hover {
+    color: $button-text-color;
+    background-color: $button-bg-color;
+  }
+}
+
+.cookie-popup-close {
+  color: $muted-color;
+  width: 35px !important;
+  height: 35px !important;
   border-radius: 5px;
   cursor: pointer;
 
@@ -946,6 +968,14 @@ body {
     color: $button-text-color;
     background-color: $button-bg-color;
   }
+}
+
+.border-bottom {
+  border-bottom: 1px solid $muted-color;
+}
+
+.donate-bottom-padding {
+  padding-bottom: 70px;
 }
 
 ::-webkit-scrollbar {
