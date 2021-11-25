@@ -997,5 +997,35 @@
   "hasCard":false,
   "enabled":true,
   "rank":0
+},
+{
+  "name":"Unagi Chazuke",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Five Pickled Treasures",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Sakura Shrimp Crackers",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
 }
 ]

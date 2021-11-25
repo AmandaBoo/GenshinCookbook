@@ -2273,5 +2273,79 @@ export const FOOD_RECIPES = {
                 ]
             ]
         },
+        {
+            name: "Unagi Chazuke",
+            src: "./images/foodRecipe/unagiChazuke.png",
+            type: "Defense",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Unagi Meat",
+                        qty:4
+                    },
+                    {
+                        name: "Rice",
+                        qty:3
+                    },
+                    {
+                        name:"Seagrass",
+                        qty:3
+                    },
+                    {
+                        name:"Salt",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Sakura Shrimp Crackers",
+            src: "./images/foodRecipe/sakuraShrimpCrackers.png",
+            type: "Defense",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Shrimp Meat",
+                        qty:3
+                    },
+                    {
+                        name: "Potato",
+                        qty:3
+                    },
+                    {
+                        name:'Sakura Bloom',
+                        qty:2
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Five Pickled Treasures",
+            src: "./images/foodRecipe/fivePickledTreasures.png",
+            type: "Defense",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Radish",
+                        qty:2
+                    },
+                    {
+                        name: "Carrot",
+                        qty:2
+                    },
+                    {
+                        name:'Lavender Melon',
+                        qty:2
+                    },
+                    {
+                        name:'Seagrass',
+                        qty:2
+                    }
+                ]
+            ]
+        },
     ]
 }
