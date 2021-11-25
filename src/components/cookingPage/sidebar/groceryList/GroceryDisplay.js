@@ -23,7 +23,7 @@ const GroceryDisplay = ({rawIngredientsDTOList, craftedIngredientsDTOList, onMin
     const [showCompletedIng, setShowCompletedIng] = useState(storage.doShowCompletedIngredients());
 
     return (
-        <div className={"sidebar-card-display"}>
+        <div className={"sidebar-card-display donate-bottom-padding"}>
             {renderTopBar(setRenderSettings, isOpen, setIsOpen)}
             {renderToggleContainer(isToggleOn, setIsToggleOn)}
             {renderGroceryList(isToggleOn, rawIngredientsDTOList, craftedIngredientsDTOList, onMiniIngredientEditSaveClick, showCompletedIng, isOpen)}
