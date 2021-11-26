@@ -28,7 +28,7 @@ function generateImage(ingredientData) {
     );
 }
 function resetFieldOnLeave(value, setter, data) {
-    if (value === "") {
+    if (value === "" || value < 0) {
         setter(0); //state of field set to 0
         data.qty = 0; //inventory obj qty set to 0
     }

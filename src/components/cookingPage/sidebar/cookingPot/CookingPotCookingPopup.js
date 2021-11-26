@@ -102,7 +102,7 @@ function setValuesIfValid(eventValue, setter) {
 }
 
 function resetFieldOnLeave(value, setter) {
-    if (value === "") {
+    if (value === "" || value < 0) {
         setter(0);
     }
 }

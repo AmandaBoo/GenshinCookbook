@@ -129,7 +129,7 @@ function updateOnAddSubtractChange(eventValue, setAddSubtractQty, currentInvento
 }
 
 function resetFieldOnLeave(value, setter) {
-    if (value === "") {
+    if (value === "" || value < 0) {
         setter(0);
     }
 }
