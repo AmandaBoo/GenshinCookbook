@@ -5,7 +5,7 @@ export const PatreonIcon = () => {
         <div className={"donate-icon-div flex-center"}>
             <a href={"https://www.patreon.com/"} target={"_blank"}>
                 <img
-                    src={"./images/icons/patreonIcon.png"}
+                    src={"./images/iconsDisplay/patreonIcon.png"}
                     alt={"Patreon Icon"}
                     className={"patreon-icon"}
                 />

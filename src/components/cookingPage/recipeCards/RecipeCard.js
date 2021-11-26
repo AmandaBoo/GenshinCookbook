@@ -56,7 +56,7 @@ function createRecipeCardBody(recipeData, setPopup, onMiniIngredientEditSaveClic
                 <img
                     className={"recipe-img"}
                     style={{backgroundImage: 'url("./images/backgrounds/Rarity_' + recipeData.rarity + '_background_cropped.jpg")'}}
-                    src={recipeData.src}
+                    src={"./images/foodRecipeCardIcon/" + recipeData.src + ".png"}
                     alt={recipeData.name}
                 />
             </div>

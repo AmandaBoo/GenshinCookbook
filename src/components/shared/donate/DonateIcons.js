@@ -5,14 +5,14 @@ export const DonateIcons = () => {
         <div className={"donate-icon-div flex-center"}>
             <a href={"https://ko-fi.com/kitbon" } target="_blank">
                 <img
-                    src={"./images/icons/kofiRound.png"}
+                    src={"./images/iconsDisplay/kofiRound.png"}
                     alt={"Kofi Icon"}
                     className={"donate-icon padding-right"}
                 />
             </a>
             <a href={"https://ko-fi.com/kitbon" } target="_blank">
                 <img
-                    src={"./images/icons/paypal.png"}
+                    src={"./images/iconsDisplay/paypal.png"}
                     alt={"Paypal Icon"}
                     className={"donate-icon"}
                 />

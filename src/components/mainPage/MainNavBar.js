@@ -12,7 +12,7 @@ export const MainNavBar = ({onInventorySave, onInventoryClose, rawIngredients, c
             <SideMenu/>
             <div className={'mobile-logo-link-container'}>
                 <NavLink className={"logo-link"} exact={true} to={"/"}>
-                    <img className={"logo"} src={"./images/icons/genshinCookbook.svg"} alt={"genshinCookbookLogo"}/>
+                    <img className={"logo"} src={"./images/iconsDisplay/genshinCookbook.svg"} alt={"genshinCookbookLogo"}/>
                 </NavLink>
             </div>
             <NavLink className={"desktop-nav-bar-links"} to={"/summary"} activeClassName={"nav-bar-link-selected"}>Summary</NavLink>

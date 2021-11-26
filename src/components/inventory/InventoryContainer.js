@@ -10,13 +10,13 @@ export const InventoryContainer = ({rawIngredients, craftIngredients, onSaveClic
     const [hasUnsavedChanges, setUnsavedChanges] = useState(false);
     const [selectedTab, setSelectedTab] = useState('materials-tab');
 
-    const imgSrcList = ["images/icons/ingredientsIcon.png"];
+    const imgSrcList = ["images/iconsDisplay/ingredientsIcon.png"];
     const imgSrcListIds = ["materials-tab"];
 
     return (
         <ModalComponent>
             <NavBar
-                navBarIcon={'./images/icons/inventoryIcon.png'}
+                navBarIcon={'./images/iconsDisplay/inventoryIcon.png'}
                 imgSrcList={imgSrcList}
                 imgSrcListIds={imgSrcListIds}
                 selectedTab={selectedTab}

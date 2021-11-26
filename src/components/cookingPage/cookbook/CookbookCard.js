@@ -24,7 +24,7 @@ function generateImage(recipeData) {
     return (
         <img
             className={"card-icon"}
-            src={recipeData.src}
+            src={"./images/foodRecipeManagerIcon/" + recipeData.src + ".png"}
             alt={recipeData.name}
         />
     );

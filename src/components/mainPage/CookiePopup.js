@@ -31,7 +31,7 @@ function renderTopBar(onCloseClick) {
 
 function renderCookieIcon() {
     return (
-        <img src={'./images/icons/cookie.png'} alt={'cookie'} className={'cookie-png'}/>
+        <img src={'./images/iconsDisplay/cookie.png'} alt={'cookie'} className={'cookie-png'}/>
 
     );
 }

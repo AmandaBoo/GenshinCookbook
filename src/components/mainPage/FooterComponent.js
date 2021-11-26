@@ -17,7 +17,7 @@ function createKofiIcon() {
         <a href={"https://ko-fi.com/kitbon" } target="_blank">
             <IconButton>
                 <img
-                    src={'./images/icons/kofiRound.png'}
+                    src={'./images/iconsDisplay/kofiRound.png'}
                     alt={'kofi-icon'}
                     className={'footer-icons'}
                 />
@@ -31,7 +31,7 @@ function createPaypalIcon() {
         <a href={"https://ko-fi.com/kitbon" } target="_blank">
             <IconButton>
                 <img
-                    src={'./images/icons/paypal.png'}
+                    src={'./images/iconsDisplay/paypal.png'}
                     alt={'paypal-icon'}
                     className={'footer-icons'}
                 />
@@ -44,7 +44,7 @@ function createCookiePolicyIcon(onCookieClick) {
     return (
         <IconButton>
             <img
-                src={'./images/icons/cookie.png'}
+                src={'./images/iconsDisplay/cookie.png'}
                 alt={'cookie-icon'}
                 className={'footer-icons'}
                 onClick={() => onCookieClick()}
@@ -57,7 +57,7 @@ function createDiscordIcon() {
     return (
         <IconButton>
             <img
-                src={'./images/icons/discordIcon.png'}
+                src={'./images/iconsDisplay/discordIcon.png'}
                 alt={'discord-icon'}
                 className={'discord-icon'}
             />

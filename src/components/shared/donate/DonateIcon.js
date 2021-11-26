@@ -8,7 +8,7 @@ export const DonateIcon = ({onClick}) => {
         >
             <img
                 className={'kofi-icon'}
-                src={'/images/icons/barbaraBlush.png'}
+                src={'/images/iconsDisplay/barbaraBlush.png'}
                 alt={'barbaraBlush'}
             />
             <div className={"vertical-center"}>

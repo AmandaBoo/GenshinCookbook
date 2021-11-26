@@ -35,20 +35,20 @@ function createCards() {
             <div className={'flex-center'}>
                 <img
                     className={'sparkling-icon'}
-                    src={'./images/icons/sparkling.png'}
+                    src={'./images/iconsDisplay/sparkling.png'}
                     alt={'sparkling icon'}
                 />
                 <div className={'offside-font vertical-center'}>{"Explore new recipes added in 2.3"}</div>
                 <img
                     className={'sparkling-icon'}
-                    src={'./images/icons/sparkling.png'}
+                    src={'./images/iconsDisplay/sparkling.png'}
                     alt={'sparkling icon'}
                 />
             </div>
             <div className={'image-container'}>
-                {createCookingPageItem('./images/foodRecipe/unagiChazuke.png')}
-                {createCookingPageItem('./images/foodRecipe/sakuraShrimpCrackers.png')}
-                {createCookingPageItem('./images/foodRecipe/fivePickledTreasures.png')}
+                {createCookingPageItem('./images/foodRecipeOrigional/unagiChazuke.png')}
+                {createCookingPageItem('./images/foodRecipeOrigional/sakuraShrimpCrackers.png')}
+                {createCookingPageItem('./images/foodRecipeOrigional/fivePickledTreasures.png')}
             </div>
         </div>
     )

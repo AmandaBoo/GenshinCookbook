@@ -77,7 +77,7 @@ export class CookingPage extends Component {
         if (this.getRecipeCards().length === 0) {
             return (
                 <PlaceholderPage
-                    imgPath={"./images/icons/xianlingFlowers.png"}
+                    imgPath={"./images/iconsDisplay/xianlingFlowers.png"}
                     addButtonText={"Recipes"}
                     onAddButtonClick={() => this.setSelectedMenu(RECIPES_POPUP_ID)}
                     onHelpGuideButtonClick={() => this.setSelectedMenu(HELP_GUIDE_ID)}
