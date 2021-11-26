@@ -123,7 +123,7 @@ function createProgressDisplay(cookQty, recipe) {
 }
 
 function resetFieldOnLeave(value, setter) {
-    if (value === "") {
+    if (value === "" || value < 0) {
         setter(0);
     }
 }
