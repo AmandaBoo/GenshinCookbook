@@ -5,7 +5,7 @@ export const FooterComponent = ({onCookieClick}) => {
     return (
         <footer className={'footer flex-center'}>
             {createKofiIcon()}
-            {createPaypalIcon()}
+            {/*{createPaypalIcon()}*/}
             {createCookiePolicyIcon(onCookieClick)}
             {createDiscordIcon()}
         </footer>
@@ -55,13 +55,15 @@ function createCookiePolicyIcon(onCookieClick) {
 
 function createDiscordIcon() {
     return (
-        <IconButton>
-            <img
-                src={'./images/iconsDisplay/discordIcon.png'}
-                alt={'discord-icon'}
-                className={'discord-icon'}
-            />
-        </IconButton>
+        <a href={"https://discord.gg/tbek347eTy" } target="_blank">
+            <IconButton>
+                <img
+                    src={'./images/iconsDisplay/discordIcon.png'}
+                    alt={'discord-icon'}
+                    className={'discord-icon'}
+                />
+            </IconButton>
+        </a>
     );
 }
 

@@ -12,7 +12,7 @@ export const DonateIcon = ({onClick}) => {
                 alt={'barbaraBlush'}
             />
             <div className={"vertical-center"}>
-                <span className={"kofi-text"}>Donate<br/> {"<3"}</span>
+                <span className={"kofi-text"}>Donate<br/>&#9829;</span>
             </div>
         </div>
     );
