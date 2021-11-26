@@ -10,13 +10,13 @@ export const DonateIcons = () => {
                     className={"donate-icon padding-right"}
                 />
             </a>
-            <a href={"https://ko-fi.com/kitbon" } target="_blank">
-                <img
-                    src={"./images/iconsDisplay/paypal.png"}
-                    alt={"Paypal Icon"}
-                    className={"donate-icon"}
-                />
-            </a>
+            {/*<a href={"https://ko-fi.com/kitbon" } target="_blank">*/}
+            {/*    <img*/}
+            {/*        src={"./images/iconsDisplay/paypal.png"}*/}
+            {/*        alt={"Paypal Icon"}*/}
+            {/*        className={"donate-icon"}*/}
+            {/*    />*/}
+            {/*</a>*/}
         </div>
     );
 }

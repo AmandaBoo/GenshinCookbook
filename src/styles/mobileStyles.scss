@@ -136,3 +136,9 @@
     display: none;
   }
 }
+
+@media only screen and (max-height: 320px) {
+  .placeholder-div, .help-container {
+    height: initial;
+  }
+}
