@@ -16,7 +16,7 @@ function localStorageNotSet() {
     return localStorage.rawIngredients === undefined
         || localStorage.foodIngredients === undefined
         || localStorage.foodRecipes === undefined
-        || localStorage.showCompleteIng === undefined;
+        || localStorage.showCompletedIng === undefined;
 }
 
 export function getRawIngredientsFromLocalStorage() {

@@ -2,7 +2,7 @@ export const FOOD_RECIPES = {
     foodRecipes: [
         {
             name: "Steak",
-            src: "./images/foodRecipe/steak.png",
+            src: "steak",
             type: "Revive",
             rarity: 1,
             craftsFrom: [
@@ -16,7 +16,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Triple-Layered Consommé",
-            src: "./images/foodRecipe/tripleLayeredConsomme.png",
+            src: "tripleLayeredConsomme",
             type: "Defense",
             rarity: 3,
             craftsFrom: [
@@ -42,7 +42,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Tricolor Dango",
-            src: "./images/foodRecipe/tricolorDango.png",
+            src: "tricolorDango",
             type: "Heal",
             rarity: 3,
             craftsFrom: [
@@ -68,7 +68,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Egg Roll",
-            src: "./images/foodRecipe/eggRoll.png",
+            src: "eggRoll",
             type: "Revive",
             rarity: 1,
             craftsFrom: [
@@ -86,7 +86,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Konda Cuisine",
-            src: "./images/foodRecipe/kondaCuisine.png",
+            src: "kondaCuisine",
             type:"Revive",
             rarity: 3,
             craftsFrom: [
@@ -112,7 +112,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Adeptus' Temptation",
-            src: "./images/foodRecipe/adeptusTemptation.png",
+            src: "adeptusTemptation",
             type: "Attack",
             rarity: 5,
             craftsFrom: [
@@ -138,7 +138,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Adventurer's Breakfast Sandwich",
-            src: "./images/foodRecipe/adventurersBreakfastSandwich.png",
+            src: "adventurersBreakfastSandwich",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -160,7 +160,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Almond Tofu",
-            src: "./images/foodRecipe/almondTofu.png",
+            src: "almondTofu",
             type: "Attack",
             rarity: 2,
             craftsFrom: [
@@ -182,7 +182,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Bamboo Shoot Soup",
-            src: "./images/foodRecipe/bambooShootSoup.png",
+            src: "bambooShootSoup",
             rarity: 3,
             craftsFrom: [
                 [
@@ -203,7 +203,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Barbatos Ratatouille",
-            src: "./images/foodRecipe/barbatosRatatouille.png",
+            src: "barbatosRatatouille",
             type: "Adventurer",
             rarity:3 ,
             craftsFrom: [
@@ -225,7 +225,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Bird Egg Sushi",
-            src: "./images/foodRecipe/birdEggSushi.png",
+            src: "birdEggSushi",
             type: "Heal",
             rarity: 1,
             craftsFrom: [
@@ -243,7 +243,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Black-Back Perch Stew",
-            src: "./images/foodRecipe/blackBackPerchStew.png",
+            src: "blackBackPerchStew",
             type: "Heal",
             rarity: 3,
             craftsFrom: [
@@ -269,7 +269,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Braised Meat",
-            src: "./images/foodRecipe/braisedMeat.png",
+            src: "braisedMeat",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -295,7 +295,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Butter Crab",
-            src: "./images/foodRecipe/butterCrab.png",
+            src: "butterCrab",
             rarity: 4,
             craftsFrom: [
                 [
@@ -320,7 +320,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Calla Lily Seafood Soup",
-            src: "./images/foodRecipe/callaLilySeafoodSoup.png",
+            src: "callaLilySeafoodSoup",
             rarity: 3,
             craftsFrom: [
                 [
@@ -341,7 +341,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Chicken-Mushroom Skewer",
-            src: "./images/foodRecipe/chickenMushroomSkewer.png",
+            src: "chickenMushroomSkewer",
             type: "Defense",
             rarity: 1,
             craftsFrom: [
@@ -359,7 +359,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Chicken Tofu Pudding",
-            src: "./images/foodRecipe/chickenTofuPudding.png",
+            src: "chickenTofuPudding",
             type: "Attack",
             rarity: 4,
             craftsFrom: [
@@ -385,7 +385,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Chili-Mince Cornbread Buns",
-            src: "./images/foodRecipe/chiliMinceCornbreadBuns.png",
+            src: "chiliMinceCornbreadBuns",
             type: "Defense",
             rarity: 4,
             craftsFrom: [
@@ -411,7 +411,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Cold Cut Platter",
-            src: "./images/foodRecipe/coldCutPlatter.png",
+            src: "coldCutPlatter",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -437,7 +437,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Come and Get It",
-            src: "./images/foodRecipe/comeAndGetIt.png",
+            src: "comeAndGetIt",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -463,7 +463,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Crab, Ham & Veggie Bake",
-            src: "./images/foodRecipe/crabHamVeggieBake.png",
+            src: "crabHamVeggieBake",
             type: "Revive",
             rarity: 3,
             craftsFrom: [
@@ -489,7 +489,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Crab Roe Kourayaki",
-            src: "./images/foodRecipe/crabRoeKourayaki.png",
+            src: "crabRoeKourayaki",
             type: "Attack",
             rarity: 2,
             craftsFrom: [
@@ -507,7 +507,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Crab Roe Tofu",
-            src: "./images/foodRecipe/crabRoeTofu.png",
+            src: "crabRoeTofu",
             type: "Revive",
             rarity: 2,
             craftsFrom: [
@@ -525,7 +525,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Cream Stew",
-            src: "./images/foodRecipe/creamStew.png",
+            src: "creamStew",
             type: "Adventurer",
             rarity: 2,
             craftsFrom: [
@@ -547,7 +547,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Crispy Potato Shrimp Platter",
-            src: "./images/foodRecipe/crispyPotatoShrimpPlatter.png",
+            src: "crispyPotatoShrimpPlatter",
             type: "Heal",
             rarity:3 ,
             craftsFrom: [
@@ -573,7 +573,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Crystal Shrimp",
-            src: "./images/foodRecipe/crystalShrimp.png",
+            src: "crystalShrimp",
             type: "Heal",
             rarity: 2,
             craftsFrom: [
@@ -595,7 +595,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Cured Pork Dry Hotpot",
-            src: "./images/foodRecipe/curedPorkDryHotpot.png",
+            src: "curedPorkDryHotpot",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -621,7 +621,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Dry-Braised Salted Fish",
-            src: "./images/foodRecipe/dryBraisedSaltedFish.png",
+            src: "dryBraisedSaltedFish",
             type: "Heal",
             rarity: 1,
             craftsFrom: [
@@ -639,7 +639,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Fisherman's Toast",
-            src: "./images/foodRecipe/fishermansToast.png",
+            src: "fishermansToast",
             type: "Defense",
             rarity: 2,
             craftsFrom: [
@@ -665,7 +665,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Flaming Red Bolognese",
-            src: "./images/foodRecipe/flamingRedBolognese.png",
+            src: "flamingRedBolognese",
             type: "Heal",
             rarity: 2,
             craftsFrom: [
@@ -687,7 +687,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Fragrant Mashed Potatoes",
-            src: "./images/foodRecipe/fragrantMashedPotatoes.png",
+            src: "fragrantMashedPotatoes",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -709,7 +709,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Fried Radish Balls",
-            src: "./images/foodRecipe/friedRadishBalls.png",
+            src: "friedRadishBalls",
             type: "Attack",
             rarity: 2,
             craftsFrom: [
@@ -731,7 +731,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Fullmoon Egg",
-            src: "./images/foodRecipe/fullmoonEgg.png",
+            src: "fullmoonEgg",
             type: "Revive",
             rarity: 3,
             craftsFrom: [
@@ -757,7 +757,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Golden Chicken Burger",
-            src: "./images/foodRecipe/goldenChickenBurger.png",
+            src: "goldenChickenBurger",
             type: "Heal",
             rarity:3,
             craftsFrom: [
@@ -783,7 +783,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Golden Crab",
-            src: "./images/foodRecipe/goldenCrab.png",
+            src: "goldenCrab",
             type: "Defense",
             rarity: 4,
             craftsFrom: [
@@ -809,7 +809,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Golden Fried Chicken",
-            src: "./images/foodRecipe/goldenFriedChicken.png",
+            src: "goldenFriedChicken",
             type: "Attack",
             rarity: 4,
             craftsFrom: [
@@ -835,7 +835,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Golden Shrimp Balls",
-            src: "./images/foodRecipe/goldenShrimpBalls.png",
+            src: "goldenShrimpBalls",
             type: "Revive",
             rarity: 3,
             craftsFrom: [
@@ -857,7 +857,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Goulash",
-            src: "./images/foodRecipe/goulash.png",
+            src: "goulash",
             type: "Adventurer",
             rarity: 2,
             craftsFrom: [
@@ -879,7 +879,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Grilled Tiger Fish",
-            src: "./images/foodRecipe/grilledTigerFish.png",
+            src: "grilledTigerFish",
             type: "Heal",
             rarity: 1,
             craftsFrom: [
@@ -897,7 +897,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Grilled Unagi Fillet",
-            src: "./images/foodRecipe/grilledUnagiFillet.png",
+            src: "grilledUnagiFillet",
             type: "Heal",
             rarity: 2,
             craftsFrom: [
@@ -915,7 +915,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Imported Poultry",
-            src: "./images/foodRecipe/importedPoultry.png",
+            src: "importedPoultry",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -941,7 +941,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Invigorating Kitty Meal",
-            src: "./images/foodRecipe/invigoratingKittyMeal.png",
+            src: "invigoratingKittyMeal",
             type: "Heal",
             rarity: 3,
             craftsFrom: [
@@ -967,7 +967,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Jade Parcels",
-            src: "./images/foodRecipe/jadeParcels.png",
+            src: "jadeParcels",
             type: "Attack",
             rarity: 4,
             craftsFrom: [
@@ -993,7 +993,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Jewelry Soup",
-            src: "./images/foodRecipe/jewelrySoup.png",
+            src: "jewelrySoup",
             type: "Defense",
             rarity: 2,
             craftsFrom: [
@@ -1015,7 +1015,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Jueyun Chili Chicken",
-            src: "./images/foodRecipe/jueyunChiliChicken.png",
+            src: "jueyunChiliChicken",
             type: "Attack",
             rarity: 2,
             craftsFrom: [
@@ -1037,7 +1037,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Jueyun Guoba",
-            src: "./images/foodRecipe/jueyunGuoba.png",
+            src: "jueyunGuoba",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -1063,7 +1063,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Lotus Flower Crisp",
-            src: "./images/foodRecipe/lotusFlowerCrisp.png",
+            src: "lotusFlowerCrisp",
             type: "Defense",
             rarity: 3,
             craftsFrom: [
@@ -1089,7 +1089,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Lotus Seed and Bird Egg Soup",
-            src: "./images/foodRecipe/lotusSeedAndBirdEggSoup.png",
+            src: "lotusSeedAndBirdEggSoup",
             type: "Stamina",
             rarity: 2,
             craftsFrom: [
@@ -1111,7 +1111,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Matsutake Meat Rolls",
-            src: "./images/foodRecipe/matsutakeMeatRolls.png",
+            src: "matsutakeMeatRolls",
             type: "Heal",
             rarity: 2,
             craftsFrom: [
@@ -1129,7 +1129,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Mint Jelly",
-            src: "./images/foodRecipe/mintJelly.png",
+            src: "mintJelly",
             type: "Heal",
             rarity: 1,
             craftsFrom: [
@@ -1147,7 +1147,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Mint Salad",
-            src: "./images/foodRecipe/mintSalad.png",
+            src: "mintSalad",
             type: "Attack",
             rarity: 2,
             craftsFrom: [
@@ -1165,7 +1165,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Minty Meat Rolls",
-            src: "./images/foodRecipe/mintyMeatRolls.png",
+            src: "mintyMeatRolls",
             type: "Stamina",
             rarity: 3,
             craftsFrom: [
@@ -1187,7 +1187,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Miso Soup",
-            src: "./images/foodRecipe/misoSoup.png",
+            src: "misoSoup",
             type: "Heal",
             rarity: 1,
             craftsFrom: [
@@ -1205,7 +1205,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Mixed Yakisoba",
-            src: "./images/foodRecipe/mixedYakisoba.png",
+            src: "mixedYakisoba",
             type: "Revive",
             rarity: 2,
             craftsFrom: [
@@ -1227,7 +1227,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Mondstadt Grilled Fish",
-            src: "./images/foodRecipe/mondstadtGrilledFish.png",
+            src: "mondstadtGrilledFish",
             type: "Revive",
             rarity: 1,
             craftsFrom: [
@@ -1245,7 +1245,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Mondstadt Hash Brown",
-            src: "./images/foodRecipe/mondstadtHashBrown.png",
+            src: "mondstadtHashBrown",
             type: "Heal",
             rarity: 3,
             craftsFrom: [
@@ -1267,7 +1267,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Moon Pie",
-            src: "./images/foodRecipe/moonPie.png",
+            src: "moonPie",
             type: "Defense",
             rarity: 4,
             craftsFrom: [
@@ -1293,7 +1293,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Mora Meat",
-            src: "./images/foodRecipe/moraMeat.png",
+            src: "moraMeat",
             type: "Revive",
             rarity: 1,
             craftsFrom: [
@@ -1311,7 +1311,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "More-and-More",
-            src: "./images/foodRecipe/moreAndMore.png",
+            src: "moreAndMore",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -1337,7 +1337,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Mushroom Pizza",
-            src: "./images/foodRecipe/mushroomPizza.png",
+            src: "mushroomPizza",
             type: "Heal",
             rarity: 3,
             craftsFrom: [
@@ -1363,7 +1363,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Noodles with Mountain Delicacies",
-            src: "./images/foodRecipe/noodlesWithMountainDelicacies.png",
+            src: "noodlesWithMountainDelicacies",
             type: "Stamina",
             rarity: 2,
             craftsFrom: [
@@ -1385,7 +1385,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Northern Apple Stew",
-            src: "./images/foodRecipe/northernAppleStew.png",
+            src: "northernAppleStew",
             type: "Heal",
             rarity: 3,
             craftsFrom: [
@@ -1411,7 +1411,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Northern Smoked Chicken",
-            src: "./images/foodRecipe/northernSmokedChicken.png",
+            src: "northernSmokedChicken",
             type: "Stamina",
             rarity: 2,
             craftsFrom: [
@@ -1433,7 +1433,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Omelette Rice",
-            src: "./images/foodRecipe/omeletteRice.png",
+            src: "omeletteRice",
             type: "Adventurer",
             rarity: 3,
             craftsFrom: [
@@ -1459,7 +1459,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Oncidium Tofu",
-            src: "./images/foodRecipe/oncidiumTofu.png",
+            src: "oncidiumTofu",
             type: "Stamina",
             rarity: 3,
             craftsFrom: [
@@ -1485,7 +1485,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Onigiri",
-            src: "./images/foodRecipe/onigiri.png",
+            src: "onigiri",
             type: "Heal",
             rarity: 2,
             craftsFrom: [
@@ -1507,7 +1507,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Pile 'Em Up",
-            src: "./images/foodRecipe/pileEmUp.png",
+            src: "pileEmUp",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -1533,7 +1533,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Qingce Stir Fry",
-            src: "./images/foodRecipe/qingceStirFry.png",
+            src: "qingceStirFry",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -1559,7 +1559,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Radish Veggie Soup",
-            src: "./images/foodRecipe/radishVeggieSoup.png",
+            src: "radishVeggieSoup",
             type: "Heal",
             rarity: 1,
             craftsFrom: [
@@ -1577,7 +1577,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Rice Buns",
-            src: "./images/foodRecipe/riceBuns.png",
+            src: "riceBuns",
             type: "Heal",
             rarity: 1,
             craftsFrom: [
@@ -1595,7 +1595,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Rice Cake Soup",
-            src: "./images/foodRecipe/riceCakeSoup.png",
+            src: "riceCakeSoup",
             type: "Defense",
             rarity: 3,
             craftsFrom: [
@@ -1621,7 +1621,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Rice Pudding",
-            src: "./images/foodRecipe/ricePudding.png",
+            src: "ricePudding",
             type: "Stamina",
             rarity: 3,
             craftsFrom: [
@@ -1647,7 +1647,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Sakura Mochi",
-            src: "./images/foodRecipe/sakuraMochi.png",
+            src: "sakuraMochi",
             type: "Revive",
             rarity: 3,
             craftsFrom: [
@@ -1669,7 +1669,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Sakura Tempura",
-            src: "./images/foodRecipe/sakuraTempura.png",
+            src: "sakuraTempura",
             type: "Defense",
             rarity: 3,
             craftsFrom: [
@@ -1695,7 +1695,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Sashimi Platter",
-            src: "./images/foodRecipe/sashimiPlatter.png",
+            src: "sashimiPlatter",
             type: "Attack",
             rarity: 4,
             craftsFrom: [
@@ -1721,7 +1721,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Satisfying Salad",
-            src: "./images/foodRecipe/satisfyingSalad.png",
+            src: "satisfyingSalad",
             type: "Attack",
             rarity: 2,
             craftsFrom: [
@@ -1747,7 +1747,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Sautéed Matsutake",
-            src: "./images/foodRecipe/sauteedMatsutake.png",
+            src: "sauteedMatsutake",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -1773,7 +1773,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Squirrel Fish",
-            src: "./images/foodRecipe/squirrelFish.png",
+            src: "squirrelFish",
             type: "Heal",
             rarity: 3,
             craftsFrom: [
@@ -1799,7 +1799,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Sticky Honey Roast",
-            src: "./images/foodRecipe/stickyHoneyRoast.png",
+            src: "stickyHoneyRoast",
             type: "Adventurer",
             rarity: 3,
             craftsFrom: [
@@ -1821,7 +1821,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Stir-Fried Filet",
-            src: "./images/foodRecipe/stirFriedFilet.png",
+            src: "stirFriedFilet",
             type: "Revive",
             rarity: 1,
             craftsFrom: [
@@ -1839,7 +1839,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Stir-Fried Fish Noodles",
-            src: "./images/foodRecipe/stirFriedFishNoodles.png",
+            src: "stirFriedFishNoodles",
             type: "Heal",
             rarity: 2,
             craftsFrom: [
@@ -1861,7 +1861,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Stir-Fried Shrimp",
-            src: "./images/foodRecipe/stirFriedShrimp.png",
+            src: "stirFriedShrimp",
             type: "Defense",
             rarity: 3,
             craftsFrom: [
@@ -1883,7 +1883,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Stone Harbor Delicacies",
-            src: "./images/foodRecipe/stoneHarborDelicacies.png",
+            src: "stoneHarborDelicacies",
             type: "Attack",
             rarity: 2,
             craftsFrom: [
@@ -1905,7 +1905,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Sunshine Sprat",
-            src: "./images/foodRecipe/sunshineSprat.png",
+            src: "sunshineSprat",
             type: "Defense",
             rarity: 3,
             craftsFrom: [
@@ -1931,7 +1931,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Sweet Madame",
-            src: "./images/foodRecipe/sweetMadame.png",
+            src: "sweetMadame",
             type: "Heal",
             rarity: 2,
             craftsFrom: [
@@ -1949,7 +1949,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Sweet Shrimp Sushi",
-            src: "./images/foodRecipe/sweetShrimpSushi.png",
+            src: "sweetShrimpSushi",
             type: "Revive",
             rarity: 1,
             craftsFrom: [
@@ -1967,7 +1967,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Taiyaki",
-            src: "./images/foodRecipe/taiyaki.png",
+            src: "taiyaki",
             type: "Heal",
             rarity: 3,
             craftsFrom: [
@@ -1993,7 +1993,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Tea Break Pancake",
-            src: "./images/foodRecipe/teaBreakPancake.png",
+            src: "teaBreakPancake",
             type: "Revive",
             rarity: 2,
             craftsFrom: [
@@ -2015,7 +2015,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Teyvat Fried Egg",
-            src: "./images/foodRecipe/teyvatFriedEgg.png",
+            src: "teyvatFriedEgg",
             type: "Revive",
             rarity: 1,
             craftsFrom: [
@@ -2029,7 +2029,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Tianshu Meat",
-            src: "./images/foodRecipe/tianshuMeat.png",
+            src: "tianshuMeat",
             type: "Attack",
             rarity: 4,
             craftsFrom: [
@@ -2055,7 +2055,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Tonkotsu Ramen",
-            src: "./images/foodRecipe/tonkotsuRamen.png",
+            src: "tonkotsuRamen",
             type: "Heal",
             rarity: 3,
             craftsFrom: [
@@ -2081,7 +2081,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Tri-Flavored Skewer",
-            src: "./images/foodRecipe/triFlavoredSkewer.png",
+            src: "triFlavoredSkewer",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
@@ -2107,7 +2107,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Tuna Sushi",
-            src: "./images/foodRecipe/tunaSushi.png",
+            src: "tunaSushi",
             type: "Heal",
             rarity: 2,
             craftsFrom: [
@@ -2125,7 +2125,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Universal Peace",
-            src: "./images/foodRecipe/universalPeace.png",
+            src: "universalPeace",
             type: "Heal",
             rarity: 3,
             craftsFrom: [
@@ -2151,7 +2151,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Vegetarian Abalone",
-            src: "./images/foodRecipe/vegetarianAbalone.png",
+            src: "vegetarianAbalone",
             type: "Revive",
             rarity: 2,
             craftsFrom: [
@@ -2169,7 +2169,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Zhongyuan Chop Suey",
-            src: "./images/foodRecipe/zhongyuanChopSuey.png",
+            src: "zhongyuanChopSuey",
             type: "Adventurer",
             rarity: 3,
             craftsFrom: [
@@ -2195,7 +2195,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Radish and Fish Stew",
-            src: "./images/foodRecipe/radishAndFishStew.png",
+            src: "radishAndFishStew",
             type: "Attack",
             rarity: 2,
             craftsFrom: [
@@ -2217,7 +2217,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Berry Mizu Manjuu",
-            src: "./images/foodRecipe/berryMizuManjuu.png",
+            src: "berryMizuManjuu",
             type: "Heal",
             rarity: 2,
             craftsFrom: [
@@ -2239,7 +2239,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Soba Noodles",
-            src: "./images/foodRecipe/sobaNoodles.png",
+            src: "sobaNoodles",
             type: "Heal",
             rarity: 1,
             craftsFrom: [
@@ -2257,7 +2257,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Wakatakeni",
-            src: "./images/foodRecipe/wakatakeni.png",
+            src: "wakatakeni",
             type: "Defense",
             rarity: 2,
             craftsFrom: [
@@ -2275,7 +2275,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Unagi Chazuke",
-            src: "./images/foodRecipe/unagiChazuke.png",
+            src: "unagiChazuke",
             type: "Defense",
             rarity: 3,
             craftsFrom: [
@@ -2301,7 +2301,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Sakura Shrimp Crackers",
-            src: "./images/foodRecipe/sakuraShrimpCrackers.png",
+            src: "sakuraShrimpCrackers",
             type: "Defense",
             rarity: 3,
             craftsFrom: [
@@ -2323,7 +2323,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Five Pickled Treasures",
-            src: "./images/foodRecipe/fivePickledTreasures.png",
+            src: "fivePickledTreasures",
             type: "Defense",
             rarity: 3,
             craftsFrom: [

@@ -9,7 +9,7 @@ export const WIPPage = () => {
                     <img
                         className={"paimon"}
                         alt={"paimon spoop"}
-                        src={"./images/icons/paimonSpoop.png"}
+                        src={"./images/iconsDisplay/paimonSpoop.png"}
                     />
                 </div>
                 <div className={'padding offside-font large-font'}>Oops! This page isn't quite ready yet...</div>

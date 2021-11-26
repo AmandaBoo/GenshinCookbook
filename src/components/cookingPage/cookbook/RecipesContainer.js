@@ -9,12 +9,12 @@ export const RecipesContainer = ({onCloseClick, foodRecipes}) => {
     const [selectedTab, setSelectedTab] = useState('food-tab');
     const [selectedRecipeCard, setSelectedRecipeCard] = useState(null);
 
-    const imgSrcList = ["images/icons/foodIcon.png"];
+    const imgSrcList = ["images/iconsDisplay/foodIcon.png"];
     const imgSrcListIds = ["food-tab"];
     return (
         <ModalComponent>
             <NavBar
-                navBarIcon={"images/icons/foodIcon.png"}
+                navBarIcon={"images/iconsDisplay/foodIcon.png"}
                 imgSrcList={imgSrcList}
                 imgSrcListIds={imgSrcListIds}
                 selectedTab={selectedTab}

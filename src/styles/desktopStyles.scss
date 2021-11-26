@@ -259,7 +259,7 @@ body {
 
     .recipe-img {
       grid-area: main-img;
-      max-width: $recipe-img-size;
+      width: $recipe-img-size;
       max-height: $recipe-img-size;
       background-size: cover;
       background-repeat: no-repeat;

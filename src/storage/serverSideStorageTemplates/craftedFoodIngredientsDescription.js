@@ -2,7 +2,7 @@ export const FOOD_INGREDIENTS = {
     foodIngredients: [
         {
             name: "Flour",
-            src: "./images/ingredients/flour.png",
+            src: "./images/ingredientsIcons/flour.png",
             rarity: 1,
             obtainedBy: "process",
             craftsFrom: [
@@ -16,7 +16,7 @@ export const FOOD_INGREDIENTS = {
         },
         {
             name: "Raw Meat",
-            src: "./images/ingredients/rawMeat.png",
+            src: "./images/ingredientsIcons/rawMeat.png",
             rarity: 1,
             obtainedBy: "forage",
             craftsFrom: [
@@ -30,7 +30,7 @@ export const FOOD_INGREDIENTS = {
         },
         {
             name: "Cream",
-            src: "./images/ingredients/cream.png",
+            src: "./images/ingredientsIcons/cream.png",
             rarity: 2,
             obtainedBy: "process",
             craftsFrom: [
@@ -44,7 +44,7 @@ export const FOOD_INGREDIENTS = {
         },
         {
             name: "Butter",
-            src: "./images/ingredients/butter.png",
+            src: "./images/ingredientsIcons/butter.png",
             rarity: 2,
             obtainedBy: "process",
             craftsFrom: [
@@ -58,7 +58,7 @@ export const FOOD_INGREDIENTS = {
         },
         {
             name: "Sugar",
-            src: "./images/ingredients/sugar.png",
+            src: "./images/ingredientsIcons/sugar.png",
             rarity: 2,
             obtainedBy: "process",
             craftsFrom: [
@@ -72,7 +72,7 @@ export const FOOD_INGREDIENTS = {
         },
         {
             name: "Crab Roe",
-            src: "./images/ingredients/crabRoe.png",
+            src: "./images/ingredientsIcons/crabRoe.png",
             rarity: 3,
             obtainedBy: "process",
             craftsFrom: [
@@ -86,7 +86,7 @@ export const FOOD_INGREDIENTS = {
         },
         {
             name: "Jam",
-            src: "./images/ingredients/jam.png",
+            src: "./images/ingredientsIcons/jam.png",
             rarity: 3,
             obtainedBy: "process",
             craftsFrom: [
@@ -108,7 +108,7 @@ export const FOOD_INGREDIENTS = {
         },
         {
             name: "Cheese",
-            src: "./images/ingredients/cheese.png",
+            src: "./images/ingredientsIcons/cheese.png",
             rarity: 3,
             obtainedBy: "process",
             craftsFrom: [
@@ -122,7 +122,7 @@ export const FOOD_INGREDIENTS = {
         },
         {
             name: "Sausage",
-            src: "./images/ingredients/sausage.png",
+            src: "./images/ingredientsIcons/sausage.png",
             rarity: 3,
             obtainedBy: "process",
             craftsFrom: [
@@ -136,7 +136,7 @@ export const FOOD_INGREDIENTS = {
         },
         {
             name: "Smoked Fowl",
-            src: "./images/ingredients/smokedFowl.png",
+            src: "./images/ingredientsIcons/smokedFowl.png",
             rarity: 2,
             obtainedBy: "process",
             craftsFrom: [
@@ -154,7 +154,7 @@ export const FOOD_INGREDIENTS = {
         },
         {
             name: "Ham",
-            src: "./images/ingredients/ham.png",
+            src: "./images/ingredientsIcons/ham.png",
             rarity: 2,
             obtainedBy: "process",
             craftsFrom: [
@@ -172,7 +172,7 @@ export const FOOD_INGREDIENTS = {
         },
         {
             name: "Bacon",
-            src: "./images/ingredients/bacon.png",
+            src: "./images/ingredientsIcons/bacon.png",
             rarity: 3,
             obtainedBy: "process",
             craftsFrom: [
