@@ -69,6 +69,7 @@ function createCurrentProficiencyDiv(curProf, recipeProficiency, setCurProf, set
                 <input
                     id={"curProfInputField"}
                     type={"number"}
+                    min={0}
                     value={curProf}
                     className={"text-field"}
                     onKeyDown={(event) => {

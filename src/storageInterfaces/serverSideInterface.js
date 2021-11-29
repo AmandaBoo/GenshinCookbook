@@ -1,6 +1,7 @@
 import {RAW_INGREDIENTS} from "../storage/serverSideStorageTemplates/rawIngredientsDescription.js";
 import {FOOD_INGREDIENTS} from "../storage/serverSideStorageTemplates/craftedFoodIngredientsDescription.js";
 import {FOOD_RECIPES} from "../storage/serverSideStorageTemplates/foodRecipesDescription.js";
+import {ALCHEMY_RECIPES} from "../storage/serverSideStorageTemplates/alchemyRecipesDescription";
 
 export function getRawIngredientsFromServer() {
     return RAW_INGREDIENTS.rawIngredients;
@@ -12,4 +13,8 @@ export function getCraftedFoodIngredientsFromServer() {
 
 export function getFoodRecipesFromServer() {
     return FOOD_RECIPES.foodRecipes;
+}
+
+export function getAlchemyRecipesFromServer() {
+    return ALCHEMY_RECIPES.alchemyRecipes;
 }

@@ -28,11 +28,14 @@ export const SORTED_FOOD_RECIPES = [
     "Adeptus' Temptation"];
 
 
-export const MATERIALS = ["Apple", "Sunsettia", "Horsetail", "Mushroom", "Sweet Flower", "Carrot", "Radish", "Snapdragon",
+export const MATERIALS = ['Dead Ley Line Leaves', 'Crystal Chunk', 'Amythest Lump', "Apple", "Sunsettia", "Horsetail", 'Mist Flower Corolla', 'Flaming Flower Stamen',
+    'Electro Crystal', 'Butterfly Wings', 'Frog', 'Luminescent Spine', 'Lizard Tail', 'Crystal Core', "Mushroom", "Sweet Flower", "Carrot", "Radish", "Snapdragon",
     "Mint", "Wheat", "Cabbage", "Pinecone", "Berry", "Calla Lily", "Raw Meat", "Bird Egg", "Fowl", "Crab", "Crab Roe", "Salt",
     "Onion", "Pepper", "Milk", "Tomato", "Potato", "Fish", "Tofu", "Almond", "Bamboo Shoot", "Rice", "Shrimp Meat", "Chilled Meat",
     "Unagi Meat", "Seagrass", "Lavender Melon", "Flour", "Cream", "Smoked Fowl", "Butter", "Ham", "Sugar", "Jam", "Cheese", "Bacon",
     "Sausage", "Lotus Head", "Jueyun Chili", "Qingxin", "Violetgrass", "Small Lamp Grass", "Sakura Bloom"];
 
-
+export const ALCHEMY_RECIPES = ['Portable Waypoint', 'Anemoculus Resonance Stone', 'Geoculus Resonance Stone', 'Electroculus Resonance Stone',
+    'Heatshield Potion', 'Dessicant Potion', 'Frostshield Potion', 'Windbarrier Potion', 'Insulation Potion', 'Dustproof Potion', 'Flaming Essential Oil',
+    'Streaming Essential Oil', 'Frosting Essential Oil', 'Gushing Essential Oil', 'Shocking Essential Oil', 'Unmoving Essential Oil'];
 
