@@ -11,7 +11,7 @@ export const SideNavBarPanel = ({onCloseClick}) => {
                     {createNavLink('/', 'Home', onCloseClick)}
                     {createNavLink('/summary', 'Summary', onCloseClick)}
                     {createNavLink('/cooking', 'Cooking', onCloseClick)}
-                    {createNavLink('/potions', 'Potions', onCloseClick)}
+                    {createNavLink('/alchemy', 'Alchemy', onCloseClick)}
                     {createNavLink('/smithing', 'Smithing', onCloseClick)}
                 </div>
             </div>

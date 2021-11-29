@@ -10,6 +10,7 @@ import {MainNavBar} from "./MainNavBar";
 import {HomePage} from "../homePage/HomePage";
 import {FooterComponent} from "./FooterComponent";
 import {CookiePopup} from "./CookiePopup";
+import {AlchemyPage} from "../alchemyPage/AlchemyPage";
 
 const MainPage = () => {
     const [recipes, setRecipes] = useState(storage.getAllFoodRecipes());
@@ -40,8 +41,8 @@ const MainPage = () => {
                         <Route path={"/cooking"}>
                             {renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngredients)}
                         </Route>
-                        <Route path={"/potions"}>
-                            {renderPotionsPage()}
+                        <Route path={"/alchemy"}>
+                            {renderAlchemyPage()}
                         </Route>
                         <Route path={"/smithing"}>
                             {renderSmithingPage()}
@@ -98,9 +99,9 @@ function renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngre
     );
 }
 
-function renderPotionsPage() {
+function renderAlchemyPage() {
     return (
-        <WIPPage/>
+        <AlchemyPage/>
     );
 }
 

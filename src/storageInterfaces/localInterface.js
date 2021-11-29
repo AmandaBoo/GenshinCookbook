@@ -1,6 +1,7 @@
 import {RAW_INGREDIENTS_TEMPLATE} from "../storage/localStorageTemplates/jsTemplates/rawIngredientsTemplate.js";
 import {FOOD_INGREDIENTS_TEMPLATE} from "../storage/localStorageTemplates/jsTemplates/craftedFoodIngredientsTemplate.js";
 import {FOOD_RECIPES_TEMPLATE} from "../storage/localStorageTemplates/jsTemplates/foodRecipesTemplate.js";
+import {ALCHEMY_RECIPES_TEMPLATE} from "../storage/localStorageTemplates/jsTemplates/alchemyRecipesTemplate";
 
 export function setUpLocalStorage() {
     if (localStorageNotSet()) {
@@ -8,6 +9,13 @@ export function setUpLocalStorage() {
         localStorage.foodIngredients = FOOD_INGREDIENTS_TEMPLATE;
         localStorage.foodRecipes = FOOD_RECIPES_TEMPLATE;
         localStorage.showCompletedIng = "false";
+    }
+
+    if (localStorage.mora === undefined) {
+        localStorage.mora = "0";
+    }
+    if (localStorage.alchemyRecipes === undefined) {
+        localStorage.alchemyRecipes =  ALCHEMY_RECIPES_TEMPLATE;
     }
     // checkStorage();
 }
@@ -29,6 +37,10 @@ export function getCraftedFoodIngredientsFromLocalStorage() {
 
 export function getFoodRecipesFromLocalStorage() {
     return JSON.parse(localStorage.foodRecipes);
+}
+
+export function getAlchemyRecipesFromLocalStorage() {
+    return JSON.parse(localStorage.alchemyRecipes);
 }
 
 export function setRawIngredientsInLocalStorage(rawIngredients) {

@@ -46,9 +46,9 @@ function createCards() {
                 />
             </div>
             <div className={'image-container'}>
-                {createCookingPageItem('./images/foodRecipeOrigional/unagiChazuke.png')}
-                {createCookingPageItem('./images/foodRecipeOrigional/sakuraShrimpCrackers.png')}
-                {createCookingPageItem('./images/foodRecipeOrigional/fivePickledTreasures.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/unagiChazuke.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/sakuraShrimpCrackers.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/fivePickledTreasures.png')}
             </div>
         </div>
     )

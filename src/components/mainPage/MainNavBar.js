@@ -17,7 +17,7 @@ export const MainNavBar = ({onInventorySave, onInventoryClose, rawIngredients, c
             </div>
             <NavLink className={"desktop-nav-bar-links"} to={"/summary"} activeClassName={"nav-bar-link-selected"}>Summary</NavLink>
             <NavLink className={"desktop-nav-bar-links"} to={"/cooking"} activeClassName={"nav-bar-link-selected"}>Cooking</NavLink>
-            <NavLink className={"desktop-nav-bar-links"} to={"/potions"} activeClassName={"nav-bar-link-selected"}>Potions</NavLink>
+            <NavLink className={"desktop-nav-bar-links"} to={"/alchemy"} activeClassName={"nav-bar-link-selected"}>Alchemy</NavLink>
             <NavLink className={"desktop-nav-bar-links"} to={"/smithing"} activeClassName={"nav-bar-link-selected"}>Smithing</NavLink>
             <div className={"inventory-icon"}>
                 <Button
