@@ -10,6 +10,7 @@ import {MainNavBar} from "./MainNavBar";
 import {HomePage} from "../homePage/HomePage";
 import {FooterComponent} from "./FooterComponent";
 import {CookiePopup} from "./CookiePopup";
+import {AlchemyPage} from "../alchemyPage/AlchemyPage";
 
 const MainPage = () => {
     const [recipes, setRecipes] = useState(storage.getAllFoodRecipes());

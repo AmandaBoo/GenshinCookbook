@@ -239,6 +239,72 @@ export const RAW_INGREDIENTS = {
             src: "./images/ingredientsIcons/fish.png",
             rarity: 1,
             obtainedBy: "forage",
+        },
+        {
+            name: "Amythest Lump",
+            src: "./images/ingredientsIcons/amythestLump.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Butterfly Wings",
+            src: "./images/ingredientsIcons/butterflyWings.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Crystal Chunk",
+            src: "./images/ingredientsIcons/crystalChunk.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Crystal Core",
+            src: "./images/ingredientsIcons/crystalCore.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Dead Ley Line Leaves",
+            src: "./images/ingredientsIcons/deadLeyLineLeavevs.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Electro Crystal",
+            src: "./images/ingredientsIcons/electroCrystal.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Flaming Flower Stamen",
+            src: "./images/ingredientsIcons/flamingFlowerStamen.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Frog",
+            src: "./images/ingredientsIcons/frog.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Lizard Tail",
+            src: "./images/ingredientsIcons/lizardTail.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Luminescent Spine",
+            src: "./images/ingredientsIcons/luminescentSpine.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Mist Flower Corolla",
+            src: "./images/ingredientsIcons/mistFlowerCorolla.png",
+            rarity: 1,
+            obtainedBy: "forage",
         }
     ]
 }

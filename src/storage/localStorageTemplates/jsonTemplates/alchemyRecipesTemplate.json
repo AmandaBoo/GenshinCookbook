@@ -1,0 +1,130 @@
+[
+  {
+    "name":"Heatshield Potion",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Desiccant Potion",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Frostshield Potion",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Windbarrier Potion",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Insulation Potion",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Dustproof Potion",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Flaming Essential Oil",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Streaming Essential Oil",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Frosting Essential Oil",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Gushing Essential Oil",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Shocking Essential Oil",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Unmoving Essential Oil",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Portable Waypoint",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Anemoculus Resonance Stone",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Geoculus Resonance Stone",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  },
+  {
+    "name":"Electroculus Resonance Stone",
+    "qtyWant":0,
+    "qtyHas":0,
+    "hasCard":false,
+    "enabled": true,
+    "rank": 0
+  }
+]
