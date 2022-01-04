@@ -7,8 +7,3 @@ defaults:
 
 	./scaler -d alchemyRecipeOriginal  3 alchemyRecipeManagerIcon
 	./scaler -d alchemyRecipeOriginal  2 alchemyRecipeCardIcon
-
-	# resize the icons, all must be done individually
-	./scaler iconsOrigional/discordIcon.png 2 iconsDisplay/discordIcon.png
-	./scaler iconsOrigional/kofiRound.png   3 iconsDisplay/kofiRound.png
-	./scaler iconsOrigional/paimonSpoop.png 2 iconsDisplay/paimonSpoop.png
