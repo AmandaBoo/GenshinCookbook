@@ -35,6 +35,6 @@ export const MATERIALS = ['Dead Ley Line Leaves', 'Crystal Chunk', 'Amythest Lum
     "Sausage", "Lotus Head", "Jueyun Chili", "Qingxin", "Violetgrass", "Small Lamp Grass", "Sakura Bloom"];
 
 export const ALCHEMY_RECIPES = ['Portable Waypoint', 'Anemoculus Resonance Stone', 'Geoculus Resonance Stone', 'Electroculus Resonance Stone',
-    'Heatshield Potion', 'Dessicant Potion', 'Frostshield Potion', 'Windbarrier Potion', 'Insulation Potion', 'Dustproof Potion', 'Flaming Essential Oil',
+    'Heatshield Potion', 'Desiccant Potion', 'Frostshield Potion', 'Windbarrier Potion', 'Insulation Potion', 'Dustproof Potion', 'Flaming Essential Oil',
     'Streaming Essential Oil', 'Frosting Essential Oil', 'Gushing Essential Oil', 'Shocking Essential Oil', 'Unmoving Essential Oil'];
 

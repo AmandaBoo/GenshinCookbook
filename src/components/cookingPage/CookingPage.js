@@ -3,7 +3,7 @@ import RecipeCardDisplay from "./recipeCards/RecipeCardDisplay";
 import * as storage from "../../storageInterfaces/storageInterface";
 import SidebarDisplay from "./sidebar/SidebarDisplay";
 import {PlaceholderPage} from "../helpGuide/PlaceholderPage";
-import {HELP_GUIDE_ID, RECIPES_POPUP_ID} from "../../constants/constants";
+import {COOKING_PLACEHOLDER_MESSAGE, HELP_GUIDE_ID, RECIPES_POPUP_ID} from "../../constants/constants";
 
 export class CookingPage extends Component {
     constructor(props) {
@@ -18,8 +18,8 @@ export class CookingPage extends Component {
         this.props.resetStateValues();
     }
 
-    getRecipeCards() {
-        return storage.sortRecipeCardsByRank(this.props.recipes.filter(card => card.hasCard));
+    getRecipesWithCards() {
+        return storage.sortRecipesByRank(this.props.recipes.filter(card => card.hasCard));
     }
 
     removeRecipeCard(recipeCard) {
@@ -74,9 +74,10 @@ export class CookingPage extends Component {
     }
 
     renderRecipeDisplay() {
-        if (this.getRecipeCards().length === 0) {
+        if (this.getRecipesWithCards().length === 0) {
             return (
                 <PlaceholderPage
+                    welcomeText={COOKING_PLACEHOLDER_MESSAGE}
                     imgPath={"./images/iconsDisplay/xianlingFlowers.png"}
                     addButtonText={"Recipes"}
                     onAddButtonClick={() => this.setSelectedMenu(RECIPES_POPUP_ID)}
@@ -86,7 +87,7 @@ export class CookingPage extends Component {
         } else {
             return (
                 <RecipeCardDisplay
-                    allRecipes={this.getRecipeCards()}
+                    allRecipes={this.getRecipesWithCards()}
                     removeRecipeCard={card => this.removeRecipeCard(card)}
                     editRecipeCard={(card, curProf, customQty) => this.editRecipeCard(card, curProf, customQty)}
                     enableDisableRecipeCard={(card) => this.enableDisableRecipeCard(card)}
@@ -95,14 +96,6 @@ export class CookingPage extends Component {
                 />
             );
         }
-    }
-
-    createFooter() {
-        return (
-            <div className={'footer'}>
-
-            </div>
-        )
     }
 
     render() {

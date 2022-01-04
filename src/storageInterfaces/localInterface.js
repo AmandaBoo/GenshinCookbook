@@ -82,6 +82,22 @@ export function setFoodRecipesInLocalStorage(foodRecipes) {
     localStorage.foodRecipes = JSON.stringify(foodRecipesJSON);
 }
 
+export function setAlchemyRecipesInLocalStorage(alchemyRecipes) {
+    let alchemyRecipesJSON = getAlchemyRecipesFromLocalStorage();
+    alchemyRecipesJSON.forEach(recipe => {
+        let alchemyRecipe = alchemyRecipes.find(ele => ele.name === recipe.name);
+        if (alchemyRecipe !== undefined) {
+            recipe.rank = alchemyRecipe.rank;
+            recipe.enabled = alchemyRecipe.enabled;
+            recipe.hasCard = alchemyRecipe.hasCard;
+            recipe.qtyHas = alchemyRecipe.qtyHas;
+            recipe.qtyWant = alchemyRecipe.qtyWant;
+        }
+    });
+
+    localStorage.alchemyRecipes = JSON.stringify(alchemyRecipesJSON);
+}
+
 export function doShowCompletedIngredients() {
     return localStorage.showCompletedIng === "true";
 }

@@ -14,7 +14,8 @@ import {AlchemyPage} from "../alchemyPage/AlchemyPage";
 
 const MainPage = () => {
     const [recipes, setRecipes] = useState(storage.getAllFoodRecipes());
-    const [rawIngredients, setRawIngredients] = useState(storage.getAllRawIngredients);
+    const [alchemyRecipes, setAlchemyRecipes] = useState(storage.getAllAlchemyRecipes());
+    const [rawIngredients, setRawIngredients] = useState(storage.getAllRawIngredients());
     const [craftIngredients, setCraftIngredients] = useState(storage.getAllCraftedFoodIngredients(storage.getAllRawIngredients()));
     const [currentPopup, setCurrentPopup] = useState("");
     const [isCookiePopupOpen, setCookiePopupStatus] = useState(false);
@@ -24,8 +25,8 @@ const MainPage = () => {
             <Router>
                 <div className={"site-nav-bar panel"}>
                     <MainNavBar
-                        onInventorySave={() => resetStateValues(setRecipes, setRawIngredients, setCraftIngredients)}
-                        onInventoryClose={() => resetStateValues(setRecipes, setRawIngredients, setCraftIngredients)}
+                        onInventorySave={() => resetAllPageStates(setRecipes, setAlchemyRecipes,setRawIngredients, setCraftIngredients)}
+                        onInventoryClose={() => resetAllPageStates(setRecipes, setAlchemyRecipes,setRawIngredients, setCraftIngredients)}
                         rawIngredients={rawIngredients}
                         craftIngredients={craftIngredients}
                     />
@@ -42,7 +43,7 @@ const MainPage = () => {
                             {renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngredients)}
                         </Route>
                         <Route path={"/alchemy"}>
-                            {renderAlchemyPage()}
+                            {renderAlchemyPage(alchemyRecipes, setAlchemyRecipes, setRawIngredients, setCraftIngredients)}
                         </Route>
                         <Route path={"/smithing"}>
                             {renderSmithingPage()}
@@ -94,14 +95,17 @@ function renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngre
     return (
         <CookingPage
             recipes={recipes}
-            resetStateValues={() => resetStateValues(setRecipes, setRawIngredients, setCraftIngredients)}
+            resetStateValues={() => resetCookingPageState(setRecipes, setRawIngredients, setCraftIngredients)}
         />
     );
 }
 
-function renderAlchemyPage() {
+function renderAlchemyPage(alchemyRecipes, setRecipes, setRawIngredients, setCraftIngredients) {
     return (
-        <AlchemyPage/>
+        <AlchemyPage
+            alchemyRecipes={alchemyRecipes}
+            resetStateValues={() => resetAlchemyPageState(setRecipes, setRawIngredients, setCraftIngredients)}
+        />
     );
 }
 
@@ -122,7 +126,16 @@ function renderDonatePopup(currentPopup, setCurrentPopup) {
     return null;
 }
 
-function resetStateValues(setRecipes, setRawIngredients, setCraftIngredients) {
+function resetAllPageStates(setCookingRecipes, setAlchemyRecipes, setRawIngredients, setCraftIngredients) {
+    resetAlchemyPageState(setAlchemyRecipes, setRawIngredients, setCraftIngredients);
+    resetCookingPageState(setCookingRecipes, setRawIngredients, setCraftIngredients);
+}
+
+function resetAlchemyPageState(setRecipes, setRawIngredients, setCraftIngredients) {
+
+}
+
+function resetCookingPageState(setRecipes, setRawIngredients, setCraftIngredients) {
     setRecipes(storage.getAllFoodRecipes());
     setRawIngredients(storage.getAllRawIngredients());
     setCraftIngredients(storage.getAllCraftedFoodIngredients(storage.getAllRawIngredients()))

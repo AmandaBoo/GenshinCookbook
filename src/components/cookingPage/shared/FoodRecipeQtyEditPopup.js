@@ -7,7 +7,7 @@ import {UnsavedChangesPopup} from "../../shared/UnsavedChangesPopup";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CheckCircleTwoToneIcon from "@mui/icons-material/CheckCircleTwoTone";
 
-const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onCloseClick}) => {
+const FoodRecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onCloseClick}) => {
     const [curProf, setCurProf] = useState(selectedRecipeCard != null ? selectedRecipeCard.currentProficiency: 0);
     const [customQty, setCustomQty] = useState(selectedRecipeCard != null ? determineStartCustomQty(topBarText, selectedRecipeCard) : 0);
     const [hasUnsavedChanges, setUnsavedChanges] = useState(false);
@@ -46,7 +46,7 @@ function createTopBar(title, onCloseClick, setCurProf, setCustomQty, curProf, cu
             <span>{title}</span>
             <CloseButton
                 onCloseClick={() => {
-                    if (hasUnsavedChanges(topBarText, curProf, customQty, recipeCard, setUnsavedChanges)) {
+                    if (hasUnsavedChanges(topBarText, curProf, customQty, recipeCard)) {
                         setUnsavedChanges(true);
                     } else {
                         onCloseClick();
@@ -193,4 +193,4 @@ function resetState(setCurProf, setCustomQty) {
     setCustomQty(0);
 }
 
-export default RecipeQtyEditPopup;
+export default FoodRecipeQtyEditPopup;

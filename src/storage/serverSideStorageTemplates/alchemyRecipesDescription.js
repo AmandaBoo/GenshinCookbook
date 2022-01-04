@@ -190,8 +190,8 @@ export const ALCHEMY_RECIPES = {
             ]
         },
         {
-            name: "Dessicant Potion",
-            src: "dessicantPotion",
+            name: "Desiccant Potion",
+            src: "desiccantPotion",
             rarity: 3,
             craftsFrom: [
                 [
