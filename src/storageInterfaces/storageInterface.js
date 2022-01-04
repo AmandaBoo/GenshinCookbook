@@ -327,7 +327,7 @@ export function getAllAlchemyRecipes() {
         let serverAlchemyRecipe = alchemyRecipesServer.find(ele => ele.name === localAlchemyRecipe.name);
         let allCraftsFrom;
         [allCraftsFrom, allRawIngredientsCopy] = mapSubRecipesForAlchemyRecipes(allRawIngredients, allRawIngredientsCopy, serverAlchemyRecipe, localAlchemyRecipe);
-        allRecipes.push(new AlchemyRecipe(serverAlchemyRecipe.name, localAlchemyRecipe.qtyWant, localAlchemyRecipe.qtyHas, localAlchemyRecipe.hasCard, localAlchemyRecipe.enabled, localAlchemyRecipe.rank, allCraftsFrom));
+        allRecipes.push(new AlchemyRecipe(serverAlchemyRecipe.name, serverAlchemyRecipe.src, localAlchemyRecipe.qtyWant, localAlchemyRecipe.qtyHas, localAlchemyRecipe.hasCard, localAlchemyRecipe.enabled, localAlchemyRecipe.rank, allCraftsFrom));
     });
 
     return allRecipes;

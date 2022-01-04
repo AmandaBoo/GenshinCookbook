@@ -32,7 +32,7 @@ function renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes, navBarIcon
             <AlchemyRecipesContainer
                 navBarIconPath={navBarIconPath}
                 onCloseClick={() => setSelectedMenu(null)}
-                foodRecipes={recipes}
+                alchemyRecipes={recipes}
                 imgSrcList={imgSrcList}
                 imgSrcListIds={imgSrcListIds}
             />
