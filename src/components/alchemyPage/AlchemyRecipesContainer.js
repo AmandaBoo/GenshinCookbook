@@ -3,8 +3,9 @@ import {NavBar} from "../shared/navBar/NavBar";
 import {ModalComponent} from "../shared/ModalComponent";
 import {AlchemyRecipeQtyEditPopup} from "./AlchemyRecipeQtyEditPopup";
 import * as storage from '../../storageInterfaces/storageInterface';
+import {AlchemyCardDisplay} from "./AlchemyCardDisplay";
 
-export const AlchemyRecipesContainer = ({onCloseClick, foodRecipes, navBarIconPath, imgSrcList, imgSrcListIds}) => {
+export const AlchemyRecipesContainer = ({onCloseClick, alchemyRecipes, navBarIconPath, imgSrcList, imgSrcListIds}) => {
     const [selectedTab, setSelectedTab] = useState('food-tab');
     const [selectedRecipeCard, setSelectedRecipeCard] = useState(null);
     return (
@@ -17,9 +18,18 @@ export const AlchemyRecipesContainer = ({onCloseClick, foodRecipes, navBarIconPa
                 onInventoryTabClick={tabId => setSelectedTab(tabId)}
                 onCloseClick={() => onCloseClick()}
             />
-
-            {renderQuantityEditPopup(selectedRecipeCard, setSelectedRecipeCard, foodRecipes, navBarIconPath)}
+            {renderAlchemyRecipesCardDisplay(alchemyRecipes, setSelectedRecipeCard)}
+            {renderQuantityEditPopup(selectedRecipeCard, setSelectedRecipeCard, alchemyRecipes, navBarIconPath)}
         </ModalComponent>
+    );
+}
+
+function renderAlchemyRecipesCardDisplay(alchemyRecipes, setSelectedRecipeCard) {
+    return (
+      <AlchemyCardDisplay
+        allCardData={filterCards(alchemyRecipes)}
+        onUpdate={card => setSelectedRecipeCard(card)}
+      />
     );
 }
 
