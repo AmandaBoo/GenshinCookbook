@@ -271,7 +271,7 @@ export function sortFoodRecipesByUIOrder(foodRecipes) {
     return foodRecipes;
 }
 
-export function sortRecipeCardsByRank(recipeCards) {
+export function sortRecipesByRank(recipeCards) {
     recipeCards.sort((recipe1, recipe2) => {
         return recipe1.rank - recipe2.rank;
     });
@@ -350,5 +350,9 @@ function mapSubRecipesForAlchemyRecipes(allRawIngredients, allRawIngredientsCopy
         allSubRecipes.push(tempIngredientsList);
     }
     return [allSubRecipes, allRawIngredientsCopy];
+}
+
+export function saveAlchemyRecipes(alchemyRecipes) {
+    localInterface.setAlchemyRecipesInLocalStorage(alchemyRecipes);
 }
 

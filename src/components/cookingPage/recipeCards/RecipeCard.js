@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import MiniIngredientCard from "../shared/MiniIngredientCard";
-import RecipeQtyEditPopup from "../shared/RecipeQtyEditPopup";
+import FoodRecipeQtyEditPopup from "../shared/FoodRecipeQtyEditPopup";
 import DeleteConfirmationPopup from "../shared/DeleteConfirmationPopup";
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import PowerSettingsNewRoundedIcon from '@mui/icons-material/PowerSettingsNewRounded';
@@ -126,7 +126,7 @@ function renderIngredients(allIngredients, isEnabled, onEditSaveClick) {
 function renderQuantityEditPopup(popup, setPopup, recipeCard, onCardEdit) {
     if (popup === "edit") {
         return (
-            <RecipeQtyEditPopup
+            <FoodRecipeQtyEditPopup
                 topBarText={"Edit Recipe"}
                 selectedRecipeCard={recipeCard}
                 onSaveClick={(recipeCard, currentProf, customQty) => {

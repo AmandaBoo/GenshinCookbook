@@ -17,3 +17,6 @@ export const NO_INGREDIENTS_PROCESS = 'No Ingredients Left to Process~';
 export const WELCOME = 'WELCOME TO GENSHIN COOKBOOK';
 export const WELCOME_MESSAGE = 'A fun little assistant for all of your crafting & cooking needs~';
 export const DISCLAIMER = 'Genshin Impact™ is a registered trademark of MiHoYo Co., Ltd. This site is not affiliated with or endorsed by miHoYo. Images and data © MiHoYo Co., Ltd.';
+
+export const COOKING_PLACEHOLDER_MESSAGE = ' Welcome to the Cooking Page! It doesn\'t look like you\'re tracking any recipes...';
+export const ALCHEMY_PLACEHOLDER_MESSAGE = 'Welcome to the Alchemy Page! It doesn\'t look like you\'re tracking any recipes...';

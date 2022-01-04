@@ -8,7 +8,8 @@ import Button from "../../shared/buttons/Button";
 import {RecipesContainer} from "../cookbook/RecipesContainer";
 
 const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOList, selectedMenu, setSelectedMenu,
-                            onMiniIngredientEditSaveClick, onCraftIngredientCookSaveClick}) => {
+                            onMiniIngredientEditSaveClick, onCraftIngredientCookSaveClick,
+                            imgSrcList, imgSrcListIds}) => {
     return (
         <div className={"sidebar-display"}>
             <div className={"add-recipe-button-div flex-center"}>
@@ -22,7 +23,7 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
                 {/*    onClick={() => setSelectedMenu(HELP_GUIDE_ID)}*/}
                 {/*/>*/}
             </div>
-            {renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes)}
+            {renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes, imgSrcList, imgSrcListIds)}
             {renderHelpGuidePopup(selectedMenu, setSelectedMenu)}
             <div className={"grocery-div"}>
                 <CookingPotDisplay
@@ -43,12 +44,14 @@ const SidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOLi
     );
 }
 
-function renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes) {
+function renderAddRecipePopup(selectedMenu, setSelectedMenu, recipes, imgSrcList, imgSrcListIds) {
     if (selectedMenu === RECIPES_POPUP_ID) {
         return (
             <RecipesContainer
                 onCloseClick={() => setSelectedMenu(null)}
                 foodRecipes={recipes}
+                imgSrcList={imgSrcList}
+                imgSrcListIds={imgSrcListIds}
             />
         );
     }
