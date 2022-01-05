@@ -49,13 +49,12 @@ function renderQuantityEditPopup(selectedRecipeCard, setSelectedRecipeCard, food
 
 function onAddNewAlchemyRecipeSaveClick(recipeCard, qtyWant, recipes, setSelectedRecipeCard) {
     let numRecipesWithCard = recipes.filter(recipe => recipe.hasCard).length;
-
-    recipeCard.rank = numRecipesWithCard === 0 ? 1 : numRecipesWithCard + 1;
-    recipeCard.qtyWant = qtyWant;
-    if (recipeCard.qtyWant !== 0) {
+    if (qtyWant !== 0) {
+        recipeCard.rank = numRecipesWithCard === 0 ? 1 : numRecipesWithCard + 1;
+        recipeCard.qtyWant = qtyWant;
         recipeCard.hasCard = true;
+        storage.saveAlchemyRecipes(recipes);
     }
-    storage.saveAlchemyRecipes(recipes);
     setSelectedRecipeCard(null);
 }
 
