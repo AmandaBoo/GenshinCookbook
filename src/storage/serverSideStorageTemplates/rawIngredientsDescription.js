@@ -266,7 +266,7 @@ export const RAW_INGREDIENTS = {
         },
         {
             name: "Dead Ley Line Leaves",
-            src: "./images/ingredientsIcons/deadLeyLineLeavevs.png",
+            src: "./images/ingredientsIcons/deadLeyLineLeaves.png",
             rarity: 1,
             obtainedBy: "forage",
         },

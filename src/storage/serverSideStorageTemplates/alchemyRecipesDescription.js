@@ -329,7 +329,7 @@ export const ALCHEMY_RECIPES = {
         },
         {
             name: "Portable Waypoint",
-            src: "electroculusResonanceStone",
+            src: "portableWaypoint",
             rarity: 3,
             craftsFrom: [
                 [

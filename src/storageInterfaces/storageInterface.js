@@ -327,7 +327,7 @@ export function getAllAlchemyRecipes() {
         let serverAlchemyRecipe = alchemyRecipesServer.find(ele => ele.name === localAlchemyRecipe.name);
         let allCraftsFrom;
         [allCraftsFrom, allRawIngredientsCopy] = mapSubRecipesForAlchemyRecipes(allRawIngredients, allRawIngredientsCopy, serverAlchemyRecipe, localAlchemyRecipe);
-        allRecipes.push(new AlchemyRecipe(serverAlchemyRecipe.name, serverAlchemyRecipe.src, localAlchemyRecipe.qtyWant, localAlchemyRecipe.qtyHas, localAlchemyRecipe.hasCard, localAlchemyRecipe.enabled, localAlchemyRecipe.rank, allCraftsFrom));
+        allRecipes.push(new AlchemyRecipe(serverAlchemyRecipe.name, serverAlchemyRecipe.src, localAlchemyRecipe.qtyWant, localAlchemyRecipe.qtyHas, localAlchemyRecipe.hasCard, localAlchemyRecipe.enabled, localAlchemyRecipe.rank, serverAlchemyRecipe.rarity, allCraftsFrom));
     });
 
     return allRecipes;
@@ -343,6 +343,7 @@ function mapSubRecipesForAlchemyRecipes(allRawIngredients, allRawIngredientsCopy
         // iterate over each ingredient within the subrecipe
         serverRecipe.craftsFrom[i].forEach(recipeIngredient => {
             let rawObj = {ingredient: '', qtyRequired: 0, qtyToObtain: 0};
+            rawObj.ingredient = allRawIngredients.find(ele => ele.name === recipeIngredient.name);
             rawObj.qtyRequired = serverRecipe.craftsFrom[i].find(ele => ele.name === recipeIngredient.name).qty;
             [rawObj.qtyToObtain, allRawIngredientsCopy] = determineQtyToObtain(localRecipe, rawObj.ingredient, rawObj.qtyRequired, allRawIngredientsCopy);
             tempIngredientsList.push(rawObj);

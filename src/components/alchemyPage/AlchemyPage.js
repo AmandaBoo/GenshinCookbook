@@ -44,7 +44,6 @@ export class AlchemyPage extends Component {
             <AlchemySidebarDisplay
                 recipes={this.props.alchemyRecipes}
                 rawIngredientsDTOList={storage.getIngredientToObtainDTOList(this.props.alchemyRecipes, "raw")}
-                craftedIngredientsDTOList={storage.getIngredientToObtainDTOList(this.props.alchemyRecipes, "crafted")}
                 selectedMenu={this.state.selectedMenu}
                 setSelectedMenu={id => this.setSelectedMenu(id)}
                 onMiniIngredientEditSaveClick={(ingredient, ingredientQty) => this.onMiniIngredientEditSaveClick(ingredient, ingredientQty)}
@@ -54,20 +53,6 @@ export class AlchemyPage extends Component {
                 imgSrcListIds={["food-tab"]}
             />
         );
-        // return (
-        //     <SidebarDisplay
-        //         recipes={this.props.alchemyRecipes}
-        //         rawIngredientsDTOList={storage.getIngredientToObtainDTOList(this.props.alchemyRecipes, "raw")}
-        //         craftedIngredientsDTOList={storage.getIngredientToObtainDTOList(this.props.alchemyRecipes, "crafted")}
-        //         selectedMenu={this.state.selectedMenu}
-        //         setSelectedMenu={id => this.setSelectedMenu(id)}
-        //         onMiniIngredientEditSaveClick={(ingredient, ingredientQty) => this.onMiniIngredientEditSaveClick(ingredient, ingredientQty)}
-        //         onCraftIngredientCookSaveClick={(craftIngredientCooked, subIngredientsUsed) => this.onCraftIngredientCookSaveClick(craftIngredientCooked, subIngredientsUsed)}
-        //         navBarIconPath={"images/iconsDisplay/alchemyIcon.png"}
-        //         imgSrcList={["images/iconsDisplay/alchemyIcon.png"]}
-        //         imgSrcListIds={["food-tab"]}
-        //     />
-        // );
     }
 
     renderRecipeDisplay() {
