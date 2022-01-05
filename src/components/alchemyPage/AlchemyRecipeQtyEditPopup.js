@@ -5,7 +5,6 @@ import CloseButton from "../shared/buttons/CloseButton";
 import SaveButton from "../shared/buttons/SaveButton";
 import {UnsavedChangesPopup} from "../shared/UnsavedChangesPopup";
 
-// TODO : DESIGN MOCK UP
 export const AlchemyRecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onCloseClick}) => {
     const [qtyWant, setQtyWant] = useState(0);
     const [hasUnsavedChanges, setUnsavedChanges] = useState(false);
@@ -66,7 +65,7 @@ function createAmountToCraftDiv(qtyWant, setQtyWant) {
             <label
                 className={"input-label"}
                 form={"amtToCraftInputField"}
-            >How many do you want to cook?
+            >How many do you want to craft?
             </label>
         </div>
     );

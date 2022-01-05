@@ -4,7 +4,7 @@ import {RECIPES_POPUP_ID} from "../../../constants/constants";
 import {RecipesContainer} from "../../cookingPage/cookbook/RecipesContainer";
 import {AlchemyRecipesContainer} from "../AlchemyRecipesContainer";
 
-export const AlchemySidebarDisplay = ({recipes, rawIngredientsDTOList, craftedIngredientsDTOList, selectedMenu, setSelectedMenu,
+export const AlchemySidebarDisplay = ({recipes, rawIngredientsDTOList, selectedMenu, setSelectedMenu,
                                           onMiniIngredientEditSaveClick, onCraftIngredientCookSaveClick, navBarIconPath,
                                           imgSrcList, imgSrcListIds}) => {
 

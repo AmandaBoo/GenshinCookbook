@@ -21,7 +21,6 @@ export const AlchemyCard = ({cardData, onCardClick}) => {
 }
 
 function generateImage(recipeData) {
-    console.log(recipeData);
     return (
         <img
             className={"card-icon"}
