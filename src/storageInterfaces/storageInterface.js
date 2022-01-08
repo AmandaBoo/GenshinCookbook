@@ -151,7 +151,7 @@ function updateLocalStorageForFoodRecipes() {
             "  \"rank\":0\n" +
             "}\n";
 
-            localStorage.foodRecipes = foodRecipeLocal.substring(0, FOOD_RECIPES_TEMPLATE.length - 2) + newRecipeEntry + "]";
+            localStorage.foodRecipes = JSON.stringify(foodRecipeLocal).substring(0, JSON.stringify(foodRecipeLocal).indexOf(']')) + newRecipeEntry + ']';
             updateLocalStorageForFoodRecipes();
         }
     });
