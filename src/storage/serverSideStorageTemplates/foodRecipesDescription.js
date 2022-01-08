@@ -2347,5 +2347,31 @@ export const FOOD_RECIPES = {
                 ]
             ]
         },
+        {
+            name: "Dragon Beard Noodles",
+            src: "dragonBeardNoodles",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Flour",
+                        qty:4
+                    },
+                    {
+                        name: "Fowl",
+                        qty:2
+                    },
+                    {
+                        name:'Mushroom',
+                        qty:2
+                    },
+                    {
+                        name:'Ham',
+                        qty:1
+                    }
+                ]
+            ]
+        },
     ]
 }
