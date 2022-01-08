@@ -18,7 +18,7 @@ export const SORTED_FOOD_RECIPES = [
     "Lotus Flower Crisp", "Universal Peace", "Jueyun Guoba", "Fullmoon Egg", "Minty Meat Rolls", "Cured Pork Dry Hotpot",
     "Stir-Fried Shrimp", "Tricolor Dango", "Tonkotsu Ramen", "Tri-Flavored Skewer", "Imported Poultry", "Sakura Mochi", "Konda Cuisine",
     "Rice Cake Soup", "Sakura Tempura", "Rice Pudding", "Braised Meat", "Oncidium Tofu", "Invigorating Kitty Meal", "Omelette Rice",
-    "Taiyaki", "More-and-More", 'Unagi Chazuke', 'Sakura Shrimp Crackers', 'Five Pickled Treasures', "Golden Chicken Burger", "Fragrant Mashed Potatoes",
+    "Taiyaki", "More-and-More", 'Unagi Chazuke', 'Sakura Shrimp Crackers', 'Five Pickled Treasures', "Dragon Beard Noodles", "Golden Chicken Burger", "Fragrant Mashed Potatoes",
 
     // 4 STAR
     "Moon Pie", "Jade Parcels", "Golden Crab", "Tianshu Meat", "Golden Fried Chicken", "Sashimi Platter", "Chicken Tofu Pudding", "Butter Crab", "Chili-Mince Cornbread Buns",
