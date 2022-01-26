@@ -3,7 +3,7 @@
 - To start up local instance run ```npm run start```
 
 ### Pull Request Guide
-1. Push code up on a new branch (name your branch your ticket #)
+1. Push code up on a new branch (name your branch [ticket #]-[ticket name] exm "11-udpate-templates")
 2. Continue to push up your code to your new branch until you're ready to merge it into master
 3. Make a PR when you're ready and add at least 1 reviewer
 4. Resolve any comments made by reviewers 
