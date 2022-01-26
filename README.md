@@ -47,7 +47,6 @@ detected is then appended to the string stored in their local storage.
 
 Unfortunately, at this time, updating new recipes requires modifying both the .json and .js local storage files (open ticket to fix this [Issue #164](https://github.com/AmandaBoo/Project-Not-Boba/issues/164))
 
-The local storage tracks both
 ### Server Storage
 The majority of the site's data can be kept server-side (exm. images of recipes and ingredients, details on how each recipe is made, etc)
 
