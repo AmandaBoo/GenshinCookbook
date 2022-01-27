@@ -19,7 +19,7 @@
 The site is written using Sass, and Javascript through the React framework. 
 The following libraries have been installed to enable browser history and to quickly implement commonly used icons
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
-- [MUI] (https://mui.com/)
+- [MUI](https://mui.com/)
 
 <a name="hosting"></a>
 ## Hosting 
