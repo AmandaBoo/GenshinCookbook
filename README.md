@@ -82,7 +82,7 @@ Cookies are only used for the purposes of viewing basic user information through
 
 <a name="how-to-update-templates-example-given-for-food-recipes"></a>
 ## How to Update Templates (example given for Food Recipes)
-- Grab relevant images and place them in public/images/foodRecipes
+- Grab relevant images and place them in public/images/foodRecipesOriginal, public/images/foodRecipesCardIcon, public/images/foodRecipesManagerIcon
 - Open foodRecipesTemplate.json and add new json entry by copying old entries and only changing the name
 - When finished, open foodRecipesTemplate.js and replace the string in there with the contents of the foodRecipesTemplate.json
 - Update the uiOrder.js with the new food entries (follow the order of the in-game UI)
