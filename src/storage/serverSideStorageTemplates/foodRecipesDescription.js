@@ -2373,5 +2373,31 @@ export const FOOD_RECIPES = {
                 ]
             ]
         },
+        {
+            name: "Bountiful Year",
+            src: "bountifulYear",
+            type: "Attack",
+            rarity: 4,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fish",
+                        qty:4
+                    },
+                    {
+                        name: "Carrot",
+                        qty:4
+                    },
+                    {
+                        name:'Onion',
+                        qty:2
+                    },
+                    {
+                        name:'Violetgrass',
+                        qty:1
+                    }
+                ]
+            ]
+        },
     ]
 }

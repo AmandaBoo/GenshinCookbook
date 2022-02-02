@@ -22,6 +22,7 @@ export const SORTED_FOOD_RECIPES = [
 
     // 4 STAR
     "Moon Pie", "Jade Parcels", "Golden Crab", "Tianshu Meat", "Golden Fried Chicken", "Sashimi Platter", "Chicken Tofu Pudding", "Butter Crab", "Chili-Mince Cornbread Buns",
+    "Bountiful Year",
 
     // 5 STAR + TO SORT RECIPES
     "Adeptus' Temptation"];
