@@ -4,6 +4,8 @@ import {NavBar} from "../../shared/navBar/NavBar";
 import CookbookCardDisplay from "./CookbookCardDisplay";
 import RecipeQtyEditPopup from "../shared/RecipeQtyEditPopup";
 import * as storage from "../../../storageInterfaces/storageInterface";
+import { Legend } from '../../shared/Legend';
+import CheckCircleTwoToneIcon from '@mui/icons-material/CheckCircleTwoTone';
 
 export const RecipesContainer = ({onCloseClick, foodRecipes}) => {
     const [selectedTab, setSelectedTab] = useState('food-tab');
@@ -20,6 +22,10 @@ export const RecipesContainer = ({onCloseClick, foodRecipes}) => {
                 selectedTab={selectedTab}
                 onInventoryTabClick={tabId => setSelectedTab(tabId)}
                 onCloseClick={() => onCloseClick()}
+            />
+            <Legend
+                icon={<CheckCircleTwoToneIcon/>}
+                meaning={": Mastered"}
             />
             <CookbookCardDisplay
                 allCardData={filterCards(foodRecipes)}

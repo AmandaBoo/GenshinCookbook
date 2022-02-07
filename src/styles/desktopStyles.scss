@@ -333,6 +333,15 @@ body {
     border-radius: 8px;
   }
 
+  .modal-legend-icon {
+    color: $green-color;
+    padding: 10px;  
+    .modal-legend-meaning {
+      display: inline-block;
+      vertical-align: super;
+    }
+  }
+
   .modal-content {
     margin: auto;
     padding: 20px;
