@@ -53,7 +53,7 @@ function renderQuantityEditPopup(selectedRecipeCard, setSelectedRecipeCard, food
 function onAddNewRecipeSaveClick(recipeCard, currentProficiency, customQty, foodRecipes, setSelectedRecipeCard) {
     let numRecipesWithCard = foodRecipes.filter(recipe => recipe.hasCard).length;
 
-    if (recipeCard.want !== 0) {
+    if (customQty !== 0) {
         recipeCard.rank = numRecipesWithCard === 0 ? 1 : numRecipesWithCard + 1;
         recipeCard.want = customQty;
         recipeCard.hasCard = true;
