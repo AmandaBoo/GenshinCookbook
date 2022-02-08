@@ -42,6 +42,6 @@
     ]
   },
   "devDependencies": {
-    "react-router-dom": "^5.3.0"
+    "react-router-dom": "^6.2.1"
   }
 }
