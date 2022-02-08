@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {CookingPage} from "../cookingPage/CookingPage";
 import * as storage from "../../storageInterfaces/storageInterface";
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Routes, Switch} from 'react-router-dom'
 import {DonatePopup} from "../shared/donate/DonatePopup";
 import {WIPPage} from "../WIP/WIPPage";
 import {DonateIcon} from "../shared/donate/DonateIcon";
@@ -30,25 +30,15 @@ const MainPage = () => {
                     />
                 </div>
                 <div className={"sub-page-body"}>
-                    <Switch>
-                        <Route exact path={"/"}>
-                            {renderHomePage()}
-                        </Route>
-                        <Route path={"/summary"}>
-                            {renderSummaryPage()}
-                        </Route>
-                        <Route path={"/cooking"}>
-                            {renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngredients)}
-                        </Route>
-                        <Route path={"/potions"}>
-                            {renderPotionsPage()}
-                        </Route>
-                        <Route path={"/smithing"}>
-                            {renderSmithingPage()}
-                        </Route>
-                    </Switch>
+                    <Routes>
+                        <Route path={"/"} element={renderHomePage()}/>
+                        <Route path={"/summary"} element={renderSummaryPage()}/>
+                        <Route path={"/cooking"} element={renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngredients)}/>
+                        <Route path={"/alchemy"} element={renderAlchemyPage()}/>
+                        <Route path={"/smithing"} element={renderSmithingPage()}/>
+                    </Routes>
                 </div>
-                <RouteChangeTracker/>
+                {/*<RouteChangeTracker/>*/}
                 {renderFooter(setCookiePopupStatus)}
             </Router>
             {renderCookiePopup(isCookiePopupOpen, setCookiePopupStatus)}
@@ -98,7 +88,7 @@ function renderCookingPage(recipes, setRecipes, setRawIngredients, setCraftIngre
     );
 }
 
-function renderPotionsPage() {
+function renderAlchemyPage() {
     return (
         <WIPPage/>
     );

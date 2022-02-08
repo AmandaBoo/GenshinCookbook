@@ -12,4 +12,4 @@ const RouteChangeTracker = ({ history }) => {
     return <div/>;
 };
 
-export default withRouter(RouteChangeTracker);
+// export default withRouter(RouteChangeTracker);
