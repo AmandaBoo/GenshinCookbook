@@ -46,8 +46,8 @@ function createCards() {
                 />
             </div>
             <div className={'image-container'}>
-                {createCookingPageItem('./images/foodRecipeOrigional/dragonBeardNoodles.png')}
-                {createCookingPageItem('./images/foodRecipeOrigional/bountifulYear.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/dragonBeardNoodles.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/bountifulYear.png')}
             </div>
         </div>
     )
