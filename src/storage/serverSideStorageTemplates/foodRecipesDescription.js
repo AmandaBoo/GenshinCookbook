@@ -2407,7 +2407,7 @@ export const FOOD_RECIPES = {
             craftsFrom: [
                 [
                     {
-                        name: "Wheat",
+                        name: "Flour",
                         qty:3
                     },
                     {
