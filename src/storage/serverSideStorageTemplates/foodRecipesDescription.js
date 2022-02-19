@@ -2399,5 +2399,49 @@ export const FOOD_RECIPES = {
                 ]
             ]
         },
+        {
+            name: "Udon Noodles",
+            src: "udonNoodles",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Wheat",
+                        qty:3
+                    },
+                    {
+                        name: "Seagrass",
+                        qty:1
+                    },
+                    {
+                        name:'Fish',
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Sangayaki",
+            src: "sangayaki",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fish",
+                        qty:2
+                    },
+                    {
+                        name: "Snapdragon",
+                        qty:2
+                    },
+                    {
+                        name:'Salt',
+                        qty:1
+                    }
+                ]
+            ]
+        },
     ]
 }

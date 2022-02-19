@@ -4,7 +4,6 @@ import SaveButton from "../../shared/buttons/SaveButton";
 import * as Utils from "../../../util/utils";
 import {SubModalComponent} from "../../shared/SubModalComponent";
 import {UnsavedChangesPopup} from "../../shared/UnsavedChangesPopup";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CheckCircleTwoToneIcon from "@mui/icons-material/CheckCircleTwoTone";
 
 const RecipeQtyEditPopup = ({topBarText, selectedRecipeCard, onSaveClick, onCloseClick}) => {

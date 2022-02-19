@@ -86,6 +86,7 @@ body {
   grid-template-areas:
   "cards sidebar";
   grid-template-columns: auto 375px;
+  min-height: 90vh;
 }
 
 .sidebar-display {

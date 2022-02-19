@@ -1047,5 +1047,25 @@ export const FOOD_RECIPES_TEMPLATE = "[{\n" +
     "  \"hasCard\":false,\n" +
     "  \"enabled\":true,\n" +
     "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Sangayaki\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Udon Noodles\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
     "}\n" +
     "]";
