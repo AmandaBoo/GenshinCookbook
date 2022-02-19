@@ -38,7 +38,7 @@ function createCards() {
                     src={'./images/iconsDisplay/sparkling.png'}
                     alt={'sparkling icon'}
                 />
-                <div className={'offside-font vertical-center'}>{"Explore new dishes added in 2.4"}</div>
+                <div className={'offside-font vertical-center'}>{"Explore new dishes added in 2.5"}</div>
                 <img
                     className={'sparkling-icon'}
                     src={'./images/iconsDisplay/sparkling.png'}
@@ -46,8 +46,8 @@ function createCards() {
                 />
             </div>
             <div className={'image-container'}>
-                {createCookingPageItem('./images/foodRecipeOriginal/dragonBeardNoodles.png')}
-                {createCookingPageItem('./images/foodRecipeOriginal/bountifulYear.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/sangayaki.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/udonNoodles.png')}
             </div>
         </div>
     )

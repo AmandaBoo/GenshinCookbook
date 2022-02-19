@@ -9,6 +9,7 @@ export const SORTED_FOOD_RECIPES = [
     "Goulash", "Almond Tofu", "Jueyun Chili Chicken", "Jewelry Soup", "Matsutake Meat Rolls", "Crystal Shrimp", "Lotus Seed and Bird Egg Soup",
     "Noodles with Mountain Delicacies", "Vegetarian Abalone", "Stone Harbor Delicacies", "Mint Salad", "Crab Roe Tofu",
     "Stir-Fried Fish Noodles", "Tuna Sushi", "Onigiri", "Mixed Yakisoba", "Crab Roe Kourayaki", "Grilled Unagi Fillet", "Wakatakeni", "Radish and Fish Stew", "Berry Mizu Manjuu",
+    "Sangayaki", "Udon Noodles",
 
     // 3 STAR
     "Golden Shrimp Balls", "Calla Lily Seafood Soup", "Sautéed Matsutake", "Cold Cut Platter", "Sticky Honey Roast", "Crab, Ham & Veggie Bake",

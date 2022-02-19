@@ -36,7 +36,10 @@ function createUnsavedChangesPopup(hasUnsavedChanges, setUnsavedChanges, onClose
     if (hasUnsavedChanges) {
         return (
             <UnsavedChangesPopup
-                onYesClick={() => onSaveClick()}
+                onYesClick={() => {
+                    onSaveClick();
+                    onCloseClick();
+                }}
                 onNoClick={() => {
                     onCloseClick();
                     setUnsavedChanges(false);
