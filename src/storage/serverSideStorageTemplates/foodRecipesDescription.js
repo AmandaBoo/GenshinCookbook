@@ -2264,7 +2264,7 @@ export const FOOD_RECIPES = {
                 [
                     {
                         name: "Bamboo Shoot",
-                        qty:2
+                        qty:3
                     },
                     {
                         name: "Seagrass",
