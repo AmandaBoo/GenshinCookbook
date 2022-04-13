@@ -1067,5 +1067,25 @@
   "hasCard":false,
   "enabled":true,
   "rank":0
+},
+{
+  "name":"Rainbow Aster",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Katsu Sandwich",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
 }
 ]

@@ -2443,5 +2443,53 @@ export const FOOD_RECIPES = {
                 ]
             ]
         },
+        {
+            name: "Katsu Sandwich",
+            src: "katsuSandwich",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Flour",
+                        qty:3
+                    },
+                    {
+                        name: "Raw Meat",
+                        qty:2
+                    },
+                    {
+                        name:'Cabbage',
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Rainbow Aster",
+            src: "rainbowAster",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Milk",
+                        qty:3
+                    },
+                    {
+                        name: "Lavender Melon",
+                        qty:2
+                    },
+                    {
+                        name:'Calla Lily',
+                        qty:2
+                    },
+                    {
+                        name:'Mint',
+                        qty:1
+                    }
+                ]
+            ]
+        },
     ]
 }
