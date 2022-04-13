@@ -9,7 +9,7 @@ export const SORTED_FOOD_RECIPES = [
     "Goulash", "Almond Tofu", "Jueyun Chili Chicken", "Jewelry Soup", "Matsutake Meat Rolls", "Crystal Shrimp", "Lotus Seed and Bird Egg Soup",
     "Noodles with Mountain Delicacies", "Vegetarian Abalone", "Stone Harbor Delicacies", "Mint Salad", "Crab Roe Tofu",
     "Stir-Fried Fish Noodles", "Tuna Sushi", "Onigiri", "Mixed Yakisoba", "Crab Roe Kourayaki", "Grilled Unagi Fillet", "Wakatakeni", "Radish and Fish Stew", "Berry Mizu Manjuu",
-    "Sangayaki", "Udon Noodles",
+    "Sangayaki", "Udon Noodles", "Katsu Sandwich",
 
     // 3 STAR
     "Golden Shrimp Balls", "Calla Lily Seafood Soup", "Sautéed Matsutake", "Cold Cut Platter", "Sticky Honey Roast", "Crab, Ham & Veggie Bake",
@@ -19,7 +19,8 @@ export const SORTED_FOOD_RECIPES = [
     "Lotus Flower Crisp", "Universal Peace", "Jueyun Guoba", "Fullmoon Egg", "Minty Meat Rolls", "Cured Pork Dry Hotpot",
     "Stir-Fried Shrimp", "Tricolor Dango", "Tonkotsu Ramen", "Tri-Flavored Skewer", "Imported Poultry", "Sakura Mochi", "Konda Cuisine",
     "Rice Cake Soup", "Sakura Tempura", "Rice Pudding", "Braised Meat", "Oncidium Tofu", "Invigorating Kitty Meal", "Omelette Rice",
-    "Taiyaki", "More-and-More", 'Unagi Chazuke', 'Sakura Shrimp Crackers', 'Five Pickled Treasures', "Dragon Beard Noodles", "Golden Chicken Burger", "Fragrant Mashed Potatoes",
+    "Taiyaki", "More-and-More", 'Unagi Chazuke', 'Sakura Shrimp Crackers', 'Five Pickled Treasures', "Dragon Beard Noodles", "Rainbow Aster",
+    "Golden Chicken Burger", "Fragrant Mashed Potatoes",
 
     // 4 STAR
     "Moon Pie", "Jade Parcels", "Golden Crab", "Tianshu Meat", "Golden Fried Chicken", "Sashimi Platter", "Chicken Tofu Pudding", "Butter Crab", "Chili-Mince Cornbread Buns",
