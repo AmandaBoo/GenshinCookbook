@@ -15,10 +15,10 @@ export const MainNavBar = ({onInventorySave, onInventoryClose, rawIngredients, c
                     <img className={"logo"} src={"./images/iconsDisplay/genshinCookbook.svg"} alt={"genshinCookbookLogo"}/>
                 </NavLink>
             </div>
-            {renderNavLink('/summary', 'Summary')}
+            {/*{renderNavLink('/summary', 'Summary')}*/}
             {renderNavLink('/cooking', 'Cooking')}
-            {renderNavLink('/alchemy', 'Alchemy')}
-            {renderNavLink('/smithing', 'Smithing')}
+            {/*{renderNavLink('/alchemy', 'Alchemy')}*/}
+            {/*{renderNavLink('/smithing', 'Smithing')}*/}
             <div className={"inventory-icon"}>
                 <Button
                     text={"Inventory"}
