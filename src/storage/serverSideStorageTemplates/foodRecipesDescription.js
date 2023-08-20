@@ -2491,5 +2491,421 @@ export const FOOD_RECIPES = {
                 ]
             ]
         },
+        {
+            name: "Minty Bean Soup",
+            src: "mintyBeanSoup",
+            type: "Attack",
+            rarity: 1,
+            craftsFrom: [
+                [
+                    {
+                        name: "Glabrous Beans",
+                        qty:2
+                    },
+                    {
+                        name: "Mint",
+                        qty:2
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Lambad Fish Roll",
+            src: "lambadFishRoll",
+            type: "Attack",
+            rarity: 1,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fish",
+                        qty: 1
+                    },
+                    {
+                        name: "Sumeru Rose",
+                        qty: 1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Shawarma Wrap",
+            src: "shawarmaWrap",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Raw Meat",
+                        qty: 2
+                    },
+                    {
+                        name: "Flour",
+                        qty: 2
+                    },
+                    {
+                        name: "Spice",
+                        qty: 1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Panipuri",
+            src: "panipuri",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Potato",
+                        qty: 2
+                    },
+                    {
+                        name: "Glabrous Beans",
+                        qty: 2
+                    },
+                    {
+                        name: "Spice",
+                        qty: 1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Curry Shrimp",
+            src: "curryShrimp",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Shrimp Meat",
+                        qty:3
+                    },
+                    {
+                        name: "Onion",
+                        qty:2
+                    },
+                    {
+                        name: "Spice",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Selva Salad",
+            src: "selvaSalad",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Zaytun Peach",
+                        qty:2
+                    },
+                    {
+                        name: "Mint",
+                        qty:2
+                    },
+                    {
+                        name: "Sumeru Rose",
+                        qty:2
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Masala Cheese Balls",
+            src: "masalaCheeseBalls",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Potato",
+                        qty:2
+                    },
+                    {
+                        name: "Cheese",
+                        qty:1
+                    },
+                    {
+                        name: "Spice",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Mushroom Hodgepodge",
+            src: "mushroomHodgepodge",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Rukkhasha-va Mushrooms",
+                        qty:1
+                    },
+                    {
+                        name: "Mushroom",
+                        qty:1
+                    },
+                    {
+                        name: "Starshroom",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Fish With Cream Sauce",
+            src: "fishWithCreamSauce",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fish",
+                        qty:3
+                    },
+                    {
+                        name: "Milk",
+                        qty:2
+                    },
+                    {
+                        name: "Mint",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Potato Boat",
+            src: "potatoBoat",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Potato",
+                        qty:4
+                    },
+                    {
+                        name: "Rukkhasha-va Mushrooms",
+                        qty:2
+                    },
+                    {
+                        name: "Cheese",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Pita Pocket",
+            src: "pitaPocket",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Raw Meat",
+                        qty:3
+                    },
+                    {
+                        name: "Flour",
+                        qty:3
+                    },
+                    {
+                        name: "Tomato",
+                        qty:2
+                    },
+                    {
+                        name: "Milk",
+                        qty:2
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Butter Chicken",
+            src: "butterChicken",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fowl",
+                        qty:3
+                    },
+                    {
+                        name: "Tomato",
+                        qty:3
+                    },
+                    {
+                        name: "Butter",
+                        qty:1
+                    },
+                    {
+                        name: "Spice",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Tahchin",
+            src: "tahchin",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Rice",
+                        qty:4
+                    },
+                    {
+                        name: "Fowl",
+                        qty:2,
+                    },
+                    {
+                        name: "Fish",
+                        qty:2,
+                    },
+                    {
+                        name: "Padisarah",
+                        qty:1,
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Sunset Berry Tea",
+            src: "sunsetBerryTea",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Sunsettia",
+                        qty:3
+                    },
+                    {
+                        name: "Berry",
+                        qty:3
+                    },
+                    {
+                        name: "Sugar",
+                        qty:2
+                    },
+                ]
+            ]
+        },
+        {
+            name: "Milky Mushroom Crisp Tower",
+            src: "milkyMushroomCrispTower",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Flour",
+                        qty:4
+                    },
+                    {
+                        name: "Mushroom",
+                        qty:3
+                    },
+                    {
+                        name: "Cheese",
+                        qty:2
+                    },
+                    {
+                        name: "Cream",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Tandoori Roast Chicken",
+            src: "tandooriRoastChicken",
+            type: "Attack",
+            rarity: 4,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fowl",
+                        qty:3
+                    },
+                    {
+                        name: "Rukkhasha-va Mushrooms",
+                        qty:2
+                    },
+                    {
+                        name: "Padisarah",
+                        qty:1
+                    },
+                    {
+                        name: "Spice",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Biryani",
+            src: "biryani",
+            type: "Attack",
+            rarity: 4,
+            craftsFrom: [
+                [
+                    {
+                        name: "Rice",
+                        qty:4
+                    },
+                    {
+                        name: "Raw Meat",
+                        qty:3
+                    },
+                    {
+                        name: "Spice",
+                        qty:2
+                    },
+                    {
+                        name: "Padisarah",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Meat Lovers' Mushroom Pizza",
+            src: "meatLoversMushroomPizza",
+            type: "Attack",
+            rarity: 4,
+            craftsFrom: [
+                [
+                    {
+                        name: "Raw Meat",
+                        qty:4
+                    },
+                    {
+                        name: "Flour",
+                        qty:4
+                    },
+                    {
+                        name: "Mushroom",
+                        qty:3
+                    },
+                    {
+                        name: "Cheese",
+                        qty:2
+                    }
+                ]
+            ]
+        },
     ]
 }

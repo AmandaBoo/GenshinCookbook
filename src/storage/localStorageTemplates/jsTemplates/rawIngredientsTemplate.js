@@ -158,5 +158,33 @@ export const RAW_INGREDIENTS_TEMPLATE = "[\n" +
     "  {\n" +
     "    \"name\":\"Fish\",\n" +
     "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Glabrous Beans\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Sumeru Rose\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Harra Fruit\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Zaytun Peach\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Rukkhashava Mushrooms\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Starshroom\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Padisarah\",\n" +
+    "    \"qty\":0\n" +
     "  }\n" +
     "]\n";

@@ -188,5 +188,19 @@ export const FOOD_INGREDIENTS = {
                 ]
             ]
         },
+        {
+            name: "Spice",
+            src: "./images/ingredientsIcons/spice.png",
+            rarity: 2,
+            obtainedBy: "process",
+            craftsFrom: [
+                [
+                    {
+                        name: "Harra Fruit",
+                        qty: 2
+                    }
+                ]
+            ]
+        },
     ]
 }

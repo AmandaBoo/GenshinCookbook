@@ -26,13 +26,12 @@ export function getAllRawIngredients() {
             allRawIngredients.push(new RawIngredient(ing.name, quantity, ing.src, ing.rarity, ing.obtainedBy));
         } else {
             let newIngEntry = ",\n" +
-                "  {\n" +
+                "{\n" +
                 "    \"name\":\"" + ing.name + "\",\n" +
                 "    \"qty\":0\n" +
-                "  }\n" +
-                "]\n";
+                "}\n";
 
-            localStorage.rawIngredients = rawIngredientsLocal.substring(0, RAW_INGREDIENTS_TEMPLATE.length - 3) + newIngEntry;
+            localStorage.rawIngredients = JSON.stringify(rawIngredientsLocal).substring(0, JSON.stringify(rawIngredientsLocal).indexOf(']')) + newIngEntry + ']';
             getAllRawIngredients();
         }});
     return allRawIngredients;
@@ -41,28 +40,37 @@ export function getAllRawIngredients() {
 // retrieves food ingredients from localStorageTemplates and local in json form
 // and creates FoodIngredient objects
 export function getAllCraftedFoodIngredients(allRawIngredients) {
+    updateLocalStorageForCraftedFoodIngredients();
+
     let allCraftedFoodIngredients = [];
     let craftedFoodIngredientsLocal = localInterface.getCraftedFoodIngredientsFromLocalStorage();
     let craftedFoodIngredientsServer = serverInterface.getCraftedFoodIngredientsFromServer();
 
     craftedFoodIngredientsServer.forEach(ing => {
         let foodIngLocal = craftedFoodIngredientsLocal.find(ele => ele.name === ing.name);
-        if (foodIngLocal !== undefined) {
-            let craftsFromRaw = mapSubRecipesForCraftedFoodIngredient(allRawIngredients, craftedFoodIngredientsServer, craftedFoodIngredientsLocal, ing);
-            allCraftedFoodIngredients.push(new CraftedFoodIngredient(ing.name, foodIngLocal.qty, ing.src, ing.rarity, ing.obtainedBy,craftsFromRaw));
-        } else {
-            let newIngEntry = ",\n" +
-                "  {\n" +
-                "    \"name\":\"" + ing.name + "\",\n" +
-                "    \"qty\":0\n" +
-                "  }\n" +
-                "]\n";
-
-            localStorage.foodIngredients = craftedFoodIngredientsLocal.substring(0, FOOD_INGREDIENTS_TEMPLATE.length - 3) + newIngEntry;
-            getAllCraftedFoodIngredients(allRawIngredients);
-        }
+        let craftsFromRaw = mapSubRecipesForCraftedFoodIngredient(allRawIngredients, craftedFoodIngredientsServer, craftedFoodIngredientsLocal, ing);
+        allCraftedFoodIngredients.push(new CraftedFoodIngredient(ing.name, foodIngLocal.qty, ing.src, ing.rarity, ing.obtainedBy,craftsFromRaw));
     });
     return allCraftedFoodIngredients;
+}
+
+function updateLocalStorageForCraftedFoodIngredients() {
+    let craftedFoodIngredientsLocal = localInterface.getCraftedFoodIngredientsFromLocalStorage();
+    let craftedFoodIngredientsServer = serverInterface.getCraftedFoodIngredientsFromServer();
+
+    craftedFoodIngredientsServer.forEach(recipe => {
+        let localRecipe = craftedFoodIngredientsLocal.find(ele => ele.name === recipe.name);
+        if (localRecipe === undefined) {
+            let newIngEntry = ",\n" +
+                "  {\n" +
+                "    \"name\":\"" + recipe.name + "\",\n" +
+                "    \"qty\":0\n" +
+                "  }\n";
+
+            localStorage.foodIngredients = JSON.stringify(craftedFoodIngredientsLocal).substring(0, JSON.stringify(craftedFoodIngredientsLocal).indexOf(']')) + newIngEntry + ']';
+            updateLocalStorageForCraftedFoodIngredients();
+        }
+    });
 }
 
 function mapSubRecipesForCraftedFoodIngredient(allRawIngredients, allCraftedIngredientsDescriptions, allCraftedIngredientsLocal, craftedFoodIngredient) {

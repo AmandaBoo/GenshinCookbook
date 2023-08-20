@@ -239,6 +239,48 @@ export const RAW_INGREDIENTS = {
             src: "./images/ingredientsIcons/fish.png",
             rarity: 1,
             obtainedBy: "forage",
-        }
+        },
+        {
+            name: "Glabrous Beans",
+            src: "./images/ingredientsIcons/glabrousBeans.png",
+            rarity: 1,
+            obtainedBy: "shop",
+        },
+        {
+            name: "Sumeru Rose",
+            src: "./images/ingredientsIcons/sumeruRose.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Zaytun Peach",
+            src: "./images/ingredientsIcons/zaytunPeach.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Rukkhashava Mushrooms",
+            src: "./images/ingredientsIcons/rukkhashavaMushrooms.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Starshroom",
+            src: "./images/ingredientsIcons/starshroom.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Padisarah",
+            src: "./images/ingredientsIcons/padisarah.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Harra Fruit",
+            src: "./images/ingredientsIcons/harraFruit.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
     ]
 }
