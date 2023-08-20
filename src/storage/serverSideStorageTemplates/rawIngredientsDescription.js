@@ -282,5 +282,29 @@ export const RAW_INGREDIENTS = {
             rarity: 1,
             obtainedBy: "forage",
         },
+        {
+            name: "Ajilenakh Nut",
+            src: "./images/ingredientsIcons/ajilenakhNut.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Wolfhook",
+            src: "./images/ingredientsIcons/wolfhook.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Mysterious Meat",
+            src: "./images/ingredientsIcons/mysteriousMeat.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Coffee Beans",
+            src: "./images/ingredientsIcons/coffeeBeans.png",
+            rarity: 1,
+            obtainedBy: "shop",
+        },
     ]
 }

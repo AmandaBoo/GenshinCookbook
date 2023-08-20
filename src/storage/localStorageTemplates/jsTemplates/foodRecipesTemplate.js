@@ -1267,5 +1267,165 @@ export const FOOD_RECIPES_TEMPLATE = "[{\n" +
     "  \"hasCard\":false,\n" +
     "  \"enabled\":true,\n" +
     "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Aaru Mixed Rice\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Baklava\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Candied Ajilenakh Nut\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Charcoal-Baked Ajilenakh Cake\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Fruits of the Festival\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Padisarah Pudding\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Rose Custard\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Samosa\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Scented Meat Balls\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Sabz Meat Stew\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Super Magnificent Pizza\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Minty Fruit Tea\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Tulumba\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Gilded Tajine\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Jade Fruit Soup\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Fatteh\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
     "}\n" +
     "]";

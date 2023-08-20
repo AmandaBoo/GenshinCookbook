@@ -79,6 +79,7 @@ export function saveDoShowCompletedIngredients(doShowCompletedIngredient) {
 }
 
 function checkStorage() {
+    // chrome should be able to hold 100KB
     let _lsTotal = 0,
         _xLen, _x;
     for (_x in localStorage) {
