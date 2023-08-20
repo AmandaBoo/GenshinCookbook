@@ -1267,5 +1267,165 @@
   "hasCard":false,
   "enabled":true,
   "rank":0
+},
+{
+  "name":"Aaru Mixed Rice",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Baklava",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Candied Ajilenakh Nut",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Charcoal-Baked Ajilenakh Cake",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Fruits of the Festival",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Padisarah Pudding",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Rose Custard",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Samosa",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Scented Meat Balls",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Sabz Meat Stew",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Super Magnificent Pizza",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Minty Fruit Tea",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Tulumba",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Gilded Tajine",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Jade Fruit Soup",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Fatteh",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
 }
 ]

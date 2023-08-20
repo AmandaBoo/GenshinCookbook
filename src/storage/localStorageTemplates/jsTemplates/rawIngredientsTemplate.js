@@ -1,7 +1,7 @@
 export const RAW_INGREDIENTS_TEMPLATE = "[\n" +
     "  {\n" +
-    "    \"name\":\"Almond\",\n" +
-    "    \"qty\":0\n" +
+    "    \"name\": \"Almond\",\n" +
+    "    \"qty\": 0\n" +
     "  },\n" +
     "  {\n" +
     "    \"name\":\"Apple\",\n" +
@@ -185,6 +185,22 @@ export const RAW_INGREDIENTS_TEMPLATE = "[\n" +
     "  },\n" +
     "  {\n" +
     "    \"name\":\"Padisarah\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Ajilenakh Nut\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Wolfhook\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Mysterious Meat\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Coffee Beans\",\n" +
     "    \"qty\":0\n" +
     "  }\n" +
     "]\n";

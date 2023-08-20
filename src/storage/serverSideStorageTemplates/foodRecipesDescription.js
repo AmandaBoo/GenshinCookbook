@@ -2907,5 +2907,519 @@ export const FOOD_RECIPES = {
                 ]
             ]
         },
+        {
+            name: "Aaru Mixed Rice",
+            src: "aaruMixedRice",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Rice",
+                        qty:3
+                    },
+                    {
+                        name: "Flour",
+                        qty:2
+                    },
+                    {
+                        name: "Glabrous Beans",
+                        qty:2
+                    },
+                    {
+                        name: "Tomato",
+                        qty:2
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Baklava",
+            src: "baklava",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Flour",
+                        qty:3
+                    },
+                    {
+                        name: "Ajilenakh Nut",
+                        qty:2
+                    },
+                    {
+                        name: "Butter",
+                        qty:2
+                    },
+                    {
+                        name: "Sugar",
+                        qty:1
+                    },
+                ]
+            ]
+        },
+        {
+            name: "Candied Ajilenakh Nut",
+            src: "candiedAjilenakhNut",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Ajilenakh Nut",
+                        qty:4
+                    },
+                    {
+                        name: "Almond",
+                        qty:2
+                    },
+                    {
+                        name: "Butter",
+                        qty:2
+                    },
+                    {
+                        name: "Sumeru Rose",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Charcoal-Baked Ajilenakh Cake",
+            src: "charcoalBakedAjilenakhCake",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Ajilenakh Nut",
+                        qty:2
+                    },
+                    {
+                        name: "Flour",
+                        qty:1
+                    },
+                    {
+                        name: "Jam",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Fruits of the Festival",
+            src: "fruitsoftheFestival",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Wolfhook",
+                        qty:2
+                    },
+                    {
+                        name: "Sunsettia",
+                        qty:2
+                    },
+                    {
+                        name: "Sugar",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Aaru Mixed Rice",
+            src: "aaruMixedRice",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Rice",
+                        qty:3
+                    },
+                    {
+                        name: "Flour",
+                        qty:2
+                    },
+                    {
+                        name: "Glabrous Beans",
+                        qty:2
+                    },
+                    {
+                        name: "Tomato",
+                        qty:2
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Baklava",
+            src: "baklava",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Flour",
+                        qty:3
+                    },
+                    {
+                        name: "Ajilenakh Nut",
+                        qty:2
+                    },
+                    {
+                        name: "Butter",
+                        qty:2
+                    },
+                    {
+                        name: "Sugar",
+                        qty:1
+                    },
+                ]
+            ]
+        },
+        {
+            name: "Candied Ajilenakh Nut",
+            src: "candiedAjilenakhNut",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Ajilenakh Nut",
+                        qty:4
+                    },
+                    {
+                        name: "Almond",
+                        qty:2
+                    },
+                    {
+                        name: "Butter",
+                        qty:2
+                    },
+                    {
+                        name: "Sumeru Rose",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Charcoal-Baked Ajilenakh Cake",
+            src: "charcoalBakedAjilenakhCake",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Ajilenakh Nut",
+                        qty:2
+                    },
+                    {
+                        name: "Flour",
+                        qty:1
+                    },
+                    {
+                        name: "Jam",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Fruits of the Festival",
+            src: "fruitsoftheFestival",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Wolfhook",
+                        qty:2
+                    },
+                    {
+                        name: "Sunsettia",
+                        qty:2
+                    },
+                    {
+                        name: "Sugar",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Padisarah Pudding",
+            src: "padisarahPudding",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Padisarah",
+                        qty:2
+                    },
+                    {
+                        name: "Sumeru Rose",
+                        qty:1
+                    },
+                    {
+                        name: "Milk",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Rose Custard",
+            src: "roseCustard",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Milk",
+                        qty:2
+                    },
+                    {
+                        name: "Sumeru Rose",
+                        qty:2
+                    },
+                    {
+                        name: "Sugar",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Samosa",
+            src: "samosa",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Raw Meat",
+                        qty:2
+                    },
+                    {
+                        name: "Flour",
+                        qty:1
+                    },
+                    {
+                        name: "Spice",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Scented Meat Balls",
+            src: "scentedMeatBalls",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Mysterious Meat",
+                        qty:3
+                    },
+                    {
+                        name: "Wheat",
+                        qty:2
+                    },
+                    {
+                        name: "Onion",
+                        qty:2
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Sabz Meat Stew",
+            src: "sabzMeatStew",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Raw Meat",
+                        qty:2
+                    },
+                    {
+                        name: "Snapdragon",
+                        qty:2
+                    },
+                    {
+                        name: "Onion",
+                        qty:2
+                    },
+                    {
+                        name: "Spice",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Super Magnificent Pizza",
+            src: "superMagnificentPizza",
+            type: "Attack",
+            rarity: 4,
+            craftsFrom: [
+                [
+                    {
+                        name: "Raw Meat",
+                        qty:2
+                    },
+                    {
+                        name: "Ham",
+                        qty:2
+                    },
+                    {
+                        name: "Flour",
+                        qty:2
+                    },
+                    {
+                        name: "Cheese",
+                        qty:2
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Minty Fruit Tea",
+            src: "mintyFruitTea",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Mint",
+                        qty:3
+                    },
+                    {
+                        name: "Sunsettia",
+                        qty:3
+                    },
+                    {
+                        name: "Berry",
+                        qty:3
+                    },
+                    {
+                        name: "Sugar",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Tulumba",
+            src: "tulumba",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Bird Egg",
+                        qty:3
+                    },
+                    {
+                        name: "Flour",
+                        qty:2
+                    },
+                    {
+                        name: "Sugar",
+                        qty:2
+                    },
+                    {
+                        name: "Coffee Beans",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Gilded Tajine",
+            src: "gildedTajine",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Raw Meat",
+                        qty:2
+                    },
+                    {
+                        name: "Padisarah",
+                        qty:2
+                    },
+                    {
+                        name: "Spice",
+                        qty:1
+                    },
+                    {
+                        name: "Onion",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Jade Fruit Soup",
+            src: "jadeFruitSoup",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Sunsettia",
+                        qty:3
+                    },
+                    {
+                        name: "Sugar",
+                        qty:1
+                    },
+                    {
+                        name: "Qingxin",
+                        qty:1
+                    },
+                    {
+                        name: "Violetgrass",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Fatteh",
+            src: "fatteh",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Flour",
+                        qty:3
+                    },
+                    {
+                        name: "Glabrous Beans",
+                        qty:2
+                    },
+                    {
+                        name: "Milk",
+                        qty:2
+                    },
+                    {
+                        name: "Mint",
+                        qty:1
+                    }
+                ]
+            ]
+        },
     ]
 }
