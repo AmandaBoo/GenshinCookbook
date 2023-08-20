@@ -1087,5 +1087,185 @@
   "hasCard":false,
   "enabled":true,
   "rank":0
+},
+{
+  "name":"Biryani",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Butter Chicken",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Curry Shrimp",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Fish With Cream Sauce",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Lambad Fish Roll",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Masala Cheese Balls",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Meat Lovers' Mushroom Pizza",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Milky Mushroom Crisp Tower",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Minty Bean Soup",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Mushroom Hodgepodge",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Panipuri",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Pita Pocket",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Potato Boat",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Selva Salad",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Shawarma Wrap",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Sunset Berry Tea",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Tahchin",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
+},
+{
+  "name":"Tandoori Roast Chicken",
+  "qty":0,
+  "want":0,
+  "mastery":false,
+  "curProf":0,
+  "hasCard":false,
+  "enabled":true,
+  "rank":0
 }
 ]

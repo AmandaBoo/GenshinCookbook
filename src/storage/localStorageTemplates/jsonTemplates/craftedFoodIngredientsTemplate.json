@@ -50,5 +50,9 @@
   {
     "name":"Bacon",
     "qty":0
+  },
+  {
+    "name":"Spice",
+    "qty":0
   }
 ]

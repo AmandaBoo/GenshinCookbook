@@ -158,5 +158,33 @@
   {
     "name":"Fish",
     "qty":0
+  },
+  {
+    "name":"Glabrous Beans",
+    "qty":0
+  },
+  {
+    "name":"Sumeru Rose",
+    "qty":0
+  },
+  {
+    "name":"Harra Fruit",
+    "qty":0
+  },
+  {
+    "name":"Zaytun Peach",
+    "qty":0
+  },
+  {
+    "name":"Rukkhashava Mushrooms",
+    "qty":0
+  },
+  {
+    "name":"Starshroom",
+    "qty":0
+  },
+  {
+    "name":"Padisarah",
+    "qty":0
   }
 ]

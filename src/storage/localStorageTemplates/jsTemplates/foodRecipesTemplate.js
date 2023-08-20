@@ -1087,5 +1087,185 @@ export const FOOD_RECIPES_TEMPLATE = "[{\n" +
     "  \"hasCard\":false,\n" +
     "  \"enabled\":true,\n" +
     "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Biryani\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Butter Chicken\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Curry Shrimp\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Fish With Cream Sauce\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Lambad Fish Roll\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Masala Cheese Balls\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Meat Lovers' Mushroom Pizza\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Milky Mushroom Crisp Tower\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Minty Bean Soup\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Mushroom Hodgepodge\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Panipuri\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Pita Pocket\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Potato Boat\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Selva Salad\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Shawarma Wrap\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Sunset Berry Tea\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Tahchin\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Tandoori Roast Chicken\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
     "}\n" +
     "]";

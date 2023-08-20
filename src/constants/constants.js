@@ -5,7 +5,7 @@ export const HELP_GUIDE_ID = "help-guide";
 
 // TEXT
 export const FORAGEABLE = "FORAGEABLE";
-export const SHOP_ONLY = 'SHOP ONLY';
+export const SHOP_ONLY = 'SHOP';
 export const PROCESSED = 'PROCESSED';
 export const GROCERY_LIST = 'GROCERY LIST';
 export const COOKING_POT = 'COOKING POT';
