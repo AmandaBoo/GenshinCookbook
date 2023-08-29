@@ -3781,7 +3781,7 @@ export const FOOD_RECIPES = {
         },
         {
             name: "Lasagna",
-            src: "Lasagna",
+            src: "lasagna",
             type: "Attack",
             rarity: 3,
             craftsFrom: [
