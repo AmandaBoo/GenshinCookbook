@@ -306,5 +306,23 @@ export const RAW_INGREDIENTS = {
             rarity: 1,
             obtainedBy: "shop",
         },
+        {
+            name: "Bulle Fruit",
+            src: "./images/ingredientsIcons/bulleFruit.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Marcotte",
+            src: "./images/ingredientsIcons/marcotte.png",
+            rarity: 1,
+            obtainedBy: "forage",
+        },
+        {
+            name: "Fermented Juice",
+            src: "./images/ingredientsIcons/fermentedJuice.png",
+            rarity: 1,
+            obtainedBy: "shop",
+        },
     ]
 }

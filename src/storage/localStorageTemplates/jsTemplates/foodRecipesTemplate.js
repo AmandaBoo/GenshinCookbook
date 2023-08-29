@@ -1427,5 +1427,205 @@ export const FOOD_RECIPES_TEMPLATE = "[{\n" +
     "  \"hasCard\":false,\n" +
     "  \"enabled\":true,\n" +
     "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Fruity Duet\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Fruity Duet\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Fruity Smoothie\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Vessie Chicken\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Fruity Trio\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Steak Tartare\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Poissonchant Pie\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Tasses Ragout\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Conch Madeleine\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Ile flottante\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Pate de Fruit\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Fish and Chips\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Fontainian Onion Soup\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Garlic Baguette\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Fontainian Foie Gras\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Poisson Seafood Soup\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Lasagna\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Fontaine Aspic\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Cream of Mushroom Soup\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
+    "},\n" +
+    "{\n" +
+    "  \"name\":\"Duck Confit\",\n" +
+    "  \"qty\":0,\n" +
+    "  \"want\":0,\n" +
+    "  \"mastery\":false,\n" +
+    "  \"curProf\":0,\n" +
+    "  \"hasCard\":false,\n" +
+    "  \"enabled\":true,\n" +
+    "  \"rank\":0\n" +
     "}\n" +
     "]";

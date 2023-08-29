@@ -2,7 +2,8 @@ export const SORTED_FOOD_RECIPES = [
     // 1 STAR
     "Chicken-Mushroom Skewer", "Teyvat Fried Egg", "Steak", "Radish Veggie Soup",
     "Mondstadt Grilled Fish", "Mint Jelly", "Mora Meat", "Stir-Fried Filet", "Grilled Tiger Fish", "Rice Buns", "Egg Roll",
-    "Dry-Braised Salted Fish", "Miso Soup", "Sweet Shrimp Sushi", "Bird Egg Sushi", "Soba Noodles", "Minty Bean Soup", "Lambad Fish Roll",
+    "Dry-Braised Salted Fish", "Miso Soup", "Sweet Shrimp Sushi", "Bird Egg Sushi", "Soba Noodles", "Minty Bean Soup",
+    "Lambad Fish Roll", "Duck Confit",
 
     // 2 STAR
     "Flaming Red Bolognese", "Sweet Madame", "Northern Smoked Chicken", "Cream Stew", "Tea Break Pancake", "Fried Radish Balls",
@@ -12,7 +13,8 @@ export const SORTED_FOOD_RECIPES = [
     "Tuna Sushi", "Onigiri", "Mixed Yakisoba", "Crab Roe Kourayaki", "Grilled Unagi Fillet",
     "Wakatakeni", "Radish and Fish Stew", "Berry Mizu Manjuu", "Sangayaki", "Udon Noodles", "Katsu Sandwich",
     "Shawarma Wrap", "Panipuri", "Curry Shrimp", "Selva Salad", "Masala Cheese Balls", "Mushroom Hodgepodge",
-    "Fish With Cream Sauce", "Aaru Mixed Rice", "Rose Custard", "Samosa", "Fatteh",
+    "Fish With Cream Sauce", "Aaru Mixed Rice", "Rose Custard", "Samosa", "Fatteh", "Cream of Mushroom Soup",
+    "Fontaine Aspic", "Garlic Baguette", "Fontainian Onion Soup", "Ile flottante", "Tasses Ragout",
 
     // 3 STAR
     "Golden Shrimp Balls", "Calla Lily Seafood Soup", "Sautéed Matsutake", "Cold Cut Platter", "Sticky Honey Roast", "Crab, Ham & Veggie Bake",
@@ -26,11 +28,13 @@ export const SORTED_FOOD_RECIPES = [
     "Golden Chicken Burger", "Fragrant Mashed Potatoes", "Potato Boat", "Pita Pocket", "Butter Chicken", "Tahchin",
     "Sunset Berry Tea", "Milky Mushroom Crisp Tower", "Baklava", "Candied Ajilenakh Nut", "Charcoal-Baked Ajilenakh Cake",
     "Fruits of the Festival", "Padisarah Pudding", "Scented Meat Balls", "Sabz Meat Stew", "Minty Fruit Tea", "Tulumba",
-    "Gilded Tajine", "Jade Fruit Soup",
+    "Gilded Tajine", "Jade Fruit Soup", "Lasagna", "Poisson Seafood Soup", "Fontainian Foie Gras", "Fish and Chips",
+    "Pate de Fruit", "Conch Madeleine", "Poissonchant Pie", "Steak Tartare", "Fruity Trio", "Fruity Smoothie", "Fruity Duet",
 
     // 4 STAR
     "Moon Pie", "Jade Parcels", "Golden Crab", "Tianshu Meat", "Golden Fried Chicken", "Sashimi Platter", "Chicken Tofu Pudding", "Butter Crab", "Chili-Mince Cornbread Buns",
     "Bountiful Year", "Tandoori Roast Chicken", "Biryani", "Meat Lovers' Mushroom Pizza", "Super Magnificent Pizza",
+    "Vessie Chicken",
 
     // 5 STAR + TO SORT RECIPES
     "Adeptus' Temptation"];
@@ -42,7 +46,7 @@ export const MATERIALS = ["Apple", "Sunsettia", "Horsetail", "Mushroom", "Sweet 
     "Unagi Meat", "Seagrass", "Lavender Melon", "Flour", "Glabrous Beans", "Sumeru Rose", "Harra Fruit", "Zaytun Peach",
     "Rukkhashava Mushrooms", "Starshroom", "Padisarah", "Cream", "Smoked Fowl", "Butter", "Ham", "Sugar", "Jam", "Cheese", "Bacon",
     "Sausage", "Spice", "Lotus Head", "Jueyun Chili", "Qingxin", "Violetgrass", "Small Lamp Grass", "Sakura Bloom",
-    "Wolfhook", "Ajilenakh Nut", "Mysterious Meat", "Coffee Beans"];
+    "Wolfhook", "Ajilenakh Nut", "Mysterious Meat", "Coffee Beans", "Bulle Fruit", "Fermented Juice", "Marcotte"];
 
 
 
