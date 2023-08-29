@@ -3421,5 +3421,447 @@ export const FOOD_RECIPES = {
                 ]
             ]
         },
+        {
+            name: "Fruity Duet",
+            src: "fruityDuet",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Sunsettia",
+                        qty:1
+                    },
+                    {
+                        name: "Jam",
+                        qty:1
+                    },
+                    {
+                        name: "Qingxin",
+                        qty:1
+                    },
+                    {
+                        name: "Sugar",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Fruity Smoothie",
+            src: "fruitySmoothie",
+            type: "Attack",
+            rarity:3 ,
+            craftsFrom: [
+                [
+                    {
+                        name: "Berry",
+                        qty:3
+                    },
+                    {
+                        name: "Milk",
+                        qty:3
+                    },
+                    {
+                        name: "Qingxin",
+                        qty:1
+                    },
+                    {
+                        name: "Sugar",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Vessie Chicken",
+            src: "vessieChicken",
+            type: "Attack",
+            rarity: 4,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fowl",
+                        qty:4
+                    },
+                    {
+                        name: "Raw Meat",
+                        qty:4
+                    },
+                    {
+                        name: "Marcotte",
+                        qty:3
+                    },
+                    {
+                        name: "Fermented Juice",
+                        qty:2
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Fruity Trio",
+            src: "fruityTrio",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Marcotte",
+                        qty:2
+                    },
+                    {
+                        name: "Bulle Fruit",
+                        qty:1
+                    },
+                    {
+                        name: "Jam",
+                        qty:1
+                    },
+                    {
+                        name: "Bird Egg",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Steak Tartare",
+            src: "steakTartare",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Raw Meat",
+                        qty:3
+                    },
+                    {
+                        name: "Bird Egg",
+                        qty:3
+                    },
+                    {
+                        name: "Onion",
+                        qty:2
+                    },
+                    {
+                        name: "Marcotte",
+                        qty:2
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Poissonchant Pie",
+            src: "poissonchantPie",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fish",
+                        qty:3
+                    },
+                    {
+                        name: "Bird Egg",
+                        qty:1
+                    },
+                    {
+                        name: "Flour",
+                        qty:2
+                    },
+                    {
+                        name: "Bacon",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Tasses Ragout",
+            src: "tassesRagout",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Tomato",
+                        qty:3
+                    },
+                    {
+                        name: "Salt",
+                        qty:2
+                    },
+                    {
+                        name: "Onion",
+                        qty:3
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Conch Madeleine",
+            src: "conchMadeleine",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Bird Egg",
+                        qty:3
+                    },
+                    {
+                        name: "Flour",
+                        qty:2
+                    },
+                    {
+                        name: "Butter",
+                        qty:2
+                    },
+                    {
+                        name: "Sugar",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Ile flottante",
+            src: "ileflottante",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Sugar",
+                        qty:1
+                    },
+                    {
+                        name: "Bird Egg",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Pate de Fruit",
+            src: "patedeFruit",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Bulle Fruit",
+                        qty:1
+                    },
+                    {
+                        name: "Jam",
+                        qty:1
+                    },
+                    {
+                        name: "Sugar",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Fish and Chips",
+            src: "fishandChips",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fish",
+                        qty:3
+                    },
+                    {
+                        name: "Flour",
+                        qty:3
+                    },
+                    {
+                        name: "Potato",
+                        qty:3
+                    },
+                    {
+                        name: "Salt",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Fontainian Onion Soup",
+            src: "fontainianOnionSoup",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Onion",
+                        qty:3
+                    },
+                    {
+                        name: "Flour",
+                        qty:2
+                    },
+                    {
+                        name: "Cheese",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Garlic Baguette",
+            src: "garlicBaguette",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Flour",
+                        qty:4
+                    },
+                    {
+                        name: "Butter",
+                        qty:2
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Fontainian Foie Gras",
+            src: "fontainianFoieGras",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fowl",
+                        qty:2
+                    },
+                    {
+                        name: "Jam",
+                        qty:1
+                    },
+                    {
+                        name: "Milk",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Poisson Seafood Soup",
+            src: "poissonSeafoodSoup",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fish",
+                        qty:4
+                    },
+                    {
+                        name: "Tomato",
+                        qty:2
+                    },
+                    {
+                        name: "Milk",
+                        qty:2
+                    },
+                    {
+                        name: "Marcotte",
+                        qty:2
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Lasagna",
+            src: "Lasagna",
+            type: "Attack",
+            rarity: 3,
+            craftsFrom: [
+                [
+                    {
+                        name: "Flour",
+                        qty:3
+                    },
+                    {
+                        name: "Raw Meat",
+                        qty:2
+                    },
+                    {
+                        name: "Cheese",
+                        qty:2
+                    },
+                    {
+                        name: "Butter",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Fontaine Aspic",
+            src: "fontaineAspic",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fish",
+                        qty:2
+                    },
+                    {
+                        name: "Fowl",
+                        qty:2
+                    },
+                    {
+                        name: "Cream",
+                        qty:1
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Cream of Mushroom Soup",
+            src: "creamofMushroomSoup",
+            type: "Attack",
+            rarity: 2,
+            craftsFrom: [
+                [
+                    {
+                        name: "Mushroom",
+                        qty:3
+                    },
+                    {
+                        name: "Cream",
+                        qty:3
+                    }
+                ]
+            ]
+        },
+        {
+            name: "Duck Confit",
+            src: "duckConfit",
+            type: "Attack",
+            rarity: 1,
+            craftsFrom: [
+                [
+                    {
+                        name: "Fowl",
+                        qty:1
+                    },
+                    {
+                        name: "Potato",
+                        qty:1
+                    }
+                ]
+            ]
+        },
     ]
 }

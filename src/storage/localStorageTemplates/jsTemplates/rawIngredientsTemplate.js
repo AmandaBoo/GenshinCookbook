@@ -202,5 +202,17 @@ export const RAW_INGREDIENTS_TEMPLATE = "[\n" +
     "  {\n" +
     "    \"name\":\"Coffee Beans\",\n" +
     "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Bulle Fruit\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Fermented Juice\",\n" +
+    "    \"qty\":0\n" +
+    "  },\n" +
+    "  {\n" +
+    "    \"name\":\"Marcotte\",\n" +
+    "    \"qty\":0\n" +
     "  }\n" +
     "]\n";

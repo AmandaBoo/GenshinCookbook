@@ -202,5 +202,17 @@
   {
     "name":"Coffee Beans",
     "qty":0
+  },
+  {
+    "name":"Bulle Fruit",
+    "qty":0
+  },
+  {
+    "name":"Fermented Juice",
+    "qty":0
+  },
+  {
+    "name":"Marcotte",
+    "qty":0
   }
 ]
