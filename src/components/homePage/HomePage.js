@@ -38,7 +38,7 @@ function createCards() {
                     src={'./images/iconsDisplay/sparkling.png'}
                     alt={'sparkling icon'}
                 />
-                <div className={'offside-font vertical-center'}>{"Explore new dishes added in 2.6"}</div>
+                <div className={'offside-font vertical-center'}>{"Explore new dishes added in 4.0"}</div>
                 <img
                     className={'sparkling-icon'}
                     src={'./images/iconsDisplay/sparkling.png'}
@@ -46,8 +46,31 @@ function createCards() {
                 />
             </div>
             <div className={'image-container'}>
-                {createCookingPageItem('./images/foodRecipeOriginal/katsuSandwich.png')}
-                {createCookingPageItem('./images/foodRecipeOriginal/rainbowAster.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/duckConfit.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/creamofMushroomSoup.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/fontaineAspic.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/lasagna.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/poissonSeafoodSoup.png')}
+            </div>
+            <div className={'image-container'}>
+                {createCookingPageItem('./images/foodRecipeOriginal/fontainianFoieGras.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/garlicBaguette.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/fontainianOnionSoup.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/fishandChips.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/patedeFruit.png')}
+            </div>
+            <div className={'image-container'}>
+                {createCookingPageItem('./images/foodRecipeOriginal/ileflottante.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/conchMadeleine.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/tassesRagout.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/poissonchantPie.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/steakTartare.png')}
+            </div>
+            <div className={'image-container'}>
+                {createCookingPageItem('./images/foodRecipeOriginal/fruityTrio.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/vessieChicken.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/fruitySmoothie.png')}
+                {createCookingPageItem('./images/foodRecipeOriginal/fruityDuet.png')}
             </div>
         </div>
     )
@@ -56,7 +79,7 @@ function createCards() {
 function createCookingPageItem(imageSrc) {
     return (
         <NavLink to={'/cooking'}>
-            <IconButton>
+            <IconButton size={'small'}>
                 <img
                     src={imageSrc}
                     alt={'newrecipe'}
