@@ -3747,7 +3747,7 @@ export const FOOD_RECIPES = {
                         qty:1
                     },
                     {
-                        name: "Milk",
+                        name: "Marcotte",
                         qty:1
                     }
                 ]
